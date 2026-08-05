@@ -1,0 +1,298 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": " Name each of the stages labelled A, B, C and D.",
+    "modelAnswer": "A: Plants; B: Carbon dioxide in the atmosphere; C: Animals; D: Dead/decaying organisms or organic matter[cite: 3].",
+    "topic": "Ecosystems",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(a).png"
+  },
+  {
+    "number": "1.a.ii",
+    "questionText": "Name each of the processes labelled P, S and T in the natural cycle shown in Figure 1(a).",
+    "modelAnswer": "P: Photosynthesis; S: Decay or decomposition; T: Combustion or burning[cite: 3].",
+    "topic": "Ecosystems",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(a).png"
+  },
+ 
+  {
+    "number": "1.a.iii",
+    "questionText": "State three activities of humans that could disrupt the cycle shown in Figure 1(a).",
+    "modelAnswer": "1. Raising of livestock; 2. Burning of fossil fuels/coal; 3. Deforestation (reducing forest cover); 4. Industrial pollution[cite: 3].",
+    "topic": "Environmental Science",
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/science-2025/figure 1(a).png"
+  },
+  {
+    "number": "1.b.i",
+    "questionText": "Name each of the farming systems labelled K and L in Figure 1(b).",
+    "modelAnswer": "K: Land rotation; L: Crop rotation[cite: 3].",
+    "topic": "Agriculture",
+    "hasImage": true,
+    "imageUrl":  "gs://bece-prep.firebasestorage.app/science-2025/figure 1(b).png"
+  },
+  {
+    "number": "1.b.ii",
+    "questionText": "Give the reason for each of the names given in (i).",
+    "modelAnswer": "K: The farmer moves from one farmland to another. L: The farmer moves or rotates the crops from one plot to another[cite: 3].",
+    "topic": "Agriculture",
+    "hasImage": true,
+    "imageUrl":  "gs://bece-prep.firebasestorage.app/science-2025/figure 1(b).png"
+  },
+  {
+    "number": "1.b.iii",
+    "questionText": "State two ways in which the farming system K is of importance to the farmer.",
+    "modelAnswer": "1. The soil regains its fertility/prevents soil exhaustion. 2. Control in the build-up of pests and diseases. 3. Helps maintain good yield. 4. Saves money[cite: 3].",
+    "topic": "Agriculture",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(b).png"
+  },
+  {
+    "number": "1.b.iv",
+    "push": "Give three reasons why the farming system K is not being encouraged in recent times.",
+    "modelAnswer": "1. Time, energy, and money is wasted in clearing new land. 2. It does not encourage large scale farming. 3. Causes rampant deforestation. 4. Land is getting scarce due to a growing population[cite: 3].",
+    "topic": "Agriculture",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(b).png"
+  },
+  {
+    "number": "1.b.v",
+    "questionText": "Name one type of crop that could be included in the farmland L to improve the fertility of the soil.",
+    "modelAnswer": "Leguminous crops[cite: 3].",
+    "topic": "Agriculture",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(b).png"
+  },
+  {
+    "number": "1.c.i",
+    "questionText": "Give three examples of the use of inclined planes in everyday life.",
+    "modelAnswer": "Staircase, Ladder, Plank of wood at an angle, Hill, Ramps, or Screws[cite: 3].",
+    "topic": "Physics",
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/science-2025/figure1(c).png"
+  },
+  {
+    "number": "1.c.ii",
+    "questionText": "Given that I is 400 N and moves a distance of 10 m while II is 100 N and moves a distance of 5 m, calculate: (α) work output; (β) work input; (γ) efficiency.",
+    "modelAnswer": "(α) Work output = Load x distance = 100 * 5 = 500 J; (β) Work input = Effort x distance = 400 * 10 = 4000 J; (γ) Efficiency = (Work output / Work input) x 100% = (500 / 4000) * 100 = 12.5%[cite: 3].",
+    "topic": "Physics",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure1(c).png"
+  },
+  {
+    "number": "1.d.i",
+    "questionText": "Name the scientific principle being demonstrated in both experimental set-ups A and B in Figure 1(d).",
+    "modelAnswer": "Separation of mixtures[cite: 3].",
+    "topic": "Chemistry",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(d).png"
+  },
+  {
+    "number": "1.d.ii",
+    "questionText": "Describe briefly the functions of each of the parts labelled II and VI in Figure 1(d).",
+    "modelAnswer": "II (Liebig condenser): Cools the vaporized components of the mixture back to liquid. VI (Magnet): Attracts the magnetic material in a mixture to separate it from non-magnetic components[cite: 3].",
+    "topic": "Chemistry",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(d).png"
+  },
+  {
+    "number": "1.d.iii",
+    "questionText": "Name any two types of materials that could be present in each of the set-ups: α) III; β) VII.",
+    "modelAnswer": "α) Mixture of alcohol and water or kerosene and diesel; β) Iron filings and powdered sulphur[cite: 3].",
+    "topic": "Chemistry",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(d).png"
+  },
+  {
+    "number": "1.d.iv",
+    "questionText": "Give the reason why the direction of water flow in A must not be reversed.",
+    "modelAnswer": "To ensure complete condensation of the vapour by keeping the condenser completely filled with cold water[cite: 3].",
+    "topic": "Chemistry",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/figure 1(d).png"
+  },
+  {
+    "number": "2.a.i",
+    "questionText": "State three ways of conserving electrical energy in the home.",
+    "hasImage": false,
+    "modelAnswer": "1. Ironing clothes in bulk. 2. Switching off lights when not in use. 3. Switching off gadgets when not in use. 4. Using energy-efficient appliances."
+  },
+  {
+    "number": "2.a.ii",
+    "questionText": "Calculate the energy consumed by a 4000 W electric stove used for 12 hours. Give your answer in kWh.",
+    "hasImage": false,
+    "modelAnswer": "Energy = Power x Time. E = 4000W x 12h = 4kW x 12h = 48 kWh."
+  },
+  {
+    "number": "2.b.i",
+    "questionText": "Name two examples of acid-base indicators.",
+    "hasImage": false,
+    "modelAnswer": "1. Methyl orange. 2. Methyl red. 3. Phenolphthalein. 4. Litmus. 5. Universal indicator."
+  },
+  {
+    "number": "2.b.ii",
+    "questionText": "State the color change of any two of the indicators mentioned in (i) in an acidic medium.",
+    "hasImage": false,
+    "modelAnswer": "1. Litmus: Red. 2. Methyl orange: Red/Pink. 3. Methyl red: Red/Pink. 4. Phenolphthalein: Colourless. 5. Universal indicator: Orange/Yellow."
+  },
+  {
+    "number": "2.c.i",
+    "questionText": "State four ways of mitigating the effects of climate change.",
+    "hasImage": false,
+    "modelAnswer": "1. Waste management (recycling/reuse). 2. Investing in renewable energy. 3. Adapting to the effects of climate change. 4. Prioritizing human health. 5. Using resources more efficiently. 6. Afforestation. 7. Use of public transport or electric vehicles."
+  },
+  {
+    "number": "2.c.ii",
+    "questionText": "List two examples of greenhouse gases.",
+    "hasImage": false,
+    "modelAnswer": "1. Carbon dioxide. 2. Methane. 3. Nitrous oxide (nitrogen (I) oxide)."
+  },
+  {
+    "number": "2.d",
+    "questionText": "List two examples of greenhouse gases.",
+    "hasImage": false,
+    "modelAnswer": "1. Carbon dioxide. 2. Methane. 3. Nitrous oxide."
+  },
+  
+  {
+    "number": "3.a.i",
+    "questionText": "State two examples of animal protein sources in animal feed.",
+    "hasImage": false,
+    "modelAnswer": "1. Feather meal. 2. Blood meal. 3. Fish meal. 4. Milk by-products. 5. Meat meal."
+  },
+  {
+    "number": "3.a.ii",
+    "questionText": "State two examples of energy sources in animal feed.",
+    "hasImage": false,
+    "modelAnswer": "1. Sorghum. 2. Millet. 3. Maize. 4. Wheat. 5. Rice. 6. Wheat bran."
+  },
+  {
+    "number": "3.b",
+    "questionText": "Describe the water cycle.",
+    "hasImage": false,
+    "modelAnswer": "Water evaporates from water bodies into the atmosphere, where it condenses into clouds and falls back to the earth's surface as rain (precipitation). This then flows back into water bodies and is taken up by plants which transpire to give off water vapour."
+  },
+  {
+    "number": "3.c.i",
+    "questionText": "State the components of Vinegar and Air.",
+    "hasImage": false,
+    "modelAnswer": "Vinegar: Ethanoic acid and water. Air: Nitrogen and oxygen."
+  },
+  {
+    "number": "3.c.ii",
+    "questionText": "Identify the solvent in Vinegar and Air.",
+    "hasImage": false,
+    "modelAnswer": "Vinegar: Water is the solvent. Air: Nitrogen is the solvent."
+  },
+  {
+    "number": "3.d.i",
+    "questionText": "State two reasons why life does not exist on some planets.",
+    "hasImage": false,
+    "modelAnswer": "1. Extreme cold/hot temperatures. 2. Absence of oxygen or water. 3. Toxic radiations/gases. 4. Strong magnetic fields. 5. Absence of a solid surface."
+  },
+  {
+    "number": "3.d.ii",
+    "questionText": "Identify any two planets without life.",
+    "hasImage": false,
+    "modelAnswer": "1. Saturn. 2. Uranus. 3. Neptune."
+  },
+ {
+    "number": "4.a.i",
+    "questionText": "Explain briefly why a kitchen knife is sharpened in order to cut a piece of yam easily.",
+    "hasImage": false,
+    "modelAnswer": "by sharpening the knife, the cutting edge reduces in surface area (1) the pressure then increases (1) hence it cuts easily with the same force (1)"
+  },
+  {
+    "number": "4.a.ii",
+    "questionText": "A force of 10 N is exerted on a piece of yam using a knife of cross-sectional area 1 x 10⁻³ m².. Determine the pressure exerted.",
+    "hasImage": false,
+    "modelAnswer": "P = F / A (1) = 10 / 1 x 10⁻³ (1) = 10 x 10³ = 10,000 Pa (1)"
+  },
+  {
+    "number": "4.b",
+    "questionText": "Describe the procedure for determining soil pH.",
+    "hasImage": false,
+    "modelAnswer": "1. Collect soil sample. 2. Add distilled water, shake gently, and allow to settle. 3. Add drops of universal indicator or use a pH meter. 4. Match the resulting colour with a standard chart. 5. Read the pH value from the chart."
+  },
+  {
+    "number": "4.c.i",
+    "questionText": "Explain a blood pressure reading of 150/90 mmHg.",
+    "hasImage": false,
+    "modelAnswer": "It means the systolic pressure (when the heart beats) is 150 mmHg and the diastolic pressure (when the heart rests) is 90 mmHg."
+  },
+  {
+    "number": "4.c.ii",
+    "questionText": "State three ways of controlling high blood pressure.",
+    "hasImage": false,
+    "modelAnswer": "1. Exercising regularly. 2. Healthy diet. 3. Reducing salt intake. 4. Easing stress. 5. Regular check-ups. 6. Reducing alcohol intake."
+  },
+  {
+    "number": "4.d",
+    "questionText": "State three characteristics of a good succulent feed (silage).",
+    "hasImage": false,
+    "modelAnswer": "1. High palatability. 2. Laxative ability. 3. High nutrient content. 4. Easily digestible. 5. Long shelf-life."
+  },
+  {
+    "number": "5.a.i",
+    "questionText": "Explain Organic Farming.",
+    "hasImage": false,
+    "modelAnswer": "Farming using plant and animal-based materials (organic fertilizers/biological pesticides) without agrochemicals."
+  },
+  {
+    "number": "5.a.ii",
+    "questionText": "Explain Mixed Farming.",
+    "hasImage": false,
+    "modelAnswer": "Growing of crops and raising of animals on the same farm at the same time."
+  },
+  {
+    "number": "5.a.iii",
+    "questionText": "Explain Mixed Cropping.",
+    "hasImage": false,
+    "modelAnswer": "Growing two or more arable crops on the same piece of land at the same time without a specific arrangement."
+  },
+  {
+    "number": "5.b.i",
+    "questionText": "Identify the type of mixture for: Oil and water",
+    "hasImage": false,
+    "modelAnswer": "Heterogeneous"
+  },
+  {
+    "number": "5.b.ii",
+    "questionText": "Identify the type of mixture for: Salt and water",
+    "hasImage": false,
+    "modelAnswer": "Homogeneous"
+  },
+  {
+    "number": "5.b.iii",
+    "questionText": "Identify the type of mixture for: Ethanol and water",
+    "hasImage": false,
+    "modelAnswer": "Homogeneous"
+  },
+  {
+    "number": "5.c.i",
+    "questionText": "State two reasons why solar energy is a renewable source.",
+    "hasImage": false,
+    "modelAnswer": "1. It is constantly replenished by the sun. 2. It is inexhaustible within a human time scale."
+  },
+  {
+    "number": "5.c.ii",
+    "questionText": "Distinguish between Heat and Temperature.",
+    "hasImage": false,
+    "modelAnswer": "Heat is a form of energy measured in Joules using a calorimeter. Temperature is the degree of hotness measured in Kelvin/Celsius using a thermometer."
+  },
+  {
+    "number": "5.d.i",
+    "questionText": "Explain how leaching interrupts the nitrogen cycle.",
+    "hasImage": false,
+    "modelAnswer": "During heavy rainfall, nitrates are washed out of the root zone, preventing plants from taking them in and interrupting the return of nitrogen as nitrites."
+  },
+  {
+    "number": "5.d.ii",
+    "questionText": "Explain how the removal of leguminous plants interrupts the nitrogen cycle.",
+    "hasImage": false,
+    "modelAnswer": "It removes nitrogen-fixing bacteria, preventing the conversion of atmospheric nitrogen to ammonia and denying the soil of nitrates."
+  }
+
+
+]

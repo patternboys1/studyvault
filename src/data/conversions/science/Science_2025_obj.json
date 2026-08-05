@@ -1,0 +1,363 @@
+[
+  {
+    "number": 1,
+    "questionText": "Germs that infect the respiratory system are frequently spread through: I. mucus, II. air pollution, III. coughs.",
+    "options": ["I only", "II only", "II and III only", "I, II and III"],
+    "correctAnswer": "D",
+    "explanation": "Respiratory pathogens are transmitted via direct contact with mucus, inhalation of contaminated air, and droplets from coughing[cite: 3, 4].",
+    "topic": "Human Biology",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Which of the following food substances would produce a red precipitate when heated with Millon's reagent?",
+    "options": ["Banana", "Groundnut", "Orange juice", "Pineapple juice"],
+    "correctAnswer": "B",
+    "explanation": "Millon's reagent is a test for proteins; groundnuts are rich in protein and produce a red precipitate when tested[cite: 3, 4].",
+    "topic": "Food and Nutrition",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "An organism that lives on decaying organic matter, contaminates human food, feeds on rotten fruits and transfers germs is most likely a:",
+    "options": ["fungus", "grasshopper", "housefly", "mosquito"],
+    "correctAnswer": "C",
+    "explanation": "Houseflies are known vectors that feed on decaying matter and rotten fruit, transferring pathogens to human food[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "A fruit with sour taste is most likely to have a pH that is:",
+    "options": ["less than 7", "greater than 7", "equal to 14", "equal to 7"],
+    "correctAnswer": "A",
+    "explanation": "Sour tastes are characteristic of acidic substances, which have a pH value less than 7[cite: 3, 4].",
+    "topic": "Chemistry",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Which of the following energy sources is/are environmentally friendly? I. Wind, II. Hydro, III. Biomass.",
+    "options": ["I only", "II only", "I and II only", "I, II and III"],
+    "correctAnswer": "D",
+    "explanation": "Wind, hydro, and biomass are all considered renewable and environmentally friendly energy sources compared to fossil fuels[cite: 3, 4].",
+    "topic": "Environmental Science",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Which of the following activities does not relate to the principles of pressure in the daily lives of humans?",
+    "options": ["Drinking straw in use", "Pumping air into car tyres", "Filling of balloons with air", "A person jerking forward when a speeding car suddenly stops"],
+    "correctAnswer": "D",
+    "explanation": "Jerking forward in a stopping car is a result of inertia (Newton's First Law), not pressure principles[cite: 3, 4].",
+    "topic": "Physics",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "The rise in heat waves and floods globally may be due to the effect of:",
+    "options": ["climate change", "greenhouse gases", "increased drought", "severe storms"],
+    "correctAnswer": "A",
+    "explanation": "Global increases in extreme weather events like heat waves and floods are primary indicators of climate change[cite: 3, 4].",
+    "topic": "Environmental Science",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "The following soil qualities are important for crop production except:",
+    "options": ["high salinity", "nutrient availability", "oxygen availability", "water-holding capacity"],
+    "correctAnswer": "A",
+    "explanation": "High salinity is generally detrimental to most crops as it hinders water uptake and can be toxic[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "A rod appears bent when immersed in water. Which property of light is demonstrated?",
+    "options": ["Refraction", "Reflection", "Dispersion", "Rectilinear propagation"],
+    "correctAnswer": "A",
+    "explanation": "Refraction is the bending of light as it passes from one medium (air) into another (water)[cite: 3, 4].",
+    "topic": "Physics",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "The following factors hinder vegetable production in Ghana except:",
+    "options": ["high cost of chemicals", "lack of market", "irregular rainfall", "availability of sunlight"],
+    "correctAnswer": "D",
+    "explanation": "Availability of sunlight is a beneficial factor for plant growth, not a hindrance[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Which of the following types of manure is suitable for a vegetable garden?",
+    "options": ["Cow dung", "Dog faecal waste", "Human excreta", "Pig dung"],
+    "correctAnswer": "A",
+    "explanation": "Cow dung is a safe and common organic fertilizer for vegetable gardens[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "An example of a mono-gastric animal is:",
+    "options": ["cattle", "goat", "sheep", "rabbit"],
+    "correctAnswer": "D",
+    "explanation": "Rabbits have a single-chambered stomach, making them monogastric, unlike ruminants like cattle or goats[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "Which of the following insect(s) show(s) the egg, nymph and adult stages in its life cycle? I. Grasshopper, II. Housefly, III. Mosquito.",
+    "options": ["I only", "I and III only", "II and III only", "I, II and III"],
+    "correctAnswer": "A",
+    "explanation": "The grasshopper undergoes incomplete metamorphosis (egg, nymph, adult), while flies and mosquitoes undergo complete metamorphosis (egg, larva, pupa, adult)[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "Which of the following statements best explains the term ecosystem?",
+    "options": ["group of organisms of same species", "group of populations in same area", "part of earth environment where life exists", "community of living and non-living things interacting"],
+    "correctAnswer": "D",
+    "explanation": "An ecosystem consists of the interactions between a community of living organisms and their non-living environment[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "The characteristics of a fertile soil include good: I. aeration, II. texture, III. water-holding capacity.",
+    "options": ["I only", "I and II only", "II and III only", "I, II and III"],
+    "correctAnswer": "D",
+    "explanation": "Soil fertility is supported by a combination of proper aeration, texture, and the ability to hold water[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Which of the following diseases can be classified as a viral disease?",
+    "options": ["Candidiasis", "H1N1", "Meningitis", "Ringworm"],
+    "correctAnswer": "B",
+    "explanation": "H1N1 is a type of influenza caused by a virus[cite: 3, 4].",
+    "topic": "Health",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "The chemical formula of iron (II) sulphide is:",
+    "options": ["FeS2", "Fe2S", "FeS", "Fe2S3"],
+    "correctAnswer": "C",
+    "explanation": "Iron (II) has a valency of 2 and Sulphur has a valency of 2, resulting in the formula FeS[cite: 3, 4].",
+    "topic": "Chemistry",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "A book is at rest on a table. The net force acting on the book could be described as one that:",
+    "options": ["is balanced", "is unbalanced", "is due to friction", "obeys Newton's second law"],
+    "correctAnswer": "A",
+    "explanation": "An object at rest has a net force of zero because all acting forces (gravity and normal force) are balanced[cite: 3, 4].",
+    "topic": "Physics",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Which of the following Ghanaian scientists is known for promoting Mathematics and Physics?",
+    "options": ["Prof. Anamuah Mensah", "Prof. Ewurama Addy", "Prof. Francis Allotey", "Prof. Osei Anto"],
+    "correctAnswer": "C",
+    "explanation": "Prof. Francis Allotey was a world-renowned Ghanaian physicist and mathematician[cite: 3, 4].",
+    "topic": "General Science",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Which of the following heart conditions in humans is caused by plaque deposits in the arteries?",
+    "options": ["Atherosclerosis", "Heart attack", "Heart failure", "Stroke"],
+    "correctAnswer": "A",
+    "explanation": "Atherosclerosis is the specific condition characterized by the buildup of fats and cholesterol (plaque) in artery walls[cite: 3, 4].",
+    "topic": "Human Biology",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "A mango of mass 2 kg hangs 15 m on top of a mango tree. Determine the value of the kinetic energy attained just before it hits the ground. [g = 10 m s⁻²]",
+    "options": ["30.0 J", "225.0 J", "300.0 J", "3.0 J"],
+    "correctAnswer": "C",
+    "explanation": "Potential energy at the top (mgh = 2 * 10 * 15) is converted into kinetic energy just before impact, totaling 300 J[cite: 3, 4].",
+    "topic": "Physics",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "A grassland ecosystem that consists of snakes, toads and grasshoppers is most likely to produce a food chain of:",
+    "options": ["toad -> grass -> grasshopper -> snake", "grass -> grasshopper -> toad -> snake", "grasshopper -> grass -> toad -> snake", "grass -> toad -> grasshopper -> snake"],
+    "correctAnswer": "B",
+    "explanation": "The energy flow starts with the producer (grass), followed by the primary consumer (grasshopper), secondary consumer (toad), and tertiary consumer (snake)[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "The first step in the digestion of fats in the body is that:",
+    "options": ["bile breaks down the fat in the gall bladder", "bile breaks down the fat in the duodenum", "lipase breaks down the fat in the pancreas", "lipase breaks down the fat in the ileum"],
+    "correctAnswer": "B",
+    "explanation": "Bile emulsifies fats in the duodenum to increase the surface area for enzymes to act upon[cite: 3, 4].",
+    "topic": "Human Biology",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "Which of the following waste disposal practices is best for plastic disposal?",
+    "options": ["Burning", "Composting", "Incineration", "Recycling"],
+    "correctAnswer": "D",
+    "explanation": "Recycling is the most environmentally friendly way to manage plastic waste and reduce pollution[cite: 3, 4].",
+    "topic": "Environmental Science",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "A patient has been diagnosed of hypertension. Which of the following readings is most likely the patient's blood pressure?",
+    "options": ["110/85", "120/80", "130/85", "140/90"],
+    "correctAnswer": "D",
+    "explanation": "A reading of 140/90 mmHg or higher is clinically classified as hypertension (high blood pressure)[cite: 3, 4].",
+    "topic": "Health",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Which of the following substances are major components of human blood? I. Hormones, II. Platelets, III. Plasma, IV. White blood cells.",
+    "options": ["I and II only", "II and III only", "III and IV only", "II, III and IV only"],
+    "correctAnswer": "D",
+    "explanation": "The cellular components of blood include platelets, white blood cells, and red blood cells, all suspended in plasma[cite: 3, 4].",
+    "topic": "Human Biology",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Which of the following organisms is prokaryotic?",
+    "options": ["Bacteria", "Earthworm", "Fungus", "Plant"],
+    "correctAnswer": "A",
+    "explanation": "Bacteria are prokaryotes because they lack a defined nucleus and membrane-bound organelles[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "An example of a communicable disease is:",
+    "options": ["asthma", "diabetes", "hepatitis", "hypertension"],
+    "correctAnswer": "C",
+    "explanation": "Hepatitis is an infectious disease that can be transmitted from person to person[cite: 3, 4].",
+    "topic": "Health",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "The S.I unit of energy is represented as:",
+    "options": ["Joule", "joule", "J", "Js"],
+    "correctAnswer": "A",
+    "explanation": "The Joule (J) is the standard unit of measurement for energy and work[cite: 3, 4].",
+    "topic": "Physics",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "A breeding female pig is called a:",
+    "options": ["doe", "gilt", "heifer", "sow"],
+    "correctAnswer": "D",
+    "explanation": "A sow is the term for an adult female pig that has given birth[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Which of the following associations between two organisms is always beneficial to both?",
+    "options": ["Commensalism", "Mutualism", "Saprophytism", "Symbiosis"],
+    "correctAnswer": "B",
+    "explanation": "Mutualism is a biological interaction where both species derive a benefit[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "To stop the spread of a disease caused by a dirty environment, one must:",
+    "options": ["ensure regular exercise", "avoid alcohol", "practice personal hygiene", "ensure regular checkups"],
+    "correctAnswer": "D",
+    "explanation": "Practicing personal and environmental hygiene is essential to eliminating pathogens found in dirty surroundings[cite: 3, 4].",
+    "topic": "Health",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Which of the following statements best explains why gases are more compressible than solids?",
+    "options": ["Particles in gases are smaller than in solids", "Gases have fixed volume but solids do not", "Particles in solids have definite shape", "Particles in gases have wider intermolecular spaces"],
+    "correctAnswer": "D",
+    "explanation": "Gases have large spaces between particles, allowing them to be pushed closer together under pressure[cite: 3, 4].",
+    "topic": "Chemistry",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Which of the following substances has a definite shape?",
+    "options": ["Air", "Kerosene", "Stone", "Water"],
+    "correctAnswer": "C",
+    "explanation": "Solids like stone have a fixed, definite shape because their particles are tightly packed in a regular pattern[cite: 3, 4].",
+    "topic": "Chemistry",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Which of the following statements best explains animal feed?",
+    "options": ["Food grown or developed for livestock", "Balanced diet provided to animals", "Breast milk served to a calf", "Grass that is used to feed livestock"],
+    "correctAnswer": "A",
+    "explanation": "Animal feed refers generally to food materials produced specifically for the nutrition of domestic animals[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Combination of science, technology and innovation is needed in Ghana because it:",
+    "options": ["equips students to travel abroad", "develops interest in science", "helps students understand environment", "promotes national development"],
+    "correctAnswer": "D",
+    "explanation": "Integrating science and technology is a key driver for economic and national development[cite: 3, 4].",
+    "topic": "General Science",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "Charles Darwin is famous for:",
+    "options": ["discovering penicillin", "work on origin of universe", "work in physics", "his theory of natural selection"],
+    "correctAnswer": "D",
+    "explanation": "Charles Darwin formulated the theory of evolution by natural selection[cite: 3, 4].",
+    "topic": "Biology",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Which of the following statements accurately explains the positions of calcium and magnesium in the periodic table? They all have the same:",
+    "options": ["proton number", "valence electrons", "number of shells", "atomic structure"],
+    "correctAnswer": "B",
+    "explanation": "Both magnesium and calcium are in Group 2, meaning they both have two valence electrons[cite: 3, 4].",
+    "topic": "Chemistry",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "An animal feed made up of high fibre is most likely to contain:",
+    "options": ["maize grain", "silage", "soybean", "wheat grain"],
+    "correctAnswer": "B",
+    "explanation": "Silage is high-fibre fermented fodder often used for feeding cattle[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "The term used to describe a rabbit giving birth is:",
+    "options": ["culling", "dubbing", "kindling", "weaning"],
+    "correctAnswer": "C",
+    "explanation": "Kindling is the specific term for the act of parturition (giving birth) in rabbits[cite: 3, 4].",
+    "topic": "Agriculture",
+    "hasImage": false
+  }
+
+]
