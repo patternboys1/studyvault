@@ -30,7 +30,7 @@ import Upgrade from "./pages/dashboard/Upgrade";
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Routes>
           {/*  Public Landing Page Routes */}
           <Route path="/" element={<Home />} />
