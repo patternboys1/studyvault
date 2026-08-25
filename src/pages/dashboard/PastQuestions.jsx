@@ -56,6 +56,8 @@ export default function PastQuestions() {
     queryFn: getPapers,
   });
 
+  const selectedPaper = firestorePapers.find((paper) => paper.id === selectedPaperId);
+
   // Debugging logs to verify Firestore handshake
   useEffect(() => {
     if (firestorePapers.length > 0) {
@@ -64,9 +66,9 @@ export default function PastQuestions() {
   }, [firestorePapers]);
 
   const { data: rawQuestions = [], isLoading: questionsLoading } = useQuery({
-    queryKey: ["questions", selectedPaperId, filters.type],
-    queryFn: () => getQuestionsByPaper(selectedPaperId, filters.type),
-    enabled: mode === "practice" && Boolean(selectedPaperId),
+    queryKey: ["questions", selectedPaper?.subjectId, selectedPaper?.year, filters.type],
+    queryFn: () => getQuestionsByPaper(selectedPaper.subjectId, selectedPaper.year, filters.type),
+    enabled: mode === "practice" && Boolean(selectedPaper?.subjectId),
   });
 
   const questions = useMemo(
@@ -98,12 +100,11 @@ export default function PastQuestions() {
   }, [firestorePapers, filters]);
 
   if (mode === "practice") {
-    const activePaper = firestorePapers.find((p) => p.id === selectedPaperId);
     return (
       <PracticeMode
         isLoading={questionsLoading}
         onBack={() => setMode("library")}
-        paper={activePaper}
+        paper={selectedPaper}
         questions={questions}
       />
     );

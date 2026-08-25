@@ -15,8 +15,8 @@ import { db, storage } from "../firebase/firebase";
  */
 function mapSnapshot(snapshot) {
   return snapshot.docs.map((doc) => ({
-    id: doc.id,
     ...doc.data(),
+    id: doc.id,
   }));
 }
 
@@ -58,9 +58,9 @@ export async function getPapers() {
 
 /**
  * Fetches questions and resolves storage URLs for images
- * Path: BECE/Science/[paperId]/[section]/Questions
+ * Path: BECE/[subjectId]/[year]/[section]/Questions
  */
-export const getQuestionsByPaper = async (paperId, type = "Objectives") => {
+export const getQuestionsByPaper = async (subjectId, year, type = "Objectives") => {
   try {
     // 1. Path Normalization
     const section = type === "All Types" || !type ? "Objectives" : type;
@@ -68,8 +68,8 @@ export const getQuestionsByPaper = async (paperId, type = "Objectives") => {
     const questionsRef = collection(
       db,
       "BECE",
-      "Science",
-      paperId,
+      subjectId,
+      String(year),
       section,
       "Questions"
     );
@@ -98,7 +98,7 @@ export const getQuestionsByPaper = async (paperId, type = "Objectives") => {
       })
     );
 
-    console.log(` ${questions.length} questions loaded for Science ${paperId} (${section})`);
+    console.log(` ${questions.length} questions loaded for ${subjectId} ${year} (${section})`);
     return questions;
 
   } catch (error) {

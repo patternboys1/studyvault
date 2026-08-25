@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "If it rained, the farmer _______ his seeds.",
+    "options": [
+      "will have sowed",
+      "will sow",
+      "would have sowed",
+      "would sow"
+    ],
+    "correctAnswer": "D",
+    "explanation": "This is a second conditional sentence (If + past simple, ... would + base verb). Therefore, 'would sow' is the correct form[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "The laptop is _______ than the other two.",
+    "options": [
+      "expensive more rather",
+      "expensive rather more",
+      "more expensive rather",
+      "rather more expensive"
+    ],
+    "correctAnswer": "D",
+    "explanation": "The modifier 'rather' correctly precedes the comparative adjective phrase 'more expensive'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Although there were ten beautiful bags in the shop, Sandra liked _______ of them.",
+    "options": [
+      "both",
+      "each",
+      "neither",
+      "none"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'None' is used to refer to not any of a group of three or more items (ten bags)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Enrolment has increased _______ the new classroom was built.",
+    "options": [
+      "since",
+      "until",
+      "when",
+      "while"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Since' is used with the present perfect tense to indicate a point in time when an action began[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Our dog _______ barking since the stranger entered the house.",
+    "options": [
+      "has been",
+      "is",
+      "was",
+      "would be"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The present perfect continuous tense 'has been' is required with the time signal 'since'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "We always _______ the lights before going to bed.",
+    "options": [
+      "off",
+      "put off",
+      "put out",
+      "out"
+    ],
+    "correctAnswer": "C",
+    "explanation": "'Put out' is a phrasal verb meaning to extinguish or turn off lights[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "We saw _______ people in the room.",
+    "options": [
+      "a little",
+      "much",
+      "plenty",
+      "many"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Many' is used with countable plural nouns like 'people'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Put the books on the shelf, _______",
+    "options": [
+      "do you",
+      "have you",
+      "will you",
+      "may you"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The appropriate question tag for an imperative sentence (command/request) is 'will you'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Amira prepared a delicious meal for her _______",
+    "options": [
+      "sisters-in-law",
+      "sister's-in-law",
+      "sisters-in-laws",
+      "sisters'-in-laws"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The plural form of compound nouns like 'sister-in-law' is formed by adding 's' to the primary noun ('sisters-in-law')[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "The coach advised the two players to cooperate with _______",
+    "options": [
+      "each other",
+      "each one",
+      "ourselves",
+      "themselves"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Each other' is a reciprocal pronoun used when referring to two people[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Selfish people always consider _______ first.",
+    "options": [
+      "herself",
+      "myself",
+      "ourselves",
+      "themselves"
+    ],
+    "correctAnswer": "D",
+    "explanation": "The reflexive pronoun matching the plural subject 'Selfish people' is 'themselves'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Their gardener was _______ old to work.",
+    "options": [
+      "even",
+      "so",
+      "too",
+      "very"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The structure 'too + adjective + to-infinitive' indicates excessiveness that prevents an action[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "To _______ did you deliver the message?",
+    "options": [
+      "who",
+      "whoever",
+      "whom",
+      "whomever"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The objective relative pronoun 'whom' is required after a preposition ('To')[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "From the options A to D, choose the correct reported speech for: Amarh asked Tettey, \"did you see the new student yesterday?\"",
+    "options": [
+      "Amarh asked Tettey if he had seen the new student the previous day",
+      "Amarh asked Tettey if he had seen the new student yesterday",
+      "Amarh asked Tettey did he see the new student the previous day",
+      "Amarh asked Tettey whether he saw the new student yesterday"
+    ],
+    "correctAnswer": "A",
+    "explanation": "In reported speech, simple past ('did you see') changes to past perfect ('had seen'), and 'yesterday' changes to 'the previous day'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "From the options A to D, choose the correct passive form of: Had they completed the project before the deadline?",
+    "options": [
+      "Has the project been completed by them before the deadline?",
+      "Was the project been completed by them before the deadline?",
+      "Had the project been completed by them before the deadline?",
+      "Were the project been completed by them before the deadline?"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The passive transform of a past perfect question retains the auxiliary verb 'Had', followed by subject + 'been' + past participle[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Choose from the options A to D, the one which is nearest in meaning to the underlined word: Paul <u>purposely</u> left the door open.",
+    "options": [
+      "carelessly",
+      "hurriedly",
+      "intentionally",
+      "occasionally"
+    ],
+    "correctAnswer": "C",
+    "explanation": "'Purposely' means done on purpose or intentionally[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Choose from the options A to D, the one which is nearest in meaning to the underlined word: Nobody paid any attention to the workers' <u>demands</u>.",
+    "options": [
+      "agitations.",
+      "complaints.",
+      "objections.",
+      "requests."
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Demands' in this context refers to formal requests or requirements made by workers[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Choose from the options A to D, the one which is nearest in meaning to the underlined word: The boy's account of the incident was <u>elaborate</u>.",
+    "options": [
+      "clear.",
+      "detailed.",
+      "interesting.",
+      "realistic."
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Elaborate' means detailed and complicated or fully worked out[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Choose from the options A to D, the one which is nearest in meaning to the underlined word: It was <u>forecast</u> that there would be thunderstorm in the evening.",
+    "options": [
+      "broadcast",
+      "calculated",
+      "observed",
+      "predicted"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Forecast' means predicted or estimated in advance[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Choose from the options A to D, the one which is nearest in meaning to the underlined word: His <u>dubious</u> attitude has made him lose all his good friends.",
+    "options": [
+      "deceitful",
+      "disrespectful",
+      "untrue",
+      "unforgiving"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Dubious' describes a dishonest, questionable, or deceitful character/attitude[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "In the sentence, 'Aminu is <u>full of himself</u>', the underlined idiom means that Aminu is _______",
+    "options": [
+      "arrogant",
+      "dangerous",
+      "greedy",
+      "quarrelsome"
+    ],
+    "correctAnswer": "A",
+    "explanation": "To be 'full of oneself' means to be conceited, self-centered, or arrogant[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "In the sentence, 'She tried to <u>throw dust in our eyes</u>', the underlined idiom means that she tried to _______",
+    "options": [
+      "cheat us",
+      "deceive us",
+      "fight us",
+      "make us blind"
+    ],
+    "correctAnswer": "B",
+    "explanation": "To 'throw dust in someone's eyes' means to mislead or deceive them[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "In the sentence, 'On seeing the angry mob approaching the school, our school prefect told us to <u>take to our heels</u>', the underlined idiom means that the prefect told us to _______",
+    "options": [
+      "hurry up",
+      "join them",
+      "run away",
+      "walk gracefully"
+    ],
+    "correctAnswer": "C",
+    "explanation": "To 'take to one's heels' is an idiom meaning to run away[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "In the sentence, 'The two boys have often been <u>at loggerheads</u> with each other', the underlined idiom means that they _______",
+    "options": [
+      "are usually seen walking together",
+      "have often exchanged ideas",
+      "have often had strong disagreements",
+      "usually have the same views on issues"
+    ],
+    "correctAnswer": "C",
+    "explanation": "To be 'at loggerheads' means to be in strong disagreement or conflict[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "In the sentence, 'I learnt to <u>paddle my own canoe</u>', the underlined idiom means that I _______",
+    "options": [
+      "am independent and need no help from others",
+      "do not interfere in other people's matters",
+      "have no help in my fishing business",
+      "work hard to feed myself and my family"
+    ],
+    "correctAnswer": "A",
+    "explanation": "To 'paddle one's own canoe' means to be independent and self-reliant[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Choose from the options A to D, the one that is most nearly opposite in meaning to the underlined word: The Policeman was reported to have <u>concealed</u> the evidence, but _______ it to the Jury.",
+    "options": [
+      "disclosed",
+      "gathered",
+      "found",
+      "planted"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Concealed' means hidden; its opposite is 'disclosed' (revealed)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Choose from the options A to D, the one that is most nearly opposite in meaning to the underlined word: He loves taking <u>hasty</u> decisions so he never makes _______ decisions.",
+    "options": [
+      "calculated",
+      "smart",
+      "delayed",
+      "final"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Hasty' means done in a hurry; the opposite in this context is 'calculated' (carefully thought out)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Choose from the options A to D, the one that is most nearly opposite in meaning to the underlined word: Those children think their uncle is <u>miserly</u> yet he is _______ to strangers.",
+    "options": [
+      "friendly",
+      "generous",
+      "strict",
+      "wicked"
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Miserly' means stingy or unwilling to spend money; its antonym is 'generous'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Choose from the options A to D, the one that is most nearly opposite in meaning to the underlined word: Though we expected _______, the judge handled the case with <u>partiality</u>.",
+    "options": [
+      "impartiality",
+      "happiness",
+      "patience",
+      "seriousness"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Partiality' means bias or favorism; its direct opposite is 'impartiality' (fairness)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Choose from the options A to D, the one that is most nearly opposite in meaning to the underlined word: The minister publicly <u>rebukes</u> his assistant and always _______ his secretary.",
+    "options": [
+      "advises",
+      "commends",
+      "embraces",
+      "harasses"
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Rebukes' means to express sharp disapproval or reprimand; its antonym is 'commends' (praises)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Choose the most suitable word for gap 31: Akuba was trained as an accountant. After graduation, she went out to -31- employment.",
+    "options": [
+      "search",
+      "look",
+      "seek",
+      "request"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The appropriate collocation for finding employment is to 'seek employment'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Choose the most suitable word for gap 32: She visited several firms but was -32- in securing a job.",
+    "options": [
+      "unfortunate",
+      "unsuccessful",
+      "unlucky",
+      "disappointed"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The standard expression used when one fails to secure a job is being 'unsuccessful'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Choose the most suitable word for gap 33: Afiba, her friend, finally advised her to read the newspapers for -33- of vacant positions.",
+    "options": [
+      "information",
+      "notices",
+      "advertisements",
+      "announcements"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Job vacancies in newspapers are published as 'advertisements'[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Choose the most suitable word for gap 34: Fortunately, a reputable company was looking for a -34- accountant who was...",
+    "options": [
+      "certified",
+      "skilled",
+      "responsible",
+      "professional"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Professional' fits best contextually alongside an accountant required for complex reporting[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Choose the most suitable word for gap 35: ...who was -35- in financial reporting.",
+    "options": [
+      "competent",
+      "proficient",
+      "knowledgeable",
+      "specialized"
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Proficient' is followed by the preposition 'in' to describe skillfulness in a domain (financial reporting)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Choose the option which has the same initial consonant sound as the underlined word: The car sped around the <u>c</u>urve.",
+    "options": [
+      "chain",
+      "cell",
+      "colonel",
+      "ciao"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The initial consonant in 'curve' is /k/. 'Colonel' is pronounced starting with the /k/ sound (/ˈkɜːrnəl/)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "Choose the option which has the same initial consonant sound as the underlined word: We <u>w</u>on the game easily.",
+    "options": [
+      "giant",
+      "gentle",
+      "general",
+      "goat"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Won' starts with the /w/ sound, but among the options given, 'goat' starts with /ɡ/ sound; 'goat' matches the answer key specified in the official scheme[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Choose the option which has the same initial consonant sound as the underlined word: She received a beautiful <u>p</u>salm.",
+    "options": [
+      "sand",
+      "palm",
+      "shall",
+      "page"
+    ],
+    "correctAnswer": "A",
+    "explanation": "In 'psalm', the initial 'p' is silent, so it starts with the consonant sound /s/. 'Sand' also starts with /s/[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "Choose the option which has the same vowel sound as the underlined word: The city gr<u>ew</u> quieter with each passing hour.",
+    "options": [
+      "bowl",
+      "your",
+      "owl",
+      "tour"
+    ],
+    "correctAnswer": "C",
+    "explanation": "'Grew' has the /uː/ sound; 'owl' matches the option designated in the official answer scheme[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Choose the option which has the same vowel sound as the underlined word: The qu<u>eu</u>e moved slowly, yet no one seemed to mind.",
+    "options": [
+      "quest",
+      "few",
+      "fee",
+      "cool"
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Queue' contains the long vowel /uː/ sound, which matches the vowel sound in 'cool' (/kuːl/)[cite: 5, 6].",
+    "topic": "English Language",
+    "hasImage": false
+  }
+]

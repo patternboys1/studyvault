@@ -58,23 +58,31 @@ async function uploadPaper() {
     console.log(`✅ SUCCESS: Uploaded ${subjectArg} ${yearArg} ${typeArg} from ${fileName}`);
 
     // 4. Automatically create the Library Card (Metadata)
-    await updateLibraryCard(subjectArg, yearArg);
+    await updateLibraryCard(subjectArg, yearArg, questions.length);
 
   } catch (error) {
     console.error('❌ Upload failed: ', error.message);
   }
 }
 
-async function updateLibraryCard(subject, year) {
+async function updateLibraryCard(subject, year, questionCount) {
   const cardId = `${subject.toLowerCase()}_${year}`;
+  const subjectId = subject.trim();
+  const subjectName = subjectId === 'Science' ? 'Integrated Science' : subjectId;
   await db.collection('papers').doc(cardId).set({
-    id: year,
-    subjectName: subject === 'Science' ? 'Integrated Science' : subject,
+    subjectId,
+    subjectName,
     year: parseInt(year),
     isPublished: true,
     type: "Theory + Objectives",
-    questionCount: 45,
+    questionCount,
     durationMinutes: 120
+  }, { merge: true });
+  await db.collection('subjects').doc(subjectId.toLowerCase().replace(/\s+/g, '-')).set({
+    name: subjectName,
+    subjectId,
+    isActive: true,
+    order: subjectId === 'Science' ? 1 : 2
   }, { merge: true });
   console.log(`📝 Library Card updated: ${cardId}`);
 }
