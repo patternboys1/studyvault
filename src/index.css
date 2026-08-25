@@ -10,3 +10,12 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Do not hide content while a touch user begins scrolling before React mounts. */
+@media (max-width: 767px) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
