@@ -1,11 +1,12 @@
+import { useQuery } from "@tanstack/react-query";
 import {
   AlertTriangle,
-  ArrowUpRight,
   Download,
-  Eye,
   Rocket,
   Target,
 } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+import { getMockAttempts } from "../../services/studyContentService";
 
 const scoreBars = [
   { month: "Jan", value: 48 },
@@ -59,22 +60,14 @@ const focusAreas = [
   ["Electrical Circuits", "51%"],
 ];
 
-const mockHistory = [
-  {
-    id: "01",
-    title: "Full Mock Exam #04",
-    date: "Completed June 12, 2024",
-    score: "412/500",
-  },
-  {
-    id: "02",
-    title: "Weekly Assessment #18",
-    date: "Completed June 05, 2024",
-    score: "388/500",
-  },
-];
-
 function Performance() {
+  const { user } = useAuth();
+  const { data: attempts = [], isLoading: attemptsLoading } = useQuery({
+    queryKey: ["mock-attempts", user?.uid],
+    queryFn: () => getMockAttempts(user.uid),
+    enabled: Boolean(user?.uid),
+  });
+
   return (
     <div className="space-y-8 pb-10">
       <section className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
@@ -98,7 +91,7 @@ function Performance() {
       </section>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-[320px_1fr]">
-        <ExamReadiness />
+        <ExamReadiness attempts={attempts} />
         <ScoreTrends />
       </section>
 
@@ -109,13 +102,19 @@ function Performance() {
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <TopicInsights />
-        <MockHistory />
+        <MockHistory attempts={attempts} isLoading={attemptsLoading} />
       </section>
     </div>
   );
 }
 
-function ExamReadiness() {
+function ExamReadiness({ attempts }) {
+  const averageScore = attempts.length
+    ? Math.round(attempts.reduce((total, attempt) => total + (attempt.score || 0), 0) / attempts.length)
+    : 0;
+  const readinessLabel = averageScore >= 80 ? "Excellent" : averageScore >= 60 ? "Progressing" : "Keep Practising";
+  const readinessColor = averageScore >= 80 ? "text-emerald-700" : averageScore >= 60 ? "text-blue-700" : "text-orange-700";
+
   return (
     <article className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 text-center shadow-sm">
       <Target
@@ -125,17 +124,15 @@ function ExamReadiness() {
       />
       <h2 className="text-2xl font-black text-gray-950">Exam Readiness</h2>
 
-      <div className="relative mx-auto mt-8 flex h-40 w-40 items-center justify-center rounded-full bg-[conic-gradient(#047857_0deg,#047857_281deg,#eceaf6_281deg,#eceaf6_360deg)]">
+      <div className="relative mx-auto mt-8 flex h-40 w-40 items-center justify-center rounded-full" style={{ background: `conic-gradient(#047857 0deg, #047857 ${averageScore * 3.6}deg, #eceaf6 ${averageScore * 3.6}deg, #eceaf6 360deg)` }}>
         <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-white">
-          <p className="text-4xl font-black text-gray-950">78%</p>
-          <p className="text-xs font-black uppercase tracking-widest text-emerald-700">
-            Excellent
-          </p>
+          <p className="text-4xl font-black text-gray-950">{averageScore}%</p>
+          <p className={`text-xs font-black uppercase tracking-widest ${readinessColor}`}>{readinessLabel}</p>
         </div>
       </div>
 
       <p className="mx-auto mt-7 max-w-56 text-base leading-relaxed text-gray-700">
-        You are in the top 15% of students this month.
+        {attempts.length ? `Based on ${attempts.length} completed objective mock${attempts.length === 1 ? "" : "s"}.` : "Complete an objective mock to see your real readiness score."}
       </p>
     </article>
   );
@@ -286,46 +283,36 @@ function InsightColumn({ icon, title, color, rows, rowClass }) {
   );
 }
 
-function MockHistory() {
+function MockHistory({ attempts, isLoading }) {
+  const recentAttempts = attempts.slice(0, 5);
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <div className="mb-7 flex items-center justify-between">
         <h2 className="text-2xl font-black text-gray-950">Mock History</h2>
-        <button className="text-sm font-black text-blue-700 hover:underline">
-          View All
-        </button>
+        <p className="text-sm font-black text-blue-700">Saved results</p>
       </div>
 
-      <div className="space-y-4">
-        {mockHistory.map((mock) => (
+      {isLoading ? <p className="py-8 text-center text-sm font-bold text-gray-400">Loading saved results...</p> : recentAttempts.length > 0 ? <div className="space-y-4">
+        {recentAttempts.map((attempt) => (
           <div
-            key={mock.id}
+            key={attempt.id}
             className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm"
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-indigo-100 text-lg font-black text-blue-900">
-              {mock.id}
+              {attempt.score}%
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate font-black text-gray-950">{mock.title}</p>
-              <p className="text-sm text-gray-500">{mock.date}</p>
+              <p className="truncate font-black text-gray-950">{attempt.subjectName} {attempt.year} Objective Mock</p>
+              <p className="text-sm text-gray-500">{attempt.completedAt?.toDate ? `Completed ${attempt.completedAt.toDate().toLocaleDateString()}` : "Completed just now"}</p>
             </div>
             <div className="text-right">
-              <p className="font-black text-gray-950">{mock.score}</p>
-              <p className="text-[10px] font-black uppercase text-emerald-700">
-                Pass
-              </p>
+              <p className="font-black text-gray-950">{attempt.correctCount}/{attempt.totalQuestions}</p>
+              <p className={`text-[10px] font-black uppercase ${attempt.score >= 50 ? "text-emerald-700" : "text-orange-700"}`}>{attempt.score >= 50 ? "Pass" : "Keep Practising"}</p>
             </div>
-            <button className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-700 text-white hover:bg-blue-800">
-              <Eye size={20} />
-            </button>
           </div>
         ))}
-      </div>
-
-      <button className="mt-5 flex items-center gap-2 text-sm font-black text-blue-700 hover:underline">
-        Open detailed analytics
-        <ArrowUpRight size={16} />
-      </button>
+      </div> : <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 p-7 text-center text-sm font-medium text-gray-500">Your completed objective mocks will appear here.</div>}
     </article>
   );
 }

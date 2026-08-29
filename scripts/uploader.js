@@ -58,14 +58,30 @@ async function uploadPaper() {
     console.log(`✅ SUCCESS: Uploaded ${subjectArg} ${yearArg} ${typeArg} from ${fileName}`);
 
     // 4. Automatically create the Library Card (Metadata)
-    await updateLibraryCard(subjectArg, yearArg, questions.length);
+    await updateLibraryCard(subjectArg, yearArg);
 
   } catch (error) {
     console.error('❌ Upload failed: ', error.message);
   }
 }
 
-async function updateLibraryCard(subject, year, questionCount) {
+async function updateLibraryCard(subject, year) {
+  const sections = ["Objectives", "Theory"];
+  const questionCounts = await Promise.all(
+    sections.map(async (section) => {
+      const snapshot = await db
+        .collection('BECE')
+        .doc(subject)
+        .collection(year)
+        .doc(section)
+        .collection('Questions')
+        .get();
+
+      return snapshot.size;
+    })
+  );
+  const questionCount = questionCounts.reduce((total, count) => total + count, 0);
+
   const cardId = `${subject.toLowerCase()}_${year}`;
   const subjectId = subject.trim();
   const subjectName = subjectId === 'Science' ? 'Integrated Science' : subjectId;

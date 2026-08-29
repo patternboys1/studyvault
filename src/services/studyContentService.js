@@ -1,8 +1,11 @@
 import { 
   collection, 
+  doc,
   getDocs, 
   query, 
-  orderBy 
+  orderBy,
+  serverTimestamp,
+  setDoc,
 } from "firebase/firestore";
 import { 
   ref, 
@@ -106,3 +109,21 @@ export const getQuestionsByPaper = async (subjectId, year, type = "Objectives") 
     return [];
   }
 };
+
+export async function saveMockAttempt(userId, attempt) {
+  const attemptRef = doc(db, "users", userId, "mockAttempts", attempt.id);
+
+  await setDoc(attemptRef, {
+    ...attempt,
+    userId,
+    completedAt: serverTimestamp(),
+  });
+}
+
+export async function getMockAttempts(userId) {
+  if (!userId) return [];
+
+  const attemptsRef = collection(db, "users", userId, "mockAttempts");
+  const snapshot = await getDocs(query(attemptsRef, orderBy("completedAt", "desc")));
+  return mapSnapshot(snapshot);
+}

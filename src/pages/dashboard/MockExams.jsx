@@ -1,217 +1,294 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import {
   ArrowLeft,
   ArrowRight,
-  BarChart3,
-  BookOpen,
-  Calculator,
   CheckCircle2,
   Clock3,
   FileQuestion,
   Flag,
   GraduationCap,
   ListChecks,
-  NotebookPen,
   Play,
-  Ruler,
-  Sigma,
-  Target,
+  RotateCcw,
   Timer,
-  TrendingUp,
+  Trophy,
+  XCircle,
 } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+import { getPapers, getQuestionsByPaper, saveMockAttempt } from "../../services/studyContentService";
 
-const subjects = [
-  {
-    name: "Mathematics",
-    description:
-      "Master numbers, algebra, and geometry through structured problem solving.",
-    exams: 15,
-    score: "88%",
-    status: "Recent: 88%",
-    icon: <Calculator size={22} />,
-    accent: "text-blue-700 bg-blue-50",
-    progressColor: "bg-blue-700",
-  },
-  {
-    name: "English Language",
-    description:
-      "Enhance grammar, comprehension, vocabulary, and creative writing skills.",
-    exams: 12,
-    score: "64%",
-    status: "Not Taken",
-    icon: <BookOpen size={22} />,
-    accent: "text-purple-700 bg-purple-50",
-    progressColor: "bg-purple-500",
-  },
-  {
-    name: "Integrated Science",
-    description: "Explore the world of biology, physics, and chemistry concepts.",
-    exams: 18,
-    score: "92%",
-    status: "Recent: 92%",
-    icon: <GraduationCap size={22} />,
-    accent: "text-emerald-700 bg-emerald-50",
-    progressColor: "bg-emerald-700",
-  },
-  {
-    name: "Social Studies",
-    description:
-      "Understand Ghana's heritage, citizenship, and global dynamics.",
-    exams: 10,
-    score: "76%",
-    status: "Recent: 76%",
-    icon: <Target size={22} />,
-    accent: "text-orange-700 bg-orange-50",
-    progressColor: "bg-orange-500",
-  },
-];
+const formatTime = (totalSeconds) => {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+};
 
-const mockPapers = [
-  {
-    title: "Mathematics Mock Exam #1",
-    set: "Set A • 2024",
-    difficulty: "Medium",
-    questions: 60,
-    minutes: 90,
-    status: "Completed • 92%",
-    state: "completed",
-    icon: <Sigma size={30} />,
-    accent: "text-blue-700 bg-blue-50",
-  },
-  {
-    title: "Mathematics Mock Exam #2",
-    set: "Set B • 2024",
-    difficulty: "Hard",
-    questions: 45,
-    minutes: 60,
-    status: "In Progress: 14/45 Answered",
-    state: "progress",
-    icon: <Calculator size={30} />,
-    accent: "text-orange-700 bg-orange-50",
-  },
-  {
-    title: "Mathematics Mock Exam #3",
-    set: "Set C • 2024",
-    difficulty: "Easy",
-    questions: 50,
-    minutes: 75,
-    status: "Not Taken",
-    state: "new",
-    icon: <Ruler size={30} />,
-    accent: "text-slate-600 bg-slate-100",
-  },
-  {
-    title: "Mathematics Mock Exam #4",
-    set: "Set D • 2023",
-    difficulty: "Medium",
-    questions: 60,
-    minutes: 90,
-    status: "Not Taken",
-    state: "new",
-    icon: <Target size={30} />,
-    accent: "text-slate-600 bg-slate-100",
-  },
-];
+const getOptionLetter = (index) => String.fromCharCode(65 + index);
 
-const answerOptions = [
-  { letter: "A", value: "7.33 cm", selected: false },
-  { letter: "B", value: "7.33 cm", selected: true },
-  { letter: "C", value: "11.00 cm", selected: false },
-  { letter: "D", value: "14.67 cm", selected: false },
-];
+const isCorrect = (question, selectedAnswer) => {
+  if (!selectedAnswer || !question.correctAnswer) return false;
 
-function MockExams() {
-  const [screen, setScreen] = useState("repository");
+  const answer = String(question.correctAnswer).trim();
+  if (answer.toUpperCase() === selectedAnswer) return true;
 
-  if (screen === "exam") {
-    return <ExamMode onBack={() => setScreen("list")} />;
+  const selectedOption = question.options?.[selectedAnswer.charCodeAt(0) - 65];
+  return selectedOption?.trim().toLowerCase() === answer.toLowerCase();
+};
+
+export default function MockExams() {
+  const [activeExam, setActiveExam] = useState(null);
+  const [view, setView] = useState("repository");
+
+  const { data: papers = [], isLoading: papersLoading } = useQuery({
+    queryKey: ["mock-exam-papers"],
+    queryFn: getPapers,
+  });
+
+  const { data: questions = [], isLoading: questionsLoading } = useQuery({
+    queryKey: ["mock-exam-questions", activeExam?.paper.subjectId, activeExam?.paper.year, activeExam?.section],
+    queryFn: () => getQuestionsByPaper(activeExam.paper.subjectId, activeExam.paper.year, activeExam.section),
+    enabled: Boolean(activeExam?.paper.subjectId),
+  });
+
+  const startExam = (paper, section) => {
+    setActiveExam({ paper, section });
+    setView("exam");
+  };
+
+  const exitExam = () => {
+    setActiveExam(null);
+    setView("repository");
+  };
+
+  if (view === "exam" && activeExam) {
+    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}`} paper={activeExam.paper} section={activeExam.section} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
   }
 
-  if (screen === "list") {
-    return (
-      <SubjectMockList
-        onBack={() => setScreen("repository")}
-        onStart={() => setScreen("exam")}
-      />
-    );
-  }
-
-  return <MockRepository onStart={() => setScreen("list")} />;
+  return <MockExamRepository papers={papers} isLoading={papersLoading} onStart={startExam} />;
 }
 
-function MockRepository({ onStart }) {
+function MockExamRepository({ papers, isLoading, onStart }) {
+  const [selectedSubject, setSelectedSubject] = useState("All Subjects");
+  const subjects = useMemo(() => [...new Set(papers.map((paper) => paper.subjectName).filter(Boolean))], [papers]);
+  const availablePapers = papers.filter((paper) => selectedSubject === "All Subjects" || paper.subjectName === selectedSubject);
+
   return (
     <div className="space-y-8 pb-10">
-      <section className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
-        <div>
-          <h1 className="text-3xl font-black tracking-tight text-gray-950 md:text-4xl">
-            Mock Exam Repository
-          </h1>
-          <p className="mt-3 text-base text-gray-500">
-            Select a subject to begin your timed practice session.
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {["All Subjects", "Core Subjects", "Electives"].map((filter, index) => (
-            <button
-              key={filter}
-              className={`rounded-full px-4 py-2 text-xs font-black ${
-                index === 0
-                  ? "bg-blue-700 text-white"
-                  : "bg-slate-100 text-gray-600 hover:bg-slate-200"
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
+      <section className="overflow-hidden rounded-3xl bg-slate-950 p-6 text-white shadow-xl shadow-slate-200 md:p-9">
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="max-w-2xl">
+            <p className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-blue-200"><Trophy size={16} /> Timed Assessment Centre</p>
+            <h1 className="mt-4 text-3xl font-black tracking-tight md:text-4xl">Mock Exams built from your past questions</h1>
+            <p className="mt-4 text-base leading-relaxed text-slate-300">Select a paper, answer every objective question under timed exam conditions, and receive an instant score with corrections.</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+            <p className="text-sm font-bold text-slate-300">Available papers</p>
+            <p className="mt-1 text-4xl font-black">{papers.length}</p>
+            <p className="mt-2 text-xs font-medium text-blue-200">Objective sections are automatically marked</p>
+          </div>
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_280px]">
-        <main className="space-y-5">
-          <div className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-              <Clock3 size={22} />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="font-black text-gray-950">Quick Resume</p>
-              <p className="text-sm text-gray-500">
-                Continue Integrated Science Mock #4 (35:12 remaining)
-              </p>
-            </div>
-            <button
-              onClick={onStart}
-              className="rounded-lg bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"
-            >
-              Resume Now
+      <section className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 className="text-2xl font-black text-gray-950">Choose a paper</h2>
+          <p className="mt-1 text-sm text-gray-500">Every available Firebase paper can be used as a timed mock exam.</p>
+        </div>
+        <label className="text-sm font-bold text-gray-700">
+          Subject
+          <select value={selectedSubject} onChange={(event) => setSelectedSubject(event.target.value)} className="mt-2 block w-full rounded-xl border border-slate-200 bg-white px-4 py-3 font-bold text-gray-900 outline-none transition focus:border-blue-600 md:w-64">
+            <option>All Subjects</option>
+            {subjects.map((subject) => <option key={subject}>{subject}</option>)}
+          </select>
+        </label>
+      </section>
+
+      {isLoading ? <LoadingCard label="Loading available mock papers..." /> : availablePapers.length > 0 ? (
+        <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {availablePapers.map((paper) => <MockPaperCard key={paper.id} paper={paper} onStart={onStart} />)}
+        </section>
+      ) : <EmptyState />}
+    </div>
+  );
+}
+
+function MockPaperCard({ paper, onStart }) {
+  return (
+    <article className="flex flex-col rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-50">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><GraduationCap size={23} /></div>
+        <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-600">{paper.year}</span>
+      </div>
+      <h3 className="mt-7 text-xl font-black text-gray-950">{paper.subjectName}</h3>
+      <p className="mt-2 text-sm font-medium text-gray-500">{paper.type || "Theory + Objectives"}</p>
+      <div className="mt-6 grid grid-cols-2 gap-3 border-y border-slate-100 py-5 text-sm">
+        <span className="flex items-center gap-2 font-bold text-gray-600"><FileQuestion size={16} className="text-blue-700" />{paper.questionCount || 0} questions</span>
+        <span className="flex items-center gap-2 font-bold text-gray-600"><Timer size={16} className="text-blue-700" />{paper.durationMinutes || 60} min</span>
+      </div>
+      <p className="mt-5 text-sm leading-relaxed text-gray-500">Choose objective questions for automatic marking or theory questions for structured written practice.</p>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <button type="button" onClick={() => onStart(paper, "Objectives")} className="flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-4 py-3.5 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100">
+          <Play size={16} fill="currentColor" /> Objectives
+        </button>
+        <button type="button" onClick={() => onStart(paper, "Theory")} className="flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3.5 text-sm font-black text-blue-800 transition hover:border-blue-300 hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-100">
+          <FileQuestion size={16} /> Theory
+        </button>
+      </div>
+    </article>
+  );
+}
+
+function MockExamSession({ paper, section, questions, isLoading, onExit }) {
+  const { user } = useAuth();
+
+  if (section === "Theory") {
+    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} onExit={onExit} />;
+  }
+
+  return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} userId={user?.uid} onExit={onExit} />;
+}
+
+function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
+  const durationInSeconds = (paper.durationMinutes || 60) * 60;
+  const [attemptId] = useState(() =>
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `${paper.id}-${Date.now()}`
+  );
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [flaggedQuestions, setFlaggedQuestions] = useState({});
+  const [timeRemaining, setTimeRemaining] = useState(durationInSeconds);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [showSubmitPrompt, setShowSubmitPrompt] = useState(false);
+
+  useEffect(() => {
+    if (hasSubmitted || isLoading || questions.length === 0) return undefined;
+    const interval = window.setInterval(() => {
+      setTimeRemaining((seconds) => {
+        if (seconds <= 1) {
+          window.clearInterval(interval);
+          setHasSubmitted(true);
+          return 0;
+        }
+
+        return seconds - 1;
+      });
+    }, 1000);
+    return () => window.clearInterval(interval);
+  }, [hasSubmitted, isLoading, questions.length]);
+
+  if (isLoading) return <LoadingCard label="Preparing your mock exam..." />;
+
+  if (questions.length === 0) {
+    return (
+      <div className="space-y-6 pb-10">
+        <button type="button" onClick={onExit} className="flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Back to mock exams</button>
+        <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-sm">
+          <FileQuestion className="mx-auto text-slate-300" size={42} />
+          <h1 className="mt-4 text-2xl font-black text-gray-950">No objective questions found</h1>
+          <p className="mx-auto mt-3 max-w-md text-gray-500">Upload the objective JSON file for this paper before starting its mock exam.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const answeredCount = Object.keys(answers).length;
+  const correctCount = questions.filter((question) => isCorrect(question, answers[question.id])).length;
+  const restartExam = () => {
+    setCurrentIndex(0);
+    setAnswers({});
+    setFlaggedQuestions({});
+    setTimeRemaining(durationInSeconds);
+    setHasSubmitted(false);
+    setShowSubmitPrompt(false);
+  };
+
+  if (hasSubmitted) return <MockResults paper={paper} questions={questions} answers={answers} correctCount={correctCount} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
+
+  const question = questions[currentIndex];
+  const selectedAnswer = answers[question.id];
+  const completion = Math.round((answeredCount / questions.length) * 100);
+
+  return (
+    <div className="space-y-6 pb-10">
+      <section className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <button type="button" onClick={onExit} className="mb-3 flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Exit mock exam</button>
+            <h1 className="text-2xl font-black text-gray-950 md:text-3xl">{paper.subjectName} {paper.year} Mock Exam</h1>
+            <p className="mt-1 text-sm text-gray-500">Objective paper • Answers save while you navigate</p>
+          </div>
+          <div className="flex items-center justify-between gap-5 rounded-2xl bg-slate-950 px-5 py-4 text-white lg:min-w-56">
+            <span className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-300"><Clock3 size={16} /> Time left</span>
+            <span className="text-2xl font-black tabular-nums">{formatTime(timeRemaining)}</span>
+          </div>
+        </div>
+      </section>
+
+      {showSubmitPrompt && (
+        <section className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
+          <div><p className="font-black text-amber-950">Ready to submit your answers?</p><p className="mt-1 text-sm text-amber-900">You have answered {answeredCount} of {questions.length} questions.</p></div>
+          <div className="flex gap-3">
+            <button type="button" onClick={() => setShowSubmitPrompt(false)} className="rounded-xl border border-amber-300 bg-white px-4 py-3 text-sm font-black text-amber-900">Keep working</button>
+            <button type="button" onClick={() => setHasSubmitted(true)} className="rounded-xl bg-amber-700 px-4 py-3 text-sm font-black text-white hover:bg-amber-800">Submit now</button>
+          </div>
+        </section>
+      )}
+
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+        <main className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
+          <div className="flex flex-col gap-4 border-b border-slate-100 bg-slate-50 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-black text-gray-950">Question {currentIndex + 1} <span className="text-gray-400">of {questions.length}</span></p>
+            <button type="button" onClick={() => setFlaggedQuestions((currentFlags) => ({ ...currentFlags, [question.id]: !currentFlags[question.id] }))} className={`flex items-center gap-2 text-sm font-black transition ${flaggedQuestions[question.id] ? "text-amber-700" : "text-gray-500 hover:text-amber-700"}`}>
+              <Flag size={17} fill={flaggedQuestions[question.id] ? "currentColor" : "none"} />{flaggedQuestions[question.id] ? "Flagged for review" : "Flag for review"}
             </button>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            {subjects.map((subject) => (
-              <SubjectMockCard
-                key={subject.name}
-                subject={subject}
-                onStart={onStart}
-              />
-            ))}
+          <div className="p-6 md:p-9">
+            <h2 className="text-lg font-bold leading-relaxed text-gray-950 md:text-xl">{question.questionText}</h2>
+            {question.imageUrl && <div className="mt-7 flex justify-center rounded-2xl border bg-slate-50 p-5"><img src={question.imageUrl} alt="Question diagram" className="max-h-80 object-contain" /></div>}
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {question.options?.map((option, index) => {
+                const letter = getOptionLetter(index);
+                const isSelected = selectedAnswer === letter;
+                return (
+                  <button key={letter} type="button" onClick={() => setAnswers((currentAnswers) => ({ ...currentAnswers, [question.id]: letter }))} className={`flex min-h-20 items-center gap-4 rounded-2xl border-2 p-4 text-left transition focus:outline-none focus:ring-4 focus:ring-blue-100 ${isSelected ? "border-blue-700 bg-blue-50" : "border-slate-200 bg-white hover:border-blue-200"}`}>
+                    <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-black ${isSelected ? "bg-blue-700 text-white" : "bg-slate-100 text-slate-700"}`}>{letter}</span>
+                    <span className="font-semibold leading-relaxed text-gray-900">{option}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-6 py-5">
+            <button type="button" onClick={() => setCurrentIndex((index) => Math.max(index - 1, 0))} disabled={currentIndex === 0} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-gray-700 transition hover:border-blue-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40"><ArrowLeft size={17} /> Previous</button>
+            <button type="button" onClick={() => setCurrentIndex((index) => Math.min(index + 1, questions.length - 1))} disabled={currentIndex === questions.length - 1} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-40">Next <ArrowRight size={17} /></button>
           </div>
         </main>
 
-        <aside className="space-y-6">
-          <PerformanceBySubject />
-          <div className="rounded-3xl bg-blue-700 p-6 text-white shadow-lg shadow-blue-100">
-            <h3 className="text-xl font-black">Exam Readiness</h3>
-            <p className="mt-3 text-sm leading-relaxed text-blue-50">
-              You have completed 45% of the total mock series available for JHS
-              3.
-            </p>
-            <div className="mt-7 flex items-end gap-3">
-              <p className="text-3xl font-black">78/150</p>
-              <p className="pb-1 text-[11px] font-black uppercase text-blue-100">
-                Mock papers done
-              </p>
+        <aside className="space-y-5">
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center justify-between"><h3 className="font-black text-gray-950">Question navigator</h3><span className="text-sm font-black text-blue-700">{answeredCount}/{questions.length}</span></div>
+            <div className="mt-5 grid grid-cols-5 gap-2">
+              {questions.map((item, index) => {
+                const isCurrent = index === currentIndex;
+                const isFlagged = flaggedQuestions[item.id];
+                const isAnswered = answers[item.id];
+                return <button key={item.id} type="button" onClick={() => setCurrentIndex(index)} aria-label={`Go to question ${index + 1}`} className={`relative h-10 rounded-lg text-sm font-black transition ${isCurrent ? "ring-2 ring-blue-700 ring-offset-2" : isFlagged ? "bg-amber-500 text-white" : isAnswered ? "bg-blue-700 text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>{index + 1}</button>;
+              })}
             </div>
+            <div className="mt-6 h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-emerald-600 transition-all" style={{ width: `${completion}%` }} /></div>
+            <p className="mt-3 text-sm text-gray-500">{completion}% completed</p>
+          </div>
+
+          <div className="rounded-3xl bg-blue-700 p-6 text-white shadow-lg shadow-blue-100">
+            <ListChecks size={24} className="text-blue-100" />
+            <h3 className="mt-4 text-xl font-black">Finish your exam</h3>
+            <p className="mt-2 text-sm leading-relaxed text-blue-100">Check your flagged questions before submitting for instant marking.</p>
+            <button type="button" onClick={() => setShowSubmitPrompt(true)} className="mt-6 w-full rounded-xl bg-white px-4 py-3.5 text-sm font-black text-blue-700 transition hover:bg-blue-50">Submit exam</button>
           </div>
         </aside>
       </section>
@@ -219,438 +296,220 @@ function MockRepository({ onStart }) {
   );
 }
 
-function SubjectMockList({ onBack, onStart }) {
-  return (
-    <div className="space-y-8 pb-10">
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm font-black text-blue-800 hover:underline"
-      >
-        <ArrowLeft size={16} />
-        Back to Repository
-      </button>
+function TheoryExamSession({ paper, questions, isLoading, onExit }) {
+  const durationInSeconds = (paper.durationMinutes || 60) * 60;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [responses, setResponses] = useState({});
+  const [flaggedQuestions, setFlaggedQuestions] = useState({});
+  const [timeRemaining, setTimeRemaining] = useState(durationInSeconds);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [showSubmitPrompt, setShowSubmitPrompt] = useState(false);
 
-      <section className="flex flex-col gap-5 xl:flex-row xl:items-start xl:justify-between">
-        <div>
-          <h1 className="text-3xl font-black tracking-tight text-gray-950 md:text-4xl">
-            Mathematics Mock Exams
-          </h1>
-          <p className="mt-3 max-w-xl text-base text-gray-500">
-            Prepare for excellence with our curated collection of JHS
-            Mathematics mock tests.
-          </p>
+  useEffect(() => {
+    if (hasSubmitted || isLoading || questions.length === 0) return undefined;
+    const interval = window.setInterval(() => {
+      setTimeRemaining((seconds) => {
+        if (seconds <= 1) {
+          window.clearInterval(interval);
+          setHasSubmitted(true);
+          return 0;
+        }
+
+        return seconds - 1;
+      });
+    }, 1000);
+    return () => window.clearInterval(interval);
+  }, [hasSubmitted, isLoading, questions.length]);
+
+  if (isLoading) return <LoadingCard label="Preparing your theory mock..." />;
+
+  if (questions.length === 0) {
+    return (
+      <div className="space-y-6 pb-10">
+        <button type="button" onClick={onExit} className="flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Back to mock exams</button>
+        <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-10 text-center shadow-sm">
+          <FileQuestion className="mx-auto text-slate-300" size={42} />
+          <h1 className="mt-4 text-2xl font-black text-gray-950">No theory questions found</h1>
+          <p className="mx-auto mt-3 max-w-md text-gray-500">Upload the theory JSON file for this paper before starting its theory mock.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <SummaryCard value="85%" label="Subject Mastery" detail="Excellent Progress" />
-          <SummaryCard value="12 / 24" label="Tests Completed" detail="Mocks" icon={<CheckCircle2 size={24} />} />
-        </div>
-      </section>
+      </div>
+    );
+  }
 
-      <section className="space-y-4">
-        {mockPapers.map((paper) => (
-          <MockPaperRow key={paper.title} paper={paper} onStart={onStart} />
-        ))}
-      </section>
+  const answeredCount = Object.values(responses).filter((response) => response.trim()).length;
+  const question = questions[currentIndex];
+  const completion = Math.round((answeredCount / questions.length) * 100);
+  const restartExam = () => {
+    setCurrentIndex(0);
+    setResponses({});
+    setFlaggedQuestions({});
+    setTimeRemaining(durationInSeconds);
+    setHasSubmitted(false);
+    setShowSubmitPrompt(false);
+  };
 
-      <section className="relative overflow-hidden rounded-3xl bg-indigo-100 p-7 md:p-10">
-        <GraduationCap
-          size={170}
-          className="absolute right-12 top-6 hidden text-blue-200 md:block"
-        />
-        <div className="relative z-10 max-w-xl">
-          <h2 className="text-2xl font-black text-blue-900">
-            Sharpen Your Geometry Skills
-          </h2>
-          <p className="mt-4 leading-relaxed text-gray-700">
-            Our data shows you excel in Algebra but need a bit more practice in
-            Geometry and Trigonometry. Try Mock #2 to challenge your spatial
-            reasoning!
-          </p>
-          <button
-            onClick={onStart}
-            className="mt-6 flex items-center gap-2 rounded-xl bg-blue-700 px-6 py-4 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"
-          >
-            Take Suggested Practice
-            <TrendingUp size={18} />
-          </button>
-        </div>
-      </section>
-    </div>
-  );
-}
+  if (hasSubmitted) {
+    return <TheoryResults paper={paper} questions={questions} responses={responses} onRestart={restartExam} onExit={onExit} />;
+  }
 
-function ExamMode({ onBack }) {
   return (
     <div className="space-y-6 pb-10">
-      <section className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_320px]">
-        <main className="space-y-6">
-          <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
-              <div>
-                <h1 className="text-2xl font-black text-gray-950 md:text-3xl">
-                  Mathematics Mock Exam #1
-                </h1>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-gray-600">
-                    Set A • 2024
-                  </span>
-                  <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-black text-emerald-800">
-                    Core Subject
-                  </span>
-                </div>
-              </div>
-              <button className="rounded-xl bg-blue-700 px-7 py-4 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800">
-                Submit Exam
-              </button>
-            </div>
+      <section className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <button type="button" onClick={onExit} className="mb-3 flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Exit theory mock</button>
+            <h1 className="text-2xl font-black text-gray-950 md:text-3xl">{paper.subjectName} {paper.year} Theory Mock</h1>
+            <p className="mt-1 text-sm text-gray-500">Write your response, then compare it with the marking guide after submission.</p>
           </div>
+          <div className="flex items-center justify-between gap-5 rounded-2xl bg-slate-950 px-5 py-4 text-white lg:min-w-56">
+            <span className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-300"><Clock3 size={16} /> Time left</span>
+            <span className="text-2xl font-black tabular-nums">{formatTime(timeRemaining)}</span>
+          </div>
+        </div>
+      </section>
 
-          <article className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-            <div className="flex items-center justify-between border-b border-slate-100 bg-indigo-50/60 px-6 py-5">
-              <p className="font-black uppercase tracking-wide text-blue-900">
-                Question 14 of 60
-              </p>
-              <button className="flex items-center gap-2 text-sm font-black text-orange-900">
-                <Flag size={17} />
-                Flag for Review
-              </button>
-            </div>
+      {showSubmitPrompt && (
+        <section className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
+          <div><p className="font-black text-amber-950">Ready to review the marking guide?</p><p className="mt-1 text-sm text-amber-900">You have drafted {answeredCount} of {questions.length} responses.</p></div>
+          <div className="flex gap-3"><button type="button" onClick={() => setShowSubmitPrompt(false)} className="rounded-xl border border-amber-300 bg-white px-4 py-3 text-sm font-black text-amber-900">Keep writing</button><button type="button" onClick={() => setHasSubmitted(true)} className="rounded-xl bg-amber-700 px-4 py-3 text-sm font-black text-white hover:bg-amber-800">Review answers</button></div>
+        </section>
+      )}
 
-            <div className="p-6 md:p-8">
-              <h2 className="text-lg font-medium leading-relaxed text-gray-950 md:text-xl">
-                In the diagram below, O is the center of the circle. If the
-                radius of the circle is 7cm and the angle subtended at the
-                center by the arc AB is 60°, find the length of the minor arc
-                AB. (Take π = 22/7)
-              </h2>
-
-              <div className="mx-auto mt-8 flex max-w-lg items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6">
-                <CircleDiagram />
-              </div>
-
-              <div className="mt-9 grid gap-4 md:grid-cols-2">
-                {answerOptions.map((option) => (
-                  <button
-                    key={`${option.letter}-${option.value}`}
-                    className={`flex items-center gap-5 rounded-xl border-2 px-5 py-5 text-left transition ${
-                      option.selected
-                        ? "border-blue-700 bg-blue-50"
-                        : "border-slate-200 bg-white hover:border-blue-200"
-                    }`}
-                  >
-                    <span
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-black ${
-                        option.selected
-                          ? "bg-blue-700 text-white"
-                          : "bg-slate-100 text-gray-700"
-                      }`}
-                    >
-                      {option.letter}
-                    </span>
-                    <span className="font-bold text-gray-950">
-                      {option.value}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-6 py-5">
-              <button
-                onClick={onBack}
-                className="flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700"
-              >
-                <ArrowLeft size={17} />
-                Previous
-              </button>
-              <button className="flex items-center gap-2 rounded-lg bg-blue-700 px-7 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800">
-                Next Question
-                <ArrowRight size={17} />
-              </button>
-            </div>
-          </article>
+      <section className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+        <main className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
+          <div className="flex flex-col gap-4 border-b border-slate-100 bg-slate-50 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-black text-gray-950">Question {currentIndex + 1} <span className="text-gray-400">of {questions.length}</span></p>
+            <button type="button" onClick={() => setFlaggedQuestions((currentFlags) => ({ ...currentFlags, [question.id]: !currentFlags[question.id] }))} className={`flex items-center gap-2 text-sm font-black transition ${flaggedQuestions[question.id] ? "text-amber-700" : "text-gray-500 hover:text-amber-700"}`}><Flag size={17} fill={flaggedQuestions[question.id] ? "currentColor" : "none"} />{flaggedQuestions[question.id] ? "Flagged for review" : "Flag for review"}</button>
+          </div>
+          <div className="p-6 md:p-9">
+            <h2 className="text-lg font-bold leading-relaxed text-gray-950 md:text-xl">{question.questionText}</h2>
+            <label className="mt-8 block text-sm font-black text-gray-800">
+              Your response
+              <textarea value={responses[question.id] || ""} onChange={(event) => setResponses((currentResponses) => ({ ...currentResponses, [question.id]: event.target.value }))} placeholder="Write your answer here. Your response stays available while you move between questions." className="mt-3 min-h-56 w-full rounded-2xl border border-slate-200 bg-slate-50 p-4 text-base font-medium leading-relaxed text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-50" />
+            </label>
+          </div>
+          <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-6 py-5">
+            <button type="button" onClick={() => setCurrentIndex((index) => Math.max(index - 1, 0))} disabled={currentIndex === 0} className="flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-black text-gray-700 transition hover:border-blue-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-40"><ArrowLeft size={17} /> Previous</button>
+            <button type="button" onClick={() => setCurrentIndex((index) => Math.min(index + 1, questions.length - 1))} disabled={currentIndex === questions.length - 1} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-40">Next <ArrowRight size={17} /></button>
+          </div>
         </main>
 
-        <ExamSidebar />
+        <aside className="space-y-5">
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div className="flex items-center justify-between"><h3 className="font-black text-gray-950">Question navigator</h3><span className="text-sm font-black text-blue-700">{answeredCount}/{questions.length}</span></div>
+            <div className="mt-5 grid grid-cols-5 gap-2">
+              {questions.map((item, index) => {
+                const isCurrent = index === currentIndex;
+                const isFlagged = flaggedQuestions[item.id];
+                const isAnswered = responses[item.id]?.trim();
+                return <button key={item.id} type="button" onClick={() => setCurrentIndex(index)} aria-label={`Go to question ${index + 1}`} className={`relative h-10 rounded-lg text-sm font-black transition ${isCurrent ? "ring-2 ring-blue-700 ring-offset-2" : isFlagged ? "bg-amber-500 text-white" : isAnswered ? "bg-blue-700 text-white" : "bg-slate-100 text-slate-500 hover:bg-slate-200"}`}>{index + 1}</button>;
+              })}
+            </div>
+            <div className="mt-6 h-2 overflow-hidden rounded-full bg-slate-100"><div className="h-full rounded-full bg-emerald-600 transition-all" style={{ width: `${completion}%` }} /></div>
+            <p className="mt-3 text-sm text-gray-500">{completion}% drafted</p>
+          </div>
+          <div className="rounded-3xl bg-blue-700 p-6 text-white shadow-lg shadow-blue-100">
+            <ListChecks size={24} className="text-blue-100" /><h3 className="mt-4 text-xl font-black">Review your work</h3><p className="mt-2 text-sm leading-relaxed text-blue-100">Submit when you are ready to compare each response with the model answer.</p>
+            <button type="button" onClick={() => setShowSubmitPrompt(true)} className="mt-6 w-full rounded-xl bg-white px-4 py-3.5 text-sm font-black text-blue-700 transition hover:bg-blue-50">Review marking guide</button>
+          </div>
+        </aside>
       </section>
     </div>
   );
 }
 
-function SubjectMockCard({ subject, onStart }) {
+function TheoryResults({ paper, questions, responses, onRestart, onExit }) {
+  const draftedCount = Object.values(responses).filter((response) => response.trim()).length;
+
   return (
-    <article className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-      <div className="mb-8 flex items-start justify-between">
-        <div
-          className={`flex h-12 w-12 items-center justify-center rounded-xl ${subject.accent}`}
-        >
-          {subject.icon}
+    <div className="space-y-7 pb-10">
+      <section className="overflow-hidden rounded-3xl bg-slate-950 p-7 text-white shadow-xl shadow-slate-200 md:p-10">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-200">Theory mock complete</p>
+        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p></div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
+      </section>
+      <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Retake theory</button></div></div>
+        <div className="mt-7 space-y-5">
+          {questions.map((question, index) => <article key={question.id} className="rounded-2xl border border-slate-100 bg-slate-50 p-5"><p className="text-sm font-black text-blue-700">Question {question.number || index + 1}</p><p className="mt-2 font-bold leading-relaxed text-gray-900">{question.questionText}</p>{responses[question.id]?.trim() && <div className="mt-4 rounded-xl border border-blue-100 bg-white p-4"><p className="text-xs font-black uppercase tracking-widest text-blue-700">Your response</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">{responses[question.id]}</p></div>}<div className="mt-4 rounded-xl bg-emerald-50 p-4"><p className="text-xs font-black uppercase tracking-widest text-emerald-700">Model answer</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-emerald-950">{question.modelAnswer || "No model answer has been added yet."}</p></div></article>)}
         </div>
-        <span
-          className={`rounded-full px-3 py-1 text-[10px] font-black ${
-            subject.status === "Not Taken"
-              ? "bg-slate-100 text-gray-500"
-              : "bg-emerald-100 text-emerald-700"
-          }`}
-        >
-          {subject.status}
-        </span>
-      </div>
-
-      <h3 className="text-xl font-black text-gray-950">{subject.name}</h3>
-      <p className="mt-2 min-h-12 text-sm leading-relaxed text-gray-600">
-        {subject.description}
-      </p>
-      <p className="mt-5 flex items-center gap-2 text-sm font-medium text-gray-500">
-        <FileQuestion size={15} />
-        {subject.exams} Full Mock Exams
-      </p>
-      <button
-        onClick={onStart}
-        className="mt-6 w-full rounded-lg bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"
-      >
-        Start Mock
-      </button>
-    </article>
-  );
-}
-
-function PerformanceBySubject() {
-  return (
-    <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
-      <h3 className="mb-6 text-xl font-black text-gray-950">
-        Performance By Subject
-      </h3>
-      <div className="space-y-5">
-        {subjects.map((subject) => (
-          <div key={subject.name}>
-            <div className="mb-2 flex items-center justify-between text-sm">
-              <p className="font-bold text-gray-700">{subject.name}</p>
-              <p className="font-black text-blue-700">{subject.score}</p>
-            </div>
-            <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-              <div
-                className={`h-full rounded-full ${subject.progressColor}`}
-                style={{ width: subject.score }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-7 rounded-xl bg-indigo-50 p-4 text-center text-sm italic text-gray-700">
-        "Success is the sum of small efforts, repeated day in and day out."
-      </div>
+      </section>
     </div>
   );
 }
 
-function SummaryCard({ value, label, detail, icon }) {
-  return (
-    <div className="flex min-w-48 items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-blue-700">
-        {icon || <span className="text-lg font-black text-emerald-600">{value}</span>}
-      </div>
-      <div>
-        <p className="text-sm font-medium text-gray-500">{label}</p>
-        <p className="font-black text-gray-950">{detail}</p>
-      </div>
-    </div>
-  );
-}
+function MockResults({ paper, questions, answers, correctCount, attemptId, userId, onRestart, onExit }) {
+  const score = Math.round((correctCount / questions.length) * 100);
+  const missedQuestions = questions.filter((question) => !isCorrect(question, answers[question.id]));
 
-function MockPaperRow({ paper, onStart }) {
-  const isProgress = paper.state === "progress";
-  const isComplete = paper.state === "completed";
+  useEffect(() => {
+    if (!userId) return undefined;
+
+    saveMockAttempt(userId, {
+      id: attemptId,
+      paperId: paper.id,
+      subjectId: paper.subjectId,
+      subjectName: paper.subjectName,
+      year: paper.year,
+      section: "Objectives",
+      score,
+      correctCount,
+      answeredCount: Object.keys(answers).length,
+      totalQuestions: questions.length,
+    }).catch((error) => console.error("Unable to save mock attempt:", error));
+
+    return undefined;
+  }, [answers, attemptId, correctCount, paper.id, paper.subjectId, paper.subjectName, paper.year, questions.length, score, userId]);
 
   return (
-    <article
-      className={`rounded-2xl border bg-white p-6 shadow-sm ${
-        isProgress ? "border-l-4 border-l-orange-800" : "border-slate-100"
-      }`}
-    >
-      <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex items-center gap-5">
-          <div
-            className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl ${paper.accent}`}
-          >
-            {paper.icon}
-          </div>
-          <div>
-            <div className="flex flex-wrap gap-2">
-              <span className="rounded bg-emerald-50 px-2 py-1 text-[10px] font-black uppercase text-emerald-700">
-                {paper.set}
-              </span>
-              <span className="rounded bg-slate-100 px-2 py-1 text-[10px] font-black uppercase text-gray-500">
-                {paper.difficulty}
-              </span>
-            </div>
-            <h2 className="mt-3 text-2xl font-black text-gray-950">
-              {paper.title}
-            </h2>
-            <div className="mt-3 flex flex-wrap gap-5 text-sm font-medium text-gray-500">
-              <span className="flex items-center gap-2">
-                <ListChecks size={16} /> {paper.questions} Questions
-              </span>
-              <span className="flex items-center gap-2">
-                <Timer size={16} /> {paper.minutes} Minutes
-              </span>
-              <span
-                className={`font-black ${
-                  isComplete
-                    ? "text-emerald-700"
-                    : isProgress
-                    ? "text-orange-900"
-                    : "text-gray-400 italic"
-                }`}
-              >
-                {paper.status}
-              </span>
-            </div>
+    <div className="space-y-7 pb-10">
+      <section className="overflow-hidden rounded-3xl bg-slate-950 p-7 text-white shadow-xl shadow-slate-200 md:p-10">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-200">Mock exam complete</p>
+        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Your objective-paper score is ready and saved to Performance.</p></div><p className="text-6xl font-black text-emerald-300">{score}%</p></div>
+      </section>
+
+      <section className="grid gap-4 sm:grid-cols-3">
+        <ResultStat label="Correct" value={correctCount} icon={<CheckCircle2 size={22} />} color="text-emerald-700 bg-emerald-50" />
+        <ResultStat label="Incorrect" value={questions.length - correctCount} icon={<XCircle size={22} />} color="text-red-700 bg-red-50" />
+        <ResultStat label="Answered" value={`${Object.keys(answers).length}/${questions.length}`} icon={<FileQuestion size={22} />} color="text-blue-700 bg-blue-50" />
+      </section>
+
+      <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div><h2 className="text-2xl font-black text-gray-950">Review corrections</h2><p className="mt-1 text-sm text-gray-500">Use the correct answers below to guide your revision.</p></div>
+          <div className="flex flex-wrap gap-3">
+            <button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button>
+            <button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Retake exam</button>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-3 lg:justify-end">
-          {isComplete && (
-            <button className="rounded-xl border border-blue-900 px-6 py-4 text-sm font-black text-blue-900 hover:bg-blue-50">
-              Review Results
-            </button>
-          )}
-          <button
-            onClick={onStart}
-            className={`flex items-center gap-2 rounded-xl px-6 py-4 text-sm font-black text-white shadow-md ${
-              isProgress
-                ? "bg-orange-800 shadow-orange-100 hover:bg-orange-900"
-                : "bg-blue-700 shadow-blue-100 hover:bg-blue-800"
-            }`}
-          >
-            {isProgress && <Play size={16} />}
-            {isComplete ? "Retake Exam" : isProgress ? "Resume Mock" : "Start Mock"}
-          </button>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function ExamSidebar() {
-  const answered = new Set([1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
-  const flagged = new Set([4]);
-  const current = 14;
-  const visible = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-
-  return (
-    <aside className="space-y-6">
-      <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-        <h3 className="mb-5 text-sm font-black uppercase tracking-widest text-gray-600">
-          Question Navigator
-        </h3>
-        <div className="grid grid-cols-5 gap-3">
-          {visible.map((item) => {
-            const isCurrent = item === current;
-            const isFlagged = flagged.has(item);
-            const isAnswered = answered.has(item);
-
+        {missedQuestions.length > 0 ? <div className="mt-7 space-y-4">
+          {missedQuestions.map((question, index) => {
+            const selectedAnswer = answers[question.id];
+            const correctAnswer = String(question.correctAnswer || "").toUpperCase();
+            const correctOption = question.options?.[correctAnswer.charCodeAt(0) - 65];
             return (
-              <button
-                key={item}
-                className={`relative h-11 rounded-lg text-sm font-black ${
-                  isFlagged
-                    ? "bg-orange-900 text-white"
-                    : isCurrent
-                    ? "border-2 border-blue-700 bg-white text-blue-700"
-                    : isAnswered
-                    ? "bg-blue-700 text-white"
-                    : "bg-slate-100 text-slate-400"
-                }`}
-              >
-                {item}
-              </button>
+              <article key={question.id} className="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                <p className="text-sm font-black text-blue-700">Question {question.number || index + 1}</p>
+                <p className="mt-2 font-bold leading-relaxed text-gray-900">{question.questionText}</p>
+                <div className="mt-4 grid gap-3 md:grid-cols-2"><p className="rounded-xl bg-red-50 px-4 py-3 text-sm font-bold text-red-800">Your answer: {selectedAnswer || "Not answered"}</p><p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm font-bold text-emerald-800">Correct answer: {correctAnswer}{correctOption ? ` — ${correctOption}` : ""}</p></div>
+                {question.explanation && <p className="mt-4 text-sm leading-relaxed text-gray-600">{question.explanation}</p>}
+              </article>
             );
           })}
-        </div>
-        <div className="mt-3 grid grid-cols-5 gap-3">
-          <button className="h-11 rounded-lg bg-slate-100 text-sm font-black text-slate-400">
-            ...
-          </button>
-          <button className="h-11 rounded-lg bg-slate-100 text-sm font-black text-slate-400">
-            60
-          </button>
-        </div>
-
-        <div className="my-6 border-t border-slate-100" />
-        <div className="mb-3 flex justify-between text-sm">
-          <span className="font-medium text-gray-500">Answered</span>
-          <span className="font-black text-gray-950">13 / 60</span>
-        </div>
-        <div className="h-2 overflow-hidden rounded-full bg-slate-100">
-          <div className="h-full w-[22%] rounded-full bg-emerald-700" />
-        </div>
-
-        <div className="mt-5 grid grid-cols-2 gap-3 text-[11px] font-black uppercase text-gray-500">
-          <Legend color="bg-blue-700" label="Answered" />
-          <Legend color="bg-slate-100" label="Pending" />
-          <Legend color="bg-orange-900" label="Flagged" />
-          <Legend outline label="Current" />
-        </div>
-      </div>
-
-      <div className="rounded-2xl border border-blue-100 bg-blue-50 p-6">
-        <h3 className="mb-5 text-lg font-black text-blue-900">
-          Exam Resources
-        </h3>
-        <div className="space-y-4 text-sm font-bold text-blue-900">
-          <p className="flex items-center gap-3">
-            <Calculator size={17} /> Virtual Calculator
-          </p>
-          <p className="flex items-center gap-3">
-            <NotebookPen size={17} /> Formula Sheet
-          </p>
-          <p className="flex items-center gap-3">
-            <BarChart3 size={17} /> Scratchpad
-          </p>
-        </div>
-      </div>
-    </aside>
-  );
-}
-
-function Legend({ color, label, outline = false }) {
-  return (
-    <span className="flex items-center gap-2">
-      {outline ? (
-        <span className="h-3 w-3 rounded-sm border-2 border-blue-700 bg-white" />
-      ) : (
-        <span className={`h-3 w-3 rounded-sm ${color}`} />
-      )}
-      {label}
-    </span>
-  );
-}
-
-function CircleDiagram() {
-  return (
-    <div className="relative h-56 w-72 rounded-lg border border-slate-300 bg-white shadow-lg">
-      <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-slate-500" />
-      <div className="absolute left-1/2 top-8 h-40 border-l-2 border-slate-400" />
-      <div className="absolute left-[70px] top-1/2 w-36 border-t-2 border-slate-400" />
-      <div className="absolute left-1/2 top-1/2 h-24 origin-top rotate-[-45deg] border-l-2 border-slate-500" />
-      <span className="absolute left-[66px] top-[106px] text-[10px] font-bold text-slate-600">
-        AB
-      </span>
-      <span className="absolute right-[54px] top-[104px] text-[10px] font-bold text-slate-600">
-        radius 7cm
-      </span>
-      <span className="absolute left-[145px] top-6 text-[10px] font-bold text-slate-600">
-        O
-      </span>
-      <span className="absolute bottom-7 left-[142px] text-[10px] font-bold text-slate-600">
-        7cm
-      </span>
-      <span className="absolute left-[118px] top-[86px] text-[10px] font-bold text-slate-600">
-        60°
-      </span>
+        </div> : <div className="mt-7 rounded-2xl bg-emerald-50 p-8 text-center text-emerald-900"><CheckCircle2 className="mx-auto" size={36} /><p className="mt-3 text-lg font-black">Excellent work — every answer is correct.</p></div>}
+      </section>
     </div>
   );
 }
 
-export default MockExams;
+function ResultStat({ label, value, icon, color }) {
+  return <article className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"><div className={`flex h-11 w-11 items-center justify-center rounded-xl ${color}`}>{icon}</div><p className="mt-5 text-3xl font-black text-gray-950">{value}</p><p className="mt-1 text-sm font-bold text-gray-500">{label}</p></article>;
+}
+
+function LoadingCard({ label }) {
+  return <div className="rounded-3xl border border-slate-100 bg-white p-16 text-center shadow-sm"><div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-blue-100 border-t-blue-700" /><p className="mt-5 font-black text-gray-700">{label}</p></div>;
+}
+
+function EmptyState() {
+  return <div className="rounded-3xl border-2 border-dashed border-slate-200 bg-white p-14 text-center"><FileQuestion className="mx-auto text-slate-300" size={44} /><h2 className="mt-4 text-2xl font-black text-gray-950">No mock papers available yet</h2><p className="mx-auto mt-3 max-w-lg text-gray-500">Upload a past-question paper to Firebase and it will appear here automatically.</p></div>;
+}

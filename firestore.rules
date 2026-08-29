@@ -2,11 +2,28 @@ rules_version='2'
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      // Study content is available only to signed-in users. All changes are
-      // made through the Firebase Admin SDK, not from the browser.
+    // Study content is available only to signed-in users. All changes are
+    // made through the Firebase Admin SDK, not from the browser.
+    match /BECE/{document=**} {
       allow read: if request.auth != null;
       allow write: if false;
+    }
+
+    match /papers/{paperId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /subjects/{subjectId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /users/{userId}/mockAttempts/{attemptId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.userId == userId;
     }
   }
 }

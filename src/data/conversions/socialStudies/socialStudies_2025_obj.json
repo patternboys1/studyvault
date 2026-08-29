@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "In which continent are the Apalachian mountains located?",
+    "options": [
+      "Africa",
+      "North America",
+      "South America",
+      "Australia"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Appalachian Mountains are a mountain range in eastern North America[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "The main purpose of sex education in Ghanaian schools is to",
+    "options": [
+      "increase the likelihood of early marriage.",
+      "promote reproductive health and responsible behavior.",
+      "discourage communication between adolescents and health care providers.",
+      "promote chastity among adolescents."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Sex education in schools primarily aims to equip adolescents with knowledge to promote reproductive health and encourage responsible sexual behavior[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "One of the effective ways by which parents carry out socialization of the family members is by",
+    "options": [
+      "teaching them the importance of drum music and dance.",
+      "telling them ancient stories.",
+      "rebuking and punitive punishment.",
+      "open communication and admonishment."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Effective family socialization relies heavily on open communication, guidance, and constructive admonishment[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "In what way does the ageing population of Ghana affect the country's health system? It",
+    "options": [
+      "decreases the demand for healthcare services.",
+      "increases the burden on healthcare resources.",
+      "leads to a surplus of healthcare professionals.",
+      "reduces the supply of medication to children"
+    ],
+    "correctAnswer": "B",
+    "explanation": "An ageing population generally requires more medical attention for age-related illnesses, thereby increasing the burden on healthcare resources[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "What role does Social Security and National Insurance Trust (SSNIT) play in the life of a pensioner?",
+    "options": [
+      "Payment of social benefits and all health needs",
+      "Provision of a source of income after retirement",
+      "Promotion of independence in old age",
+      "Promotion of reliance on government welfare program"
+    ],
+    "correctAnswer": "B",
+    "explanation": "SSNIT functions as a pension scheme designed to provide retired workers with regular income after retirement[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "A lot of foreigners visit Ghana yearly to see beautiful sceneries. By this, they contribute to the economy through",
+    "options": [
+      "exploitation of natural resources.",
+      "exploitation of culture.",
+      "revenue generation and foreign exchange.",
+      "developing infrastructure only."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Tourism brings in foreign currency and generates significant tax/business revenue for the host nation[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "What role does cultural tourism play in preserving Ghana's traditional heritage? It",
+    "options": [
+      "promotes drumming and dancing.",
+      "promotes cultural exchange and appreciation of our way of life.",
+      "facilitates access to traditional artefacts in the community.",
+      "exposes cultural activities."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cultural tourism encourages interaction between tourists and locals, enhancing pride and mutual appreciation for traditional customs[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "In 1948, there was a riot following the killing of three ex-servicemen at the Osu Christianborg Castle Cross roads. What significant impact did it have on nationalists activities in the Gold Coast? It",
+    "options": [
+      "resulted in the transfer of the governor.",
+      "strengthened agitation against colonial administration.",
+      "encouraged patriotism and respect for rule of law.",
+      "strengthened colonial rule against the nationalists."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The 1948 Accra riots intensified anti-colonial sentiments and accelerated nationalist demands for self-governance[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Which of the following options is the most destructive of volcanic eruption on the environment?",
+    "options": [
+      "Gas emission",
+      "Water pollution",
+      "Lava flows on vegetation",
+      "Loss of lives and property"
+    ],
+    "correctAnswer": "D",
+    "explanation": "While volcanic eruptions affect air, land, and water, loss of human lives and structural property is the most severe and irreversible consequence[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "The demarcation of administrative regions and districts of Ghana are best highlighted on",
+    "options": [
+      "an imaginary map.",
+      "an economic map.",
+      "a political map.",
+      "a historical map."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Political maps specifically show administrative boundaries, regions, districts, and towns[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Sanitation has been a major challenge in some communities in Ghana. What is the most sustainable way to improve sanitation in your community?",
+    "options": [
+      "Building more landfills for waste disposal",
+      "Providing many incinerators in the community",
+      "Recycling and education",
+      "Sweeping and collecting waste materials in the community"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Recycling minimizes waste volume, and education addresses long-term behavioral change, making it the most sustainable approach[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Why is it useful to provide a legend on a map? To",
+    "options": [
+      "display the title",
+      "show the compass direction",
+      "explain the symbols",
+      "indicate the scale"
+    ],
+    "correctAnswer": "C",
+    "explanation": "A key or legend clarifies the meaning of colors, signs, and symbols used on a map[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "Contours on a map indicate what phenomenon?",
+    "options": [
+      "Elevation changes",
+      "Temperate changes",
+      "Pressure changes",
+      "Changes in rainfall"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Contour lines join places of equal height above sea level, thereby depicting variations in elevation[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "Topographical maps are important to study because they show",
+    "options": [
+      "mainly the drainage of the land.",
+      "the plant cover of the land.",
+      "the elevation of land forms.",
+      "the distribution of settlements only."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Topographical maps represent relief features and height variations of landforms using contours[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "How does your role as an active citizen contribute to the development of your community? By",
+    "options": [
+      "promoting self interest and peace of mind",
+      "fostering cooperation and collaboration",
+      "encouraging isolation from others and staying aloof",
+      "prioritizing personal interests over communal well being"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Active citizenship requires working together with community members to achieve communal development goals[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "In what way does early exposure to sexual content on the media affect the adolescents?",
+    "options": [
+      "Admiration for the opposite sex",
+      "Sexual abstinence",
+      "Strong association with peers",
+      "Uncontrolled sexual activity"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Premature exposure to explicit media can lead to risky and uncontrolled sexual behavior among youth[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "The primary aim of elections in Ghana is to",
+    "options": [
+      "allow the powerful to govern without restrain.",
+      "protect the rights of children and mothers only.",
+      "provide tax reliefs to groups of people with common interests.",
+      "change governments peacefully and orderly."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Democratic elections serve as the legitimate mechanism for selecting public leaders and transferring power peacefully[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "What will be the best effect on the development of your community if you engage in voluntary activities? It will",
+    "options": [
+      "encourage people to pay their taxes.",
+      "promote peace and harmony.",
+      "foster a sense of belonging and shared responsibility.",
+      "hinder social progress and development."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Voluntarism instills communal ownership and deepens the spirit of shared civic duty[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Your school is embarking on an excursion in Asia to see famous mountains. Which of the following mountains are they likely to see?",
+    "options": [
+      "Andes mountains",
+      "Atlas mountains",
+      "The Rocky mountains",
+      "Himalayas mountains"
+    ],
+    "correctAnswer": "D",
+    "explanation": "The Himalayas are situated in Asia, containing Mount Everest[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Most Ghanaian communities experience flooding during the raining season due to",
+    "options": [
+      "nature having its way.",
+      "poor hygienic conditions.",
+      "long period of dry season.",
+      "siting of buildings on water ways."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Constructing structures along natural drainage paths obstructs water flow, causing artificial floods during rainfall[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Which of the following would you advise against by way of reducing dependence on foreign financial support?",
+    "options": [
+      "Developing the human resource",
+      "Patronizing Ghanaian products",
+      "Adding value to our primary products",
+      "Borrowing from the international market"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Borrowing externally increases foreign debt burdens rather than fostering self-reliance[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Which of the following cultural elements would you say, identifies ethnic groups of Ghana the most?",
+    "options": [
+      "Dance",
+      "Food",
+      "Language",
+      "Music"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Language is the primary cultural indicator that differentiates various ethnic groups in Ghana[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "The productivity of a worker in an organization can best be improved by",
+    "options": [
+      "regular supervision and punishment.",
+      "engaging in short reading courses.",
+      "engaging in retraining workshops.",
+      "necessary tools only."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Continuous training and skill-upgrading workshops enhance technical competence and workplace output[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "What role does peer socialization play in shaping adolescent behavior and attitude? It",
+    "options": [
+      "reinforces parental authority.",
+      "encourages conformity to family traditions.",
+      "influences language, fashion and social norms.",
+      "promotes isolation from peer groups."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Peer groups exert strong influence on adolescent lifestyles, including speech, attire, and general socialization norms[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "What is the major effect of illegal mining on the water bodies of Ghana?",
+    "options": [
+      "Destroys aquatic and plant life",
+      "Reduces the flow of water bodies",
+      "Changes the colour of the water bodies only",
+      "Empowers the youth negatively"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Chemical pollution (e.g., mercury, cyanide) and heavy siltation from illegal mining destroy aquatic flora and fauna[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Ghana was ushered into the fourth republican government in",
+    "options": [
+      "1981.",
+      "1966.",
+      "1979.",
+      "1992."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Ghana adopted the Fourth Republican Constitution following the presidential election in 1992 (which took effect on January 7, 1993)[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "One negative effect of colonization on the Ghanaian society is the",
+    "options": [
+      "introduction of formal education.",
+      "introduction of currency.",
+      "adulteration of our culture.",
+      "introduction of plantation farming."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Colonial rule eroded traditional values and cultural practices through Western assimilation[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Criminal activities in the society can best be minimized if there is effective",
+    "options": [
+      "arbitration.",
+      "law enforcement.",
+      "parental care.",
+      "prison service."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Strong enforcement of laws acts as a deterrence against criminal behavior and maintains social order[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "The constitution of a country is important because it",
+    "options": [
+      "punishes criminals and politicians.",
+      "allows the Speaker to become the Head of State.",
+      "serves as basis for the practice of good governance.",
+      "can be amended anytime and has fixed term."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The constitution is the supreme law that outlines fundamental principles, rights, and powers necessary for democratic governance[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Your younger brother's homework requires he identifies types of business enterprise. Which of the following should not be part of his list?",
+    "options": [
+      "Rural Banks",
+      "Joint Stock Companies",
+      "Non-Governmental Organizations-NGO's",
+      "Co-operative societies"
+    ],
+    "correctAnswer": "C",
+    "explanation": "NGOs are non-profit social entities rather than commercial business enterprises[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Your father intends to begin a new business by raising capital through the sale of shares. This type of business enterprise is known as",
+    "options": [
+      "partnership.",
+      "sole proprietorship.",
+      "joint Stock company.",
+      "co-operative society."
+    ],
+    "correctAnswer": "C",
+    "explanation": "A joint-stock company raises its equity capital by issuing and selling shares to the public or shareholders[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "The main function of the executive organ of government is",
+    "options": [
+      "approval of budget.",
+      "implementation of policies.",
+      "interpretation of the law.",
+      "law making and arbitration."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The executive arm is tasked with administering, executing, and implementing national laws and policies[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "One major way you can defend the integrity of Ghana as a citizen is by",
+    "options": [
+      "promoting inter-ethnic marriages.",
+      "respecting other people's culture.",
+      "obeying the laws of the country.",
+      "promoting national festivals."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Law-abiding citizens protect national sovereignty, uphold order, and preserve state integrity[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Rapid population growth of any country will result in",
+    "options": [
+      "better medical facilities.",
+      "high family expectation on female adults.",
+      "pressure on social facilities in the communities.",
+      "proper upbringing of many children."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Uncontrolled population growth outpaces infrastructure, overstretching public schools, health centers, and utilities[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "To ensure the survival of private enterprises, the government of Ghana must support",
+    "options": [
+      "advertising the products of private enterprises, oversees and provide tax exemption.",
+      "controlling and providing vital services and strict control.",
+      "payment of their tax obligation and other commitments.",
+      "providing efficient management and direct control."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Government assistance through export marketing support and tax incentives enhances the viability of private firms[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Apart from law making, Ghana's legislature also",
+    "options": [
+      "ensures accountability of the Executive to the people.",
+      "formulates and implements policies for development.",
+      "protects powerful entities in the state.",
+      "assents bills to become laws."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Parliament performs an oversight role over the executive through ministerial vetting, budget scrutiny, and inquiries[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "On 28th of February, 1948, three ex-servicemen were shot and killed while marching peacefully to present a petition to the governor of the Gold Coast. These ex-servicemen were",
+    "options": [
+      "Corporal Attipoe, Flt. Lt. J.J. Rawlings and Gen. I.K. Acheampong.",
+      "Corporal Attipoe, Gen. Afrifa and Lt. Gen. E. K. Kotoka.",
+      "Corporal Attipoe, Lt. Gen. E.K. Kotoka and Gen. I.K. Acheampong.",
+      "Corporal Attipoe, Private Odartey-Lamptey and Sergeant Adjetey."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The three veteran soldiers killed during the Christiansborg Crossroads march were Sergeant Adjetey, Corporal Attipoe, and Private Odartey-Lamptey[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "What makes it impossible to determine the actual distance from a sketch map? It",
+    "options": [
+      "is roughly drawn.",
+      "covers a large area.",
+      "has no key.",
+      "has no scale."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Without a map scale, ground distances cannot be accurately measured or calculated from map measurements[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "One major benefit Ghana derives from legal mining activities is",
+    "options": [
+      "generation of revenue for development.",
+      "granting of loans for mining activities and employment.",
+      "availability of rocks for road construction.",
+      "presidential awards received by mining companies."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Formal mining companies contribute to public revenue through taxes, royalties, and foreign exchange reserves[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "The Prime Minister of the Second Republic of Ghana was",
+    "options": [
+      "Dr Hilla Limann.",
+      "Dr K. A. Busia.",
+      "Dr Kwame Nkrumah.",
+      "Prof Evans Atta Millls."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Dr. Kofi Abrefa Busia served as Prime Minister under the parliamentary system of the Second Republic (1969–1972)[cite: 13, 14].",
+    "topic": "Social Studies",
+    "hasImage": false
+  }
+]

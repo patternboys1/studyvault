@@ -114,7 +114,7 @@ export default function PastQuestions() {
     <div className="space-y-8 pb-10">
       <header>
         <h1 className="text-3xl font-black text-gray-900 md:text-4xl">Past Questions Library</h1>
-        <p className="mt-2 text-gray-500">Access BECE 2025 history. Built for the UDS Community.</p>
+        <p className="mt-2 text-gray-500">Access BECE Pasco history. Built for the student Community.</p>
       </header>
 
       <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm grid gap-3 md:grid-cols-4">
