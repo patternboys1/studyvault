@@ -5,6 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardLayout from "./components/DashboardLayout";
 
@@ -14,7 +15,7 @@ import About from "./pages/public/About";
 import Features from "./pages/public/Features";
 import Contact from "./pages/public/Contact";
 import Subjects from "./pages/public/Subjects";
-import Pricings from "./pages/public/Pricings"; // Your public pricing
+import Pricing from "./pages/public/Pricings"; // Your public pricing
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 
@@ -29,15 +30,17 @@ import Upgrade from "./pages/dashboard/Upgrade";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router basename={import.meta.env.BASE_URL}>
+    <ThemeProvider>
+      <AuthProvider>
+        <Router basename={import.meta.env.BASE_URL}>
         <Routes>
           {/*  Public Landing Page Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/pricing" element={<Pricings />} />
+          <Route path="/subject" element={<Subjects />} />
+          <Route path="/pricing" element={<Pricing />} />
 
           {/*  Auth Routes */}
           <Route path="/login" element={<Login />} />
@@ -66,7 +69,8 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
-    </AuthProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

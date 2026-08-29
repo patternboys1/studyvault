@@ -4,61 +4,119 @@ import {
   Download,
   Rocket,
   Target,
+  TrendingUp,
+  Calendar,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { getMockAttempts } from "../../services/studyContentService";
 
-const scoreBars = [
-  { month: "Jan", value: 48 },
-  { month: "Feb", value: 56 },
-  { month: "Mar", value: 62 },
-  { month: "Apr", value: 68 },
-  { month: "May", value: 74 },
-  { month: "Jun", value: 82 },
-];
+// Subject metadata with colors
+const SUBJECT_METADATA = {
+  Mathematics: { color: "bg-blue-700", dot: "bg-blue-600" },
+  "Mathematics (with Statistics)": { color: "bg-blue-700", dot: "bg-blue-600" },
+  "English Language": { color: "bg-orange-900", dot: "bg-orange-800" },
+  English: { color: "bg-orange-900", dot: "bg-orange-800" },
+  "Integrated Science": { color: "bg-emerald-700", dot: "bg-emerald-600" },
+  Science: { color: "bg-emerald-700", dot: "bg-emerald-600" },
+  "Social Studies": { color: "bg-orange-400", dot: "bg-orange-400" },
+  "Social studies": { color: "bg-orange-400", dot: "bg-orange-400" },
+  RME: { color: "bg-purple-700", dot: "bg-purple-600" },
+};
 
-const subjects = [
-  {
-    name: "Mathematics",
-    score: 82,
-    note: "Mastery in Algebra & Geometry",
-    color: "bg-blue-700",
-    dot: "bg-blue-600",
-  },
-  {
-    name: "English Language",
-    score: 75,
-    note: "Focus needed on Essay Writing",
-    color: "bg-orange-900",
-    dot: "bg-orange-800",
-  },
-  {
-    name: "Integrated Science",
-    score: 91,
-    note: "Exceptional performance in Biology",
-    color: "bg-emerald-700",
-    dot: "bg-emerald-700",
-  },
-  {
-    name: "Social Studies",
-    score: 64,
-    note: "Review History & Governance",
-    color: "bg-orange-400",
-    dot: "bg-orange-400",
-  },
-];
+// Process attempts data for analytics
+function processAttemptsData(attempts) {
+  if (!attempts || attempts.length === 0) {
+    return {
+      scoreTrends: [],
+      subjectScores: {},
+      strengths: [],
+      focusAreas: [],
+    };
+  }
 
-const strengths = [
-  ["Sets & Operations", "95%"],
-  ["Grammar & Punctuation", "88%"],
-  ["Human Body Systems", "92%"],
-];
+  // Sort attempts by date (oldest first)
+  const sortedAttempts = [...attempts].sort(
+    (a, b) => (a.completedAt?.toDate?.() || new Date(a.completedAt)) - (b.completedAt?.toDate?.() || new Date(b.completedAt))
+  );
 
-const focusAreas = [
-  ["Trigonometry", "42%"],
-  ["Colonial History", "38%"],
-  ["Electrical Circuits", "51%"],
-];
+  // Score trends - last 6 attempts
+  const scoreTrends = sortedAttempts.slice(-6).map((attempt, idx) => ({
+    label: `Exam ${idx + 1}`,
+    value: attempt.score || 0,
+  }));
+
+  // Subject scores - grouped by subject
+  const subjectScores = {};
+  sortedAttempts.forEach((attempt) => {
+    const subject = attempt.subjectName || "Unknown";
+    if (!subjectScores[subject]) {
+      subjectScores[subject] = { scores: [], attempts: 0 };
+    }
+    subjectScores[subject].scores.push(attempt.score || 0);
+    subjectScores[subject].attempts += 1;
+  });
+
+  // Calculate average scores for each subject
+  Object.keys(subjectScores).forEach((subject) => {
+    const data = subjectScores[subject];
+    const avg = Math.round(data.scores.reduce((a, b) => a + b, 0) / data.scores.length);
+    subjectScores[subject].averageScore = avg;
+  });
+
+  // Identify strengths and focus areas
+  const subjectAverages = Object.entries(subjectScores).map(([name, data]) => ({
+    name,
+    score: data.averageScore,
+  }));
+
+  const sortedByScore = [...subjectAverages].sort((a, b) => b.score - a.score);
+  const strengths = sortedByScore.slice(0, 3).map((s) => [s.name, `${s.score}%`]);
+  const focusAreas = sortedByScore.slice(-3).reverse().map((s) => [s.name, `${s.score}%`]);
+
+  return {
+    scoreTrends,
+    subjectScores,
+    strengths,
+    focusAreas,
+  };
+}
+
+// Calculate study metrics
+function calculateStudyMetrics(attempts) {
+  if (!attempts || attempts.length === 0) {
+    return {
+      totalHours: 0,
+      averageScore: 0,
+      lastAttemptDate: "Never",
+    };
+  }
+
+  const avgScore = Math.round(attempts.reduce((total, a) => total + (a.score || 0), 0) / attempts.length);
+  const lastAttempt = attempts[attempts.length - 1];
+  const lastDate = lastAttempt.completedAt?.toDate?.() || new Date(lastAttempt.completedAt);
+  const now = new Date();
+  const daysAgo = Math.floor((now - lastDate) / (1000 * 60 * 60 * 24));
+
+  let lastAttemptDate;
+  if (daysAgo === 0) {
+    lastAttemptDate = "Today";
+  } else if (daysAgo === 1) {
+    lastAttemptDate = "Yesterday";
+  } else if (daysAgo < 7) {
+    lastAttemptDate = `${daysAgo}d ago`;
+  } else {
+    lastAttemptDate = lastDate.toLocaleDateString();
+  }
+
+  // Estimate total hours (assume ~1 hour per exam)
+  const totalHours = attempts.length * 1.0;
+
+  return {
+    totalHours,
+    averageScore: avgScore,
+    lastAttemptDate,
+  };
+}
 
 function Performance() {
   const { user } = useAuth();
@@ -67,6 +125,9 @@ function Performance() {
     queryFn: () => getMockAttempts(user.uid),
     enabled: Boolean(user?.uid),
   });
+
+  // Process attempts data for analytics
+  const analytics = processAttemptsData(attempts);
 
   return (
     <div className="space-y-8 pb-10">
@@ -91,29 +152,30 @@ function Performance() {
       </section>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-[320px_1fr]">
-        <ExamReadiness attempts={attempts} />
-        <ScoreTrends />
+        <ExamReadiness attempts={attempts} analytics={analytics} />
+        <ScoreTrends analytics={analytics} />
       </section>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_320px]">
-        <SubjectBreakdown />
-        <StudyPattern />
+        <SubjectBreakdown analytics={analytics} />
+        <StudyPattern attempts={attempts} />
       </section>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-        <TopicInsights />
+        <TopicInsights analytics={analytics} />
         <MockHistory attempts={attempts} isLoading={attemptsLoading} />
       </section>
     </div>
   );
 }
 
-function ExamReadiness({ attempts }) {
+function ExamReadiness({ attempts, analytics }) {
   const averageScore = attempts.length
     ? Math.round(attempts.reduce((total, attempt) => total + (attempt.score || 0), 0) / attempts.length)
     : 0;
   const readinessLabel = averageScore >= 80 ? "Excellent" : averageScore >= 60 ? "Progressing" : "Keep Practising";
   const readinessColor = averageScore >= 80 ? "text-emerald-700" : averageScore >= 60 ? "text-blue-700" : "text-orange-700";
+  const readinessBg = averageScore >= 80 ? "#047857" : averageScore >= 60 ? "#1e40af" : "#ea580c";
 
   return (
     <article className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 text-center shadow-sm">
@@ -124,7 +186,7 @@ function ExamReadiness({ attempts }) {
       />
       <h2 className="text-2xl font-black text-gray-950">Exam Readiness</h2>
 
-      <div className="relative mx-auto mt-8 flex h-40 w-40 items-center justify-center rounded-full" style={{ background: `conic-gradient(#047857 0deg, #047857 ${averageScore * 3.6}deg, #eceaf6 ${averageScore * 3.6}deg, #eceaf6 360deg)` }}>
+      <div className="relative mx-auto mt-8 flex h-40 w-40 items-center justify-center rounded-full" style={{ background: `conic-gradient(${readinessBg} 0deg, ${readinessBg} ${averageScore * 3.6}deg, #eceaf6 ${averageScore * 3.6}deg, #eceaf6 360deg)` }}>
         <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-white">
           <p className="text-4xl font-black text-gray-950">{averageScore}%</p>
           <p className={`text-xs font-black uppercase tracking-widest ${readinessColor}`}>{readinessLabel}</p>
@@ -138,14 +200,16 @@ function ExamReadiness({ attempts }) {
   );
 }
 
-function ScoreTrends() {
+function ScoreTrends({ analytics }) {
+  const { scoreTrends } = analytics;
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>
           <h2 className="text-2xl font-black text-gray-950">Score Trends</h2>
           <p className="mt-1 text-sm text-gray-500">
-            Performance across all subjects (last 6 months)
+            {scoreTrends.length > 0 ? "Performance over time (last exams)" : "Take mock exams to see your trends"}
           </p>
         </div>
         <div className="flex rounded-full bg-slate-50 p-1 text-xs font-black">
@@ -158,105 +222,141 @@ function ScoreTrends() {
 
       <div className="mt-8 h-64 border-l border-slate-100">
         <div className="flex h-full items-end gap-5 border-b border-slate-100 px-4">
-          {scoreBars.map((bar) => (
-            <div key={bar.month} className="flex h-full flex-1 flex-col justify-end">
-              <div
-                className="rounded-t-xl bg-blue-700/90"
-                style={{ height: `${bar.value}%` }}
-              />
-              <p className="mt-3 text-center text-[11px] font-black uppercase text-gray-500">
-                {bar.month}
-              </p>
+          {scoreTrends.length > 0 ? (
+            scoreTrends.map((bar) => (
+              <div key={bar.label} className="flex h-full flex-1 flex-col justify-end">
+                <div
+                  className="rounded-t-xl bg-blue-700/90 transition hover:bg-blue-700"
+                  style={{ height: `${Math.min(bar.value, 100)}%` }}
+                />
+                <p className="mt-3 text-center text-[11px] font-black uppercase text-gray-500">
+                  {bar.label}
+                </p>
+              </div>
+            ))
+          ) : (
+            <div className="flex w-full items-center justify-center text-sm text-gray-400">
+              No attempt data yet
             </div>
-          ))}
+          )}
         </div>
       </div>
     </article>
   );
 }
 
-function SubjectBreakdown() {
+function SubjectBreakdown({ analytics }) {
+  const { subjectScores } = analytics;
+  const subjectList = Object.entries(subjectScores).map(([name, data]) => ({
+    name,
+    score: Math.round(data.averageScore),
+    attempts: data.attempts,
+    metadata: SUBJECT_METADATA[name] || { color: "bg-slate-600", dot: "bg-slate-500" },
+  }));
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <h2 className="text-2xl font-black text-gray-950">Subject Breakdown</h2>
-      <div className="mt-7 grid gap-5 md:grid-cols-2">
-        {subjects.map((subject) => (
-          <div
-            key={subject.name}
-            className="rounded-xl border border-slate-100 bg-indigo-50/60 p-5"
-          >
-            <div className="mb-4 flex items-center justify-between gap-3">
-              <p className="flex items-center gap-2 font-black text-gray-950">
-                <span className={`h-2 w-2 rounded-full ${subject.dot}`} />
-                {subject.name}
-              </p>
-              <p className="font-black text-blue-700">{subject.score}%</p>
+      {subjectList.length > 0 ? (
+        <div className="mt-7 grid gap-5 md:grid-cols-2">
+          {subjectList.map((subject) => (
+            <div
+              key={subject.name}
+              className="rounded-xl border border-slate-100 bg-indigo-50/60 p-5"
+            >
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <p className="flex items-center gap-2 font-black text-gray-950">
+                  <span className={`h-2 w-2 rounded-full ${subject.metadata.dot}`} />
+                  {subject.name}
+                </p>
+                <p className="font-black text-blue-700">{subject.score}%</p>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-white">
+                <div
+                  className={`h-full rounded-full ${subject.metadata.color}`}
+                  style={{ width: `${subject.score}%` }}
+                />
+              </div>
+              <p className="mt-4 text-sm text-gray-500">{subject.attempts} attempt{subject.attempts !== 1 ? "s" : ""}</p>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-white">
-              <div
-                className={`h-full rounded-full ${subject.color}`}
-                style={{ width: `${subject.score}%` }}
-              />
-            </div>
-            <p className="mt-4 text-sm text-gray-500">{subject.note}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-7 rounded-xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm text-gray-500">
+          Complete mock exams to see subject breakdown
+        </div>
+      )}
     </article>
   );
 }
 
-function StudyPattern() {
+function StudyPattern({ attempts }) {
+  // Calculate study metrics from attempts
+  const studyMetrics = calculateStudyMetrics(attempts);
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <h2 className="text-2xl font-black text-gray-950">Study Pattern</h2>
-      <div className="mx-auto mt-7 flex h-32 w-32 flex-col items-center justify-center rounded-full border-4 border-emerald-300 bg-emerald-300 text-emerald-950 shadow-inner">
-        <p className="text-3xl font-black">18.5</p>
-        <p className="text-[10px] font-black uppercase">Hours / Week</p>
-      </div>
+      
+      {attempts.length > 0 ? (
+        <>
+          <div className="mx-auto mt-7 flex h-32 w-32 flex-col items-center justify-center rounded-full border-4 border-emerald-300 bg-emerald-300 text-emerald-950 shadow-inner">
+            <p className="text-3xl font-black">{studyMetrics.totalHours.toFixed(1)}</p>
+            <p className="text-[10px] font-black uppercase">Hours Total</p>
+          </div>
 
-      <div className="mt-8 flex items-center justify-between">
-        <p className="font-medium text-gray-600">Active Days</p>
-        <p className="font-black text-gray-950">6/7 Days</p>
-      </div>
+          <div className="mt-8 flex items-center justify-between">
+            <p className="font-medium text-gray-600">Exams Taken</p>
+            <p className="font-black text-gray-950">{attempts.length}</p>
+          </div>
 
-      <div className="mt-4 grid grid-cols-7 gap-1.5">
-        {[1, 2, 3, 4, 5, 6, 7].map((day) => (
-          <div
-            key={day}
-            className={`h-6 rounded-sm ${
-              day === 5 ? "bg-slate-100" : "bg-emerald-700"
-            }`}
-          />
-        ))}
-      </div>
-      <p className="mt-5 text-sm italic text-gray-500">
-        Peak performance usually at 4 PM.
-      </p>
+          <div className="mt-4 flex items-center justify-between">
+            <p className="font-medium text-gray-600">Last Exam</p>
+            <p className="text-sm font-black text-gray-900">{studyMetrics.lastAttemptDate}</p>
+          </div>
+
+          <div className="mt-6 rounded-lg bg-blue-50 p-4 text-sm text-blue-900">
+            <p className="font-black">Average Score</p>
+            <p className="mt-1 text-2xl font-black">{studyMetrics.averageScore}%</p>
+          </div>
+        </>
+      ) : (
+        <div className="mt-7 rounded-xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm text-gray-500">
+          Your study data will appear after taking exams
+        </div>
+      )}
     </article>
   );
 }
 
-function TopicInsights() {
+function TopicInsights({ analytics }) {
+  const { strengths, focusAreas } = analytics;
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <h2 className="text-2xl font-black text-gray-950">Topic Insights</h2>
-      <div className="mt-7 grid gap-5 md:grid-cols-2">
-        <InsightColumn
-          icon={<Rocket size={19} />}
-          title="Strengths"
-          color="text-emerald-700"
-          rows={strengths}
-          rowClass="bg-emerald-50 text-emerald-800"
-        />
-        <InsightColumn
-          icon={<AlertTriangle size={19} />}
-          title="Needs Focus"
-          color="text-red-700"
-          rows={focusAreas}
-          rowClass="bg-red-50 text-red-800"
-        />
-      </div>
+      {strengths.length > 0 || focusAreas.length > 0 ? (
+        <div className="mt-7 grid gap-5 md:grid-cols-2">
+          <InsightColumn
+            icon={<Rocket size={19} />}
+            title="Strengths"
+            color="text-emerald-700"
+            rows={strengths}
+            rowClass="bg-emerald-50 text-emerald-800"
+          />
+          <InsightColumn
+            icon={<AlertTriangle size={19} />}
+            title="Needs Focus"
+            color="text-red-700"
+            rows={focusAreas}
+            rowClass="bg-red-50 text-red-800"
+          />
+        </div>
+      ) : (
+        <div className="mt-7 rounded-xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center text-sm text-gray-500">
+          Complete more exams to identify strengths and focus areas
+        </div>
+      )}
     </article>
   );
 }
@@ -286,6 +386,19 @@ function InsightColumn({ icon, title, color, rows, rowClass }) {
 function MockHistory({ attempts, isLoading }) {
   const recentAttempts = attempts.slice(0, 5);
 
+  const formatDate = (timestamp) => {
+    if (!timestamp) return "Unknown date";
+    const date = timestamp.toDate?.() || new Date(timestamp);
+    const now = new Date();
+    const daysAgo = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+
+    if (daysAgo === 0) return "Today";
+    if (daysAgo === 1) return "Yesterday";
+    if (daysAgo < 7) return `${daysAgo} days ago`;
+
+    return date.toLocaleDateString();
+  };
+
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
       <div className="mb-7 flex items-center justify-between">
@@ -303,8 +416,8 @@ function MockHistory({ attempts, isLoading }) {
               {attempt.score}%
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate font-black text-gray-950">{attempt.subjectName} {attempt.year} Objective Mock</p>
-              <p className="text-sm text-gray-500">{attempt.completedAt?.toDate ? `Completed ${attempt.completedAt.toDate().toLocaleDateString()}` : "Completed just now"}</p>
+              <p className="truncate font-black text-gray-950">{attempt.subjectName} {attempt.year}</p>
+              <p className="text-sm text-gray-500">{formatDate(attempt.completedAt)}</p>
             </div>
             <div className="text-right">
               <p className="font-black text-gray-950">{attempt.correctCount}/{attempt.totalQuestions}</p>

@@ -7,7 +7,7 @@ const today = date.getFullYear()
 
 function Footer() {
   return (
-   <footer className="border-t border-slate-100 py-12 px-6 reveal">
+   <footer className="border-t border-slate-100 py-12 px-6">
   <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
     
     {/* Left Side: Logo and Branding */}

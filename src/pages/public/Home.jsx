@@ -86,9 +86,10 @@ const Home = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Features", path: "/features" },
-    { name: "Subjects", path: "/subjects" },
+    { name: "Subjects", path: "/subject" },
     { name: "Pricing", path: "/pricing" },
     { name: "Contact", path: "/contact" },
+    { name: "About", path: "/about" },
   ];
 
   return (
