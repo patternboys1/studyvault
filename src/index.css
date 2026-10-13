@@ -19,3 +19,25 @@
     transition: none;
   }
 }
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #report-print-area,
+  #report-print-area * {
+    visibility: visible !important;
+  }
+
+  #report-print-area {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .report-print-hidden {
+    display: none !important;
+  }
+}

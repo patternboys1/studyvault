@@ -4,8 +4,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
-import { Link, useNavigate } from "react-router-dom"; // Assuming you use react-router
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebase";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
 
 export default function Login() {
@@ -14,13 +15,30 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Email/Password Login Logic
+  const ensureUserProfile = async (user, fallbackName = "Student") => {
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(
+      userRef,
+      {
+        uid: user.uid,
+        email: user.email || "",
+        displayName: user.displayName || fallbackName,
+        plan: "free",
+        isPremium: false,
+        billingCycle: null,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    );
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // Redirect to that beautiful dashboard
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      await ensureUserProfile(result.user, result.user.displayName || "Student");
+      navigate("/dashboard");
     } catch (error) {
       alert(error.message);
     } finally {
@@ -28,11 +46,11 @@ export default function Login() {
     }
   };
 
-  // Google Login Logic
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      await ensureUserProfile(result.user, result.user.displayName || "Student");
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);

@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   ArrowRight,
   CalendarDays,
-  CheckCircle2,
   Download,
   Eye,
   FileBarChart,
@@ -13,6 +13,7 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { getMockAttempts } from "../../services/studyContentService";
 
@@ -27,6 +28,51 @@ const SUBJECT_METADATA = {
   "Social Studies": "History, Geography, Governance",
   "Social studies": "History, Geography, Governance",
   RME: "Moral Development, Ethics",
+};
+
+const getAttemptDate = (timestamp) => {
+  if (!timestamp) return null;
+  const date = typeof timestamp.toDate === "function" ? timestamp.toDate() : new Date(timestamp);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
+const sortAttemptsNewestFirst = (attempts = []) => [...attempts].sort((first, second) =>
+  (getAttemptDate(second.completedAt)?.getTime() || 0)
+    - (getAttemptDate(first.completedAt)?.getTime() || 0)
+);
+
+const downloadCsv = (filename, rows) => {
+  const csv = rows
+    .map((row) => row.map((value) => `"${String(value ?? "").replace(/"/g, '""')}"`).join(","))
+    .join("\n");
+  const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+
+const buildParentSummary = (attempts) => {
+  const orderedAttempts = sortAttemptsNewestFirst(attempts);
+  if (orderedAttempts.length === 0) return "No completed mock exams yet.";
+
+  const average = Math.round(
+    orderedAttempts.reduce((sum, attempt) => sum + (Number(attempt.score) || 0), 0) / orderedAttempts.length
+  );
+  const latest = orderedAttempts[0];
+
+  return `BECE Prep progress: ${orderedAttempts.length} completed mock exams; overall average ${average}%. Latest: ${latest.subjectName || "Mock"} ${latest.year || ""}, ${Number(latest.score) || 0}%.`;
+};
+
+const shareOrCopy = async (text) => {
+  if (navigator.share) {
+    await navigator.share({ title: "BECE Prep progress", text });
+    return "";
+  }
+
+  await navigator.clipboard.writeText(text);
+  return "Summary copied to clipboard.";
 };
 
 // Grade calculator
@@ -71,18 +117,20 @@ function processReportData(attempts) {
     };
   }
 
+  const orderedAttempts = sortAttemptsNewestFirst(attempts);
+
   // Calculate stats
-  const avgScore = Math.round(attempts.reduce((sum, a) => sum + (a.score || 0), 0) / attempts.length);
+  const avgScore = Math.round(orderedAttempts.reduce((sum, attempt) => sum + (Number(attempt.score) || 0), 0) / orderedAttempts.length);
   const overallGrade = getGrade(avgScore);
 
   // Group by subject
   const subjectScores = {};
-  attempts.forEach((attempt) => {
+  orderedAttempts.forEach((attempt) => {
     const subject = attempt.subjectName || "Unknown";
     if (!subjectScores[subject]) {
       subjectScores[subject] = [];
     }
-    subjectScores[subject].push(attempt.score || 0);
+    subjectScores[subject].push(Number(attempt.score) || 0);
   });
 
   // Create subject data for report
@@ -98,25 +146,25 @@ function processReportData(attempts) {
   });
 
   // Create reports from attempts
-  const reports = attempts.slice(-5).reverse().map((attempt) => ({
+  const reports = orderedAttempts.slice(0, 5).map((attempt) => ({
     id: attempt.id,
     title: `${attempt.subjectName} ${attempt.year} Mock Exam`,
     type: "Mock Exam Report",
     date: formatDate(attempt.completedAt),
-    score: `${attempt.score}%`,
-    status: attempt.score >= 50 ? "Reviewed" : "Needs Review",
+    score: Number(attempt.score) || 0,
+    status: Number(attempt.score) >= 50 ? "Reviewed" : "Needs Review",
   }));
 
   // Generate recommendation
   const bestSubject = Object.entries(subjectScores).reduce((best, [subject, scores]) => {
     const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-    return avg > (best.avg || 0) ? { subject, avg } : best;
-  }, {});
+    return !best.subject || avg > best.avg ? { subject, avg } : best;
+  }, null);
 
   const worstSubject = Object.entries(subjectScores).reduce((worst, [subject, scores]) => {
     const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-    return avg < (worst.avg || 100) ? { subject, avg } : worst;
-  }, {});
+    return !worst.subject || avg < worst.avg ? { subject, avg } : worst;
+  }, null);
 
   const recommendation = bestSubject.subject && worstSubject.subject
     ? `Your strongest area is ${bestSubject.subject}. Focus on improving ${worstSubject.subject} for your next exam.`
@@ -176,24 +224,62 @@ function formatDate(timestamp) {
   return `Generated ${date.toLocaleDateString()}`;
 }
 
-const reportStats = [];
-
-const reports = [];
-
 function Report() {
   const { user } = useAuth();
+  const location = useLocation();
   const { data: attempts = [], isLoading: attemptsLoading } = useQuery({
     queryKey: ["mock-attempts", user?.uid],
     queryFn: () => getMockAttempts(user.uid),
     enabled: Boolean(user?.uid),
   });
+  const [expandedReportId, setExpandedReportId] = useState(null);
+  const [shareMessage, setShareMessage] = useState("");
 
   const reportData = processReportData(attempts);
+  const focusSubject = location.state?.focusSubject;
+  const handleShare = async () => {
+    try {
+      setShareMessage(await shareOrCopy(buildParentSummary(attempts)));
+    } catch (error) {
+      if (error.name !== "AbortError") setShareMessage("Unable to share the report from this browser.");
+    }
+  };
+  const handleExportCsv = () => downloadCsv("bece-progress-report.csv", [
+    ["Subject", "Year", "Score", "Correct", "Total Questions", "Completed At"],
+    ...sortAttemptsNewestFirst(attempts).map((attempt) => [
+      attempt.subjectName,
+      attempt.year,
+      Number(attempt.score) || 0,
+      Number(attempt.correctCount) || 0,
+      Number(attempt.totalQuestions) || 0,
+      getAttemptDate(attempt.completedAt)?.toISOString() || "",
+    ]),
+  ]);
+  const handleDownloadAttempt = (attempt) => downloadCsv(
+    `${String(attempt.subjectName || "mock").toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${attempt.year || "report"}.csv`,
+    [
+      ["Subject", "Year", "Score", "Correct", "Total Questions", "Completed At"],
+      [
+        attempt.subjectName,
+        attempt.year,
+        Number(attempt.score) || 0,
+        Number(attempt.correctCount) || 0,
+        Number(attempt.totalQuestions) || 0,
+        getAttemptDate(attempt.completedAt)?.toISOString() || "",
+      ],
+    ]
+  );
+  const handlePrint = () => window.print();
 
   return (
-    <div className="space-y-8 pb-10">
+    <div id="report-print-area" className="space-y-8 pb-10">
       <section className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
         <div>
+          {focusSubject && (
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-black uppercase tracking-[0.2em] text-blue-700">
+              Focus subject: {focusSubject}
+            </div>
+          )}
           <h1 className="text-3xl font-black tracking-tight text-gray-950 md:text-4xl">
             Reports Center
           </h1>
@@ -202,14 +288,14 @@ function Report() {
             recommendations.
           </p>
         </div>
-        <div className="flex flex-wrap gap-3">
-          <button className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700">
+        <div className="report-print-hidden flex flex-wrap gap-3">
+          <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700">
             <Printer size={16} />
             Print Report
           </button>
-          <button className="flex items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800">
+          <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800">
             <Download size={16} />
-            Export PDF
+            Save as PDF
           </button>
         </div>
       </section>
@@ -240,21 +326,21 @@ function Report() {
 
       <section className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_340px]">
         <main className="space-y-8">
-          <TermReportPreview reportData={reportData} isLoading={attemptsLoading} attempts={attempts} />
-          <ReportList reports={reportData.reports} isLoading={attemptsLoading} />
+          <div id="report-summary"><TermReportPreview reportData={reportData} isLoading={attemptsLoading} attempts={attempts} onShare={handleShare} onExport={handleExportCsv} /></div>
+          <ReportList reports={reportData.reports} isLoading={attemptsLoading} attempts={attempts} expandedReportId={expandedReportId} setExpandedReportId={setExpandedReportId} onDownloadAttempt={handleDownloadAttempt} />
         </main>
 
         <aside className="space-y-6">
           <RecommendationCard recommendation={reportData.recommendation} />
-          <ParentShareCard />
-          <ReportSchedule />
+          <ParentShareCard onShare={handleShare} shareMessage={shareMessage} />
+          <ReportSchedule attempts={attempts} />
         </aside>
       </section>
     </div>
   );
 }
 
-function TermReportPreview({ reportData, isLoading, attempts }) {
+function TermReportPreview({ reportData, isLoading, attempts, onShare, onExport }) {
   if (isLoading) {
     return (
       <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -290,14 +376,14 @@ function TermReportPreview({ reportData, isLoading, attempts }) {
             Based on {attempts.length} mock exam{attempts.length !== 1 ? "s" : ""} completed
           </p>
         </div>
-        <div className="flex gap-2">
-          <IconButton label="View">
+        <div className="report-print-hidden flex gap-2">
+          <IconButton label="View summary" onClick={() => document.getElementById("report-summary")?.scrollIntoView({ behavior: "smooth" })}>
             <Eye size={18} />
           </IconButton>
-          <IconButton label="Share">
+          <IconButton label="Share summary" onClick={onShare}>
             <Share2 size={18} />
           </IconButton>
-          <IconButton label="Download">
+          <IconButton label="Download CSV" onClick={onExport}>
             <Download size={18} />
           </IconButton>
         </div>
@@ -357,7 +443,9 @@ function TermReportPreview({ reportData, isLoading, attempts }) {
   );
 }
 
-function ReportList({ reports, isLoading }) {
+function ReportList({ reports, isLoading, attempts = [], expandedReportId, setExpandedReportId, onDownloadAttempt }) {
+  const attemptMap = new Map((attempts || []).map((attempt) => [attempt.id, attempt]));
+
   if (isLoading) {
     return (
       <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -380,44 +468,67 @@ function ReportList({ reports, isLoading }) {
             {reports.length > 0 ? "Recent reports ready for review or download." : "No reports generated yet."}
           </p>
         </div>
-        {reports.length > 5 && (
-          <button className="text-sm font-black text-blue-700 hover:underline">
-            View All
-          </button>
-        )}
       </div>
 
       {reports.length > 0 ? (
         <div className="space-y-4">
-          {reports.map((report) => (
-            <div
-              key={report.id}
-              className="flex flex-col gap-4 rounded-2xl border border-slate-100 p-4 transition hover:border-blue-100 hover:shadow-sm md:flex-row md:items-center"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
-                <FileText size={22} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate font-black text-gray-950">
-                  {report.title}
-                </p>
-                <p className="mt-1 text-sm text-gray-500">
-                  {report.type} • {report.date}
-                </p>
-              </div>
-              <div className="flex items-center justify-between gap-4 md:justify-end">
-                <div className="text-right">
-                  <p className="font-black text-gray-950">{report.score}</p>
-                  <p className={`text-[10px] font-black uppercase ${report.score >= "50%" ? "text-emerald-700" : "text-orange-700"}`}>
-                    {report.status}
-                  </p>
+          {reports.map((report) => {
+            const attempt = attemptMap.get(report.id);
+            const isExpanded = expandedReportId === report.id;
+
+            return (
+              <div key={report.id} className="rounded-2xl border border-slate-100 p-4 transition hover:border-blue-100 hover:shadow-sm">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700">
+                    <FileText size={22} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate font-black text-gray-950">{report.title}</p>
+                    <p className="mt-1 text-sm text-gray-500">{report.type} • {report.date}</p>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 md:justify-end">
+                    <div className="text-right">
+                      <p className="font-black text-gray-950">{report.score}%</p>
+                      <p className={`text-[10px] font-black uppercase ${report.score >= 50 ? "text-emerald-700" : "text-orange-700"}`}>
+                        {report.status}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setExpandedReportId(isExpanded ? null : report.id)}
+                      className="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-gray-700 transition hover:border-blue-200 hover:text-blue-700"
+                      aria-label="View report details"
+                      title="View report details"
+                    >
+                      <Eye size={18} />
+                    </button>
+                    <button type="button" onClick={() => attempt && onDownloadAttempt(attempt)} disabled={!attempt} className="report-print-hidden flex h-11 w-11 items-center justify-center rounded-lg bg-blue-700 text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-40" aria-label="Download report CSV" title="Download report CSV">
+                      <Download size={18} />
+                    </button>
+                  </div>
                 </div>
-                <button className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-700 text-white transition hover:bg-blue-800">
-                  <Download size={18} />
-                </button>
+
+                {isExpanded && attempt && (
+                  <div className="mt-4 rounded-xl bg-slate-50 p-4">
+                    <div className="grid gap-3 text-sm text-gray-600 sm:grid-cols-3">
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">Subject</p>
+                        <p className="mt-1 font-bold text-gray-950">{attempt.subjectName || "Unknown"}</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">Score</p>
+                        <p className="mt-1 font-bold text-gray-950">{attempt.score || 0}%</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-500">Correct</p>
+                        <p className="mt-1 font-bold text-gray-950">{attempt.correctCount || 0}/{attempt.totalQuestions || 0}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-8 text-center">
@@ -431,6 +542,8 @@ function ReportList({ reports, isLoading }) {
 }
 
 function RecommendationCard({ recommendation }) {
+  const navigate = useNavigate();
+
   return (
     <article className="rounded-3xl bg-slate-950 p-6 text-white shadow-lg">
       <div className="mb-5 flex items-center gap-3">
@@ -446,7 +559,7 @@ function RecommendationCard({ recommendation }) {
         </p>
         <p className="mt-2 font-black">Review weaker subjects daily</p>
       </div>
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-300 px-4 py-3 text-sm font-black text-slate-950 hover:bg-emerald-200">
+      <button type="button" onClick={() => navigate("/dashboard/mock-exams")} className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-300 px-4 py-3 text-sm font-black text-slate-950 hover:bg-emerald-200">
         Start Recommendation
         <ArrowRight size={16} />
       </button>
@@ -454,7 +567,7 @@ function RecommendationCard({ recommendation }) {
   );
 }
 
-function ParentShareCard() {
+function ParentShareCard({ onShare, shareMessage }) {
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
       <h2 className="text-xl font-black text-gray-950">Parent Copy</h2>
@@ -462,20 +575,21 @@ function ParentShareCard() {
         Create a simple guardian-friendly version with grades, strengths,
         focus areas, and next steps.
       </p>
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 hover:bg-blue-50">
+      <button type="button" onClick={onShare} className="report-print-hidden mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 hover:bg-blue-50">
         <Share2 size={16} />
-        Prepare Share Link
+        Share Progress Summary
       </button>
+      {shareMessage && <p role="status" className="mt-3 text-sm font-bold text-blue-800">{shareMessage}</p>}
     </article>
   );
 }
 
-function ReportSchedule() {
-  // Calculate next report date (7 days from now)
-  const nextReport = new Date();
-  nextReport.setDate(nextReport.getDate() + 7);
-  const dayOfWeek = nextReport.toLocaleDateString("en-US", { weekday: "long" });
-  const dateStr = nextReport.toLocaleDateString();
+function ReportSchedule({ attempts }) {
+  const latestAttempt = sortAttemptsNewestFirst(attempts)[0];
+  const latestDate = latestAttempt ? getAttemptDate(latestAttempt.completedAt) : null;
+  const dateLabel = latestDate
+    ? latestDate.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })
+    : "No saved attempts yet";
 
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -484,32 +598,26 @@ function ReportSchedule() {
           <CalendarDays size={20} />
         </div>
         <div>
-          <h2 className="font-black text-gray-950">Next Report</h2>
-          <p className="text-sm text-gray-500">{dayOfWeek}, {dateStr}</p>
+          <h2 className="font-black text-gray-950">Latest Report Activity</h2>
+          <p className="text-sm text-gray-500">{dateLabel}</p>
         </div>
       </div>
-      <div className="mt-6 space-y-3">
-        {["Complete 3 mock exams", "Review focus areas", "Track progress"].map(
-          (item) => (
-            <p
-              key={item}
-              className="flex items-center gap-3 text-sm font-bold text-gray-600"
-            >
-              <CheckCircle2 size={17} className="text-emerald-700" />
-              {item}
-            </p>
-          )
-        )}
-      </div>
+      <p className="mt-6 text-sm leading-relaxed text-gray-600">
+        {latestAttempt
+          ? `${attempts.length} saved mock ${attempts.length === 1 ? "result" : "results"}. Your report updates when a new mock is completed.`
+          : "Complete a mock exam to generate a report from your saved results."}
+      </p>
     </article>
   );
 }
 
-function IconButton({ label, children }) {
+function IconButton({ label, onClick, children }) {
   return (
     <button
       aria-label={label}
       title={label}
+      type="button"
+      onClick={onClick}
       className="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-gray-600 transition hover:border-blue-200 hover:text-blue-700"
     >
       {children}

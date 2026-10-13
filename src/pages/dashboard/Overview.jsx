@@ -17,6 +17,7 @@ import {
   TrendingUp,
   Trophy,
 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { getMockAttempts } from "../../services/studyContentService";
 import StatCard from "../../components/StatCard";
@@ -35,6 +36,18 @@ const SUBJECT_ICONS = {
   RME: <Book size={20} />,
 };
 
+const parseAttemptDate = (value) => {
+  if (!value) return null;
+
+  if (typeof value?.toDate === "function") {
+    const date = value.toDate();
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
 // Process mock attempts data
 function processOverviewData(attempts) {
   if (!attempts || attempts.length === 0) {
@@ -51,13 +64,19 @@ function processOverviewData(attempts) {
     };
   }
 
+  const orderedAttempts = [...attempts].sort((first, second) => {
+    const firstDate = parseAttemptDate(first.completedAt)?.getTime() || 0;
+    const secondDate = parseAttemptDate(second.completedAt)?.getTime() || 0;
+    return secondDate - firstDate;
+  });
+
   // Calculate stats
-  const mockCount = attempts.length;
-  const avgScore = Math.round(attempts.reduce((sum, a) => sum + (a.score || 0), 0) / attempts.length);
+  const mockCount = orderedAttempts.length;
+  const avgScore = Math.round(orderedAttempts.reduce((sum, attempt) => sum + (Number(attempt.score) || 0), 0) / orderedAttempts.length);
 
   // Group by subject
   const subjectScores = {};
-  attempts.forEach((attempt) => {
+  orderedAttempts.forEach((attempt) => {
     const subject = attempt.subjectName || "Unknown";
     if (!subjectScores[subject]) {
       subjectScores[subject] = [];
@@ -72,7 +91,7 @@ function processOverviewData(attempts) {
   // Calculate subject data
   const subjects = Object.entries(subjectScores).map(([name, scores]) => {
     const avgSubjectScore = Math.round(scores.reduce((s, a) => s + a.score, 0) / scores.length);
-    const lastScore = scores[scores.length - 1].score;
+    const lastScore = scores[0].score;
     const mastery = avgSubjectScore;
     const status = avgSubjectScore >= 80 ? "Strong" : avgSubjectScore >= 60 ? "Average" : "Critical";
 
@@ -91,40 +110,49 @@ function processOverviewData(attempts) {
   const weakestSubject = sortedByScore[sortedByScore.length - 1]?.name || "Unknown";
 
   // Recent results (last 5)
-  const recentResults = attempts.slice(-5).reverse().map((attempt) => {
-    const daysAgo = Math.floor((new Date() - (attempt.completedAt?.toDate?.() || new Date(attempt.completedAt))) / (1000 * 60 * 60 * 24));
+  const recentResults = orderedAttempts.slice(0, 5).map((attempt, index) => {
+    const completedAt = parseAttemptDate(attempt.completedAt);
+    const daysAgo = completedAt ? Math.max(0, Math.floor((new Date() - completedAt) / (1000 * 60 * 60 * 24))) : 0;
     const meta = daysAgo === 0 ? "Completed today" : daysAgo === 1 ? "Completed yesterday" : `Completed ${daysAgo}d ago`;
+    const previousAttempt = orderedAttempts
+      .slice(index + 1)
+      .find((olderAttempt) => olderAttempt.subjectName === attempt.subjectName);
+    const score = Number(attempt.score) || 0;
+    const scoreDifference = previousAttempt ? score - (Number(previousAttempt.score) || 0) : null;
 
     return {
-      title: `${attempt.subjectName} Mock`,
+      id: attempt.id,
+      title: `${attempt.subjectName || "Mock"} Mock`,
       meta,
-      score: `${attempt.score}%`,
-      delta: "+5 XP",
+      score: `${score}%`,
+      delta: scoreDifference === null
+        ? "First attempt"
+        : `${scoreDifference > 0 ? "+" : ""}${scoreDifference} pts vs last`,
       icon: <CheckCircle2 size={18} />,
-      color: attempt.score >= 60 ? "text-emerald-600 bg-emerald-50" : "text-orange-600 bg-orange-50",
+      color: score >= 60 ? "text-emerald-600 bg-emerald-50" : "text-orange-600 bg-orange-50",
     };
   });
 
-  // Generate trend data
-  const last7Attempts = attempts.slice(-7);
-  const trendData = last7Attempts.map((attempt, idx) => ({
+  const trendData = orderedAttempts.slice(0, 7).reverse().map((attempt, idx) => ({
     label: `Exam ${idx + 1}`,
-    height: `${Math.min((attempt.score / 100) * 100, 100)}%`,
-    color: attempt.score >= 70 ? "bg-blue-700" : attempt.score >= 50 ? "bg-blue-500" : "bg-blue-300",
+    height: `${Math.max(0, Math.min(Number(attempt.score) || 0, 100))}%`,
+    score: Number(attempt.score) || 0,
+    color: Number(attempt.score) >= 70 ? "bg-blue-700" : Number(attempt.score) >= 50 ? "bg-blue-500" : "bg-blue-300",
   }));
 
   // Calculate streak (consecutive days)
   let streak = 0;
   const uniqueDates = new Set();
-  attempts.forEach((attempt) => {
-    const date = attempt.completedAt?.toDate?.() || new Date(attempt.completedAt);
-    const dateString = date.toISOString().split('T')[0];
+  orderedAttempts.forEach((attempt) => {
+    const date = parseAttemptDate(attempt.completedAt);
+    if (!date) return;
+    const dateString = date.toISOString().split("T")[0];
     uniqueDates.add(dateString);
   });
   streak = Math.min(uniqueDates.size, 7); // Max 7-day streak
 
   // Estimate questions answered
-  const totalQuestions = attempts.reduce((sum, a) => sum + (a.totalQuestions || 0), 0);
+  const totalQuestions = orderedAttempts.reduce((sum, attempt) => sum + (Number(attempt.totalQuestions) || 0), 0);
 
   return {
     totalQuestionsAnswered: totalQuestions,
@@ -135,25 +163,34 @@ function processOverviewData(attempts) {
     strongestSubject,
     subjects,
     recentResults,
-    trendData: trendData.length > 0 ? trendData : generateDefaultTrend(),
+    trendData,
   };
 }
 
-// Default trend if no data
-function generateDefaultTrend() {
-  return [
-    { label: "Week 1", height: "38%", color: "bg-blue-200" },
-    { label: "Week 2", height: "52%", color: "bg-blue-300" },
-    { label: "Week 3", height: "47%", color: "bg-blue-300" },
-    { label: "Week 3", height: "66%", color: "bg-blue-400" },
-    { label: "Week 4", height: "80%", color: "bg-blue-700" },
-    { label: "Week 4", height: "70%", color: "bg-blue-600" },
-    { label: "Current", height: "85%", color: "bg-emerald-700" },
-  ];
+async function getLeaderboard(user) {
+  const endpoint = import.meta.env.VITE_LEADERBOARD_ENDPOINT
+    || "https://us-central1-bece-prep.cloudfunctions.net/leaderboard";
+  const token = await user.getIdToken();
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({}),
+  });
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data?.error || "Unable to load leaderboard.");
+  }
+
+  return data;
 }
 
 const Overview = () => {
-  const { user } = useAuth();
+  const { user, isPremium } = useAuth();
+  const navigate = useNavigate();
   const firstName = user?.displayName?.split(" ")[0] || "Student";
 
   const { data: attempts = [], isLoading } = useQuery({
@@ -162,13 +199,31 @@ const Overview = () => {
     enabled: Boolean(user?.uid),
   });
 
+  const {
+    data: leaderboardData,
+    isLoading: leaderboardLoading,
+    isError: leaderboardError,
+  } = useQuery({
+    queryKey: ["leaderboard", user?.uid],
+    queryFn: () => getLeaderboard(user),
+    enabled: Boolean(user?.uid),
+  });
+
   const data = processOverviewData(attempts);
+  const leaderboard = leaderboardData?.entries || [];
+
+  const handleSubjectAction = (subjectName) => {
+    navigate("/dashboard/reports", { state: { focusSubject: subjectName } });
+  };
+
+  const handleContinuePractice = () => navigate("/dashboard/mock-exams");
+  const handleTakeMockExam = () => navigate("/dashboard/mock-exams");
 
   return (
     <div className="space-y-8 pb-10">
       <section className="relative overflow-hidden rounded-3xl bg-blue-700 text-white shadow-xl shadow-blue-100">
         <div className="absolute inset-y-0 right-0 hidden w-[34%] bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80')] bg-cover bg-center opacity-35 md:block" />
-        <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-blue-900/50 to-transparent md:block" />
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-linear-to-l from-blue-900/50 to-transparent md:block" />
 
         <div className="relative z-10 max-w-3xl px-6 py-8 md:px-12 md:py-11">
           <p className="text-sm font-semibold text-blue-100">
@@ -187,11 +242,19 @@ const Overview = () => {
               : "Take your first mock exam to get started and see your progress."}
           </p>
           <div className="mt-7 flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-black text-blue-700 shadow-md transition hover:bg-blue-50">
+            <button
+              type="button"
+              onClick={handleContinuePractice}
+              className="flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-black text-blue-700 shadow-md transition hover:bg-blue-50"
+            >
               <PlayCircle size={18} />
               Continue Practice
             </button>
-            <button className="flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:bg-white/15">
+            <button
+              type="button"
+              onClick={handleTakeMockExam}
+              className="flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-black text-white transition hover:bg-white/15"
+            >
               <Sparkles size={18} />
               Take Mock Exam
             </button>
@@ -244,15 +307,23 @@ const Overview = () => {
             <h3 className="text-lg font-bold text-gray-950">
               Subject Performance
             </h3>
-            <button className="flex items-center gap-1 text-sm font-black text-blue-700 hover:underline">
+            <Link
+              to="/dashboard/reports"
+              className="flex items-center gap-1 text-sm font-black text-blue-700 hover:underline"
+            >
               View Detailed Report <ArrowRight size={15} />
-            </button>
+            </Link>
           </div>
 
           {data.subjects.length > 0 ? (
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {data.subjects.map((subject) => (
-                <SubjectCard key={subject.name} {...subject} />
+                <SubjectCard
+                  key={subject.name}
+                  {...subject}
+                  onReview={handleSubjectAction}
+                  onPractice={handleSubjectAction}
+                />
               ))}
             </div>
           ) : (
@@ -264,7 +335,7 @@ const Overview = () => {
           )}
         </div>
 
-        <AIFocusCard />
+        <AIFocusCard attempts={attempts} isPremium={isPremium} />
       </section>
 
       <section className="grid grid-cols-1 gap-8 xl:grid-cols-3">
@@ -278,28 +349,36 @@ const Overview = () => {
                 {data.mockExamsTaken > 0 ? "Your progress across exams" : "No data yet"}
               </p>
             </div>
-            <button className="rounded-lg bg-slate-100 px-4 py-2 text-xs font-black text-gray-800">
-              Recent
-            </button>
+            <span className="rounded-lg bg-slate-100 px-4 py-2 text-xs font-black text-gray-800">
+              Latest 7 exams
+            </span>
           </div>
 
-          <div className="flex h-72 items-end gap-3 md:gap-5">
-            {data.trendData.map((bar, index) => (
-              <div
-                key={`${bar.label}-${index}`}
-                className="flex h-full flex-1 flex-col justify-end"
-              >
+          {data.trendData.length > 0 ? (
+            <div className="flex h-72 items-end gap-3 md:gap-5">
+              {data.trendData.map((bar, index) => (
                 <div
-                  className={`${bar.color} w-full rounded-t-lg transition-all hover:opacity-80`}
-                  style={{ height: bar.height }}
-                  title={bar.label}
-                />
-                <p className="mt-4 text-center text-[10px] font-black uppercase text-gray-500">
-                  {bar.label}
-                </p>
-              </div>
-            ))}
-          </div>
+                  key={`${bar.label}-${index}`}
+                  className="flex h-full flex-1 flex-col justify-end"
+                  aria-label={`${bar.label}: ${bar.score}%`}
+                >
+                  <div
+                    className={`${bar.color} w-full rounded-t-lg transition-all hover:opacity-80`}
+                    style={{ height: bar.height }}
+                    title={`${bar.label}: ${bar.score}%`}
+                  />
+                  <p className="mt-4 text-center text-[10px] font-black uppercase text-gray-500">
+                    {bar.label}
+                  </p>
+                  <p className="text-center text-xs font-bold text-gray-700">{bar.score}%</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-72 items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50 text-center text-sm text-gray-500">
+              Complete a mock exam to see your score trend.
+            </div>
+          )}
         </div>
 
         <div className="space-y-6">
@@ -309,9 +388,9 @@ const Overview = () => {
             </h3>
             {data.recentResults.length > 0 ? (
               <div className="space-y-5">
-                {data.recentResults.map((result) => (
+                {data.recentResults.map((result, index) => (
                   <div
-                    key={result.title}
+                    key={result.id || `${result.title}-${index}`}
                     className="flex items-center justify-between gap-4"
                   >
                     <div className="flex min-w-0 items-center gap-3">
@@ -349,44 +428,40 @@ const Overview = () => {
             <div className="mb-5 flex items-center justify-between">
               <h3 className="text-lg font-bold text-gray-950">Leaderboard</h3>
               <p className="text-[10px] font-black uppercase text-blue-700">
-                Region: Greater Accra
+                {leaderboardData?.participantCount || 0} participants
               </p>
             </div>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 rounded-xl bg-indigo-50 p-3">
-                <span className="text-xs font-black text-blue-700">1st</span>
-                <img
-                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
-                    user?.displayName || "Study Vault"
-                  )}&background=1d4ed8&color=fff`}
-                  alt=""
-                  className="h-9 w-9 rounded-full"
-                />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-black text-gray-950">
-                    {user?.displayName || "Kwame Mensah"} (You)
-                  </p>
-                  <p className="text-[11px] text-gray-500">{data.mockExamsTaken * 100} XP</p>
-                </div>
-                <Trophy size={16} className="text-blue-700" />
-              </div>
-              <div className="flex items-center gap-3 p-3">
-                <span className="text-xs font-black text-gray-700">2nd</span>
-                <img
-                  src="https://ui-avatars.com/api/?name=Abena+Serwaa&background=047857&color=fff"
-                  alt=""
-                  className="h-9 w-9 rounded-full"
-                />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-black text-gray-950">
-                    Abena Serwaa
-                  </p>
-                  <p className="text-[11px] text-gray-500">2,480 XP</p>
-                </div>
-                <span className="text-[11px] font-bold text-gray-500">
-                  -{(data.mockExamsTaken * 100) - 2480} XP
-                </span>
-              </div>
+              {leaderboardLoading ? (
+                <p className="py-6 text-center text-sm text-gray-500">Loading leaderboard…</p>
+              ) : leaderboardError ? (
+                <p className="py-6 text-center text-sm text-red-600">Leaderboard is temporarily unavailable.</p>
+              ) : leaderboard.length > 0 ? (
+                leaderboard.map((entry) => (
+                  <div
+                    key={`${entry.rank}-${entry.name}`}
+                    className={`flex items-center gap-3 rounded-xl p-3 ${entry.isCurrentUser ? "bg-blue-50" : "bg-white"}`}
+                  >
+                    <span className="w-7 text-xs font-black text-blue-700">{entry.rank}</span>
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURIComponent(entry.name)}&background=${entry.isCurrentUser ? "1d4ed8" : "047857"}&color=fff`}
+                      alt=""
+                      className="h-9 w-9 rounded-full"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-xs font-black text-gray-950">
+                        {entry.name} {entry.isCurrentUser ? "(You)" : ""}
+                      </p>
+                      <p className="text-[11px] text-gray-500">
+                        {entry.averageScore}% average · {entry.attemptCount} mock{entry.attemptCount === 1 ? "" : "s"}
+                      </p>
+                    </div>
+                    {entry.isCurrentUser && <Trophy size={16} className="text-blue-700" />}
+                  </div>
+                ))
+              ) : (
+                <p className="py-6 text-center text-sm text-gray-500">Complete a mock exam to join the leaderboard.</p>
+              )}
             </div>
           </div>
         </div>

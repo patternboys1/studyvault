@@ -1,48 +1,98 @@
-import { Zap, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Zap, ArrowRight, Crown, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { getStudyRecommendations } from "../services/aiRecommendationService";
 
-const AIFocusCard = () => {
-  const recommendations = [
-    {
-      label: "Focus Topic",
-      title: "Quadratic Equations (Math)",
-      body: "You missed 4 similar questions in your last practice.",
-      tag: "15 mins",
-    },
-    {
-      label: "Suggested Resource",
-      title: "Science Past Papers (2022)",
-      body: "Master the Integrated Science trends from last year.",
-      tag: "40 questions",
-    },
-  ];
+const AIFocusCard = ({ attempts = [], isPremium = true }) => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [recommendations, setRecommendations] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadRecommendations = async () => {
+      setIsLoading(true);
+      const nextRecommendations = await getStudyRecommendations(attempts, {
+        user,
+        allowRemote: isPremium,
+      });
+
+      if (active) {
+        setRecommendations(nextRecommendations);
+        setIsLoading(false);
+      }
+    };
+
+    loadRecommendations();
+
+    return () => {
+      active = false;
+    };
+  }, [attempts, user, isPremium]);
+
+  const handleAiAction = () => {
+    if (isPremium) {
+      navigate("/dashboard/mock-exams");
+      return;
+    }
+
+    navigate("/dashboard/upgrade");
+  };
 
   return (
     <div className="bg-slate-950 rounded-3xl p-6 text-white shadow-xl h-full flex flex-col">
-      <div className="flex items-center gap-3 mb-6">
-        <Zap className="text-emerald-400" size={21} />
-        <h3 className="font-bold text-lg">AI Focus</h3>
+      <div className="mb-6 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <Zap className="text-emerald-400" size={21} />
+          <h3 className="font-bold text-lg">AI Focus</h3>
+        </div>
+
+        <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-widest text-emerald-300">
+          {isPremium ? <Crown size={12} /> : <Sparkles size={12} />}
+          {isPremium ? "Pro" : "Lite"}
+        </span>
       </div>
 
       <div className="space-y-4 flex-1">
-        {recommendations.map((item, index) => (
-          <div key={index} className="bg-white/10 border border-white/10 p-4 rounded-xl hover:bg-white/15 transition-colors cursor-pointer group">
-            <p className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-300 mb-2">
-              {item.label}
-            </p>
-            <h4 className="font-bold text-sm text-slate-100">{item.title}</h4>
-            <p className="text-xs text-slate-400 mt-2 leading-relaxed">{item.body}</p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase bg-emerald-300 text-emerald-950 px-3 py-1 rounded">
-                {item.tag}
-              </span>
-              <ArrowRight size={15} className="text-slate-400 group-hover:text-white" />
-            </div>
+        {isLoading ? (
+          <div className="space-y-3 animate-pulse">
+            <div className="h-20 rounded-xl bg-white/10" />
+            <div className="h-20 rounded-xl bg-white/10" />
           </div>
-        ))}
+        ) : (
+          recommendations.map((item, index) => (
+            <button
+              key={`${item.label}-${index}`}
+              type="button"
+              onClick={handleAiAction}
+              className="w-full rounded-xl border border-white/10 bg-white/10 p-4 text-left transition-colors hover:bg-white/15 group"
+            >
+              <p className="mb-2 text-[10px] font-extrabold uppercase tracking-widest text-emerald-300">
+                {item.label}
+              </p>
+              <h4 className="font-bold text-sm text-slate-100">{item.title}</h4>
+              <p className="mt-2 text-xs text-slate-400 leading-relaxed">{item.body}</p>
+              <div className="mt-4 flex items-center justify-between">
+                <span className="rounded bg-emerald-300 px-3 py-1 text-[10px] font-black uppercase text-emerald-950">
+                  {item.tag}
+                </span>
+                <ArrowRight size={15} className="text-slate-400 group-hover:text-white" />
+              </div>
+            </button>
+          ))
+        )}
       </div>
 
-      <button className="w-full mt-6 py-4 bg-emerald-300 hover:bg-emerald-200 rounded-xl text-sm font-black text-slate-950 flex items-center justify-center gap-2 transition-all">
-        Generate Personal Mock
+      <button
+        type="button"
+        onClick={handleAiAction}
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-300 py-4 text-sm font-black text-slate-950 transition-all hover:bg-emerald-200"
+      >
+        {isPremium ? "Generate Personal Mock" : "Upgrade to Pro"}
+        <ArrowRight size={16} />
       </button>
     </div>
   );

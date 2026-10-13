@@ -217,6 +217,11 @@ function PracticeMode({ onBack, paper, questions, isLoading }) {
         {isSolutionVisible && (
           <div className="mt-8 p-6 bg-emerald-50 border border-emerald-100 rounded-2xl animate-in fade-in slide-in-from-bottom-4">
             <h4 className="flex items-center gap-2 text-emerald-800 font-black mb-3"><Lightbulb size={20} /> Verbatim Solution:</h4>
+            {isTheory && (question.answerImageUrl || question.modelAnswerImageUrl || question.answerImage) && (
+              <div className="mb-5 flex justify-center rounded-2xl border border-emerald-200 bg-white p-4">
+                <img src={question.answerImageUrl || question.modelAnswerImageUrl || question.answerImage} alt="Model answer diagram" className="max-h-80 object-contain" />
+              </div>
+            )}
             <div className="text-emerald-900 whitespace-pre-wrap leading-relaxed font-medium">
               {isTheory ? question.modelAnswer : `Correct Answer: ${question.correctAnswer}`}
             </div>

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   ArrowLeft,
@@ -162,6 +162,7 @@ function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
   const [timeRemaining, setTimeRemaining] = useState(durationInSeconds);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [showSubmitPrompt, setShowSubmitPrompt] = useState(false);
+  const submitPromptRef = useRef(null);
 
   useEffect(() => {
     if (hasSubmitted || isLoading || questions.length === 0) return undefined;
@@ -178,6 +179,12 @@ function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
     }, 1000);
     return () => window.clearInterval(interval);
   }, [hasSubmitted, isLoading, questions.length]);
+
+  useEffect(() => {
+    if (!showSubmitPrompt) return;
+    submitPromptRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    submitPromptRef.current?.focus({ preventScroll: true });
+  }, [showSubmitPrompt]);
 
   if (isLoading) return <LoadingCard label="Preparing your mock exam..." />;
 
@@ -228,7 +235,7 @@ function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
       </section>
 
       {showSubmitPrompt && (
-        <section className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
+        <section ref={submitPromptRef} tabIndex={-1} aria-live="polite" className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
           <div><p className="font-black text-amber-950">Ready to submit your answers?</p><p className="mt-1 text-sm text-amber-900">You have answered {answeredCount} of {questions.length} questions.</p></div>
           <div className="flex gap-3">
             <button type="button" onClick={() => setShowSubmitPrompt(false)} className="rounded-xl border border-amber-300 bg-white px-4 py-3 text-sm font-black text-amber-900">Keep working</button>
@@ -304,6 +311,7 @@ function TheoryExamSession({ paper, questions, isLoading, onExit }) {
   const [timeRemaining, setTimeRemaining] = useState(durationInSeconds);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [showSubmitPrompt, setShowSubmitPrompt] = useState(false);
+  const submitPromptRef = useRef(null);
 
   useEffect(() => {
     if (hasSubmitted || isLoading || questions.length === 0) return undefined;
@@ -320,6 +328,12 @@ function TheoryExamSession({ paper, questions, isLoading, onExit }) {
     }, 1000);
     return () => window.clearInterval(interval);
   }, [hasSubmitted, isLoading, questions.length]);
+
+  useEffect(() => {
+    if (!showSubmitPrompt) return;
+    submitPromptRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    submitPromptRef.current?.focus({ preventScroll: true });
+  }, [showSubmitPrompt]);
 
   if (isLoading) return <LoadingCard label="Preparing your theory mock..." />;
 
@@ -369,7 +383,7 @@ function TheoryExamSession({ paper, questions, isLoading, onExit }) {
       </section>
 
       {showSubmitPrompt && (
-        <section className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
+        <section ref={submitPromptRef} tabIndex={-1} aria-live="polite" className="flex flex-col gap-4 rounded-2xl border border-amber-200 bg-amber-50 p-5 md:flex-row md:items-center md:justify-between">
           <div><p className="font-black text-amber-950">Ready to review the marking guide?</p><p className="mt-1 text-sm text-amber-900">You have drafted {answeredCount} of {questions.length} responses.</p></div>
           <div className="flex gap-3"><button type="button" onClick={() => setShowSubmitPrompt(false)} className="rounded-xl border border-amber-300 bg-white px-4 py-3 text-sm font-black text-amber-900">Keep writing</button><button type="button" onClick={() => setHasSubmitted(true)} className="rounded-xl bg-amber-700 px-4 py-3 text-sm font-black text-white hover:bg-amber-800">Review answers</button></div>
         </section>
@@ -431,7 +445,23 @@ function TheoryResults({ paper, questions, responses, onRestart, onExit }) {
       <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Retake theory</button></div></div>
         <div className="mt-7 space-y-5">
-          {questions.map((question, index) => <article key={question.id} className="rounded-2xl border border-slate-100 bg-slate-50 p-5"><p className="text-sm font-black text-blue-700">Question {question.number || index + 1}</p><p className="mt-2 font-bold leading-relaxed text-gray-900">{question.questionText}</p>{question.imageUrl && <div className="mt-4 flex justify-center rounded-2xl border bg-white p-5"><img src={question.imageUrl} alt="Question diagram" className="max-h-80 object-contain" /></div>}{responses[question.id]?.trim() && <div className="mt-4 rounded-xl border border-blue-100 bg-white p-4"><p className="text-xs font-black uppercase tracking-widest text-blue-700">Your response</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">{responses[question.id]}</p></div>}<div className="mt-4 rounded-xl bg-emerald-50 p-4"><p className="text-xs font-black uppercase tracking-widest text-emerald-700">Model answer</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-emerald-950">{question.modelAnswer || "No model answer has been added yet."}</p></div></article>)}
+          {questions.map((question, index) => {
+            const modelAnswerImage = question.answerImageUrl || question.modelAnswerImageUrl || question.answerImage;
+
+            return (
+              <article key={question.id} className="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                <p className="text-sm font-black text-blue-700">Question {question.number || index + 1}</p>
+                <p className="mt-2 font-bold leading-relaxed text-gray-900">{question.questionText}</p>
+                {question.imageUrl && <div className="mt-4 flex justify-center rounded-2xl border bg-white p-5"><img src={question.imageUrl} alt="Question diagram" className="max-h-80 object-contain" /></div>}
+                {responses[question.id]?.trim() && <div className="mt-4 rounded-xl border border-blue-100 bg-white p-4"><p className="text-xs font-black uppercase tracking-widest text-blue-700">Your response</p><p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-gray-700">{responses[question.id]}</p></div>}
+                <div className="mt-4 rounded-xl bg-emerald-50 p-4">
+                  <p className="text-xs font-black uppercase tracking-widest text-emerald-700">Model answer</p>
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-emerald-950">{question.modelAnswer || "No model answer has been added yet."}</p>
+                  {modelAnswerImage && <div className="mt-4 flex justify-center rounded-2xl border border-emerald-200 bg-white p-4"><img src={modelAnswerImage} alt="Model answer diagram" className="max-h-80 object-contain" /></div>}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
     </div>

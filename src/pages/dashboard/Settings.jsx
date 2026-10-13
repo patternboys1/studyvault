@@ -30,7 +30,7 @@ const studyPreferencesOptions = [
 ];
 
 function Settings() {
-  const { user } = useAuth();
+  const { user, userProfile, isPremium, setUserPlan } = useAuth();
   const { isDark, toggleTheme } = useTheme();
   const [notifications, setNotifications] = useState(
     notificationOptions.reduce((acc, opt) => ({ ...acc, [opt.id]: opt.default }), {})
@@ -83,7 +83,7 @@ function Settings() {
 
       <section className="grid grid-cols-1 gap-8 xl:grid-cols-[360px_1fr]">
         <aside className="space-y-6">
-          <ProfileCard user={user} />
+          <ProfileCard user={user} userProfile={userProfile} isPremium={isPremium} onTogglePremium={setUserPlan} />
           <SecurityCard />
           <ThemeCard isDark={isDark} toggleTheme={toggleTheme} />
         </aside>
@@ -98,7 +98,9 @@ function Settings() {
   );
 }
 
-function ProfileCard({ user }) {
+function ProfileCard({ user, userProfile, isPremium, onTogglePremium }) {
+  const planLabel = isPremium ? "Premium" : "Free";
+
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 text-center shadow-sm dark:border-slate-700 dark:bg-slate-800">
       <img
@@ -115,10 +117,21 @@ function ProfileCard({ user }) {
         {user?.displayName || "Study Vault Student"}
       </h2>
       <p className="mt-1 text-sm font-medium text-gray-500 dark:text-gray-400">
-        JHS 3 Student • Greater Accra
+        {userProfile?.plan ? `${planLabel} plan` : "JHS 3 Student • Greater Accra"}
       </p>
-      <button className="mt-6 w-full rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 transition hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-900/30">
-        Change Photo
+      <div className="mt-4 flex items-center justify-center gap-2">
+        <span className={`inline-flex items-center rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest ${
+          isPremium ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-600"
+        }`}>
+          {planLabel}
+        </span>
+      </div>
+      <button
+        type="button"
+        onClick={() => onTogglePremium(isPremium ? "free" : "premium", isPremium ? null : "monthly")}
+        className="mt-6 w-full rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 transition hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-900/30"
+      >
+        {isPremium ? "Switch to Free" : "Enable Test Premium"}
       </button>
     </article>
   );

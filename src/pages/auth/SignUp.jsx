@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -10,20 +11,32 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const createUserProfile = async (user, fallbackName = "Student") => {
+    const userRef = doc(db, "users", user.uid);
+    await setDoc(
+      userRef,
+      {
+        uid: user.uid,
+        email: user.email || "",
+        displayName: user.displayName || fallbackName,
+        plan: "free",
+        isPremium: false,
+        billingCycle: null,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    );
+  };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     setLoading(true);
     
     try {
-      // 1. Create the user in Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      
-      // 2. Add their Name to their Firebase Auth profile
-      await updateProfile(userCredential.user, {
-        displayName: fullName,
-      });
-
-      console.log("Account created successfully");
+      await updateProfile(userCredential.user, { displayName: fullName });
+      await createUserProfile(userCredential.user, fullName);
       navigate("/dashboard"); 
     } catch (error) {
       alert(error.message);
@@ -35,7 +48,8 @@ export default function Signup() {
   const handleGoogleSignup = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      await createUserProfile(result.user, result.user.displayName || "Student");
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);

@@ -80,23 +80,33 @@ export const getQuestionsByPaper = async (subjectId, year, type = "Objectives") 
     const q = query(questionsRef, orderBy("number", "asc"));
     const snapshot = await getDocs(q);
 
+    const imageFields = ["imageUrl", "answerImageUrl", "modelAnswerImageUrl", "answerImage"];
+
+    const resolveStorageField = async (value) => {
+      if (!value || !String(value).startsWith("gs://")) {
+        return value;
+      }
+
+      try {
+        const imageRef = ref(storage, value);
+        return await getDownloadURL(imageRef);
+      } catch (err) {
+        console.warn(`Could not resolve Firebase image: ${value}`, err.message);
+        return null;
+      }
+    };
+
     // 2. Resolve gs:// links to https:// download URLs
     const questions = await Promise.all(
       snapshot.docs.map(async (docSnap) => {
         const data = docSnap.data();
-        
-        // If an image exists and uses the internal Firebase scheme
-        if (data.imageUrl && data.imageUrl.startsWith("gs://")) {
-          try {
-            const imageRef = ref(storage, data.imageUrl);
-            data.imageUrl = await getDownloadURL(imageRef);
-          } catch (err) {
-            console.warn(` Could not resolve image for Q${data.number}:`, err.message);
-            // Keep the data but set image to null so UI handles it gracefully
-            data.imageUrl = null; 
+
+        for (const field of imageFields) {
+          if (data[field]) {
+            data[field] = await resolveStorageField(data[field]);
           }
         }
-        
+
         return { id: docSnap.id, ...data };
       })
     );

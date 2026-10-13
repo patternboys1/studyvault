@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Check,
@@ -12,6 +14,41 @@ import {
   X,
   TrendingUp,
 } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+
+const getPlanAmount = (planId) => {
+  if (planId === "monthly") return 49;
+  if (planId === "yearly") return 499;
+  return 0;
+};
+
+let paystackScriptPromise;
+
+const loadPaystackScript = () => {
+  if (window.PaystackPop) return Promise.resolve();
+  if (paystackScriptPromise) return paystackScriptPromise;
+
+  paystackScriptPromise = new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://js.paystack.co/v2/inline.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.PaystackPop) {
+        resolve();
+      } else {
+        paystackScriptPromise = null;
+        reject(new Error("Paystack checkout loaded without its payment API."));
+      }
+    };
+    script.onerror = () => {
+      paystackScriptPromise = null;
+      reject(new Error("Unable to load Paystack checkout. Check your connection or content blocker."));
+    };
+    document.body.appendChild(script);
+  });
+
+  return paystackScriptPromise;
+};
 
 const pricingPlans = [
   {
@@ -100,6 +137,121 @@ const comparison = [
 ];
 
 function Upgrade() {
+  const navigate = useNavigate();
+  const { user, userProfile, setUserPlan, isPremium } = useAuth();
+  const [processingPlan, setProcessingPlan] = useState(null);
+  const [paymentMessage, setPaymentMessage] = useState("");
+
+  useEffect(() => {
+    loadPaystackScript().catch((error) => {
+      setPaymentMessage(error.message || "Unable to load Paystack checkout.");
+    });
+  }, []);
+
+  const handleSelectPlan = async (planId) => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
+    if (planId === "free") {
+      await setUserPlan("free", null);
+      navigate("/dashboard");
+      return;
+    }
+
+    const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY;
+    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT;
+
+    if (!publicKey) {
+      setPaymentMessage("Add your Paystack public key in VITE_PAYSTACK_PUBLIC_KEY to enable live payments.");
+      return;
+    }
+
+    if (!verifyEndpoint) {
+      setPaymentMessage("Set VITE_PAYSTACK_VERIFY_ENDPOINT to your deployed Cloud Function URL before enabling premium payments.");
+      return;
+    }
+
+    if (!window.PaystackPop) {
+      setPaymentMessage("Paystack checkout is still loading. Please try again in a moment.");
+      return;
+    }
+
+    try {
+      setProcessingPlan(planId);
+      setPaymentMessage("");
+
+      const amount = getPlanAmount(planId) * 100;
+      const popup = new window.PaystackPop();
+      popup.newTransaction({
+        key: publicKey,
+        email: user.email || "student@studyvault.app",
+        amount,
+        currency: "GHS",
+        reference: `studyvault-${user.uid}-${Date.now()}`,
+        metadata: {
+          custom_fields: [
+            { display_name: "Plan", variable_name: "plan", value: planId },
+            { display_name: "User UID", variable_name: "user_uid", value: user.uid },
+          ],
+        },
+        onSuccess: (response) => {
+          const reference = response.reference || response.trxref;
+          const verifyPayment = async () => {
+            const token = await user.getIdToken();
+            const verificationResponse = await fetch(verifyEndpoint, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify({ reference, planId }),
+            });
+
+            const verificationData = await verificationResponse.json();
+            if (!verificationResponse.ok) {
+              const providerMessage = verificationData?.details?.message
+                || verificationData?.details?.data?.gateway_response;
+              const amountMismatch = verificationData?.expectedAmount != null
+                ? `Expected GHS ${(verificationData.expectedAmount / 100).toFixed(2)}, received ${verificationData.receivedCurrency || "unknown currency"} ${((verificationData.receivedAmount || 0) / 100).toFixed(2)}.`
+                : "";
+              const message = [
+                verificationData?.error || "Payment verification failed.",
+                providerMessage,
+                amountMismatch,
+                `(HTTP ${verificationResponse.status})`,
+              ].filter(Boolean).join(" ");
+
+              throw new Error(message);
+            }
+
+            await setUserPlan("premium", planId);
+            setPaymentMessage(`Payment verified successfully. Reference: ${reference}`);
+            navigate("/dashboard");
+          };
+
+          verifyPayment()
+            .catch((error) => {
+              setPaymentMessage(error.message || "Payment verification failed. Please contact support.");
+            })
+            .finally(() => setProcessingPlan(null));
+        },
+        onCancel: () => {
+          setProcessingPlan(null);
+          setPaymentMessage("Payment window closed. No charge was made.");
+        },
+        onError: (error) => {
+          setProcessingPlan(null);
+          setPaymentMessage(error.message || "Paystack could not start this transaction.");
+        },
+      });
+    } catch (error) {
+      setPaymentMessage(error.message || "Payment failed. Please try again.");
+      setProcessingPlan(null);
+    }
+  };
+
   return (
     <div className="space-y-12 pb-10">
       {/* Hero Section */}
@@ -123,6 +275,28 @@ function Upgrade() {
         </div>
       </section>
 
+      <section className="rounded-3xl border border-blue-100 bg-white p-6 shadow-sm">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-xs font-black uppercase tracking-widest text-blue-700">Current account status</p>
+            <h2 className="mt-2 text-2xl font-black text-gray-950">
+              {isPremium ? "Premium access unlocked" : "Free plan active"}
+            </h2>
+          </div>
+
+          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-700">
+            <Crown size={16} />
+            {isPremium ? "Pro member" : "Upgrade available"}
+          </div>
+        </div>
+
+        {paymentMessage && (
+          <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-900">
+            {paymentMessage}
+          </div>
+        )}
+      </section>
+
       {/* Pricing Cards */}
       <section className="space-y-6">
         <div className="text-center">
@@ -132,7 +306,17 @@ function Upgrade() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              isCurrentPlan={
+                plan.id === "free"
+                  ? !isPremium
+                  : isPremium && userProfile?.billingCycle === plan.id
+              }
+              onSelectPlan={handleSelectPlan}
+              isProcessing={processingPlan === plan.id}
+            />
           ))}
         </div>
       </section>
@@ -182,7 +366,7 @@ function Upgrade() {
   );
 }
 
-function PricingCard({ plan }) {
+function PricingCard({ plan, isCurrentPlan, onSelectPlan, isProcessing }) {
   const colorClasses = {
     slate: {
       bg: "bg-white",
@@ -247,10 +431,14 @@ function PricingCard({ plan }) {
 
         {/* CTA Button */}
         <button
-          className={`mt-6 w-full rounded-xl px-5 py-3 text-sm font-black transition ${colors.button}`}
+          onClick={() => onSelectPlan(plan.id)}
+          disabled={isCurrentPlan || isProcessing}
+          className={`mt-6 w-full rounded-xl px-5 py-3 text-sm font-black transition ${
+            isCurrentPlan || isProcessing ? "cursor-default bg-slate-200 text-slate-500" : colors.button
+          }`}
         >
-          {plan.buttonText}
-          <ArrowRight size={16} className="ml-2 inline" />
+          {isCurrentPlan ? "Current Plan" : isProcessing ? "Processing..." : plan.buttonText}
+          {!isCurrentPlan && !isProcessing && <ArrowRight size={16} className="ml-2 inline" />}
         </button>
 
         {/* Features */}

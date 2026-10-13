@@ -1,7 +1,6 @@
 import { BookOpen } from "lucide-react";
 
-const SubjectCard = ({ name, lastScore, mastery, icon, status }) => {
-  // Logic to determine colors based on status
+const SubjectCard = ({ name, lastScore, mastery, icon, status, onReview, onPractice }) => {
   const statusStyles = {
     Strong: { bg: "bg-green-100", text: "text-green-700", bar: "bg-green-500" },
     Average: { bg: "bg-orange-100", text: "text-orange-700", bar: "bg-orange-500" },
@@ -9,6 +8,17 @@ const SubjectCard = ({ name, lastScore, mastery, icon, status }) => {
   };
 
   const style = statusStyles[status] || statusStyles.Average;
+
+  const handleClick = () => {
+    if (status === "Critical" && onReview) {
+      onReview(name);
+      return;
+    }
+
+    if (onPractice) {
+      onPractice(name);
+    }
+  };
 
   return (
     <div className="bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-sm transition-hover hover:shadow-md">
@@ -32,9 +42,7 @@ const SubjectCard = ({ name, lastScore, mastery, icon, status }) => {
           <span className="text-gray-400">Mastery</span>
           <span className="text-gray-900">{mastery}%</span>
         </div>
-        {/* Progress Bar Container */}
         <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-          {/* Actual Progress Bar */}
           <div 
             className={`h-full rounded-full transition-all duration-500 ${style.bar}`} 
             style={{ width: `${mastery}%` }}
@@ -42,11 +50,15 @@ const SubjectCard = ({ name, lastScore, mastery, icon, status }) => {
         </div>
       </div>
 
-      <button className={`w-full mt-5 py-2 rounded-lg text-xs font-bold transition-colors ${
-        status === "Critical"
-          ? "bg-blue-600 text-white hover:bg-blue-700"
-          : "border border-blue-100 text-blue-700 hover:bg-blue-50 bg-white"
-      }`}>
+      <button
+        type="button"
+        onClick={handleClick}
+        className={`w-full mt-5 py-2 rounded-lg text-xs font-bold transition-colors ${
+          status === "Critical"
+            ? "bg-blue-600 text-white hover:bg-blue-700"
+            : "border border-blue-100 text-blue-700 hover:bg-blue-50 bg-white"
+        }`}
+      >
         {status === "Critical" ? "Review Errors" : "Practice"}
       </button>
     </div>

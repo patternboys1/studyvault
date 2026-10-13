@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
   AlertTriangle,
@@ -7,6 +8,7 @@ import {
   TrendingUp,
   Calendar,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { getMockAttempts } from "../../services/studyContentService";
 
@@ -23,6 +25,57 @@ const SUBJECT_METADATA = {
   RME: { color: "bg-purple-700", dot: "bg-purple-600" },
 };
 
+const toAttemptDate = (value) => {
+  if (!value) return null;
+  const date = typeof value.toDate === "function" ? value.toDate() : new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
+const startOfWeek = (date) => {
+  const start = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const daysSinceMonday = (start.getDay() + 6) % 7;
+  start.setDate(start.getDate() - daysSinceMonday);
+  return start;
+};
+
+function getScoreTrendBuckets(scoreTrends, period) {
+  const now = new Date();
+  const currentWeek = startOfWeek(now);
+  const buckets = Array.from({ length: 6 }, (_, index) => {
+    const offset = index - 5;
+    const start = period === "monthly"
+      ? new Date(now.getFullYear(), now.getMonth() + offset, 1)
+      : new Date(currentWeek.getFullYear(), currentWeek.getMonth(), currentWeek.getDate() + offset * 7);
+    const end = period === "monthly"
+      ? new Date(start.getFullYear(), start.getMonth() + 1, 1)
+      : new Date(start.getFullYear(), start.getMonth(), start.getDate() + 7);
+
+    return {
+      start,
+      end,
+      label: period === "monthly"
+        ? start.toLocaleDateString("en", { month: "short" })
+        : start.toLocaleDateString("en", { month: "short", day: "numeric" }),
+      scores: [],
+    };
+  });
+
+  scoreTrends.forEach((attempt) => {
+    const date = toAttemptDate(attempt.completedAt);
+    if (!date) return;
+    const bucket = buckets.find((item) => date >= item.start && date < item.end);
+    if (bucket) bucket.scores.push(attempt.value);
+  });
+
+  return buckets
+    .filter((bucket) => bucket.scores.length > 0)
+    .map((bucket) => ({
+      label: bucket.label,
+      value: Math.round(bucket.scores.reduce((sum, score) => sum + score, 0) / bucket.scores.length),
+      attemptCount: bucket.scores.length,
+    }));
+}
+
 // Process attempts data for analytics
 function processAttemptsData(attempts) {
   if (!attempts || attempts.length === 0) {
@@ -35,14 +88,14 @@ function processAttemptsData(attempts) {
   }
 
   // Sort attempts by date (oldest first)
-  const sortedAttempts = [...attempts].sort(
-    (a, b) => (a.completedAt?.toDate?.() || new Date(a.completedAt)) - (b.completedAt?.toDate?.() || new Date(b.completedAt))
+  const sortedAttempts = [...attempts].sort((first, second) =>
+    (toAttemptDate(first.completedAt)?.getTime() || 0)
+      - (toAttemptDate(second.completedAt)?.getTime() || 0)
   );
 
-  // Score trends - last 6 attempts
-  const scoreTrends = sortedAttempts.slice(-6).map((attempt, idx) => ({
-    label: `Exam ${idx + 1}`,
-    value: attempt.score || 0,
+  const scoreTrends = sortedAttempts.map((attempt) => ({
+    completedAt: attempt.completedAt,
+    value: Number(attempt.score) || 0,
   }));
 
   // Subject scores - grouped by subject
@@ -52,7 +105,7 @@ function processAttemptsData(attempts) {
     if (!subjectScores[subject]) {
       subjectScores[subject] = { scores: [], attempts: 0 };
     }
-    subjectScores[subject].scores.push(attempt.score || 0);
+    subjectScores[subject].scores.push(Number(attempt.score) || 0);
     subjectScores[subject].attempts += 1;
   });
 
@@ -91,14 +144,18 @@ function calculateStudyMetrics(attempts) {
     };
   }
 
-  const avgScore = Math.round(attempts.reduce((total, a) => total + (a.score || 0), 0) / attempts.length);
-  const lastAttempt = attempts[attempts.length - 1];
-  const lastDate = lastAttempt.completedAt?.toDate?.() || new Date(lastAttempt.completedAt);
-  const now = new Date();
-  const daysAgo = Math.floor((now - lastDate) / (1000 * 60 * 60 * 24));
+  const avgScore = Math.round(attempts.reduce((total, attempt) => total + (Number(attempt.score) || 0), 0) / attempts.length);
+  const latestAttempt = [...attempts].sort((first, second) =>
+    (toAttemptDate(second.completedAt)?.getTime() || 0)
+      - (toAttemptDate(first.completedAt)?.getTime() || 0)
+  )[0];
+  const lastDate = toAttemptDate(latestAttempt.completedAt);
+  const daysAgo = lastDate ? Math.floor((new Date() - lastDate) / (1000 * 60 * 60 * 24)) : null;
 
   let lastAttemptDate;
-  if (daysAgo === 0) {
+  if (daysAgo === null) {
+    lastAttemptDate = "Unknown date";
+  } else if (daysAgo === 0) {
     lastAttemptDate = "Today";
   } else if (daysAgo === 1) {
     lastAttemptDate = "Yesterday";
@@ -108,11 +165,10 @@ function calculateStudyMetrics(attempts) {
     lastAttemptDate = lastDate.toLocaleDateString();
   }
 
-  // Estimate total hours (assume ~1 hour per exam)
-  const totalHours = attempts.length * 1.0;
+  const questionsAnswered = attempts.reduce((total, attempt) => total + (Number(attempt.answeredCount) || 0), 0);
 
   return {
-    totalHours,
+    questionsAnswered,
     averageScore: avgScore,
     lastAttemptDate,
   };
@@ -120,11 +176,36 @@ function calculateStudyMetrics(attempts) {
 
 function Performance() {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const { data: attempts = [], isLoading: attemptsLoading } = useQuery({
     queryKey: ["mock-attempts", user?.uid],
     queryFn: () => getMockAttempts(user.uid),
     enabled: Boolean(user?.uid),
   });
+
+  const handleExportReport = () => {
+    if (!attempts.length) return;
+
+    const csvRows = [
+      ["subjectName", "score", "correctCount", "totalQuestions", "completedAt"],
+      ...attempts.map((attempt) => [
+        attempt.subjectName || "",
+        attempt.score || 0,
+        attempt.correctCount || 0,
+        attempt.totalQuestions || 0,
+        attempt.completedAt ? new Date(attempt.completedAt.toDate?.() ?? attempt.completedAt).toISOString() : "",
+      ]),
+    ];
+
+    const csvString = csvRows.map((row) => row.map((value) => `"${String(value).replace(/"/g, '""')}"`).join(",")).join("\n");
+    const blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "bece-performance-report.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  };
 
   // Process attempts data for analytics
   const analytics = processAttemptsData(attempts);
@@ -141,11 +222,19 @@ function Performance() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <button className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700">
+          <button
+            type="button"
+            onClick={handleExportReport}
+            className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
+          >
             <Download size={16} />
             Export Report
           </button>
-          <button className="rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800">
+          <button
+            type="button"
+            onClick={() => navigate("/dashboard/mock-exams")}
+            className="rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800"
+          >
             Start Practice Test
           </button>
         </div>
@@ -201,7 +290,8 @@ function ExamReadiness({ attempts, analytics }) {
 }
 
 function ScoreTrends({ analytics }) {
-  const { scoreTrends } = analytics;
+  const [period, setPeriod] = useState("monthly");
+  const scoreTrends = getScoreTrendBuckets(analytics.scoreTrends, period);
 
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
@@ -209,14 +299,18 @@ function ScoreTrends({ analytics }) {
         <div>
           <h2 className="text-2xl font-black text-gray-950">Score Trends</h2>
           <p className="mt-1 text-sm text-gray-500">
-            {scoreTrends.length > 0 ? "Performance over time (last exams)" : "Take mock exams to see your trends"}
+            {scoreTrends.length > 0
+              ? `Average mock score by ${period === "monthly" ? "month" : "week"}`
+              : `No attempts in the last six ${period === "monthly" ? "months" : "weeks"}`}
           </p>
         </div>
-        <div className="flex rounded-full bg-slate-50 p-1 text-xs font-black">
-          <button className="rounded-full bg-white px-4 py-2 text-gray-900 shadow-sm">
+        <div className="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-1 text-xs font-black" role="group" aria-label="Trend time period">
+          <button type="button" aria-pressed={period === "monthly"} onClick={() => setPeriod("monthly")} className={`rounded-md px-4 py-2 ${period === "monthly" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"}`}>
             Monthly
           </button>
-          <button className="px-4 py-2 text-gray-400">Weekly</button>
+          <button type="button" aria-pressed={period === "weekly"} onClick={() => setPeriod("weekly")} className={`rounded-md px-4 py-2 ${period === "weekly" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"}`}>
+            Weekly
+          </button>
         </div>
       </div>
 
@@ -224,14 +318,15 @@ function ScoreTrends({ analytics }) {
         <div className="flex h-full items-end gap-5 border-b border-slate-100 px-4">
           {scoreTrends.length > 0 ? (
             scoreTrends.map((bar) => (
-              <div key={bar.label} className="flex h-full flex-1 flex-col justify-end">
+              <div key={bar.label} className="flex h-full flex-1 flex-col justify-end" title={`${bar.attemptCount} attempt${bar.attemptCount === 1 ? "" : "s"}`}>
                 <div
                   className="rounded-t-xl bg-blue-700/90 transition hover:bg-blue-700"
-                  style={{ height: `${Math.min(bar.value, 100)}%` }}
+                  style={{ height: `${Math.max(3, Math.min(bar.value, 100))}%` }}
                 />
                 <p className="mt-3 text-center text-[11px] font-black uppercase text-gray-500">
                   {bar.label}
                 </p>
+                <p className="text-center text-xs font-bold text-gray-700">{bar.value}%</p>
               </div>
             ))
           ) : (
@@ -301,8 +396,8 @@ function StudyPattern({ attempts }) {
       {attempts.length > 0 ? (
         <>
           <div className="mx-auto mt-7 flex h-32 w-32 flex-col items-center justify-center rounded-full border-4 border-emerald-300 bg-emerald-300 text-emerald-950 shadow-inner">
-            <p className="text-3xl font-black">{studyMetrics.totalHours.toFixed(1)}</p>
-            <p className="text-[10px] font-black uppercase">Hours Total</p>
+            <p className="text-3xl font-black">{studyMetrics.questionsAnswered}</p>
+            <p className="text-[10px] font-black uppercase">Questions Answered</p>
           </div>
 
           <div className="mt-8 flex items-center justify-between">
