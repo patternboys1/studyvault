@@ -1,10 +1,11 @@
 import { onRequest } from "firebase-functions/v2/https";
 import { defineSecret } from "firebase-functions/params";
 import admin from "firebase-admin";
-import OpenAI from "openai";
+import { GoogleGenAI } from "@google/genai";
 
 admin.initializeApp();
 const paystackSecretKey = defineSecret("PAYSTACK_SECRET_KEY");
+const geminiApiKey = defineSecret("GEMINI_API_KEY");
 
 const setCorsHeaders = (res) => {
   res.set("Access-Control-Allow-Origin", "*");
@@ -243,7 +244,7 @@ export const leaderboard = onRequest(async (req, res) => {
   }
 });
 
-export const recommendations = onRequest(async (req, res) => {
+export const recommendations = onRequest({ secrets: [geminiApiKey] }, async (req, res) => {
   setCorsHeaders(res);
 
   if (req.method === "OPTIONS") {
@@ -269,42 +270,70 @@ export const recommendations = onRequest(async (req, res) => {
 
     const attempts = Array.isArray(req.body?.attempts) ? req.body.attempts : [];
 
-    if (!process.env.OPENAI_API_KEY) {
-      return res.json({ recommendations: buildFallbackRecommendations(attempts) });
+    const apiKey = geminiApiKey.value();
+    if (!apiKey) {
+      return res.json({
+        recommendations: buildFallbackRecommendations(attempts),
+        provider: "rules",
+      });
     }
 
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    const gemini = new GoogleGenAI({ apiKey });
     const context = attempts.length > 0
       ? attempts.slice(0, 20).map((attempt) => `${attempt.subjectName || "Unknown"}: ${Number(attempt.score) || 0}%`).join(" | ")
       : "No attempts yet";
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content: "You are an academic coach for BECE students. Respond with valid JSON only. Return an array named recommendations with exactly 2 objects: each object has label, title, body, and tag. Keep the advice concise, practical, and based on score trends."
+    const completion = await gemini.interactions.create({
+      model: "gemini-3.8-flash",
+      store: false,
+      input: `You are an academic coach for BECE students. Give a practical study plan based on these mock scores: ${context}. Return exactly two concise recommendations: one focused on the weakest subject and one that builds confidence in the strongest subject. Each recommendation must have label, title, body, and tag.`,
+      response_format: {
+        type: "text",
+        mime_type: "application/json",
+        schema: {
+          type: "object",
+          properties: {
+            recommendations: {
+              type: "array",
+              minItems: 2,
+              maxItems: 2,
+              items: {
+                type: "object",
+                properties: {
+                  label: { type: "string" },
+                  title: { type: "string" },
+                  body: { type: "string" },
+                  tag: { type: "string" },
+                },
+                required: ["label", "title", "body", "tag"],
+                additionalProperties: false,
+              },
+            },
+          },
+          required: ["recommendations"],
+          additionalProperties: false,
         },
-        {
-          role: "user",
-          content: `Student exam performance: ${context}. Give me a study plan focused on the weakest area and a confidence-building recommendation for the strongest area.`
-        }
-      ],
-      response_format: { type: "json_object" },
-      temperature: 0.7,
+      },
     });
 
-    const rawContent = completion.choices?.[0]?.message?.content || "{}";
+    const rawContent = completion.output_text || "{}";
     const parsed = JSON.parse(rawContent);
-    const recommendations = Array.isArray(parsed?.recommendations) && parsed.recommendations.length > 0
+    const recommendations = Array.isArray(parsed?.recommendations) && parsed.recommendations.length === 2
       ? parsed.recommendations
       : buildFallbackRecommendations(attempts);
 
-    return res.json({ recommendations });
+    return res.json({
+      recommendations,
+      provider: "gemini",
+      model: "gemini-3.8-flash",
+    });
   } catch (error) {
-    console.error("AI recommendation error:", error);
+    console.error("Gemini recommendation error:", error);
 
     const fallbackAttempts = Array.isArray(req.body?.attempts) ? req.body.attempts : [];
-    return res.json({ recommendations: buildFallbackRecommendations(fallbackAttempts) });
+    return res.json({
+      recommendations: buildFallbackRecommendations(fallbackAttempts),
+      provider: "rules",
+    });
   }
 });

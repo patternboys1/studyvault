@@ -79,7 +79,10 @@ export async function getStudyRecommendations(attempts = [], options = {}) {
   const shouldUseRemote = Boolean(endpoint) && options.allowRemote !== false && Boolean(options.user?.uid);
 
   if (!shouldUseRemote) {
-    return buildRuleBasedRecommendations(attempts);
+    return {
+      recommendations: buildRuleBasedRecommendations(attempts),
+      provider: "rules",
+    };
   }
 
   try {
@@ -111,12 +114,22 @@ export async function getStudyRecommendations(attempts = [], options = {}) {
     const recommendations = Array.isArray(data?.recommendations) ? data.recommendations : null;
 
     if (!recommendations || recommendations.length === 0) {
-      return buildRuleBasedRecommendations(attempts);
+      return {
+        recommendations: buildRuleBasedRecommendations(attempts),
+        provider: "rules",
+      };
     }
 
-    return recommendations;
+    return {
+      recommendations,
+      provider: data.provider || "unknown",
+      model: data.model || null,
+    };
   } catch (error) {
     console.warn("AI recommendation request failed. Falling back to local recommendation engine.", error);
-    return buildRuleBasedRecommendations(attempts);
+    return {
+      recommendations: buildRuleBasedRecommendations(attempts),
+      provider: "rules",
+    };
   }
 }

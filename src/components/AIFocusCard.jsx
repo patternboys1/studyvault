@@ -8,6 +8,7 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
+  const [recommendationProvider, setRecommendationProvider] = useState("rules");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,13 +16,14 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
 
     const loadRecommendations = async () => {
       setIsLoading(true);
-      const nextRecommendations = await getStudyRecommendations(attempts, {
+      const result = await getStudyRecommendations(attempts, {
         user,
         allowRemote: isPremium,
       });
 
       if (active) {
-        setRecommendations(nextRecommendations);
+        setRecommendations(result.recommendations);
+        setRecommendationProvider(result.provider);
         setIsLoading(false);
       }
     };
@@ -50,10 +52,32 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
           <h3 className="font-bold text-lg">AI Focus</h3>
         </div>
 
-        <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-widest text-emerald-300">
-          {isPremium ? <Crown size={12} /> : <Sparkles size={12} />}
-          {isPremium ? "Pro" : "Lite"}
-        </span>
+        <div className="flex flex-col items-end gap-2">
+          <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-widest text-emerald-300">
+            {isPremium ? <Crown size={12} /> : <Sparkles size={12} />}
+            {isPremium ? "Pro" : "Lite"}
+          </span>
+          <span
+            role="status"
+            className={`rounded-full px-2.5 py-1 text-[9px] font-black uppercase tracking-widest ${
+              isLoading
+                ? "bg-white/10 text-slate-300"
+                : recommendationProvider === "gemini"
+                  ? "bg-emerald-300 text-emerald-950"
+                  : "bg-amber-300 text-amber-950"
+            }`}
+          >
+            {isLoading
+              ? "Checking AI"
+              : recommendationProvider === "gemini"
+                ? "Gemini 3.8 Flash"
+                : recommendationProvider === "rules" && isPremium
+                  ? "Rule fallback"
+                  : recommendationProvider === "rules"
+                    ? "Rule preview"
+                    : "Source unknown"}
+          </span>
+        </div>
       </div>
 
       <div className="space-y-4 flex-1">
