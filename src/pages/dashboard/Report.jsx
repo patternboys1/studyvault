@@ -158,15 +158,15 @@ function processReportData(attempts) {
   // Generate recommendation
   const bestSubject = Object.entries(subjectScores).reduce((best, [subject, scores]) => {
     const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-    return !best.subject || avg > best.avg ? { subject, avg } : best;
+    return !best || avg > best.avg ? { subject, avg } : best;
   }, null);
 
   const worstSubject = Object.entries(subjectScores).reduce((worst, [subject, scores]) => {
     const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-    return !worst.subject || avg < worst.avg ? { subject, avg } : worst;
+    return !worst || avg < worst.avg ? { subject, avg } : worst;
   }, null);
 
-  const recommendation = bestSubject.subject && worstSubject.subject
+  const recommendation = bestSubject?.subject && worstSubject?.subject
     ? `Your strongest area is ${bestSubject.subject}. Focus on improving ${worstSubject.subject} for your next exam.`
     : "Keep taking mock exams to get personalized recommendations.";
 
