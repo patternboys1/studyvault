@@ -1,5 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -38,6 +40,8 @@ const normalizeOptions = (options = []) => {
 
 // --- MAIN COMPONENT ---
 export default function PastQuestions() {
+  const { isPremium } = useAuth();
+  const navigate = useNavigate();
   const [mode, setMode] = useState("library");
   const [selectedPaperId, setSelectedPaperId] = useState(null);
   const [filters, setFilters] = useState({
@@ -106,6 +110,8 @@ export default function PastQuestions() {
         onBack={() => setMode("library")}
         paper={selectedPaper}
         questions={questions}
+        isPremium={isPremium}
+        onUpgrade={() => navigate("/dashboard/upgrade")}
       />
     );
   }
@@ -127,7 +133,7 @@ export default function PastQuestions() {
         <FilterDropdown 
           label="Year" 
           value={filters.year} 
-          options={["All Years", "2025", "2024", "2023", "2022"]} 
+          options={["All Years", "2025", "2024", "2023", "2022", "2021", "2020"]} 
           onChange={(v) => setFilters(f => ({ ...f, year: v }))} 
         />
         <FilterDropdown 
@@ -161,7 +167,7 @@ export default function PastQuestions() {
   );
 }
 
-function PracticeMode({ onBack, paper, questions, isLoading }) {
+function PracticeMode({ onBack, paper, questions, isLoading, isPremium, onUpgrade }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [revealedSolutions, setRevealedSolutions] = useState({});
@@ -228,12 +234,14 @@ function PracticeMode({ onBack, paper, questions, isLoading }) {
           </div>
         )}
 
+        {!isPremium && <p className="mt-6 rounded-xl border border-blue-100 bg-blue-50 p-4 text-sm font-medium text-blue-900">Marking schemes and detailed explanations are included with Pro.</p>}
+
         <div className="mt-10 pt-8 border-t flex flex-col md:flex-row justify-between gap-4">
           <button 
-            onClick={() => setRevealedSolutions(p => ({ ...p, [questionId]: true }))} 
+            onClick={() => isPremium ? setRevealedSolutions(p => ({ ...p, [questionId]: true })) : onUpgrade()} 
             className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold shadow-lg shadow-emerald-100 transition hover:bg-emerald-700"
           >
-            Reveal Marking Scheme
+            {isPremium ? "Reveal Marking Scheme" : "Pro: Reveal Marking Scheme"}
           </button>
           <div className="flex gap-3">
             <button disabled={currentIndex === 0} onClick={() => setCurrentIndex(i => i - 1)} className="p-4 border rounded-xl hover:bg-gray-50 disabled:opacity-20"><ChevronLeft /></button>

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { getMockAttempts } from "../../services/studyContentService";
+import { authorizeParentReportExport, getMockAttempts } from "../../services/studyContentService";
 
 // Subject metadata
 const SUBJECT_METADATA = {
@@ -225,7 +225,7 @@ function formatDate(timestamp) {
 }
 
 function Report() {
-  const { user } = useAuth();
+  const { user, isPremium, userProfile } = useAuth();
   const location = useLocation();
   const { data: attempts = [], isLoading: attemptsLoading } = useQuery({
     queryKey: ["mock-attempts", user?.uid],
@@ -234,14 +234,25 @@ function Report() {
   });
   const [expandedReportId, setExpandedReportId] = useState(null);
   const [shareMessage, setShareMessage] = useState("");
+  const [parentExportsOverride, setParentExportsOverride] = useState(null);
+  const parentExportsRemaining = parentExportsOverride ?? userProfile?.parentExportsRemaining ?? 0;
 
-  const reportData = processReportData(attempts);
+  const isYearlyPlan = isPremium && userProfile?.billingCycle === "yearly";
+  const now = new Date();
+  const visibleAttempts = isPremium ? attempts : attempts.filter((attempt) => {
+    const date = getAttemptDate(attempt.completedAt);
+    return date && date.getFullYear() === now.getFullYear() && date.getMonth() === now.getMonth();
+  });
+  const reportData = processReportData(visibleAttempts);
   const focusSubject = location.state?.focusSubject;
   const handleShare = async () => {
     try {
+      if (!isYearlyPlan) throw new Error("Parent report sharing is included with Pro Yearly.");
+      const authorization = await authorizeParentReportExport();
+      setParentExportsOverride(authorization.parentExportsRemaining);
       setShareMessage(await shareOrCopy(buildParentSummary(attempts)));
     } catch (error) {
-      if (error.name !== "AbortError") setShareMessage("Unable to share the report from this browser.");
+      if (error.name !== "AbortError") setShareMessage(error.message || "Unable to share the report from this browser.");
     }
   };
   const handleExportCsv = () => downloadCsv("bece-progress-report.csv", [
@@ -289,14 +300,14 @@ function Report() {
           </p>
         </div>
         <div className="report-print-hidden flex flex-wrap gap-3">
-          <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700">
-            <Printer size={16} />
-            Print Report
-          </button>
-          <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800">
-            <Download size={16} />
-            Save as PDF
-          </button>
+          {isPremium && <>
+            <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-black text-gray-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700">
+              <Printer size={16} /> Print Report
+            </button>
+            <button type="button" onClick={handlePrint} className="flex items-center gap-2 rounded-xl bg-blue-700 px-6 py-3 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800">
+              <Download size={16} /> Save as PDF
+            </button>
+          </>}
         </div>
       </section>
 
@@ -326,21 +337,23 @@ function Report() {
 
       <section className="grid grid-cols-1 gap-8 xl:grid-cols-[1fr_340px]">
         <main className="space-y-8">
-          <div id="report-summary"><TermReportPreview reportData={reportData} isLoading={attemptsLoading} attempts={attempts} onShare={handleShare} onExport={handleExportCsv} /></div>
-          <ReportList reports={reportData.reports} isLoading={attemptsLoading} attempts={attempts} expandedReportId={expandedReportId} setExpandedReportId={setExpandedReportId} onDownloadAttempt={handleDownloadAttempt} />
+          <div id="report-summary"><TermReportPreview reportData={reportData} isLoading={attemptsLoading} attempts={visibleAttempts} onShare={handleShare} onExport={handleExportCsv} canExport={isPremium} canShare={isYearlyPlan} /></div>
+          {isPremium
+            ? <ReportList reports={reportData.reports} isLoading={attemptsLoading} attempts={visibleAttempts} expandedReportId={expandedReportId} setExpandedReportId={setExpandedReportId} onDownloadAttempt={handleDownloadAttempt} />
+            : <article className="rounded-3xl border border-blue-100 bg-blue-50 p-6"><h2 className="text-xl font-black text-blue-950">Detailed reports are part of Pro</h2><p className="mt-2 text-sm text-blue-900">Your free plan includes this month’s summary. Upgrade for full history, detailed readiness reports, and exports.</p></article>}
         </main>
 
         <aside className="space-y-6">
           <RecommendationCard recommendation={reportData.recommendation} />
-          <ParentShareCard onShare={handleShare} shareMessage={shareMessage} />
-          <ReportSchedule attempts={attempts} />
+          {isYearlyPlan && <ParentShareCard onShare={handleShare} shareMessage={shareMessage} remaining={parentExportsRemaining} />}
+          {isPremium && <ReportSchedule attempts={visibleAttempts} />}
         </aside>
       </section>
     </div>
   );
 }
 
-function TermReportPreview({ reportData, isLoading, attempts, onShare, onExport }) {
+function TermReportPreview({ reportData, isLoading, attempts, onShare, onExport, canExport, canShare }) {
   if (isLoading) {
     return (
       <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
@@ -377,15 +390,16 @@ function TermReportPreview({ reportData, isLoading, attempts, onShare, onExport 
           </p>
         </div>
         <div className="report-print-hidden flex gap-2">
-          <IconButton label="View summary" onClick={() => document.getElementById("report-summary")?.scrollIntoView({ behavior: "smooth" })}>
+          {canShare && <IconButton label="Share summary" onClick={onShare}>
+            <Share2 size={18} />
+          </IconButton>}
+          {canExport && <IconButton label="Download CSV" onClick={onExport}>
+            <Download size={18} />
+          </IconButton>}
+          {canExport && <IconButton label="View summary" onClick={() => document.getElementById("report-summary")?.scrollIntoView({ behavior: "smooth" })}>
             <Eye size={18} />
           </IconButton>
-          <IconButton label="Share summary" onClick={onShare}>
-            <Share2 size={18} />
-          </IconButton>
-          <IconButton label="Download CSV" onClick={onExport}>
-            <Download size={18} />
-          </IconButton>
+          }
         </div>
       </div>
 
@@ -567,7 +581,7 @@ function RecommendationCard({ recommendation }) {
   );
 }
 
-function ParentShareCard({ onShare, shareMessage }) {
+function ParentShareCard({ onShare, shareMessage, remaining }) {
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
       <h2 className="text-xl font-black text-gray-950">Parent Copy</h2>
@@ -575,7 +589,8 @@ function ParentShareCard({ onShare, shareMessage }) {
         Create a simple guardian-friendly version with grades, strengths,
         focus areas, and next steps.
       </p>
-      <button type="button" onClick={onShare} className="report-print-hidden mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 hover:bg-blue-50">
+      <p className="mt-2 text-xs font-bold text-blue-700">{remaining} of 3 parent report exports remaining this month.</p>
+      <button type="button" onClick={onShare} disabled={remaining <= 0} className="report-print-hidden mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-50">
         <Share2 size={16} />
         Share Progress Summary
       </button>

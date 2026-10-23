@@ -1,17 +1,29 @@
 import { 
   collection, 
-  doc,
   getDocs, 
   query, 
   orderBy,
-  serverTimestamp,
-  setDoc,
 } from "firebase/firestore";
-import { 
-  ref, 
-  getDownloadURL 
-} from "firebase/storage"; 
-import { db, storage } from "../firebase/firebase";
+import { auth, db } from "../firebase/firebase";
+
+const FUNCTIONS_BASE_URL = "https://us-central1-bece-prep.cloudfunctions.net";
+
+async function callFunction(name, body) {
+  const user = auth.currentUser;
+  if (!user) throw new Error("Sign in to continue.");
+  const token = await user.getIdToken();
+  const response = await fetch(`${FUNCTIONS_BASE_URL}/${name}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(body),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data?.error || `Request failed (HTTP ${response.status}).`);
+  return data;
+}
 
 /**
  * Helper to map Firestore snapshots into usable arrays
@@ -46,13 +58,8 @@ export async function getSubjects() {
  */
 export async function getPapers() {
   try {
-    const papersRef = collection(db, "papers");
-    const snapshot = await getDocs(papersRef);
-    const papers = mapSnapshot(snapshot);
-
-    return papers
-      .filter((paper) => paper.isPublished === true)
-      .sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+    const { papers = [] } = await callFunction("getStudyContent", { operation: "papers" });
+    return papers;
   } catch (error) {
     console.error("Error fetching papers:", error);
     return [];
@@ -63,71 +70,50 @@ export async function getPapers() {
  * Fetches questions and resolves storage URLs for images
  * Path: BECE/[subjectId]/[year]/[section]/Questions
  */
-export const getQuestionsByPaper = async (subjectId, year, type = "Objectives") => {
+export const getQuestionsByPaper = async (subjectId, year, type = "Objectives", options = {}) => {
   try {
-    // 1. Path Normalization
     const section = type === "All Types" || !type ? "Objectives" : type;
-
-    const questionsRef = collection(
-      db,
-      "BECE",
+    const { questions = [] } = await callFunction("getStudyContent", {
+      operation: "questions",
       subjectId,
-      String(year),
+      year: String(year),
       section,
-      "Questions"
-    );
-
-    const q = query(questionsRef, orderBy("number", "asc"));
-    const snapshot = await getDocs(q);
-
-    const imageFields = ["imageUrl", "answerImageUrl", "modelAnswerImageUrl", "answerImage"];
-
-    const resolveStorageField = async (value) => {
-      if (!value || !String(value).startsWith("gs://")) {
-        return value;
-      }
-
-      try {
-        const imageRef = ref(storage, value);
-        return await getDownloadURL(imageRef);
-      } catch (err) {
-        console.warn(`Could not resolve Firebase image: ${value}`, err.message);
-        return null;
-      }
-    };
-
-    // 2. Resolve gs:// links to https:// download URLs
-    const questions = await Promise.all(
-      snapshot.docs.map(async (docSnap) => {
-        const data = docSnap.data();
-
-        for (const field of imageFields) {
-          if (data[field]) {
-            data[field] = await resolveStorageField(data[field]);
-          }
-        }
-
-        return { id: docSnap.id, ...data };
-      })
-    );
-
-    console.log(` ${questions.length} questions loaded for ${subjectId} ${year} (${section})`);
+      mode: options.mode || "practice",
+      reservationId: options.reservationId || null,
+    });
     return questions;
-
   } catch (error) {
-    console.error(" Firebase Fetch Error:", error.message);
-    return [];
+    console.error("Study content request failed:", error.message);
+    throw error;
   }
 };
 
 export async function saveMockAttempt(userId, attempt) {
-  const attemptRef = doc(db, "users", userId, "mockAttempts", attempt.id);
-
-  await setDoc(attemptRef, {
-    ...attempt,
-    userId,
-    completedAt: serverTimestamp(),
+  if (auth.currentUser?.uid !== userId) throw new Error("You can only save your own mock exam.");
+  return callFunction("completeMockAttempt", {
+    attemptId: attempt.id,
+    answers: attempt.answers || {},
+    score: attempt.score,
+    correctCount: attempt.correctCount,
+    answeredCount: attempt.answeredCount,
+    totalQuestions: attempt.totalQuestions,
   });
+}
+
+export async function reserveMockAttempt({ paper, section, attemptId }) {
+  return callFunction("reserveMockAttempt", {
+    paperId: paper.id,
+    section,
+    attemptId,
+  });
+}
+
+export async function getMyEntitlements() {
+  return callFunction("getMyEntitlements", {});
+}
+
+export async function authorizeParentReportExport() {
+  return callFunction("authorizeParentReportExport", {});
 }
 
 export async function getMockAttempts(userId) {

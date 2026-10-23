@@ -35,8 +35,7 @@ const pricingPlans = [
       { text: "3 mock exams per month", included: true },
       { text: "Basic performance tracking", included: true },
       { text: "Limited past questions (2020-2021)", included: true },
-      { text: "Study calendar", included: true },
-      { text: "Monthly summary reports", included: false },
+      { text: "Monthly summary reports", included: true },
       { text: "AI focus recommendations", included: false },
       { text: "Detailed question explanations", included: false },
       { text: "Priority support", included: false },
@@ -60,9 +59,9 @@ const pricingPlans = [
       { text: "AI-powered focus areas", included: true },
       { text: "Detailed exam readiness reports", included: true },
       { text: "Topic-wise explanations", included: true },
-      { text: "Priority support", included: true },
+      { text: "30 days of Pro access; renew manually", included: true },
       { text: "Parent progress reports", included: false },
-      { text: "Cancel anytime", included: true },
+      { text: "Manual renewal; no automatic charges", included: true },
     ],
   },
   {
@@ -83,9 +82,9 @@ const pricingPlans = [
       { text: "AI-powered focus recommendations", included: true },
       { text: "Detailed exam readiness reports", included: true },
       { text: "Topic-wise explanations", included: true },
-      { text: "Priority email & chat support", included: true },
+      { text: "365 days of Pro access; renew manually", included: true },
       { text: "Parent progress reports (3 exports/month)", included: true },
-      { text: "Early access to new papers", included: true },
+      { text: "Manual renewal; no automatic charges", included: true },
     ],
   },
 ];
@@ -97,7 +96,7 @@ const comparison = [
   ["Performance reports", "Monthly only", "Unlimited", "Unlimited"],
   ["Question explanations", "No", "Yes", "Yes"],
   ["Parent sharing", "No", "No", "Yes"],
-  ["Priority support", "No", "Yes", "Yes"],
+  ["Priority support", "No", "No", "No"],
 ];
 
 const Pricing = () => {
@@ -424,7 +423,7 @@ function PlanComparison() {
 
       <div className="mt-6 rounded-2xl bg-emerald-50/60 p-4 border border-emerald-100">
         <p className="text-sm font-semibold text-emerald-800 flex items-center gap-2">
-          <span>✨</span> Yearly plan includes early access to new exam papers and dedicated support.
+          <span>✨</span> Pro plans are one-time payments. Monthly access lasts 30 days; yearly access lasts 365 days. Renew manually when you are ready.
         </p>
       </div>
     </article>

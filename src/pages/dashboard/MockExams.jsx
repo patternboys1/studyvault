@@ -16,7 +16,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { getPapers, getQuestionsByPaper, saveMockAttempt } from "../../services/studyContentService";
+import { getPapers, getQuestionsByPaper, reserveMockAttempt, saveMockAttempt } from "../../services/studyContentService";
 
 const formatTime = (totalSeconds) => {
   const minutes = Math.floor(totalSeconds / 60);
@@ -39,6 +39,10 @@ const isCorrect = (question, selectedAnswer) => {
 export default function MockExams() {
   const [activeExam, setActiveExam] = useState(null);
   const [view, setView] = useState("repository");
+  const [startError, setStartError] = useState("");
+  const { isPremium, userProfile } = useAuth();
+  const [freeMocksOverride, setFreeMocksOverride] = useState(null);
+  const freeMocksRemaining = freeMocksOverride ?? userProfile?.freeMocksRemaining;
 
   const { data: papers = [], isLoading: papersLoading } = useQuery({
     queryKey: ["mock-exam-papers"],
@@ -46,14 +50,27 @@ export default function MockExams() {
   });
 
   const { data: questions = [], isLoading: questionsLoading } = useQuery({
-    queryKey: ["mock-exam-questions", activeExam?.paper.subjectId, activeExam?.paper.year, activeExam?.section],
-    queryFn: () => getQuestionsByPaper(activeExam.paper.subjectId, activeExam.paper.year, activeExam.section),
+    queryKey: ["mock-exam-questions", activeExam?.paper.subjectId, activeExam?.paper.year, activeExam?.section, activeExam?.attemptId],
+    queryFn: () => getQuestionsByPaper(activeExam.paper.subjectId, activeExam.paper.year, activeExam.section, {
+      mode: "mock",
+      reservationId: activeExam.attemptId,
+    }),
     enabled: Boolean(activeExam?.paper.subjectId),
   });
 
-  const startExam = (paper, section) => {
-    setActiveExam({ paper, section });
-    setView("exam");
+  const startExam = async (paper, section) => {
+    setStartError("");
+    const attemptId = typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `${paper.id}-${Date.now()}`;
+    try {
+      const reservation = await reserveMockAttempt({ paper, section, attemptId });
+      if (reservation.freeMocksRemaining !== null) setFreeMocksOverride(reservation.freeMocksRemaining);
+      setActiveExam({ paper, section, attemptId });
+      setView("exam");
+    } catch (error) {
+      setStartError(error.message || "Unable to start this mock exam.");
+    }
   };
 
   const exitExam = () => {
@@ -62,13 +79,13 @@ export default function MockExams() {
   };
 
   if (view === "exam" && activeExam) {
-    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}`} paper={activeExam.paper} section={activeExam.section} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
+    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
   }
 
-  return <MockExamRepository papers={papers} isLoading={papersLoading} onStart={startExam} />;
+  return <MockExamRepository papers={papers} isLoading={papersLoading} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
 }
 
-function MockExamRepository({ papers, isLoading, onStart }) {
+function MockExamRepository({ papers, isLoading, onStart, startError, isPremium, freeMocksRemaining }) {
   const [selectedSubject, setSelectedSubject] = useState("All Subjects");
   const subjects = useMemo(() => [...new Set(papers.map((paper) => paper.subjectName).filter(Boolean))], [papers]);
   const availablePapers = papers.filter((paper) => selectedSubject === "All Subjects" || paper.subjectName === selectedSubject);
@@ -89,6 +106,9 @@ function MockExamRepository({ papers, isLoading, onStart }) {
           </div>
         </div>
       </section>
+
+      {startError && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm font-bold text-red-800">{startError}</p>}
+      {!isPremium && Number.isFinite(freeMocksRemaining) && <p className="rounded-xl border border-blue-100 bg-blue-50 p-4 text-sm font-bold text-blue-900">Free plan: {freeMocksRemaining} of 3 mock exams remaining this month.</p>}
 
       <section className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
@@ -139,23 +159,18 @@ function MockPaperCard({ paper, onStart }) {
   );
 }
 
-function MockExamSession({ paper, section, questions, isLoading, onExit }) {
+function MockExamSession({ paper, section, attemptId, questions, isLoading, onExit }) {
   const { user } = useAuth();
 
   if (section === "Theory") {
-    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} onExit={onExit} />;
+    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
   }
 
-  return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} userId={user?.uid} onExit={onExit} />;
+  return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
 }
 
-function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
+function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, onExit }) {
   const durationInSeconds = (paper.durationMinutes || 60) * 60;
-  const [attemptId] = useState(() =>
-    typeof crypto !== "undefined" && crypto.randomUUID
-      ? crypto.randomUUID()
-      : `${paper.id}-${Date.now()}`
-  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [flaggedQuestions, setFlaggedQuestions] = useState({});
@@ -204,12 +219,7 @@ function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
   const answeredCount = Object.keys(answers).length;
   const correctCount = questions.filter((question) => isCorrect(question, answers[question.id])).length;
   const restartExam = () => {
-    setCurrentIndex(0);
-    setAnswers({});
-    setFlaggedQuestions({});
-    setTimeRemaining(durationInSeconds);
-    setHasSubmitted(false);
-    setShowSubmitPrompt(false);
+    onExit();
   };
 
   if (hasSubmitted) return <MockResults paper={paper} questions={questions} answers={answers} correctCount={correctCount} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
@@ -303,7 +313,7 @@ function ObjectiveExamSession({ paper, questions, isLoading, userId, onExit }) {
   );
 }
 
-function TheoryExamSession({ paper, questions, isLoading, onExit }) {
+function TheoryExamSession({ paper, questions, isLoading, attemptId, userId, onExit }) {
   const durationInSeconds = (paper.durationMinutes || 60) * 60;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [responses, setResponses] = useState({});
@@ -354,16 +364,11 @@ function TheoryExamSession({ paper, questions, isLoading, onExit }) {
   const question = questions[currentIndex];
   const completion = Math.round((answeredCount / questions.length) * 100);
   const restartExam = () => {
-    setCurrentIndex(0);
-    setResponses({});
-    setFlaggedQuestions({});
-    setTimeRemaining(durationInSeconds);
-    setHasSubmitted(false);
-    setShowSubmitPrompt(false);
+    onExit();
   };
 
   if (hasSubmitted) {
-    return <TheoryResults paper={paper} questions={questions} responses={responses} onRestart={restartExam} onExit={onExit} />;
+    return <TheoryResults paper={paper} questions={questions} responses={responses} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
   }
 
   return (
@@ -433,8 +438,14 @@ function TheoryExamSession({ paper, questions, isLoading, onExit }) {
   );
 }
 
-function TheoryResults({ paper, questions, responses, onRestart, onExit }) {
+function TheoryResults({ paper, questions, responses, attemptId, userId, onRestart, onExit }) {
   const draftedCount = Object.values(responses).filter((response) => response.trim()).length;
+
+  useEffect(() => {
+    if (!userId) return;
+    saveMockAttempt(userId, { id: attemptId, section: "Theory" })
+      .catch((error) => console.error("Unable to complete theory mock:", error));
+  }, [attemptId, userId]);
 
   return (
     <div className="space-y-7 pb-10">
@@ -443,7 +454,7 @@ function TheoryResults({ paper, questions, responses, onRestart, onExit }) {
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p></div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
       </section>
       <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Retake theory</button></div></div>
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Start another attempt</button></div></div>
         <div className="mt-7 space-y-5">
           {questions.map((question, index) => {
             const modelAnswerImage = question.answerImageUrl || question.modelAnswerImageUrl || question.answerImage;
@@ -477,6 +488,7 @@ function MockResults({ paper, questions, answers, correctCount, attemptId, userI
 
     saveMockAttempt(userId, {
       id: attemptId,
+      answers,
       paperId: paper.id,
       subjectId: paper.subjectId,
       subjectName: paper.subjectName,
@@ -509,7 +521,7 @@ function MockResults({ paper, questions, answers, correctCount, attemptId, userI
           <div><h2 className="text-2xl font-black text-gray-950">Review corrections</h2><p className="mt-1 text-sm text-gray-500">Use the correct answers below to guide your revision.</p></div>
           <div className="flex flex-wrap gap-3">
             <button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button>
-            <button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Retake exam</button>
+            <button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Start another attempt</button>
           </div>
         </div>
 

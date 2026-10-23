@@ -9,14 +9,21 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
   const navigate = useNavigate();
   const [recommendations, setRecommendations] = useState([]);
   const [recommendationProvider, setRecommendationProvider] = useState("rules");
+  const [fallbackReason, setFallbackReason] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const attemptsSignature = JSON.stringify(
+    attempts.slice(0, 20).map((attempt) => ({
+      subjectName: attempt.subjectName || "Unknown",
+      score: Number(attempt.score) || 0,
+    })),
+  );
 
   useEffect(() => {
     let active = true;
 
     const loadRecommendations = async () => {
       setIsLoading(true);
-      const result = await getStudyRecommendations(attempts, {
+      const result = await getStudyRecommendations(JSON.parse(attemptsSignature), {
         user,
         allowRemote: isPremium,
       });
@@ -24,6 +31,7 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
       if (active) {
         setRecommendations(result.recommendations);
         setRecommendationProvider(result.provider);
+        setFallbackReason(result.fallbackReason || null);
         setIsLoading(false);
       }
     };
@@ -33,7 +41,7 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
     return () => {
       active = false;
     };
-  }, [attempts, user, isPremium]);
+  }, [attemptsSignature, user, isPremium]);
 
   const handleAiAction = () => {
     if (isPremium) {
@@ -70,7 +78,9 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
             {isLoading
               ? "Checking AI"
               : recommendationProvider === "gemini"
-                ? "Gemini 3.8 Flash"
+                ? "Gemini Flash-Lite"
+                : fallbackReason === "quota"
+                  ? "AI daily limit reached"
                 : recommendationProvider === "rules" && isPremium
                   ? "Rule fallback"
                   : recommendationProvider === "rules"

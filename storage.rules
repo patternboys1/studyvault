@@ -2,10 +2,10 @@ rules_version = '2';
 
 service firebase.storage {
   match /b/{bucket}/o {
-    // Diagrams are protected study content. File management is performed
-    // with the Firebase Admin SDK, never from the browser.
     match /{allPaths=**} {
-      allow read: if request.auth != null;
+      allow read: if request.auth != null
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.isPremium == true
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.premiumExpiresAt > request.time;
       allow write: if false;
     }
   }

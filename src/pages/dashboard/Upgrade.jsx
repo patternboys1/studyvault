@@ -64,8 +64,7 @@ const pricingPlans = [
       { text: "3 mock exams per month", included: true },
       { text: "Basic performance tracking", included: true },
       { text: "Limited past questions (2020-2021)", included: true },
-      { text: "Study calendar", included: true },
-      { text: "Monthly summary reports", included: false },
+      { text: "Monthly summary reports", included: true },
       { text: "AI focus recommendations", included: false },
       { text: "Detailed question explanations", included: false },
       { text: "Priority support", included: false },
@@ -88,9 +87,9 @@ const pricingPlans = [
       { text: "AI-powered focus areas", included: true },
       { text: "Detailed exam readiness reports", included: true },
       { text: "Topic-wise explanations", included: true },
-      { text: "Priority support", included: true },
+      { text: "30 days of Pro access; renew manually", included: true },
       { text: "Parent progress reports", included: false },
-      { text: "Cancel anytime", included: true },
+      { text: "Manual renewal; no automatic charges", included: true },
     ],
   },
   {
@@ -110,20 +109,11 @@ const pricingPlans = [
       { text: "AI-powered focus recommendations", included: true },
       { text: "Detailed exam readiness reports", included: true },
       { text: "Topic-wise explanations", included: true },
-      { text: "Priority email & chat support", included: true },
+      { text: "365 days of Pro access; renew manually", included: true },
       { text: "Parent progress reports (3 exports/month)", included: true },
-      { text: "Early access to new papers", included: true },
+      { text: "Manual renewal; no automatic charges", included: true },
     ],
   },
-];
-
-const planFeatures = [
-  "Unlimited mock exams",
-  "AI feedback and focus recommendations",
-  "Full past question explanations",
-  "Parent-ready progress reports",
-  "Advanced performance analytics",
-  "Priority access to new papers",
 ];
 
 const comparison = [
@@ -133,14 +123,17 @@ const comparison = [
   ["Performance reports", "Monthly only", "Unlimited", "Unlimited"],
   ["Question explanations", "No", "Yes", "Yes"],
   ["Parent sharing", "No", "No", "Yes"],
-  ["Priority support", "No", "Yes", "Yes"],
+  ["Priority support", "No", "No", "No"],
 ];
 
 function Upgrade() {
   const navigate = useNavigate();
-  const { user, userProfile, setUserPlan, isPremium } = useAuth();
+  const { user, userProfile, refreshUserProfile, isPremium } = useAuth();
   const [processingPlan, setProcessingPlan] = useState(null);
   const [paymentMessage, setPaymentMessage] = useState("");
+  const [recoveryReference, setRecoveryReference] = useState("");
+  const [recoveryPlan, setRecoveryPlan] = useState("monthly");
+  const [isRecoveringPayment, setIsRecoveringPayment] = useState(false);
 
   useEffect(() => {
     loadPaystackScript().catch((error) => {
@@ -155,8 +148,11 @@ function Upgrade() {
     }
 
     if (planId === "free") {
-      await setUserPlan("free", null);
-      navigate("/dashboard");
+      if (isPremium) {
+        setPaymentMessage("Pro access is a one-time purchase and will expire on the date shown. It will not renew automatically.");
+      } else {
+        navigate("/dashboard");
+      }
       return;
     }
 
@@ -226,7 +222,7 @@ function Upgrade() {
               throw new Error(message);
             }
 
-            await setUserPlan("premium", planId);
+            await refreshUserProfile(user);
             setPaymentMessage(`Payment verified successfully. Reference: ${reference}`);
             navigate("/dashboard");
           };
@@ -249,6 +245,48 @@ function Upgrade() {
     } catch (error) {
       setPaymentMessage(error.message || "Payment failed. Please try again.");
       setProcessingPlan(null);
+    }
+  };
+
+  const handleRecoverPayment = async (event) => {
+    event.preventDefault();
+
+    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT;
+    if (!verifyEndpoint) {
+      setPaymentMessage("Payment verification is not configured. Contact support with your transaction reference.");
+      return;
+    }
+
+    try {
+      setIsRecoveringPayment(true);
+      setPaymentMessage("");
+
+      const token = await user.getIdToken();
+      const response = await fetch(verifyEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          reference: recoveryReference.trim(),
+          planId: recoveryPlan,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        const providerMessage = data?.details?.message || data?.error;
+        throw new Error(providerMessage || `Payment verification failed (HTTP ${response.status}).`);
+      }
+
+      await refreshUserProfile(user);
+      setPaymentMessage("Your existing payment was verified and Premium access is active.");
+      navigate("/dashboard");
+    } catch (error) {
+      setPaymentMessage(error.message || "Unable to verify that payment. Check the reference and selected plan.");
+    } finally {
+      setIsRecoveringPayment(false);
     }
   };
 
@@ -290,11 +328,52 @@ function Upgrade() {
           </div>
         </div>
 
+        {isPremium && userProfile?.premiumExpiresAt && <p className="mt-3 text-sm font-bold text-emerald-800">Pro access is active through {new Date(userProfile.premiumExpiresAt).toLocaleDateString()}.</p>}
+
         {paymentMessage && (
           <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-900">
             {paymentMessage}
           </div>
         )}
+
+        <details className="mt-5 rounded-xl border border-slate-200 p-4">
+          <summary className="cursor-pointer text-sm font-black text-blue-800">
+            Already paid? Verify that transaction
+          </summary>
+          <form onSubmit={handleRecoverPayment} className="mt-4 grid gap-3 md:grid-cols-[1fr_180px_auto]">
+            <label className="text-xs font-bold text-slate-600">
+              Paystack transaction reference
+              <input
+                required
+                value={recoveryReference}
+                onChange={(event) => setRecoveryReference(event.target.value)}
+                className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-900 outline-none focus:border-blue-500"
+                placeholder="studyvault-…"
+              />
+            </label>
+            <label className="text-xs font-bold text-slate-600">
+              Plan purchased
+              <select
+                value={recoveryPlan}
+                onChange={(event) => setRecoveryPlan(event.target.value)}
+                className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-900 outline-none focus:border-blue-500"
+              >
+                <option value="monthly">Pro Monthly</option>
+                <option value="yearly">Pro Yearly</option>
+              </select>
+            </label>
+            <button
+              type="submit"
+              disabled={isRecoveringPayment || !user}
+              className="self-end rounded-lg bg-blue-700 px-4 py-2 text-sm font-black text-white hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {isRecoveringPayment ? "Verifying…" : "Verify payment"}
+            </button>
+          </form>
+          <p className="mt-2 text-xs text-slate-500">
+            This checks a completed payment and will not charge you again. Find the reference in your Paystack transaction details.
+          </p>
+        </details>
       </section>
 
       {/* Pricing Cards */}
@@ -357,7 +436,7 @@ function Upgrade() {
           <div>
             <h3 className="font-black text-blue-900">Secure Payment & Billing</h3>
             <p className="mt-1 text-sm leading-relaxed text-blue-800">
-              All transactions are encrypted and secure. Payment integration will be connected when ready. Start with free or monthly plans risk-free.
+              Paystack verifies each payment before access is activated. Pro is a one-time purchase: monthly access lasts 30 days and yearly access lasts 365 days; renewals are manual.
             </p>
           </div>
         </div>
@@ -547,7 +626,7 @@ function PlanComparison() {
 
       <div className="mt-6 rounded-xl bg-emerald-50 p-4">
         <p className="text-sm font-bold text-emerald-900">
-          ✨ Yearly plan includes early access to new papers and priority support
+          ✨ Yearly Pro includes three parent progress exports each month.
         </p>
       </div>
     </article>

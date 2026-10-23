@@ -3,13 +3,18 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
+import { getMyEntitlements } from "../services/studyContentService";
 
 const AuthContext = createContext();
 
-const normalizeUserProfile = (currentUser, userSnapshot) => {
+const normalizeUserProfile = (currentUser, userSnapshot, entitlements = null) => {
   const data = userSnapshot?.exists ? userSnapshot.data() : {};
-  const plan = data.plan || "free";
-  const isPremium = Boolean(data.isPremium || plan === "premium");
+  const premiumExpiresAt = entitlements?.premiumExpiresAt
+    ?? data.premiumExpiresAt?.toDate?.()?.getTime?.()
+    ?? null;
+  const isPremium = entitlements?.isPremium
+    ?? Boolean((data.isPremium || data.plan === "premium") && premiumExpiresAt && premiumExpiresAt > Date.now());
+  const plan = isPremium ? "premium" : "free";
 
   return {
     uid: currentUser?.uid || data.uid || null,
@@ -18,6 +23,9 @@ const normalizeUserProfile = (currentUser, userSnapshot) => {
     plan,
     isPremium,
     billingCycle: data.billingCycle || null,
+    premiumExpiresAt,
+    freeMocksRemaining: entitlements?.freeMocksRemaining,
+    parentExportsRemaining: entitlements?.parentExportsRemaining,
     darkMode: data.darkMode ?? false,
   };
 };
@@ -26,6 +34,16 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [clock, setClock] = useState(0);
+
+  useEffect(() => {
+    const initialTick = window.setTimeout(() => setClock(Date.now()), 0);
+    const interval = window.setInterval(() => setClock(Date.now()), 60_000);
+    return () => {
+      window.clearTimeout(initialTick);
+      window.clearInterval(interval);
+    };
+  }, []);
 
   const refreshUserProfile = async (currentUser) => {
     if (!currentUser) {
@@ -34,8 +52,14 @@ export const AuthProvider = ({ children }) => {
     }
 
     const userRef = doc(db, "users", currentUser.uid);
+    let entitlements = null;
+    try {
+      entitlements = await getMyEntitlements();
+    } catch (error) {
+      console.warn("Unable to refresh account entitlements:", error.message);
+    }
     const userSnap = await getDoc(userRef);
-    const profile = normalizeUserProfile(currentUser, userSnap);
+    const profile = normalizeUserProfile(currentUser, userSnap, entitlements);
 
     await setDoc(
       userRef,
@@ -43,9 +67,6 @@ export const AuthProvider = ({ children }) => {
         uid: currentUser.uid,
         email: currentUser.email || profile.email,
         displayName: currentUser.displayName || profile.displayName,
-        plan: profile.plan,
-        isPremium: profile.isPremium,
-        billingCycle: profile.billingCycle,
         updatedAt: serverTimestamp(),
       },
       { merge: true }
@@ -53,26 +74,6 @@ export const AuthProvider = ({ children }) => {
 
     setUserProfile(profile);
     return profile;
-  };
-
-  const setUserPlan = async (plan = "free", billingCycle = null) => {
-    if (!user) return false;
-
-    const normalizedPlan = plan === "premium" ? "premium" : "free";
-    const nextProfile = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName || "Student",
-      plan: normalizedPlan,
-      isPremium: normalizedPlan === "premium",
-      billingCycle: normalizedPlan === "premium" ? billingCycle : null,
-      updatedAt: serverTimestamp(),
-    };
-
-    const userRef = doc(db, "users", user.uid);
-    await setDoc(userRef, nextProfile, { merge: true });
-    setUserProfile((current) => ({ ...(current || {}), ...nextProfile }));
-    return true;
   };
 
   useEffect(() => {
@@ -91,6 +92,9 @@ export const AuthProvider = ({ children }) => {
             plan: "free",
             isPremium: false,
             billingCycle: null,
+            premiumExpiresAt: null,
+            freeMocksRemaining: 3,
+            parentExportsRemaining: 0,
             darkMode: false,
           });
         }
@@ -110,9 +114,12 @@ export const AuthProvider = ({ children }) => {
         user,
         userProfile,
         loading,
-        isPremium: Boolean(userProfile?.isPremium),
+        isPremium: Boolean(
+          userProfile?.isPremium
+          && userProfile.premiumExpiresAt
+          && userProfile.premiumExpiresAt > clock,
+        ),
         refreshUserProfile,
-        setUserPlan,
       }}
     >
       {!loading && children}

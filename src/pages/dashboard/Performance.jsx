@@ -175,7 +175,7 @@ function calculateStudyMetrics(attempts) {
 }
 
 function Performance() {
-  const { user } = useAuth();
+  const { user, isPremium } = useAuth();
   const navigate = useNavigate();
   const { data: attempts = [], isLoading: attemptsLoading } = useQuery({
     queryKey: ["mock-attempts", user?.uid],
@@ -209,6 +209,28 @@ function Performance() {
 
   // Process attempts data for analytics
   const analytics = processAttemptsData(attempts);
+  const basicMetrics = calculateStudyMetrics(attempts);
+
+  if (!isPremium) {
+    return (
+      <div className="space-y-8 pb-10">
+        <section>
+          <h1 className="text-3xl font-black tracking-tight text-gray-950 md:text-4xl">Performance</h1>
+          <p className="mt-2 text-base text-gray-500">Your basic progress at a glance.</p>
+        </section>
+        <section className="grid gap-4 sm:grid-cols-3">
+          <BasicMetric label="Mock exams" value={attempts.length} />
+          <BasicMetric label="Average score" value={`${basicMetrics.averageScore}%`} />
+          <BasicMetric label="Questions answered" value={basicMetrics.questionsAnswered || 0} />
+        </section>
+        <section className="rounded-3xl border border-blue-100 bg-blue-50 p-7">
+          <h2 className="text-xl font-black text-blue-950">Advanced analytics are part of Pro</h2>
+          <p className="mt-2 text-sm text-blue-900">Upgrade for score trends, topic insights, readiness analysis, and report exports.</p>
+          <button type="button" onClick={() => navigate("/dashboard/upgrade")} className="mt-5 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white">See Pro plans</button>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8 pb-10">
@@ -256,6 +278,10 @@ function Performance() {
       </section>
     </div>
   );
+}
+
+function BasicMetric({ label, value }) {
+  return <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><p className="text-sm font-bold text-gray-500">{label}</p><p className="mt-2 text-3xl font-black text-gray-950">{value}</p></article>;
 }
 
 function ExamReadiness({ attempts, analytics }) {

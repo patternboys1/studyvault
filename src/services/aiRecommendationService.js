@@ -10,6 +10,41 @@ const SUBJECT_TOPIC_MAP = {
   RME: ["Ethics", "Morals", "Leadership"],
 };
 
+const CACHE_PREFIX = "bece-prep-ai-recommendations-v2:";
+const MEMORY_CACHE = new Map();
+const GEMINI_CACHE_MS = 6 * 60 * 60 * 1000;
+const FALLBACK_CACHE_MS = 15 * 60 * 1000;
+
+function getCachedRecommendations(key) {
+  const memoryEntry = MEMORY_CACHE.get(key);
+  if (memoryEntry && memoryEntry.expiresAt > Date.now()) return memoryEntry.result;
+
+  try {
+    const stored = localStorage.getItem(`${CACHE_PREFIX}${key}`);
+    if (!stored) return null;
+    const entry = JSON.parse(stored);
+    if (!entry?.expiresAt || entry.expiresAt <= Date.now()) {
+      localStorage.removeItem(`${CACHE_PREFIX}${key}`);
+      return null;
+    }
+    MEMORY_CACHE.set(key, entry);
+    return entry.result;
+  } catch {
+    return null;
+  }
+}
+
+function cacheRecommendations(key, result) {
+  const ttl = result.provider === "gemini" ? GEMINI_CACHE_MS : FALLBACK_CACHE_MS;
+  const entry = { result, expiresAt: Date.now() + ttl };
+  MEMORY_CACHE.set(key, entry);
+  try {
+    localStorage.setItem(`${CACHE_PREFIX}${key}`, JSON.stringify(entry));
+  } catch {
+    // Keep the in-memory cache if browser storage is unavailable.
+  }
+}
+
 const normalizeSubject = (subject = "Unknown") => {
   if (!subject) return "Unknown";
   const normalized = String(subject).trim();
@@ -85,6 +120,16 @@ export async function getStudyRecommendations(attempts = [], options = {}) {
     };
   }
 
+  const cacheKey = encodeURIComponent(JSON.stringify({
+    uid: options.user.uid,
+    attempts: attempts.slice(0, 20).map((attempt) => ({
+      subjectName: attempt.subjectName || "Unknown",
+      score: Number(attempt.score) || 0,
+    })),
+  }));
+  const cachedResult = getCachedRecommendations(cacheKey);
+  if (cachedResult) return cachedResult;
+
   try {
     const authHeader = options.user?.getIdToken
       ? { Authorization: `Bearer ${(await options.user.getIdToken())}` }
@@ -120,16 +165,21 @@ export async function getStudyRecommendations(attempts = [], options = {}) {
       };
     }
 
-    return {
+    const result = {
       recommendations,
       provider: data.provider || "unknown",
       model: data.model || null,
+      fallbackReason: data.fallbackReason || null,
     };
+    cacheRecommendations(cacheKey, result);
+    return result;
   } catch (error) {
     console.warn("AI recommendation request failed. Falling back to local recommendation engine.", error);
-    return {
+    const result = {
       recommendations: buildRuleBasedRecommendations(attempts),
       provider: "rules",
     };
+    cacheRecommendations(cacheKey, result);
+    return result;
   }
 }
