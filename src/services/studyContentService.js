@@ -100,6 +100,17 @@ export async function saveMockAttempt(userId, attempt) {
   });
 }
 
+export async function saveTheoryMockAttempt(userId, attempt) {
+  if (auth.currentUser?.uid !== userId) throw new Error("You can only save your own theory mock.");
+  const result = await callFunction("completeMockAttempt", {
+    attemptId: attempt.id,
+    section: "Theory",
+    responses: attempt.responses || {},
+  });
+  if (!result.saved) throw new Error("The server could not confirm that your theory responses were saved.");
+  return result;
+}
+
 export async function reserveMockAttempt({ paper, section, attemptId }) {
   return callFunction("reserveMockAttempt", {
     paperId: paper.id,
@@ -112,8 +123,8 @@ export async function getMyEntitlements() {
   return callFunction("getMyEntitlements", {});
 }
 
-export async function authorizeParentReportExport() {
-  return callFunction("authorizeParentReportExport", {});
+export async function authorizeParentReportExport(exportId, action = "authorize") {
+  return callFunction("authorizeParentReportExport", { exportId, action });
 }
 
 export async function getMockAttempts(userId) {

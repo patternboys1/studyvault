@@ -1,0 +1,216 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": "In the space provided, draw the six point colour wheel. Use the hatching technique to shade the secondary colours. Use the stippling technique to shade primary colours.",
+    "modelAnswer": "Drawing = 2 marks; Labeling/indicating secondary colours (Orange, Green, Violet/Purple) = 2 marks; Shading secondary colours with hatching = 3 marks; Labeling/indicating primary colours (Red, Yellow, Blue) = 2 marks; Shading primary colours with stippling = 3 marks.",
+    "topic": "Visual Arts",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/creative-arts-2025/figure1(a).png",
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/creative-arts-2025/figure1(a).png",
+    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/Screenshot 2026-09-19 081557.png"
+  },
+  {
+    "number": "1.b",
+    "questionText": "List cool colours found on the colour wheel drawn in (a).",
+    "modelAnswer": "1. Blue; 2. Green; 3. Violet/purple.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.i",
+    "questionText": "The Black star party has 85,000 members. The party intends to embark on rally in December, 2025. They have therefore decided to print a new cloth for the rally. As a student artist: identify the most appropriate method to be used for printing the cloth for the members;",
+    "modelAnswer": "Serigraphy/Screen printing.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.ii",
+    "questionText": "State two reasons for the choice of printing method identified in (i) above;",
+    "modelAnswer": "1. Helps to produce more clothing / fast and suitable for mass production. 2. It costs less when making mass production (cheaper). 3. It produces bold and intricate designs effectively.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.iii",
+    "questionText": "List three wet media that would be useful for the printing of the cloth.",
+    "modelAnswer": "1. Printing paste. 2. Fabric paint / Textile paint. 3. Printing ink. 4. Dye. 5. Acrylic paint.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.b.i",
+    "questionText": "Your teacher tasked the class to weave a stole to be used by the final year learners for their 10th graduation celebration. As a creative student: enumerate the two sets of yarns that would be used for the stole;",
+    "modelAnswer": "1. Warp (ends). 2. Weft (picks).",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.b.ii",
+    "questionText": "Describe any one of the yarns enumerated in (i) above;",
+    "modelAnswer": "Warp/ends yarn is the lengthwise yarn that is held under tension on a loom when weaving. (OR: Weft/picks yarn is the horizontal yarn that interlaces the lengthwise warp in weaving.)",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "2.b.iii",
+    "questionText": "List any two tools that would help in weaving the stole.",
+    "modelAnswer": "1. Loom. 2. Shuttle. 3. Bobbin winder. 4. Bobbin/spool. 5. Beater/reed.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "3.a.i",
+    "questionText": "Aku has been tasked to produce a vase with clay for the upcoming interschool art competition. List two tests that can be done on the clay for its suitability.",
+    "modelAnswer": "1. Plasticity test. 2. Fired shrinkage test. 3. Porosity test. 4. Dry shrinkage test.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "3.a.ii",
+    "questionText": "Describe in three steps how to prepare the clay for the task.",
+    "modelAnswer": "1. Soak/slake the clay in water. 2. Stir and sieve the clay slip. 3. Dry, knead, and wedge the clay until it reaches uniform consistency.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "3.a.iii",
+    "questionText": "Identify one technique that can be used to decorate the vase.",
+    "modelAnswer": "Incising (or Sgraffito / Burnishing / Sprigging / Glazing / Embossing / Painting).",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "The creative arts learners displayed their works for appreciation. As part of the class, explain three benefits that you will derive from this activity.",
+    "modelAnswer": "1. Boosts self-confidence: Validates hard work, makes learners feel recognized, and encourages excellence. 2. Fosters creativity: Inspires imagination, encourages experimentation, and helps build on peer ideas. 3. Improves communication skills: Promotes clear articulation of ideas and helps give and receive constructive feedback.",
+    "topic": "Visual Arts",
+    "hasImage": false
+  },
+  {
+    "number": "4.a.i",
+    "questionText": "On the Staff provided, notate F on a line using the treble clef using a semibreve/whole note.",
+    "modelAnswer": "Top line (5th line) of treble staff with a semibreve (whole note).",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "4.a.ii",
+    "questionText": "On the Staff provided, notate C on a space using the treble clef using a semibreve/whole note.",
+    "modelAnswer": "3rd space of treble staff with a semibreve (whole note).",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "4.a.iii",
+    "questionText": "On the Staff provided, notate C on a space using the bass clef using a semibreve/whole note.",
+    "modelAnswer": "2nd space of bass staff with a semibreve (whole note).",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "In the table provided place the following western instruments in the group they belong: Keyboard, Cello, Clarinet, Cymbals, Trombone.",
+    "modelAnswer": "Woodwinds: Clarinet; Brass: Trombone; Percussion: Cymbals; Strings: Cello; Electronic: Keyboard.",
+    "topic": "Music",
+   "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/Screenshot 2026-09-19 084302.png"
+  },
+  {
+    "number": "4.c",
+    "questionText": "King Paluta, whose real name is Thomas Adjei Wireko, is a Ghanaian Musician known for combining Traditional rhythms, storytelling and modern hip-hop beats in his music. One of his most popular songs, \"Aseda\" carries deep messages that address important issues in the Ghanaian society. Identify two of these issues.",
+    "modelAnswer": "1. Expressing gratitude to God despite life challenges. 2. Hardship and perseverance among Ghanaian youth.",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "Classify the following musicians under the categories of art music, popular music and traditional music: James V. Armaah, K.K. Kabobo, Dela Botri, Newlove Annan, Okyeame Kwame.",
+    "modelAnswer": "Art Music: James V. Armaah, Newlove Annan; Popular Music: K.K. Kabobo, Okyeame Kwame; Traditional Music: Dela Botri.",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.i",
+    "questionText": "State the meaning of Presto.",
+    "modelAnswer": "Presto means very fast or rapid tempo.",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.ii",
+    "questionText": "State the meaning of Allegretto.",
+    "modelAnswer": "Allegretto means moderately fast tempo (slightly slower than Allegro).",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.iii",
+    "questionText": "State the meaning of Andante.",
+    "modelAnswer": "Andante means at a walking pace or moderately slow tempo.",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.iv",
+    "questionText": "State the meaning of Mezzo.",
+    "modelAnswer": "Mezzo means medium or moderately (e.g., mezzo forte = moderately loud).",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.v",
+    "questionText": "State the meaning of A cappella.",
+    "modelAnswer": "A cappella means singing without instrumental accompaniment.",
+    "topic": "Music",
+    "hasImage": false
+  },
+  {
+    "number": "6.a",
+    "questionText": "Grace Omaboe, popularly known as Maame Dokono has played an important role in developing Ghana's creative Arts industry and has made a positive impact on society. Identify three ways Maame Dokono has contributed to Ghanaian society.",
+    "modelAnswer": "1. Promoting Ghanaian culture and moral storytelling through film and television. 2. Advocating for child protection and women's rights through charity and advocacy work. 3. Mentoring and nurturing young talent in drama and acting.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "6.b.i",
+    "questionText": "State any three parts of the performance space.",
+    "modelAnswer": "1. Stage. 2. Backstage. 3. Wings (or Auditorium / Control Booth).",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "6.b.ii",
+    "questionText": "Provide one function on each of the parts stated in (i) above.",
+    "modelAnswer": "1. Stage: Where performers execute the dance or drama in full view of the audience. 2. Backstage: Resting and preparation area for actors before going on stage. 3. Wings: Off-stage side spaces used for discreet entrances, exits, and prop positioning.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "6.c",
+    "questionText": "Modern Ghanaian dances such as azonto, kupe, pilolo, alkayida, shaku shaku and akwaaba are popular among young people. Explain two ways these dances could be used to preserve and promote Ghanaian culture.",
+    "modelAnswer": "1. Global Exposure: These dance steps feature heavily in international music videos and social media, showcasing contemporary Ghanaian culture globally. 2. Youth Engagement: They blend traditional Ghanaian rhythmic movements with modern music, keeping youth connected to cultural expressions.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "7.a",
+    "questionText": "Explain dance-drama.",
+    "modelAnswer": "Dance-drama is a drama performed mainly through movement, body gestures, dance choreography, and mime without relying on spoken dialogue.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "7.b",
+    "questionText": "How do actors and dancers utilize their feet, arms, hands, legs, head, neck and torso to convey emotions, tell stories and enhance their performance? Write on any three.",
+    "modelAnswer": "1. Hands/Arms: Used for gestural storytelling, symbolic expressions, and guiding direction. 2. Torso: Bends, expands, or contracts to express deep emotions like grief, fear, pride, or power. 3. Feet/Legs: Execute rhythms and leaps; heavy stomping conveys anger or strength, while light movement conveys joy.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  },
+  {
+    "number": "7.c",
+    "questionText": "Using appropriate examples, describe how the following elements of contemporary dance are utilised: (i) body, (ii) space, (iii) energy.",
+    "modelAnswer": "1. Body: Represents the principal instrument, forming shapes and executing postures (e.g., expressive hand/arm waves in Azonto). 2. Space: Involves stage levels, pathways, and directions traveled by dancers during performance. 3. Energy: Refers to dynamic force, ranging from powerful explosive movements in energetic dances to soft, smooth flows in lyrical sequences.",
+    "topic": "Dance & Drama",
+    "hasImage": false
+  }
+]

@@ -9,5 +9,13 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/studyvault/',
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+      },
+    },
+  },
 })
 

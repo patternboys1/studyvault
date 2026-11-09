@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Bell,
   CheckCircle2,
-  ChevronRight,
   KeyRound,
   Mail,
   MonitorSmartphone,
@@ -14,6 +13,9 @@ import {
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { useTheme } from "../../context/ThemeContext";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebase";
 
 const notificationOptions = [
   { id: "mocks", label: "Mock exam reminders", default: true },
@@ -26,19 +28,43 @@ const studyPreferencesOptions = [
   { id: "subject", label: "Default subject", options: ["Mathematics", "English", "Science", "Social Studies", "RME"], default: "Mathematics" },
   { id: "practice", label: "Practice mode", options: ["Show answers immediately", "Show answers after attempt", "No answers until review"], default: "Show answers after attempt" },
   { id: "target", label: "Daily question target", options: ["10 questions", "15 questions", "25 questions", "50 questions"], default: "25 questions" },
-  { id: "timer", label: "Exam timer warning", options: ["5 minutes", "10 minutes", "15 minutes", "No warning"], default: "10 minutes remaining" },
+  { id: "timer", label: "Exam timer warning", options: ["5 minutes", "10 minutes", "15 minutes", "No warning"], default: "10 minutes" },
 ];
 
+const defaultNotifications = Object.fromEntries(notificationOptions.map(({ id, default: value }) => [id, value]));
+const defaultPreferences = Object.fromEntries(studyPreferencesOptions.map(({ id, default: value }) => [id, value]));
+
 function Settings() {
-  const { user, userProfile, isPremium, setUserPlan } = useAuth();
+  const { user, userProfile, isPremium } = useAuth();
   const { isDark, toggleTheme } = useTheme();
-  const [notifications, setNotifications] = useState(
-    notificationOptions.reduce((acc, opt) => ({ ...acc, [opt.id]: opt.default }), {})
-  );
-  const [preferences, setPreferences] = useState(
-    studyPreferencesOptions.reduce((acc, opt) => ({ ...acc, [opt.id]: opt.default }), {})
-  );
+  const [notifications, setNotifications] = useState(defaultNotifications);
+  const [preferences, setPreferences] = useState(defaultPreferences);
+  const [school, setSchool] = useState("");
+  const [classLevel, setClassLevel] = useState("");
+  const [isLoadingSettings, setIsLoadingSettings] = useState(true);
   const [saveStatus, setSaveStatus] = useState(null);
+  const [securityMessage, setSecurityMessage] = useState("");
+
+  useEffect(() => {
+    let active = true;
+    const loadSettings = async () => {
+      try {
+        const snapshot = await getDoc(doc(db, "users", user.uid));
+        if (!active || !snapshot.exists()) return;
+        const data = snapshot.data();
+        setNotifications({ ...defaultNotifications, ...data.notificationSettings });
+        setPreferences({ ...defaultPreferences, ...data.studyPreferences });
+        setSchool(data.school || "");
+        setClassLevel(data.classLevel || "");
+      } catch (error) {
+        if (active) setSaveStatus(`error:${error.message || "Unable to load saved settings."}`);
+      } finally {
+        if (active) setIsLoadingSettings(false);
+      }
+    };
+    loadSettings();
+    return () => { active = false; };
+  }, [user.uid]);
 
   const handleNotificationToggle = (id) => {
     setNotifications((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -48,12 +74,35 @@ function Settings() {
     setPreferences((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    if (isLoadingSettings) return;
     setSaveStatus("saving");
-    setTimeout(() => {
+    try {
+      await setDoc(doc(db, "users", user.uid), {
+        studyPreferences: preferences,
+        notificationSettings: notifications,
+        school: school.trim(),
+        classLevel: classLevel.trim(),
+        updatedAt: serverTimestamp(),
+      }, { merge: true });
       setSaveStatus("saved");
-      setTimeout(() => setSaveStatus(null), 3000);
-    }, 1000);
+      window.setTimeout(() => setSaveStatus((status) => status === "saved" ? null : status), 3000);
+    } catch (error) {
+      setSaveStatus(`error:${error.message || "Unable to save settings."}`);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    if (!user?.email) {
+      setSecurityMessage("This account does not have an email address for password recovery.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, user.email);
+      setSecurityMessage(`Password reset email sent to ${user.email}.`);
+    } catch (error) {
+      setSecurityMessage(error.message || "Unable to send the password reset email.");
+    }
   };
 
   return (
@@ -69,7 +118,7 @@ function Settings() {
         </div>
         <button
           onClick={handleSave}
-          disabled={saveStatus === "saving"}
+          disabled={saveStatus === "saving" || isLoadingSettings}
           className={`flex w-fit items-center gap-2 rounded-xl px-6 py-3 text-sm font-black text-white shadow-md transition ${
             saveStatus === "saved"
               ? "bg-emerald-700 hover:bg-emerald-800"
@@ -77,19 +126,20 @@ function Settings() {
           }`}
         >
           <Save size={16} />
-          {saveStatus === "saving" ? "Saving..." : saveStatus === "saved" ? "Saved!" : "Save Changes"}
+          {isLoadingSettings ? "Loading..." : saveStatus === "saving" ? "Saving..." : saveStatus === "saved" ? "Saved!" : saveStatus?.startsWith("error:") ? "Retry Save" : "Save Changes"}
         </button>
       </section>
+      {saveStatus?.startsWith("error:") && <p role="alert" className="-mt-5 text-sm font-bold text-red-700">{saveStatus.slice(6)}</p>}
 
       <section className="grid grid-cols-1 gap-8 xl:grid-cols-[360px_1fr]">
         <aside className="space-y-6">
-          <ProfileCard user={user} userProfile={userProfile} isPremium={isPremium} onTogglePremium={setUserPlan} />
-          <SecurityCard />
+          <ProfileCard user={user} userProfile={userProfile} isPremium={isPremium} />
+          <SecurityCard user={user} onPasswordReset={handlePasswordReset} message={securityMessage} />
           <ThemeCard isDark={isDark} toggleTheme={toggleTheme} />
         </aside>
 
         <main className="space-y-6">
-          <AccountForm user={user} />
+          <AccountForm user={user} school={school} setSchool={setSchool} classLevel={classLevel} setClassLevel={setClassLevel} />
           <PreferencesCard preferences={preferences} onPreferenceChange={handlePreferenceChange} />
           <NotificationsCard notifications={notifications} onToggle={handleNotificationToggle} />
         </main>
@@ -98,7 +148,7 @@ function Settings() {
   );
 }
 
-function ProfileCard({ user, userProfile, isPremium, onTogglePremium }) {
+function ProfileCard({ user, userProfile, isPremium }) {
   const planLabel = isPremium ? "Premium" : "Free";
 
   return (
@@ -126,18 +176,19 @@ function ProfileCard({ user, userProfile, isPremium, onTogglePremium }) {
           {planLabel}
         </span>
       </div>
-      <button
-        type="button"
-        onClick={() => onTogglePremium(isPremium ? "free" : "premium", isPremium ? null : "monthly")}
-        className="mt-6 w-full rounded-xl border border-blue-900 px-4 py-3 text-sm font-black text-blue-900 transition hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-900/30"
-      >
-        {isPremium ? "Switch to Free" : "Enable Test Premium"}
-      </button>
     </article>
   );
 }
 
-function SecurityCard() {
+function SecurityCard({ user, onPasswordReset, message }) {
+  const providers = user?.providerData?.map((provider) => provider.providerId) || [];
+  const hasPasswordProvider = providers.includes("password");
+  const hasGoogleProvider = providers.includes("google.com");
+  const statuses = [
+    ["Email verified", Boolean(user?.emailVerified)],
+    ["Google sign-in enabled", hasGoogleProvider],
+    ["Password recovery available", Boolean(user?.email && hasPasswordProvider)],
+  ];
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
       <div className="flex items-center gap-3">
@@ -150,22 +201,23 @@ function SecurityCard() {
         </div>
       </div>
       <div className="mt-6 space-y-3">
-        {["Email verified", "Google sign-in enabled", "Password recovery ready"].map(
-          (item) => (
+        {statuses.map(
+          ([item, enabled]) => (
             <p
               key={item}
-              className="flex items-center gap-3 text-sm font-bold text-gray-600 dark:text-gray-300"
+              className={`flex items-center gap-3 text-sm font-bold ${enabled ? "text-gray-600 dark:text-gray-300" : "text-gray-400 dark:text-gray-500"}`}
             >
-              <CheckCircle2 size={17} className="text-emerald-700 dark:text-emerald-400" />
-              {item}
+              <CheckCircle2 size={17} className={enabled ? "text-emerald-700 dark:text-emerald-400" : "text-gray-300 dark:text-gray-600"} />
+              {item}: {enabled ? "Enabled" : "Not enabled"}
             </p>
           )
         )}
       </div>
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-gray-700 transition hover:bg-slate-200 dark:bg-slate-700 dark:text-gray-300 dark:hover:bg-slate-600">
+      <button type="button" onClick={onPasswordReset} disabled={!user?.email || !hasPasswordProvider} className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-slate-100 px-4 py-3 text-sm font-black text-gray-700 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-700 dark:text-gray-300 dark:hover:bg-slate-600">
         <KeyRound size={16} />
-        Change Password
+        Send Password Reset Email
       </button>
+      {message && <p role="status" className="mt-3 text-sm font-medium text-gray-600 dark:text-gray-300">{message}</p>}
     </article>
   );
 }
@@ -212,7 +264,7 @@ function ThemeCard({ isDark, toggleTheme }) {
   );
 }
 
-function AccountForm({ user }) {
+function AccountForm({ user, school, setSchool, classLevel, setClassLevel }) {
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
       <div className="mb-6 flex items-center gap-3">
@@ -230,8 +282,8 @@ function AccountForm({ user }) {
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Full Name" value={user?.displayName || "Study Vault Student"} />
         <Field label="Email Address" value={user?.email || "student@studyvault.app"} />
-        <Field label="School" value="Accra Junior High School" />
-        <Field label="Class Level" value="JHS 3" />
+        <Field label="School" value={school} onChange={setSchool} placeholder="Enter your school" />
+        <Field label="Class Level" value={classLevel} onChange={setClassLevel} placeholder="For example, JHS 3" />
       </div>
     </article>
   );
@@ -318,13 +370,15 @@ function NotificationsCard({ notifications, onToggle }) {
   );
 }
 
-function Field({ label, value }) {
+function Field({ label, value, onChange, placeholder }) {
   return (
     <label className="block">
       <span className="mb-2 block text-sm font-black text-gray-700 dark:text-gray-300">{label}</span>
       <input
         value={value}
-        readOnly
+        onChange={onChange ? (event) => onChange(event.target.value) : undefined}
+        readOnly={!onChange}
+        placeholder={placeholder}
         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-gray-700 outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100 dark:border-slate-600 dark:bg-slate-700 dark:text-gray-300"
       />
     </label>

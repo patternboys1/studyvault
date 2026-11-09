@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,32 +8,30 @@ import {
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import DashboardLayout from "./components/DashboardLayout";
 
-// --- PUBLIC PAGES (Landing Site) ---
-import Home from "./pages/public/Home";
-import About from "./pages/public/About";
-import Features from "./pages/public/Features";
-import Contact from "./pages/public/Contact";
-import Subjects from "./pages/public/Subjects";
-import Pricing from "./pages/public/Pricings"; // Your public pricing
-import Login from "./pages/auth/Login";
-import SignUp from "./pages/auth/SignUp";
-
-// --- PROTECTED PAGES (Internal App) ---
-import Overview from "./pages/dashboard/Overview";
-import Performance from "./pages/dashboard/Performance";
-import MockExams from "./pages/dashboard/MockExams";
-import Settings from "./pages/dashboard/Settings";
-import PastQuestions from "./pages/dashboard/PastQuestions";
-import Report from "./pages/dashboard/Report";
-import Upgrade from "./pages/dashboard/Upgrade";
+const Home = lazy(() => import("./pages/public/Home"));
+const About = lazy(() => import("./pages/public/About"));
+const Features = lazy(() => import("./pages/public/Features"));
+const Contact = lazy(() => import("./pages/public/Contact"));
+const Subjects = lazy(() => import("./pages/public/Subjects"));
+const Pricing = lazy(() => import("./pages/public/Pricings"));
+const Login = lazy(() => import("./pages/auth/Login"));
+const SignUp = lazy(() => import("./pages/auth/SignUp"));
+const DashboardLayout = lazy(() => import("./components/DashboardLayout"));
+const Overview = lazy(() => import("./pages/dashboard/Overview"));
+const Performance = lazy(() => import("./pages/dashboard/Performance"));
+const MockExams = lazy(() => import("./pages/dashboard/MockExams"));
+const Settings = lazy(() => import("./pages/dashboard/Settings"));
+const PastQuestions = lazy(() => import("./pages/dashboard/PastQuestions"));
+const Report = lazy(() => import("./pages/dashboard/Report"));
+const Upgrade = lazy(() => import("./pages/dashboard/Upgrade"));
 
 function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
         <Router basename={import.meta.env.BASE_URL}>
+        <Suspense fallback={<div className="flex min-h-screen items-center justify-center text-sm font-semibold text-slate-500">Loading Study Vault...</div>}>
         <Routes>
           {/*  Public Landing Page Routes */}
           <Route path="/" element={<Home />} />
@@ -68,6 +67,7 @@ function App() {
           {/* 404 Redirect */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        </Suspense>
       </Router>
       </AuthProvider>
     </ThemeProvider>

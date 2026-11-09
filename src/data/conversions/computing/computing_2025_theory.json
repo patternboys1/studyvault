@@ -1,0 +1,166 @@
+[
+  {
+    "number": "1.a",
+    "questionText": "As a computing student, you are to program a robot to assist your colleagues to buy stationery from a shop. The sequence of activities undertaken to buy stationery at the shop is as follows:\nGo to the stationery shop;\nCheck the price of the selected stationery;\nSelect the needed stationery;\nGo to the cash counter;\nPay money to the cashier;\nTake the stationery along;\nLeave the shop.\n\nDraw a flowchart using the sequence of activities.",
+    "modelAnswer": "Start -> Go to the shop -> Select the stationery -> Check the price -> [Decision: Is price OK?] -> If Yes, Go to the cash counter -> Pay money -> Take the stationery along -> Leave the shop -> Stop.",
+    "topic": "Algorithms & Flowcharts",
+    "hasImage": true,
+    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/answer1A.png"
+  },
+  {
+    "number": "1.b",
+    "questionText": "Suggest three modes of payment the students could use to pay the cashier.",
+    "modelAnswer": "1. Cash\n2. Mobile Money\n3. Contactless payment (Credit/Debit cards, Google Pay, Apple Pay)",
+    "topic": "E-Commerce & Digital Payment Systems",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "Describe one of the modes of payment suggested in 1(b).",
+    "modelAnswer": "Cash: This involves using physical currency, like banknotes and coins, to make the payment.",
+    "topic": "E-Commerce & Digital Payment Systems",
+    "hasImage": false
+  },
+  {
+    "number": "1.d",
+    "questionText": "Assume that there are four cashiers at the shop, and each of them uses a computer which is net worked for their work. Draw a well labelled diagram to illustrate two network topologies that could be used to network the computers.",
+    "modelAnswer": "1. Star Topology: A central node/switch connected individually to Node 1, Node 2, Node 3, and Node 4.\n2. Bus Topology: A single central backbone link line with drop lines connecting to Node 1, Node 2, Node 3, and Node 4.",
+    "topic": "Computer Networks & Topologies",
+    "hasImage": true,
+     "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/answer1D.png"
+  },
+  {
+    "number": "1.e.i",
+    "questionText": "Kofi, a student in your school visited the stationery shop for two days and his expenditure at the shop is as follows:\nOn Monday, he bought 4 exercise books for GH₵ 60.00. On Tuesday, he bought 6 pens for GH₵ 40.00.\n\nComplete the Microsoft Excel worksheet using Kofi's two days expenditure at the stationery shop as shown in Figure 1.",
+    "modelAnswer": "Cell B2: Exercise books\nCell C2: 4\nCell D2: 60\nCell B3: Pens\nCell C3: 6\nCell D3: 40",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": true,
+    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/answer1E.png"
+  },
+  {
+    "number": "1.e.ii",
+    "questionText": "Write a formula in Microsoft Excel to compute Kofi's total amount spent for the two days at the stationery shop.",
+    "modelAnswer": "=D2+D3",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a",
+    "questionText": "Explain the concept of perceptual computing to colleagues in the computing club.",
+    "modelAnswer": "Perceptual computing is the technology that enables computers and computing devices to interact with the user through the use of various sensors and input devices to perceive and respond to their surroundings, such as recognizing human gestures, speech, and facial expressions.",
+    "topic": "Emerging Technologies",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "Most companies use data entry devices that capture machine-readable data directly into the computer system without using the keyboard.\nList three such data entry devices.",
+    "modelAnswer": "1. Graphic tablet\n2. Optical Mark Reader (OMR)\n3. Barcode reader/scanner",
+    "topic": "Input & Data Capture Devices",
+    "hasImage": false
+  },
+  {
+    "number": "2.c",
+    "questionText": "A student is planning to compress a file on a computer so that it can be sent to a friend through e-mail:\nSuggest two techniques that can be used to compress the file.",
+    "modelAnswer": "1. Lossy compression technique\n2. Lossless compression technique",
+    "topic": "File Management & Compression",
+    "hasImage": false
+  },
+  {
+    "number": "2.d",
+    "questionText": "A student complained of eye strain due to prolonged use of the computer.\nState two possible ways to prevent the problem.",
+    "modelAnswer": "1. Use screen filter/screen protector screen shield.\n2. Take regular breaks while using the computer.",
+    "topic": "Health & Ergonomics",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "Outline the steps on how to make the word Computing in Word processing document a hyperlink to the website address www.waecgh.org.",
+    "modelAnswer": "1. Select the word Computing in the word document.\n2. Right-click on the selected word (Computing).\n3. Locate and click on Hyperlink from the pop-up menu.\n4. Ensure the selected word (Computing) is seen in the 'Text to display' box.\n5. Copy and paste or type the website address (www.waecgh.org) in the Address box.\n6. Click on OK.",
+    "topic": "Word Processing (MS Word)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "In designing a presentation, shapes allow the user to create complex objects on the slide.\nList two categories in which objects found under the shape tool are grouped.",
+    "modelAnswer": "1. Lines\n2. Rectangles",
+    "topic": "Presentation Software (MS PowerPoint)",
+    "hasImage": false
+  },
+  {
+    "number": "3.c",
+    "questionText": "A Microsoft Publisher assignment requires that texts are written over an image on a flyer.\nOutline the steps to accomplish the assignment.",
+    "modelAnswer": "1. Insert textbox\n2. Type the text\n3. Select the textbox\n4. Format the text",
+    "topic": "Desktop Publishing (MS Publisher)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "State one of the data communication models for networks.",
+    "modelAnswer": "OSI model (Open Systems Interconnection Reference Model)",
+    "topic": "Computer Networks",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "Social media sites were created for friendships, learning, entertainment and other purposes.\nList two of the sites used for video-sharing.",
+    "modelAnswer": "1. YouTube\n2. Facebook Live",
+    "topic": "Internet & Social Media",
+    "hasImage": false
+  },
+  {
+    "number": "4.c",
+    "questionText": "Outline two of the key principles governing information security.",
+    "modelAnswer": "1. Confidentiality\n2. Integrity",
+    "topic": "Information Security",
+    "hasImage": false
+  },
+  {
+    "number": "4.d.i",
+    "questionText": "Describe how the following search technique is used to search for information on the Internet:\nAND",
+    "modelAnswer": "This search technique allows the user to get information from various websites that contains both the keyword and another keyword.",
+    "topic": "Internet Search Techniques",
+    "hasImage": false
+  },
+  {
+    "number": "4.d.ii",
+    "questionText": "Describe how the following search technique is used to search for information on the Internet:\nNOT",
+    "modelAnswer": "This search technique allows the user to get information from various websites that contains only the specified keywords and not any other keyword.",
+    "topic": "Internet Search Techniques",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "Convert 10010₂ to a decimal number.",
+    "modelAnswer": "10010₂ = (1 × 2⁴) + (0 × 2³) + (0 × 2²) + (1 × 2¹) + (0 × 2⁰)\n= 16 + 0 + 0 + 2 + 0\n= 18",
+    "topic": "Number Systems & Conversions",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.i",
+    "questionText": "In the real-world environment, outline two applications of robotics in Education.",
+    "modelAnswer": "1. Age group teaching\n2. One-on-one interactions",
+    "topic": "Robotics Applications",
+    "hasImage": false
+  },
+  {
+    "number": "5.b.ii",
+    "questionText": "In the real-world environment, outline two applications of robotics in Transportation.",
+    "modelAnswer": "1. Drones\n2. Self-driving autonomous/driverless cars",
+    "topic": "Robotics Applications",
+    "hasImage": false
+  },
+  {
+    "number": "5.c",
+    "questionText": "A school's robotic club is to construct a robot to be shown during a robotic exhibition organized by the District Education Office.\nList two components of the robot to be constructed.",
+    "modelAnswer": "1. Sensors\n2. Actuators",
+    "topic": "Robotics Hardware",
+    "hasImage": false
+  },
+  {
+    "number": "5.d",
+    "questionText": "Artificial Intelligence is the ability of a computer or computer-controlled robots to perform tasks like human beings.\nList two abilities that make the computers or computer-controlled robots intelligent.",
+    "modelAnswer": "1. Reasoning/thinking\n2. Finding meanings",
+    "topic": "Artificial Intelligence",
+    "hasImage": false
+  }
+]

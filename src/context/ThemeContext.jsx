@@ -1,9 +1,14 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
 
 const ThemeContext = createContext();
+
+function updateDOM(isDarkMode) {
+  document.documentElement.classList.toggle("dark", isDarkMode);
+}
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
@@ -53,14 +58,6 @@ export const ThemeProvider = ({ children }) => {
 
     return () => unsubscribe();
   }, []);
-
-  const updateDOM = (isDarkMode) => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
 
   const toggleTheme = async () => {
     const newValue = !isDark;

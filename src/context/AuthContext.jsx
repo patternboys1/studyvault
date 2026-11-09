@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
 import { getMyEntitlements } from "../services/studyContentService";
 
@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
   const [userProfile, setUserProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [clock, setClock] = useState(0);
+  const profileRequestId = useRef(0);
 
   useEffect(() => {
     const initialTick = window.setTimeout(() => setClock(Date.now()), 0);
@@ -46,45 +47,49 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const refreshUserProfile = async (currentUser) => {
+    const requestId = ++profileRequestId.current;
     if (!currentUser) {
       setUserProfile(null);
       return null;
     }
 
     const userRef = doc(db, "users", currentUser.uid);
-    let entitlements = null;
-    try {
-      entitlements = await getMyEntitlements();
-    } catch (error) {
-      console.warn("Unable to refresh account entitlements:", error.message);
+    const [entitlementsResult, userResult] = await Promise.allSettled([
+      getMyEntitlements(),
+      getDoc(userRef),
+    ]);
+    const entitlements = entitlementsResult.status === "fulfilled"
+      ? entitlementsResult.value
+      : null;
+    if (entitlementsResult.status === "rejected") {
+      console.warn("Unable to refresh account entitlements:", entitlementsResult.reason?.message);
     }
-    const userSnap = await getDoc(userRef);
+    if (userResult.status === "rejected") throw userResult.reason;
+
+    const userSnap = userResult.value;
     const profile = normalizeUserProfile(currentUser, userSnap, entitlements);
-
-    await setDoc(
-      userRef,
-      {
-        uid: currentUser.uid,
-        email: currentUser.email || profile.email,
-        displayName: currentUser.displayName || profile.displayName,
-        updatedAt: serverTimestamp(),
-      },
-      { merge: true }
-    );
-
-    setUserProfile(profile);
+    if (
+      requestId === profileRequestId.current
+      && auth.currentUser?.uid === currentUser.uid
+    ) setUserProfile(profile);
     return profile;
   };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
 
-      if (currentUser) {
-        try {
-          await refreshUserProfile(currentUser);
-        } catch (error) {
-          console.error("Error loading user profile:", error);
+      if (!currentUser) {
+        profileRequestId.current += 1;
+        setUserProfile(null);
+        return;
+      }
+
+      setUserProfile(null);
+      refreshUserProfile(currentUser).catch((error) => {
+        console.error("Error loading user profile:", error);
+        if (auth.currentUser?.uid === currentUser.uid) {
           setUserProfile({
             uid: currentUser.uid,
             email: currentUser.email || "",
@@ -98,11 +103,7 @@ export const AuthProvider = ({ children }) => {
             darkMode: false,
           });
         }
-      } else {
-        setUserProfile(null);
-      }
-
-      setLoading(false);
+      });
     });
 
     return () => unsubscribe();

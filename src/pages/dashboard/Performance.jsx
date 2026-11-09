@@ -5,8 +5,6 @@ import {
   Download,
   Rocket,
   Target,
-  TrendingUp,
-  Calendar,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -263,7 +261,7 @@ function Performance() {
       </section>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-[320px_1fr]">
-        <ExamReadiness attempts={attempts} analytics={analytics} />
+        <ExamReadiness attempts={attempts} />
         <ScoreTrends analytics={analytics} />
       </section>
 
@@ -284,7 +282,7 @@ function BasicMetric({ label, value }) {
   return <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><p className="text-sm font-bold text-gray-500">{label}</p><p className="mt-2 text-3xl font-black text-gray-950">{value}</p></article>;
 }
 
-function ExamReadiness({ attempts, analytics }) {
+function ExamReadiness({ attempts }) {
   const averageScore = attempts.length
     ? Math.round(attempts.reduce((total, attempt) => total + (attempt.score || 0), 0) / attempts.length)
     : 0;

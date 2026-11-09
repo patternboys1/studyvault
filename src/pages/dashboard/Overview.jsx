@@ -5,7 +5,6 @@ import {
   Book,
   Calculator,
   CheckCircle2,
-  Clock3,
   FileText,
   Flame,
   Globe,
@@ -141,7 +140,6 @@ function processOverviewData(attempts) {
   }));
 
   // Calculate streak (consecutive days)
-  let streak = 0;
   const uniqueDates = new Set();
   orderedAttempts.forEach((attempt) => {
     const date = parseAttemptDate(attempt.completedAt);
@@ -149,7 +147,7 @@ function processOverviewData(attempts) {
     const dateString = date.toISOString().split("T")[0];
     uniqueDates.add(dateString);
   });
-  streak = Math.min(uniqueDates.size, 7); // Max 7-day streak
+  const streak = Math.min(uniqueDates.size, 7); // Max 7-day streak
 
   // Estimate questions answered
   const totalQuestions = orderedAttempts.reduce((sum, attempt) => sum + (Number(attempt.totalQuestions) || 0), 0);
@@ -193,7 +191,7 @@ const Overview = () => {
   const navigate = useNavigate();
   const firstName = user?.displayName?.split(" ")[0] || "Student";
 
-  const { data: attempts = [], isLoading } = useQuery({
+  const { data: attempts = [] } = useQuery({
     queryKey: ["mock-attempts", user?.uid],
     queryFn: () => getMockAttempts(user.uid),
     enabled: Boolean(user?.uid),

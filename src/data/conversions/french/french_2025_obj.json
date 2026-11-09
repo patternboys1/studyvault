@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Roberta, Rukiya et Cobbina cherchent ......",
+    "options": [
+      "des amis",
+      "des camarades",
+      "des collègiens",
+      "des élèves"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Le texte indique que les trois élèves se présentent « à la recherche des correspondants » sur un site d'amitié en ligne, ce qui signifie qu'ils cherchent des amis[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Selon les textes, qui n'aime pas préparer les repas?",
+    "options": [
+      "Cobbina",
+      "D-Jay",
+      "Roberta",
+      "Rukiya"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Roberta dit explicitement dans le texte : « je déteste cuisiner »[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Rukiya aime",
+    "options": [
+      "l'anglais",
+      "le français",
+      "l'histoire",
+      "les mathématiques"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Rukiya mentionne : « J'aime faire des calculs », ce qui correspond aux mathématiques[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Rukiya est ...... du groupe de trois élèves.",
+    "options": [
+      "la plus âgée",
+      "la plus belle",
+      "la plus jeune",
+      "la plus petite"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Rukiya a 15 ans, Roberta a 12 ans et Cobbina a 7 ans. Rukiya est donc la plus âgée[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Selon le passage, Cobbina adore",
+    "options": [
+      "les chats",
+      "l'anglais",
+      "aller à Tarkwa",
+      "manger de la viande"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cobbina dit : « J'aime beaucoup les animaux », ce qui correspond à l'option « les chats »[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Qu'est-ce qui anime le vendredi soir à Domekofe ?",
+    "options": [
+      "La journée au champ",
+      "Le retour des élèves",
+      "Les devoirs",
+      "Les jouissances"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Le texte indique qu'après le dîner, les habitants se rassemblent pour se divertir et parle de « ces jouissances »[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Selon le journaliste, les parents à Domekofe sont",
+    "options": [
+      "animateurs",
+      "cultivateurs",
+      "élèves",
+      "musiciens"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le texte précise que les parents « reviennent au foyer après la journée au champ », ce qui indique qu'ils sont cultivateurs[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "D'après le texte, on joue du tam-tam",
+    "options": [
+      "à la place publique",
+      "à l'école publique",
+      "au champ",
+      "au foyer"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Le texte mentionne que les habitants se rassemblent « au centre public » (la place publique) où l'on joue du tam-tam[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Pendant la soirée, les jeunes dansent ...... leurs parents.",
+    "options": [
+      "avec",
+      "comme",
+      "pour",
+      "sans"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le texte dit : « les jeunes imitent leurs parents en dansant aussi », ce qui signifie qu'ils dansent « comme » leurs parents[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "À 22 heures, tout le monde va",
+    "options": [
+      "chanter",
+      "danser",
+      "se coucher",
+      "s'amuser"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte se termine par : « À 22 heures, les activités s'arrêtent puis tout le monde va au lit » (se coucher)[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "La famille Boateng a ....... membres.",
+    "options": [
+      "deux",
+      "trois",
+      "cinq",
+      "six"
+    ],
+    "correctAnswer": "C",
+    "explanation": "M. Boateng, sa femme, et leurs trois enfants (Patrick, Patricia, Philip) font un total de 5 membres dans la famille Boateng[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Kwaku est ...... de M. Boateng.",
+    "options": [
+      "l'enfant",
+      "l'oncle",
+      "le cousin",
+      "le neveu"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Kwaku dit : « Mon oncle, M. Boateng... », donc Kwaku est le neveu de M. Boateng[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "«Patrick et Patricia sont nés le même jour», c'est-à-dire qu'ils sont",
+    "options": [
+      "des confrères",
+      "des frères",
+      "des jumeaux",
+      "des soeurs"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Deux enfants nés des mêmes parents le même jour sont des jumeaux[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "Philip a quel âge?",
+    "options": [
+      "2 ans",
+      "8 ans",
+      "10 ans",
+      "12 ans"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Patrick et Patricia ont 10 ans, et Philip a deux ans de moins (10 - 2 = 8 ans)[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "Le petit déjeuner est préparé par",
+    "options": [
+      "Patrick et Patricia",
+      "Philip et Kwaku",
+      "Philip et Mme Boateng",
+      "Patricia et Mme Boateng"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Le texte indique que « Patricia aide sa mère à la cuisine », donc la mère (Mme Boateng) et Patricia préparent les repas/petit déjeuner[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Barracks Basic et Airport Basic sont",
+    "options": [
+      "des camps militaires",
+      "des écoles primaires",
+      "des équipes de football",
+      "des joueurs de football"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le texte mentionne « un match de foot entre mon école, Barracks Basic et Airport Basic », ce sont des écoles[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Le match a lieu",
+    "options": [
+      "à Barracks Basic",
+      "à Airport Basic",
+      "au ministère des Sports",
+      "sur le terrain du Ghana"
+    ],
+    "correctAnswer": "A",
+    "explanation": "L'auteur fréquente Barracks Basic et dit : « Le match a lieu sur notre terrain », c'est-à-dire à Barracks Basic[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Combien de buts sont marqués pendant le match?",
+    "options": [
+      "Zéro",
+      "Deux",
+      "Trois",
+      "Cinq"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte indique que Barracks Basic marque 3 buts en première mi-temps, et qu'aucun pénalty n'est marqué ensuite[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Selon le passage,",
+    "options": [
+      "Airport Basic perd le match",
+      "Appiah marque trois buts",
+      "l'arbitre siffle deux pénaltys",
+      "Shittu rate trois pénaltys"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Barracks Basic a marqué 3 buts et Airport Basic a raté ses opportunités, donc Airport Basic perd le match[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Le gardien de Airport Basic rate un pénalty à la ... minute.",
+    "options": [
+      "29 ème",
+      "49 ème",
+      "89 ème",
+      "99 ème"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte dit : « À la quatre-vingt-neuvième minute, c'est le gardien de Airport Basic qui n'arrive pas à marquer... »[cite: 21, 22].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Quand on parle d'Afadzato, il s'agit .......",
+    "options": [
+      "d'un animal",
+      "d'une montagne",
+      "d'un pays",
+      "d'une ville"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le mont Afadjato est une montagne située au Ghana[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "À la fin de la journée, quand Aminata veut aller au lit, elle dit « ...... » à sa mère.",
+    "options": [
+      "Au lit!",
+      "Au revoir!",
+      "Bonne nuit!",
+      "Bonsoir!"
+    ],
+    "correctAnswer": "C",
+    "explanation": "On dit « Bonne nuit ! » avant d'aller se coucher[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "- Joe! Tu es le dernier né de tes parents?\n- Ah non! Je suis plutôt ......",
+    "options": [
+      "l'aîné",
+      "le cadet",
+      "l'enfant",
+      "le petit"
+    ],
+    "correctAnswer": "A",
+    "explanation": "L'opposé du dernier-né (le plus jeune) est le premier-né, c'est-à-dire l'aîné[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "- Salut Sammy! Je t'invite à jouer aux jeux vidéo. Tu viens?\n- ...... Je suis occupé.",
+    "options": [
+      "D'accord!",
+      "Désolé!",
+      "Ok, ça marche!",
+      "Oui, merci!"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Pour refuser poliment une invitation parce qu'on est occupé, on dit « Désolé ! »[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "- Bonjour, Maman! Où allez-vous?\n- Bonjour! Je veux aller voir le directeur de l'école dans ....... pour payer les frais de scolarité.",
+    "options": [
+      "son atelier",
+      "son bureau",
+      "sa classe",
+      "sa salle"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Un directeur d'école reçoit les parents dans son bureau[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "M. Dupont est européen ...... son teint noir.",
+    "options": [
+      "à part",
+      "dans",
+      "en plus",
+      "malgré"
+    ],
+    "correctAnswer": "D",
+    "explanation": "« Malgré » exprime l'opposition ou la concession[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Avec l'ordonnance, Mme Awula va ...... pour acheter des médicaments.",
+    "options": [
+      "à la clinique",
+      "à la pharmacie",
+      "au magasin",
+      "au marché"
+    ],
+    "correctAnswer": "B",
+    "explanation": "On achète des médicaments prescrits sur une ordonnance à la pharmacie[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "- Paul, voici mon cousin, Jean.\n- Ah bon! Donc, il est .......!",
+    "options": [
+      "le fils de ta soeur",
+      "le fils de ta tante",
+      "le frère de ton père",
+      "le frère de ton neveu"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le cousin est le fils de l'oncle ou de la tante[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Mes chers enfants, c'est bientôt décembre et nous devons nous préparer pour la fête ......",
+    "options": [
+      "des Mères",
+      "de Noël",
+      "des Pâques",
+      "de Pentecôte"
+    ],
+    "correctAnswer": "B",
+    "explanation": "La fête de Noël est célébrée en décembre[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "- Esi, que penses-tu des citoyens de ......?\n- Ils sont vraiment gentils.",
+    "options": [
+      "cette école",
+      "cette région",
+      "ce pays",
+      "ce quartier"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le terme « citoyens » s'emploie pour les habitants d'un pays[cite: 21, 22].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Le dernier samedi - 31 - mois d'août marque le jour de la fête d'igname...",
+    "options": [
+      "de",
+      "au",
+      "du",
+      "le"
+    ],
+    "correctAnswer": "C",
+    "explanation": "On dit « du mois d'août » (de + le)[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "...tout le monde - 32 - de bonne heure...",
+    "options": [
+      "se lève",
+      "se lèves",
+      "se lèvent",
+      "se lever"
+    ],
+    "correctAnswer": "A",
+    "explanation": "« Tout le monde » est un sujet singulier, donc le verbe prend la 3ème personne du singulier : « se lève »[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "...très - 33 -.",
+    "options": [
+      "content",
+      "contente",
+      "contents",
+      "contentes"
+    ],
+    "correctAnswer": "C",
+    "explanation": "« Tout le monde » s'accorde au pluriel masculin en tant qu'adjectif attribut (« contents »)[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Personne ne va au champ - 34 - au travail ce jour-là.",
+    "options": [
+      "ou",
+      "ni",
+      "pas",
+      "sans"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Après « ne », la négation double utilise la conjonction « ni » (« ne... ni... »)[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Le matin, les hommes - 35 - des moutons, des boeufs et des coqs.",
+    "options": [
+      "tue",
+      "tuer",
+      "tues",
+      "tuent"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le sujet « les hommes » est à la 3ème personne du pluriel, donc le verbe prend la terminaison « -ent » : « tuent »[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "...et c'est le repas préféré dans - 36 - maison.",
+    "options": [
+      "cette",
+      "chaque",
+      "quelques",
+      "plusieurs"
+    ],
+    "correctAnswer": "B",
+    "explanation": "L'adjectif indéfini « chaque » convient au sens du passage (« dans chaque maison »)[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "Après avoir mangé, chacun porte - 37 - jolis vêtements et bijoux.",
+    "options": [
+      "leurs",
+      "d'autres",
+      "ses",
+      "des"
+    ],
+    "correctAnswer": "C",
+    "explanation": "« Chacun » est singulier, l'adjectif possessif pour des objets au pluriel est « ses »[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "- 38 - se rassemblent à la place publique...",
+    "options": [
+      "Elle",
+      "Elles",
+      "Ils",
+      "On"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le pronom sujet masculin pluriel « Ils » reprend la communauté/les gens[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "...à la place publique - 39 - le grand arbre au centre du village.",
+    "options": [
+      "dans",
+      "près",
+      "sous",
+      "sur"
+    ],
+    "correctAnswer": "C",
+    "explanation": "On se rassemble « sous » un grand arbre pour bénéficier de son ombre[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Le soir, ils rentrent chez - 40 - tout fatigués.",
+    "options": [
+      "elles",
+      "eux",
+      "nous",
+      "soi"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le pronom tonique masculin pluriel correspondant à « ils » est « eux » (« chez eux »)[cite: 21, 22].",
+    "topic": "French (Cloze Test / Grammar)",
+    "hasImage": false
+  }
+]

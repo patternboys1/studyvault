@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout Components
@@ -20,8 +20,6 @@ import {
   Menu,
   X,
   TrendingUp,
-  BrainCircuit,
-  Award
 } from 'lucide-react';
 
 const Features = () => {

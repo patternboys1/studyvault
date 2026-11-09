@@ -1,0 +1,80 @@
+[
+  {
+    "number": "1.a",
+    "questionText": "Je travaille pour un journal. Je suis ...",
+    "modelAnswer": "Journaliste (aussi accepté: Rédacteur / Photographe / Reporteur)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "Je m'occupe des personnes malades. Je suis ...",
+    "modelAnswer": "Infirmier / Infirmière (aussi accepté: Docteur / Médecin / Pharmacien / Herboriste)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "Je fais du pain et des gâteaux. Je suis ...",
+    "modelAnswer": "Boulanger / Boulangère (aussi accepté: Pâtissier / Pâtissière)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.d",
+    "questionText": "Je juge les criminels. Je suis ...",
+    "modelAnswer": "Juge (aussi accepté: Magistrat / Magistrate)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.e",
+    "questionText": "Je fabrique des meubles. Je suis ...",
+    "modelAnswer": "Menuisier (aussi accepté: Charpentier)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.f",
+    "questionText": "J'écris des lettres et je prends des messages. Je suis ...",
+    "modelAnswer": "Secrétaire (aussi accepté: Réceptionniste / Dactylographe)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.g",
+    "questionText": "Je donne des cours d'Anglais. Je suis ...",
+    "modelAnswer": "Professeur (aussi accepté: Enseignant / Enseignante / Maître / Maîtresse)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.h",
+    "questionText": "Je fais des chaussures. Je suis ...",
+    "modelAnswer": "Cordonnier (aussi accepté: Chausseur)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.i",
+    "questionText": "Je cuisine dans un restaurant. Je suis ...",
+    "modelAnswer": "Chef (aussi accepté: Cuisinier / Cuisinière / Restaurateur / Restauratrice)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "1.j",
+    "questionText": "Je coupe les cheveux. Je suis ...",
+    "modelAnswer": "Coiffeur / Coiffeuse (aussi accepté: Barbier)",
+    "topic": "French",
+    "hasImage": false
+  },
+  {
+    "number": "2",
+    "questionText": "Vous venez de recevoir un message WhatsApp de Janice vous invitant à son anniversaire à Cape Coast (hôtel Savoy, le 15 juillet à 15h). Répondez à Janice, par WhatsApp, pour expliquer pourquoi vous ne pouvez pas participer à l'anniversaire (50 à 60 mots).",
+    "modelAnswer": "Salut Janice! Merci beaucoup pour ton invitation. J'aimerais vraiment fêter ton anniversaire avec toi à Cape Coast, mais malheureusement je ne pourrai pas venir. Mes parents ont déjà organisé un voyage familial hors de la région ce même week-end. Je te souhaite une excellente fête d'anniversaire. On se voit très bientôt! Bises.",
+    "topic": "French",
+       "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/french-2025/Screenshot 2026-09-19 090925.png"
+  }
+]

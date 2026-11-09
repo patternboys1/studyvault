@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // Assets
@@ -12,13 +12,6 @@ import Logo from '../../components/Logo';
 
 // Icons
 import { 
-  CheckCircle, 
-  BookOpen, 
-  Timer, 
-  BarChart3, 
-  Smartphone, 
-  RefreshCw, 
-  Zap, 
   Star,
   Menu,
   X
@@ -37,6 +30,7 @@ const Home = () => {
 
   // --- Intersection Observer for Scroll Animations ---
   useEffect(() => {
+    const analyticsNode = analyticsRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
@@ -48,12 +42,12 @@ const Home = () => {
       { threshold: 0.2 } 
     );
 
-    if (analyticsRef.current) {
-      observer.observe(analyticsRef.current);
+    if (analyticsNode) {
+      observer.observe(analyticsNode);
     }
 
     return () => {
-      if (analyticsRef.current) observer.unobserve(analyticsRef.current);
+      if (analyticsNode) observer.unobserve(analyticsNode);
     };
   }, []);
 

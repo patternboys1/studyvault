@@ -3,14 +3,12 @@ import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Check,
-  CheckCircle2,
   Crown,
   FileQuestion,
   GraduationCap,
   ShieldCheck,
   Sparkles,
   Trophy,
-  Zap,
   X,
   TrendingUp,
 } from "lucide-react";

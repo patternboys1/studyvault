@@ -1,0 +1,100 @@
+[
+  {
+    "number": "1.a",
+    "questionText": "Based on discussions and studies in class, define marriage in the context of Ghanaian Society.",
+    "modelAnswer": "Marriage is the union between a man and a woman who have agreed to live together as husband and wife and have gone through all the procedures recognised in their society.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "State four reasons, that will cause you to marry when the time is due.",
+    "modelAnswer": "1. For companionship. 2. Legitimate sexual avenue. 3. For procreation. 4. For mutual assistance (also accepted: social status/respect, economic support, social cohesion/unity among families, security/protection, love/affection).",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "Mr and Mrs Mensah have been happily married for forty-seven years. Suggest four possible reasons that might have accounted for the longevity of their marriage.",
+    "modelAnswer": "1. Faithfulness and honesty between spouses. 2. Effective communication and openness. 3. Showing mutual love, tolerance, and understanding. 4. Developing peaceful conflict resolution methods.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.i",
+    "questionText": "How would you explain the term Human Rights in a class discussion?",
+    "modelAnswer": "Human Rights are inalienable fundamental freedoms and privileges that every person is entitled to by nature or law, which cannot be deprived without justification (e.g., Right to life, freedom of speech).",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.ii",
+    "questionText": "Identify two human right abuses in your community.",
+    "modelAnswer": "1. Child labour/trafficking. 2. Domestic violence/abuse (also accepted: Bullying, Rape/Defilement, Discrimination, Mob action/instant justice, Forced marriage).",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "Suggest four reasons why the society must be educated on Human Rights.",
+    "modelAnswer": "1. To protect the vulnerable in society and reduce fear. 2. To prevent crime and corruption by promoting accountability. 3. To encourage freedom of speech and association. 4. To foster mutual respect and peaceful co-existence.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "3.a.i",
+    "questionText": "How would you explain the term Constitution to your study group as you prepare for examination?",
+    "modelAnswer": "A constitution is a body of fundamental rules, regulations, and principles that governs the administration of a country. It is the supreme law of the land to which all other laws must conform.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "3.a.ii",
+    "questionText": "List four important reasons for which Ghana decided to practise republican system of government.",
+    "modelAnswer": "1. To gain full sovereignty and break colonial ties. 2. To allow citizens to choose leaders and hold them accountable. 3. To establish an independent executive government and national identity. 4. To promote national unity and democratic ideals.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "As the principal speaker during a class debate on the constitution of Ghana, what four points will you make to convince the audience on the contributions of the 1992 constitution to the development of the nation?",
+    "modelAnswer": "1. Prevention of dictatorial rule by separating powers among government organs. 2. Protection of fundamental human rights and freedoms of citizens. 3. Promotion of good governance, accountability, and smooth transition of government. 4. Recognition and preservation of traditional institutions like chieftaincy.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "Identify four factors that led to the 1948 riots in the Gold Coast.",
+    "modelAnswer": "1. The shooting and killing of three Ex-servicemen at Osu crossroad. 2. Non-payment of pensions and unfulfilled promises to Ex-servicemen. 3. High cost of essential commodities and monopoly of trade by foreign firms (AWAM). 4. Cutting down of diseased cocoa trees without adequate compensation.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "Highlight four ways in which the 1948 riots contributed to Ghana's independence.",
+    "modelAnswer": "1. Led to the formation of the Watson Commission, which recommended constitutional reform toward self-rule. 2. Sparked the formation of the Coussey Committee to draft the 1951 Constitution. 3. Caused the arrest of the 'Big Six', boosting their national popularity and leadership status. 4. Accelerated political awareness and intensified nationalist demands across the colony.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "5.a.i",
+    "questionText": "How would you explain the concept of Social Security to your parents?",
+    "modelAnswer": "Social security is a public system or program designed to provide individuals and families with financial protection and income security during retirement, old age, sickness, disability, or loss of a breadwinner.",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "5.a.ii",
+    "questionText": "State any two national Social Security Schemes available in Ghana.",
+    "modelAnswer": "1. Social Security and National Insurance Trust (SSNIT). 2. National Health Insurance Scheme (NHIS) (also accepted: National Pension Scheme, Tier II and III Pensions).",
+    "topic": "Social Studies",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "Suggest four reasons to convince any individual to join a Social Security Scheme in Ghana.",
+    "modelAnswer": "1. Provision of guaranteed monthly income during retirement or old age. 2. Access to disability/invalidity benefits in case of incapacitation. 3. Provision of survivor benefits to financially cushion dependents upon death. 4. Protection against economic instability and sudden financial distress.",
+    "topic": "Social Studies",
+    "hasImage": false
+  }
+]

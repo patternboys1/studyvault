@@ -595,9 +595,51 @@ export const completeMockAttempt = onRequest(async (req, res) => {
     if (!reservationSnap.exists) return res.status(403).json({ error: "This mock exam was not started correctly." });
     const reservation = reservationSnap.data();
 
+    if (reservation.section === "Theory") {
+      const theoryQuestions = await admin.firestore().collection("BECE")
+        .doc(reservation.subjectId).collection(String(reservation.year))
+        .doc("Theory").collection("Questions").orderBy("number", "asc").get();
+      const validQuestionIds = new Set(theoryQuestions.docs.map((questionDoc) => questionDoc.id));
+      const requestedResponses = req.body?.responses && typeof req.body.responses === "object"
+        ? req.body.responses
+        : {};
+      const responses = Object.fromEntries(Object.entries(requestedResponses)
+        .filter(([questionId, response]) => validQuestionIds.has(questionId) && typeof response === "string")
+        .map(([questionId, response]) => [questionId, response.slice(0, 20000)]));
+      const theoryAttemptRef = userRef.collection("mockTheoryAttempts").doc(attemptId);
+      const result = await admin.firestore().runTransaction(async (tx) => {
+        const [currentReservation, existingAttempt] = await Promise.all([
+          tx.get(reservationRef),
+          tx.get(theoryAttemptRef),
+        ]);
+        if (!currentReservation.exists || currentReservation.data()?.section !== "Theory") {
+          throw new Error("MOCK_RESERVATION_MISSING");
+        }
+        if (existingAttempt.exists) return { alreadySaved: true };
+        if (currentReservation.data()?.status !== "started") throw new Error("MOCK_ALREADY_COMPLETED");
+        tx.create(theoryAttemptRef, {
+          id: attemptId,
+          paperId: reservation.paperId,
+          subjectId: reservation.subjectId,
+          subjectName: reservation.subjectName || "",
+          year: reservation.year,
+          section: "Theory",
+          responses,
+          answeredCount: Object.values(responses).filter((response) => response.trim()).length,
+          totalQuestions: theoryQuestions.size,
+          completedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        tx.update(reservationRef, {
+          status: "completed",
+          completedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+        return { alreadySaved: false };
+      });
+      return res.json({ ok: true, saved: true, alreadySaved: result.alreadySaved });
+    }
+
     if (reservation.section !== "Objectives") {
-      await reservationRef.set({ status: "completed", completedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
-      return res.json({ ok: true, saved: false });
+      return res.status(400).json({ error: "This mock exam section is not supported." });
     }
 
     const answers = req.body?.answers && typeof req.body.answers === "object" ? req.body.answers : {};
@@ -671,15 +713,34 @@ export const authorizeParentReportExport = onRequest(async (req, res) => {
     const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
     const monthKey = getUtcMonthKey();
     const usageRef = userRef.collection("parentReportUsage").doc(monthKey);
+    const exportId = String(req.body?.exportId || "");
+    const action = req.body?.action === "release" ? "release" : "authorize";
+    if (!/^[A-Za-z0-9_-]{8,100}$/.test(exportId)) {
+      return res.status(400).json({ error: "A valid report export ID is required." });
+    }
+    const exportRef = usageRef.collection("exports").doc(exportId);
     const result = await admin.firestore().runTransaction(async (tx) => {
-      const [userSnap, usageSnap] = await Promise.all([tx.get(userRef), tx.get(usageRef)]);
+      const [userSnap, usageSnap, exportSnap] = await Promise.all([
+        tx.get(userRef), tx.get(usageRef), tx.get(exportRef),
+      ]);
       const userData = userSnap.data() || {};
       if (!isPremiumActive(userData) || userData.billingCycle !== "yearly") {
         throw new Error("YEARLY_PLAN_REQUIRED");
       }
       const count = Number(usageSnap.data()?.count) || 0;
+      if (action === "release") {
+        if (exportSnap.exists && exportSnap.data()?.status === "authorized") {
+          const releasedCount = Math.max(0, count - 1);
+          tx.set(usageRef, { count: releasedCount, monthKey, updatedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
+          tx.update(exportRef, { status: "released", releasedAt: admin.firestore.FieldValue.serverTimestamp() });
+          return { remaining: PARENT_EXPORTS_PER_MONTH - releasedCount };
+        }
+        return { remaining: Math.max(0, PARENT_EXPORTS_PER_MONTH - count) };
+      }
+      if (exportSnap.exists) return { remaining: Math.max(0, PARENT_EXPORTS_PER_MONTH - count) };
       if (count >= PARENT_EXPORTS_PER_MONTH) throw new Error("PARENT_EXPORT_LIMIT");
       tx.set(usageRef, { count: count + 1, monthKey, updatedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
+      tx.create(exportRef, { exportId, status: "authorized", createdAt: admin.firestore.FieldValue.serverTimestamp() });
       return { remaining: PARENT_EXPORTS_PER_MONTH - count - 1 };
     });
     return res.json({ ok: true, parentExportsRemaining: result.remaining });

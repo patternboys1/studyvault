@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronLeft,
-  Circle,
   Clock3,
   FileText,
   Lightbulb,

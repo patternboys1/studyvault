@@ -1,4 +1,3 @@
-import React from 'react';
 import { Globe, Mail } from 'lucide-react'; // Add this line
 import logo from "../assets/logo.png"
 

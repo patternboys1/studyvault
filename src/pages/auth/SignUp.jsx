@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../../components/Logo";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Signup() {
   const [fullName, setFullName] = useState("");
@@ -10,6 +12,13 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { user, loading: authLoading } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && user) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [authLoading, navigate, user]);
 
   const createUserProfile = async (user, fallbackName = "Student") => {
     const userRef = doc(db, "users", user.uid);
@@ -19,9 +28,6 @@ export default function Signup() {
         uid: user.uid,
         email: user.email || "",
         displayName: user.displayName || fallbackName,
-        plan: "free",
-        isPremium: false,
-        billingCycle: null,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
       },
@@ -35,9 +41,16 @@ export default function Signup() {
     
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(userCredential.user, { displayName: fullName });
-      await createUserProfile(userCredential.user, fullName);
-      navigate("/dashboard"); 
+      try {
+        await updateProfile(userCredential.user, { displayName: fullName });
+      } catch (profileError) {
+        console.warn("Account created, but the display name could not be saved:", profileError);
+      }
+      try {
+        await createUserProfile(userCredential.user, fullName);
+      } catch (profileError) {
+        console.warn("Account created, but the profile could not be saved:", profileError);
+      }
     } catch (error) {
       alert(error.message);
     } finally {
@@ -48,11 +61,17 @@ export default function Signup() {
   const handleGoogleSignup = async () => {
     const provider = new GoogleAuthProvider();
     try {
+      setLoading(true);
       const result = await signInWithPopup(auth, provider);
-      await createUserProfile(result.user, result.user.displayName || "Student");
-      navigate("/dashboard");
+      try {
+        await createUserProfile(result.user, result.user.displayName || "Student");
+      } catch (profileError) {
+        console.warn("Google account created, but the profile could not be saved:", profileError);
+      }
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,7 +94,7 @@ export default function Signup() {
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-24 lg:px-32">
         <div className="w-full max-w-md mx-auto">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold tracking-tighter text-gray-900 italic">Study Vault</h1>
+            <Logo />
           </div>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Create your account</h2>
@@ -152,7 +171,7 @@ export default function Signup() {
           </button>
 
           <p className="mt-6 text-center text-sm text-gray-600">
-            Already have an account? <Link to="/login" clLinkssName="font-bold text-indigo-600 hover:underline">Login</Link>
+            Already have an account? <Link to="/login" className="font-bold text-indigo-600 hover:underline">Login</Link>
           </p>
         </div>
       </div>

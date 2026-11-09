@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout Components
@@ -11,12 +11,8 @@ import {
   BookOpen,
   Atom,
   Globe2,
-  Sparkles,
-  ArrowRight,
   TrendingUp,
   Brain,
-  CheckCircle,
-  HelpCircle,
   ChevronDown,
   Menu,
   X,

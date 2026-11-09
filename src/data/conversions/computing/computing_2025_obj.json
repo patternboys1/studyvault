@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Computers have become smaller, faster, and more reliable due to the use of microprocessor in the",
+    "options": [
+      "second generation.",
+      "third generation.",
+      "fourth generation.",
+      "fifth generation."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Microprocessors were introduced in the fourth generation of computers, which significantly reduced computer size while increasing speed and reliability[cite: 21, 22].",
+    "topic": "Computer Generations & Hardware",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "The graphic tablet is a kind of device used to capture",
+    "options": [
+      "RFID signals.",
+      "QR code scans.",
+      "magnetic card data.",
+      "handwritings, drawings and inputs."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Graphic tablets are specialized input devices used to capture hand-drawn illustrations, handwriting, and stylus inputs[cite: 21, 22].",
+    "topic": "Input Devices",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "To make teaching and learning of computing more interactive, the teacher intends to demonstrate an activity by showing diagrams, images and videos on a large screen in the classroom. The most appropriate device to achieve this objective by the teacher is a",
+    "options": [
+      "printer.",
+      "plotter.",
+      "monitor.",
+      "projector."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A projector displays images, diagrams, and videos onto a large projection screen or wall for classroom viewing[cite: 21, 22].",
+    "topic": "Output Devices",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "The purpose of a storage device in a computer system is for",
+    "options": [
+      "keeping and retrieving data.",
+      "displaying graphic elements.",
+      "executing computer programs.",
+      "connecting devices to the Internet."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Storage devices are designed to retain (keep) data permanently or temporarily and retrieve it when required[cite: 21, 22].",
+    "topic": "Storage Devices",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "A school prefect approached the computing club to guide him design a presentation using Microsoft PowerPoint. The prefect intends to practice the presentation and record the time spent for each slide to make his presentation run smooth. The best feature the computing club will suggest to the prefect is",
+    "options": [
+      "presenter notes.",
+      "presenter feature.",
+      "rehearse feature.",
+      "rehearse timings."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The 'Rehearse Timings' feature in PowerPoint allows users to practice their presentation while tracking and recording the duration of each slide[cite: 21, 22].",
+    "topic": "Presentation Software (MS PowerPoint)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "After the computing class, a colleague approached you to further explain to him how to reference a worksheet cell in Microsoft Excel. In the explanation, you mentioned that, to reference a cell, one need to use the cell",
+    "options": [
+      "value.",
+      "address.",
+      "content.",
+      "function."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A cell is referenced in Microsoft Excel using its cell address (e.g., A1, B5), which consists of its column letter and row number[cite: 21, 22].",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Bello formatted Microsoft Excel worksheet cells with different colours based on specific conditions and it was very beautiful. Which of the given features can a student use to achieve the same results as Bello?",
+    "options": [
+      "Conditional sorting",
+      "Conditional filtering",
+      "Conditional validation",
+      "Conditional formatting"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Conditional formatting automatically applies formatting—such as cell background colours or font styles—to cells based on specified criteria[cite: 21, 22].",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Which of the following terminologies is associated with computer network?",
+    "options": [
+      "Junk",
+      "Trojan",
+      "Firewall",
+      "Defragmenter"
+    ],
+    "correctAnswer": "C",
+    "explanation": "A firewall is a network security system that monitors and controls incoming and outgoing network traffic[cite: 21, 22].",
+    "topic": "Networking & Security",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Zalia is very good at posting her pictures and location of where ever she goes on her social media platforms for her friends to see. The potential risk associated with Zalia's activities online is",
+    "options": [
+      "identity theft.",
+      "learning difficulty.",
+      "strengthening friendships.",
+      "building a professional network."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Over-sharing sensitive personal details and live locations publicly increases the risk of identity theft and personal security breaches[cite: 21, 22].",
+    "topic": "Internet Safety & Cyber Security",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Surfing the Internet requires the use of search engines which was designed to help users find",
+    "options": [
+      "information on the Internet.",
+      "information from e-mail messages.",
+      "information from the computer hard disk drive.",
+      "information from files and folders on the computer."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Search engines are web-based tools that index and locate information across the World Wide Web based on user queries[cite: 21, 22].",
+    "topic": "Internet & Web Browsing",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "In the concept of programming, a comment in a program code is used to",
+    "options": [
+      "explain portions of the code.",
+      "make the program run faster.",
+      "change the output of the program.",
+      "temporarily remove a line of code."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Comments in source code are non-executable annotations used to document and explain how the code works for programmers[cite: 21, 22].",
+    "topic": "Programming Concepts",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Robotic systems have components that relates to the functioning of the human organs. The component of the robot that acts like the human brain is the",
+    "options": [
+      "motors.",
+      "sensors.",
+      "batteries.",
+      "controllers."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The controller serves as the computational 'brain' of a robotic system, processing input signals and directing mechanical responses[cite: 21, 22].",
+    "topic": "Robotics & Artificial Intelligence",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The most powerful technological innovation made during the development of the fifth-generation computers was the use of",
+    "options": [
+      "vacuum tubes.",
+      "integrated circuits.",
+      "VLSI microprocessors.",
+      "ULSI microprocessors."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Fifth-generation computing relies on Ultra Large Scale Integration (ULSI) microprocessors and artificial intelligence[cite: 21, 22].",
+    "topic": "Computer Generations",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "A customer gave a new laptop to a technician to set accounts on windows that is required to make changes to all system settings. The best account type that you will advise the technician to consider is",
+    "options": [
+      "Guest.",
+      "Remote.",
+      "Standard.",
+      "Administrator."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An Administrator account possesses full system privileges required to alter global system settings, install software, and manage other user accounts[cite: 21, 22].",
+    "topic": "Operating Systems & User Accounts",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "JHS students were given a project by their computing teacher to create a virtual museum for the storage of electronic artifacts. The possible tool for this assignment is",
+    "options": [
+      "cloud computing.",
+      "social networking.",
+      "augmented reality.",
+      "artificial intelligence."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Augmented reality (AR) overlaying digital content onto physical/virtual environments provides an immersive framework for interactive virtual museums[cite: 21, 22].",
+    "topic": "Emerging Technologies",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "The Secretary to the Parliament of Ghana sits on an ergonomic chair in the office because it",
+    "options": [
+      "ensures proper sitting arrangements.",
+      "makes the workplace looks attractive.",
+      "aligns the chair properly with the workstation.",
+      "promotes proper body alignment and support."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Ergonomic chairs are specifically engineered to provide posture support, reducing physical strain and promoting proper body alignment[cite: 21, 22].",
+    "topic": "Health & Ergonomics in Computing",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Text formatting options in Word processing applications include",
+    "options": [
+      "subscript.",
+      "underline.",
+      "superscript.",
+      "strikethrough."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Underline is a fundamental text formatting option alongside bold and italic used to emphasize text in word processors[cite: 21, 22].",
+    "topic": "Word Processing (MS Word)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "A user intends to create and customize diagrams in Microsoft PowerPoint application for a presentation. The best feature to help the user achieve the task is",
+    "options": [
+      "Charts.",
+      "Shapes.",
+      "WordArt.",
+      "SmartArt."
+    ],
+    "correctAnswer": "D",
+    "explanation": "SmartArt graphics provide pre-designed diagram layouts (such as process lists, hierarchies, and cycles) for visually communicating information[cite: 21, 22].",
+    "topic": "Presentation Software (MS PowerPoint)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "In a Desktop Publishing project work, a student's work contained more text than it can display. This situation is best described as",
+    "options": [
+      "layout.",
+      "template.",
+      "overflow.",
+      "alignment."
+    ],
+    "correctAnswer": "C",
+    "explanation": "In desktop publishing, 'overflow' (or text overflow) occurs when a text frame contains more text than fits within its dimensions[cite: 21, 22].",
+    "topic": "Desktop Publishing",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "The purpose of the IF function in Microsoft Excel application is to",
+    "options": [
+      "calculate the average of a range of cells.",
+      "manipulate text from multiple cells into one cell.",
+      "perform a logical test and return a value for a condition.",
+      "return the value from a specified row and column intersection."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The IF function evaluates a logical condition and returns one value if the condition is TRUE and another value if it is FALSE[cite: 21, 22].",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "What value will the Microsoft Excel function =COUNT(A1:A10) return?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The range A1:A10 spans exactly 10 individual cells from row 1 to row 10 inclusive[cite: 21, 22].",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "At the internet cafe, Kofi connected his laptop to the Internet using cable and Aksua also connected her laptop to the Internet using cable. An example of Akua's connection type is",
+    "options": [
+      "Infrared.",
+      "Bluetooth.",
+      "Wi-Fi adaptor.",
+      "Ethernet adaptor."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An Ethernet adapter/port is used to establish wired local area network (LAN) and Internet connections using physical network cables[cite: 21, 22].",
+    "topic": "Networking Hardware",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "The computing teacher during computing class advised the students that, studying computer networking provides entrepreneurial opportunities. Which of the following statements in your opinion justifies the advise given to the students?",
+    "options": [
+      "Offering consulting services",
+      "Developing video games online",
+      "Creating social media platforms",
+      "Designing smartphone Apps for schools"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Knowledge of computer networking directly enables individuals to offer network installation, management, and IT support consulting services commercially[cite: 21, 22].",
+    "topic": "Computing & Entrepreneurship",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "After replacing his old smartphone with a new one, Muba cannot access most of his saved contacts. His friend advised that, he should have saved the contacts in an e-mail environment. The feature that would have allowed Muba to save and organize the contacts in the e-mail environment is referred to as",
+    "options": [
+      "draft.",
+      "folders.",
+      "attach files.",
+      "address book."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An address book (or contacts list) in an email client stores contact details online, allowing synchronization across devices[cite: 21, 22].",
+    "topic": "Electronic Mail & Internet Applications",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "In a computing class, a video of a user who gained unauthorized access into an organization's computer system was shown and discussed. The user's act in the video is termed",
+    "options": [
+      "hacking.",
+      "encryption.",
+      "cyberbullying.",
+      "authentication."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Hacking refers to gaining unauthorized access to digital systems, networks, or computer devices[cite: 21, 22].",
+    "topic": "Cyber Security & Ethics",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "An entry on a blog that contains texts, images or multimedia content is called",
+    "options": [
+      "post.",
+      "name.",
+      "status.",
+      "account."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Individual articles, media items, or updates published on a blog are formally called blog posts[cite: 21, 22].",
+    "topic": "Web Publishing & Blogging",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "A programmer uses a good algorithm to write a software. The algorithm being used is characterized by the following except",
+    "options": [
+      "efficiency.",
+      "simplicity.",
+      "correctness.",
+      "complexity."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A good algorithm strives for efficiency, correctness, and clarity/simplicity; unnecessary complexity is an undesirable trait[cite: 21, 22].",
+    "topic": "Algorithms & Computational Thinking",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Robots are used in many areas of the society. An example of the application of robots in the society includes",
+    "options": [
+      "virtual reality.",
+      "machine learning.",
+      "artificial intelligence.",
+      "autonomous vehicles."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Autonomous (self-driving) vehicles are physical robotic systems that navigate and operate in the real world[cite: 21, 22].",
+    "topic": "Robotics Applications",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "A quiz master asked participants to complete the statement: while download folder is the default location for downloaded files, my recent folder is the default location for documents",
+    "options": [
+      "just printed.",
+      "to be saved.",
+      "just worked on.",
+      "to be worked on."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The 'Recent' folder/section automatically stores shortcuts to files that have been recently opened or worked on by the user[cite: 21, 22].",
+    "topic": "File Management & OS Basics",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "The term multimedia is widely used in several areas in the computing environment. What will you tell the computing teacher about the function of a multimedia feature in Word processing application?",
+    "options": [
+      "It converts text into audio formats.",
+      "It translates text into different languages.",
+      "It removes images from word document.",
+      "It adds interactive elements like buttons and links."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Multimedia features in word processors enable the inclusion of interactive media, hyperlinked content, and clickable control buttons[cite: 21, 22].",
+    "topic": "Word Processing & Multimedia",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "In a group presentation, a group was to demonstrate how to insert an online video into a slide they have created. The first step to be considered by the group is to click on the",
+    "options": [
+      "Insert tab.",
+      "Design tab.",
+      "Online video.",
+      "Download video."
+    ],
+    "correctAnswer": "A",
+    "explanation": "To add media like online videos in presentation software, the user must first navigate to the Insert tab on the ribbon menu[cite: 21, 22].",
+    "topic": "Presentation Software (MS PowerPoint)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "A designer consistently reminds his staff to use template in Desktop publishing because it helps to",
+    "options": [
+      "create documents in unique ways.",
+      "provide a starting point for document design.",
+      "decorate the document for distribution to others.",
+      "provide an opportunity for users to print their work."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Templates provide pre-formatted page structures, layouts, and styles that act as convenient starting points for document design[cite: 21, 22].",
+    "topic": "Desktop Publishing",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "A man shared his property to his children and wife in a particular ratio. The most appropriate chart type that can be used to represent the sharing of the property is",
+    "options": [
+      "pie chart.",
+      "bar chart.",
+      "line chart.",
+      "scatter chart."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A pie chart is ideal for showing proportions and relative percentage distributions of a whole[cite: 21, 22].",
+    "topic": "Data Representation & Spreadsheets",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "The correct syntax of the IF() function in Microsoft Excel application is",
+    "options": [
+      "=IF(logical_test ; [value_if_true] , [value_if_false])",
+      "=IF(logical_test, [value_if_true], [value_if_false])",
+      "=IF(logical_test, {[value_if_true]} , [value_if_false])",
+      "=IF(logical_test , TRUE [value_if_true] , FALSE [value_if_false])"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The standard syntax for the IF function in Excel is `=IF(logical_test, [value_if_true], [value_if_false])`[cite: 21, 22].",
+    "topic": "Spreadsheet (MS Excel)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Most JHS students can send pictures to their friends through various social media platforms but find it difficult to send it through an electronic mail. The most appropriate feature in an electronic mail to accomplish this task is",
+    "options": [
+      "compose.",
+      "categorize.",
+      "attach files.",
+      "inbox."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The 'Attach files' feature in email clients allows external files, such as pictures or documents, to be appended to an outgoing message[cite: 21, 22].",
+    "topic": "Electronic Mail",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "A weekly assignment requires students to create a blog for the school. The best activity needed for the assignment is to",
+    "options": [
+      "pick the blog name and niche.",
+      "display advertisement of the blog.",
+      "provide consulting services to the bloggers.",
+      "determine the product to sell on the blog."
+    ],
+    "correctAnswer": "A",
+    "explanation": "The foundational first step when creating a new blog is selecting an appropriate blog name and identifying its subject area/niche[cite: 21, 22].",
+    "topic": "Web Publishing & Blogging",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "Miss Fatima, the computing teacher taught the class basic programming terms. Explain to your friend what Miss Fatima said pseudocode is",
+    "options": [
+      "compiled programming codes.",
+      "structured programming symbols.",
+      "flowchart decisions using symbols.",
+      "step-by-step outline of a program using informal language."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Pseudocode is an informal, plain-text step-by-step description of an algorithm's logic written in natural language rather than strict syntax[cite: 21, 22].",
+    "topic": "Algorithms & Pseudocode",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "A student is very good at converting any integer to binary but finds it difficult to convert from hexadecimal to binary. Help the student to convert the hexadecimal number A2₁₆ to binary.",
+    "options": [
+      "10000110₂",
+      "10100010₂",
+      "10010001₂",
+      "10001010₂"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In hexadecimal, 'A' equals 10 (1010 in 4-bit binary) and '2' equals 2 (0010 in 4-bit binary). Combining them yields `10100010₂`[cite: 21, 22].",
+    "topic": "Number Systems & Conversions",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "A programmer has indented the codes in the program being written. The purpose of the indentation is to",
+    "options": [
+      "make the code difficult to read by users.",
+      "hide the code from others when writing it.",
+      "create bugs in the program to disturb the codes.",
+      "show the start and end of a conditional statement."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Code indentation visually structures source code blocks, clearly defining where conditional statements or loops start, nest, and end[cite: 21, 22].",
+    "topic": "Programming Concepts & Formatting",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "The role of neural networks in Artificial Intelligence in modern technology is to",
+    "options": [
+      "control robots within their environment for work and safety.",
+      "enhance Internet speed for fast movements of the robots.",
+      "create computer virus for robots to find solutions to them.",
+      "simulate human brain function for learning and problem-solving."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Artificial neural networks are designed to mimic biological brain networks, enabling machine learning, pattern recognition, and complex problem-solving[cite: 21, 22].",
+    "topic": "Artificial Intelligence & Neural Networks",
+    "hasImage": false
+  }
+]

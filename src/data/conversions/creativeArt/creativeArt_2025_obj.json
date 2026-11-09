@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Abiwa is printing on a fabric. She aims at ensuring even distribution of paste on the surface of the fabric. Identify the tool that she would use.",
+    "options": [
+      "Brayer",
+      "Ink pad",
+      "Pallet",
+      "Squeegee"
+    ],
+    "correctAnswer": "A",
+    "explanation": "A brayer (roller) is used in printing to achieve an even distribution of ink or paste over a surface.",
+    "topic": "Visual Arts (Printing & Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "In making an artwork, Ama gathers and joins different discarded materials to create a new whole. Select the technique Ama used.",
+    "options": [
+      "Carving",
+      "Assemblage",
+      "Etching",
+      "Engraving"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Assemblage is a 3D artistic form created by gathering and joining together diverse objects and discarded materials.",
+    "topic": "Visual Arts (Techniques)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Select the most appropriate binder used in papier-mâché.",
+    "options": [
+      "Formica glue",
+      "Resin",
+      "Starch",
+      "White glue"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Starch (or starch paste) is a common and appropriate traditional binder used in making papier-mâché.",
+    "topic": "Visual Arts (Materials)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "In the design process, investigating a problem includes determining the",
+    "options": [
+      "size and forms of the article to produce.",
+      "cost of materials to use.",
+      "colour, symbols and features of the products.",
+      "production tools to use."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Investigating a design problem involves analyzing user requirements including attributes such as colour, symbols, and product features.",
+    "topic": "Design Process",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "A 3-dimensional form of a square is the",
+    "options": [
+      "cone.",
+      "cube.",
+      "cuboid.",
+      "cylinder."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A cube is the three-dimensional geometric form derived from a square.",
+    "topic": "Visual Arts (Forms & Shapes)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Mr. Adamu is an artist who wants to design a poster for one of his customers. Select the digital tools that he could use for the work.",
+    "options": [
+      "A-4 sheets, scanner and a computer.",
+      "Computer, A-4 sheets and Adobe photoshop.",
+      "Photoshop, scanner and A-4 sheets.",
+      "Scanner, Adobe photoshop and a computer."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A scanner, Adobe Photoshop (software), and a computer constitute a complete set of digital tools for graphic design.",
+    "topic": "Digital Media & Design",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Your school anthem is in 3/4 time. Which of the following conducting patterns would the conductor use?",
+    "options": [
+      "A square-shaped pattern",
+      "A triangular pattern",
+      "A straight-line pattern",
+      "A circular pattern"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A 3/4 time signature (triple meter) is conducted using a triangular pattern (down-out-up).",
+    "topic": "Music (Conducting & Time Signatures)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Many songs address topical issues in the Ghanaian community. Which of the following is not a step in transcribing such songs?",
+    "options": [
+      "Choosing a song",
+      "Listening carefully",
+      "Writing down the lyrics",
+      "Composing a new melody"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Transcribing involves documenting an existing song; composing a new melody is creating new music, not transcribing.",
+    "topic": "Music (Transcription)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "How long should you hold a half note/minim in 4/4 time?",
+    "options": [
+      "1 beat/count",
+      "2 beats/counts",
+      "3 beats/counts",
+      "4 beats/counts"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A half note (minim) receives 2 beats in 4/4 time.",
+    "topic": "Music Theory (Note Values)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "In Ghana, most people wear black or red cloth during funerals to show they are mourning. However, these same colours worn by demonstrators signify their",
+    "options": [
+      "displeasure about poor working conditions.",
+      "full support towards developmental projects.",
+      "happiness about working conditions.",
+      "readiness to work for the country."
+    ],
+    "correctAnswer": "A",
+    "explanation": "In Ghanaian culture, red and black worn during demonstrations or protests symbolize anger, grief, or displeasure.",
+    "topic": "Cultural Studies & Symbolism",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "What does the circular movement in Ghanaian traditional dance represent?",
+    "options": [
+      "Individual strength",
+      "Togetherness and community",
+      "Fighting and war",
+      "A straight path to success"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Circular arrangements and movements in African traditional dances symbolize unity, oneness, and community togetherness.",
+    "topic": "Dance & Culture",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Which of the following artists is known for painting with a palette knife instead of a brush?",
+    "options": [
+      "Ablade Glover",
+      "Francis Boateng",
+      "Kofi Antobam",
+      "Theodosia Okoh"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Professor Ablade Glover is world-renowned for his heavy impasto technique using a palette knife.",
+    "topic": "Visual Arts (Ghanaian Artists)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "If a dancer kneels or squats in a traditional dance, what message might she be conveying?",
+    "options": [
+      "She is tired and needs rest.",
+      "She is showing respect or submission.",
+      "She is preparing to jump.",
+      "She is pleading."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Kneeling or lowering oneself in traditional Ghanaian dances is a gesture of reverence, respect, or homage.",
+    "topic": "Dance (Gestures & Expressions)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "Select the technique that involves shaping materials into three-dimensional forms.",
+    "options": [
+      "Knitting",
+      "Modelling",
+      "Printing",
+      "Appliquéing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Modelling is an additive sculpting technique where pliable materials (like clay) are manipulated into 3D forms.",
+    "topic": "Visual Arts (Sculpture Techniques)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "A well-known playwright in Ghana is",
+    "options": [
+      "Majeed Michel.",
+      "Ebo Whyte.",
+      "Yvonne Nelson.",
+      "Jacqline Appiah."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Uncle Ebo Whyte is a prominent Ghanaian playwright and theatre director.",
+    "topic": "Drama & Theatre (Ghanaian Playwrights)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "An artist wants to mix oil paints for quick painting. Select the most appropriate solvent to mix the paints.",
+    "options": [
+      "Kerosene",
+      "Lacquer",
+      "Turpentine",
+      "Alcohol"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Turpentine is the standard thinner and solvent used for oil-based paints.",
+    "topic": "Visual Arts (Painting Media)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Two modern Ghanaian dancers who promoted Ghanaian culture on the Britain's Got Talent (BGT) platform are",
+    "options": [
+      "Afronita and Mzbel.",
+      "Afronita and Efya.",
+      "Afronita and Abigail.",
+      "Afronita and Eboni."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Afronita and Abigail (Abigail Adjiri) represented Ghana as a dance duo on Britain's Got Talent.",
+    "topic": "Dance & Performing Arts",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Agatey wishes to present a gift to his friend in a self-made paper wrapper. Which of the following would enable him achieve his wish?",
+    "options": [
+      "Atomizer, charcoal and spray diffuser",
+      "Charcoal, poster colour and spray diffuser",
+      "Stiff brush, paper and charcoal",
+      "Spray diffuser, paper and poster colour"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Spray diffuser, paper, and poster colour allow for spatter/spray printing techniques to design decorative wrapping paper.",
+    "topic": "Visual Arts (Design & Materials)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Which of the following Northern traditional dances is a war dance?",
+    "options": [
+      "Bamaaya",
+      "Nagali",
+      "Takai",
+      "Damba"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Takai is a traditional dance from northern Ghana performed with rods, historically associated with warriors/war celebration.",
+    "topic": "Dance (Traditional Ghanaian Dances)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "In a composition, objects of the same kind and weight placed on either side of a central line forms",
+    "options": [
+      "a formal balance.",
+      "an informal balance.",
+      "an irregular balance.",
+      "a radial balance."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Formal balance (symmetrical balance) occurs when identical or equal elements are placed on opposite sides of a central axis.",
+    "topic": "Principles of Design",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Your music teacher wants a song to start loudly and then gradually becomes softer. Which of the following dynamic marks would you suggest?",
+    "options": [
+      "Crescendo",
+      "Diminuendo",
+      "Forte",
+      "Piano"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Diminuendo (or decrescendo) means gradually getting softer in music dynamics.",
+    "topic": "Music (Dynamics)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Sally was tasked to weave a mat. Select the best measure that she would take to ensure that the mat lies flat.",
+    "options": [
+      "Use thicker thread",
+      "Double the thread",
+      "Beat the thread tighter",
+      "Use fine threads"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Beating/pressing the weave firmly and tightly ensures an even, flat structure without warping.",
+    "topic": "Crafts & Weaving",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "An artist mixes one tablespoon of a red colour with another tablespoon of a blue colour. What colour will the artist achieve?",
+    "options": [
+      "Green",
+      "Orange",
+      "Yellow",
+      "Violet"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Mixing equal parts of the primary colours red and blue produces the secondary colour violet (purple).",
+    "topic": "Visual Arts (Colour Theory)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "In creating a piece of an artwork that reflects Ghanaian traditions, which of the following would be essential to include?",
+    "options": [
+      "Modern architectural structures",
+      "Portraits of political leaders",
+      "Scenes of urban life",
+      "Symbols of ancestral heritage"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Ancestral heritage symbols (like Adinkra) communicate traditional values and culture in Ghanaian art.",
+    "topic": "Visual Arts & Culture",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "Art appreciation helps one to become aware of",
+    "options": [
+      "all the various designs in nature.",
+      "all the good qualities of an art.",
+      "the size of work.",
+      "the title of work."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Art appreciation is the understanding and evaluation of the aesthetic values and good qualities in works of art.",
+    "topic": "Art Appreciation",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Your class is creating its own rhythm for a clapping exercise. If your teacher wants the class to clap softly, which dynamic mark should the class use?",
+    "options": [
+      "Forte",
+      "Andante",
+      "Piano",
+      "Allegro"
+    ],
+    "correctAnswer": "C",
+    "explanation": "In musical terminology, 'piano' (p) indicates soft dynamic execution.",
+    "topic": "Music (Dynamics)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Juuba intends to paint a poster with cool colours. Identify the set of cool colours Juuba could use.",
+    "options": [
+      "Blue, yellow and violet",
+      "Green, violet and blue",
+      "Orange, blue and red",
+      "Red, yellow and orange"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cool colours on the colour wheel are green, blue, and violet (purple).",
+    "topic": "Visual Arts (Colour Theory)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Which of the following traditional instruments belongs to the membranophone family?",
+    "options": [
+      "Gankogui",
+      "Gyile",
+      "Atumpan",
+      "Axatse"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Atumpan is a drum with a stretched membrane/skin, classifying it as a membranophone.",
+    "topic": "Music (Musical Instruments)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "A composer is writing a song for the school choir, which tempo marking should be used to mark portions to be performed in a lively and fast pace?",
+    "options": [
+      "Largo",
+      "Andante",
+      "Allegro",
+      "Moderato"
+    ],
+    "correctAnswer": "C",
+    "explanation": "'Allegro' is a musical tempo marking that indicates a fast, lively speed.",
+    "topic": "Music (Tempo Marks)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "To prevent injury when working in the art studio, one has to",
+    "options": [
+      "clean the tools after use.",
+      "leave the tools by the window.",
+      "pack tools in toolbox after use.",
+      "pocket sharp and pointed tools."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Safely storing tools in a toolbox after work prevents accidental injuries in the studio environment.",
+    "topic": "Studio Safety & Practice",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "In producing sculpture, the artist uses which of the following set of materials?",
+    "options": [
+      "Fabric, acrylic and clay.",
+      "Metal, wood and clay.",
+      "Metal, fabric and charcoal.",
+      "Wood, conté and clay."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Metal, wood, and clay are core three-dimensional media used for sculpting.",
+    "topic": "Visual Arts (Sculpture Materials)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Martin Owusu is known for his contribution to the development of Ghanaian",
+    "options": [
+      "music.",
+      "dance.",
+      "poetry.",
+      "drama."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Martin Owusu is a distinguished Ghanaian playwright and scholar in Ghanaian drama and theatre.",
+    "topic": "Drama & Performing Arts",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "The red colour in the national flag of Ghana symbolizes",
+    "options": [
+      "unity of the people.",
+      "rich natural resources.",
+      "struggle for independence.",
+      "vegetation of the land."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The red strip in the Ghanaian flag commemorates the blood shed by forefathers during the struggle for independence.",
+    "topic": "National Symbols & Culture",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Francis Nii Yartey is known for his contribution to the development of",
+    "options": [
+      "music.",
+      "dance.",
+      "poetry.",
+      "drama."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Professor Francis Nii Yartey was a pioneer of contemporary African dance and choreography in Ghana.",
+    "topic": "Dance & Performing Arts",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Design can be described as a",
+    "options": [
+      "basic shape of an artwork.",
+      "form of colourful artwork.",
+      "plan within a work of art.",
+      "skill to produce tools."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Design refers to the plan, structure, or organization of elements within a work of art.",
+    "topic": "Design Fundamentals",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "The area occupied by the objects in a composition is described as the",
+    "options": [
+      "background.",
+      "foreground.",
+      "negative space.",
+      "positive space."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Positive space is the main area occupied by the primary subject/objects in an artwork.",
+    "topic": "Elements of Art (Space)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "A school's drama club is preparing for a play. Which performance space should the actors wait and get ready in before stepping onto the stage?",
+    "options": [
+      "Audience area",
+      "Backstage",
+      "Sound booth",
+      "Lighting grid"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Backstage is the off-stage area where performers wait and prepare before entering the stage.",
+    "topic": "Drama (Stage & Theatre Terminology)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "If tempera, acrylic and indian ink are classified as wet media, then dry media would include",
+    "options": [
+      "charcoal, crayon and poster colour.",
+      "crayon, pastel and charcoal.",
+      "poster colour, conté and pastel.",
+      "pastel, poster colour and crayon."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Crayon, pastel, and charcoal are all dry drawing/painting media that require no liquid solvent.",
+    "topic": "Visual Arts (Drawing Media)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "During a performance, an actor needs to enter the stage without being seen before their scene begins. Which part of the performance space should he use?",
+    "options": [
+      "Sound booth",
+      "Wings",
+      "Audience area",
+      "Lighting grid"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The wings are the areas off-stage right and left hidden from audience view, used for stage entries and exits.",
+    "topic": "Drama (Stage Terminology)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Johnny created a drawing from a scene in a dream he had. Johnny is into",
+    "options": [
+      "figure drawing.",
+      "imaginative drawing.",
+      "silhouette drawing.",
+      "still life drawing."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Imaginative drawing involves creating art based on ideas, dreams, or concepts from one's mind rather than direct observation.",
+    "topic": "Visual Arts (Drawing Types)",
+    "hasImage": false
+  }
+]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout Components
@@ -14,13 +14,10 @@ import {
   FileText,
   Sparkles,
   Target,
-  Users,
-  Award,
   ShieldCheck,
   CheckCircle2,
   Menu,
   X,
-  ArrowRight
 } from 'lucide-react';
 
 const About = () => {
@@ -98,29 +95,29 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Kwame Mensah",
+      name: "Fosu Kelvin",
       role: "Founder & Lead Developer",
       badge: "FOUNDER",
       badgeColor: "bg-blue-600",
       bio: "Veteran educator with 10 years of Ghanaian curriculum experience."
     },
     {
-      name: "Dr. Abena Mensah",
-      role: "Head of Content",
-      badge: "EDUCATOR",
+      name: "Twene Samuel Sekyere",
+      role: "Chief Executive Officer & Lead UX Designer",
+      badge: "CEO ",
       badgeColor: "bg-emerald-600",
       bio: "Curriculum specialist focused on JHS excellence and WAEC standards."
     },
     {
-      name: "Prof. Kofi Boateng",
-      role: "Strategic Advisor",
-      badge: "ADVISOR",
+      name: "Philemon Awuah Nabare",
+      role: "Co-Founder & Academic Advisor",
+      badge: "Co-Founder",
       badgeColor: "bg-amber-700",
       bio: "Advising on STEM assessment metrics and nationwide BECE benchmarks."
     },
     {
-      name: "Yaa Appiah",
-      role: "Lead UI/UX Designer",
+      name: "Badu Nkrumah",
+      role: " UI/UX Designer",
       badge: "DESIGNER",
       badgeColor: "bg-blue-700",
       bio: "Crafting accessible, student-first digital learning interfaces."
@@ -187,7 +184,7 @@ const About = () => {
               Empowering BECE Students to Achieve Academic Success
             </h1>
             <p className="text-slate-500 mt-4 text-base md:text-lg leading-relaxed max-w-xl">
-              BECE Prep Ghana helps students prepare smarter with past questions, mock exams, detailed solutions, and performance tracking.
+              Study Vault helps students prepare smarter with past questions, mock exams, detailed solutions, and performance tracking.
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-8">
               <Link to="/signup" className="bg-blue-700 text-white px-8 py-3.5 rounded-xl font-bold shadow-md hover:bg-blue-800 transition">
@@ -238,7 +235,7 @@ const About = () => {
             <div>
               <h2 className="text-2xl font-extrabold text-slate-900 mb-4">Our Story</h2>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                BECE Prep Ghana was born from a simple observation: JHS students often struggle to find comprehensive, up-to-date, and affordable study materials for their exams. Traditional book revisions tend to be outdated and offer no feedback.
+                Study Vault was born from a simple observation: JHS students often struggle to find comprehensive, up-to-date, and affordable study materials for their exams. Traditional book revisions tend to be outdated and offer no feedback.
               </p>
               <p className="text-slate-500 text-sm leading-relaxed">
                 We solved this by building a digital platform that brings prep materials to the student's device. By combining years of past papers with instant grading and detailed explanations, we've created a preparation hub that adapts to each learner's unique pace.

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout Components
@@ -56,8 +56,8 @@ const Contact = () => {
       bgColor: "bg-blue-50",
       title: "Email Us",
       desc: "Our support team responds within 24 hours to all inquiries.",
-      actionText: "support@beceprep.com",
-      actionLink: "mailto:support@beceprep.com",
+      actionText: "support@studyvault.com",
+      actionLink: "mailto:studyvault@gmail.com",
       actionColor: "text-blue-600 hover:text-blue-700"
     },
     {
@@ -66,7 +66,7 @@ const Contact = () => {
       title: "WhatsApp",
       desc: "Instant help for students and parents on the go.",
       actionText: "Chat on WhatsApp",
-      actionLink: "https://wa.me/233000000000",
+      actionLink: "https://wa.me/203261348",
       actionColor: "text-emerald-600 hover:text-emerald-700 font-bold"
     },
     {
@@ -74,7 +74,7 @@ const Contact = () => {
       bgColor: "bg-amber-50",
       title: "Call Support",
       desc: "Available Mon–Fri, 8:00 AM to 5:00 PM for urgent needs.",
-      actionText: "+233 (0) 555 123 456",
+      actionText: "+233 (0) 203 261 248",
       actionLink: "tel:+2330555123456",
       actionColor: "text-slate-800 font-bold hover:text-blue-600"
     },
@@ -240,7 +240,7 @@ const Contact = () => {
                   <label className="block text-xs font-bold uppercase text-slate-600 mb-2">Phone Number</label>
                   <input
                     type="tel"
-                    placeholder="+233 24 000 0000"
+                    placeholder="+233 20 000 0000"
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 text-sm"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -375,7 +375,7 @@ const Contact = () => {
           <div className="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-3">
             <MapPin size={22} />
           </div>
-          <h4 className="font-bold text-slate-900 text-base">BECE Prep Ghana HQ</h4>
+          <h4 className="font-bold text-slate-900 text-base">Study Vault Ghana HQ</h4>
           <p className="text-xs text-slate-500 mt-1">Empowering students across Osu and Greater Accra</p>
           <a
             href="https://maps.google.com"

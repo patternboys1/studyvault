@@ -1,0 +1,563 @@
+[
+  {
+
+    "number": 1,
+    "questionText": "A major factor to consider when selecting a sewing machine for a cousin who is an apprentice dressmaker is",
+    "options": [
+      "facilities available.",
+      "the skills of the user.",
+      "maintenance facilities available.",
+      "type of sewing work to be done."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The primary factor in choosing a sewing machine is the type of sewing work to be executed to ensure the machine meets functional requirements[cite: 29, 30].",
+    "topic": "Sewing & Garment Making",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "After the family's meal, Ama washed up and dried the crockery with a kitchen cloth. The suitable cloth for drying crockery is",
+    "options": [
+      "tea towel.",
+      "dish cloth.",
+      "muslin cloth.",
+      "cotton napkin."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A tea towel is specifically designed for drying cleaned dishes, crockery, and cutlery[cite: 29, 30].",
+    "topic": "Kitchen Operations & Hygiene",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "The doctor diagnosed Kofi of iron deficiency after examining the laboratory results. Deficiency symptoms of iron include",
+    "options": [
+      "improper functioning of nerves.",
+      "inability of blood to clot.",
+      "fatigue and loss of appetite.",
+      "loss of weight and muscle cramps."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Iron deficiency leads to anaemia, which commonly presents with symptoms of fatigue and loss of appetite[cite: 29, 30].",
+    "topic": "Nutrition & Health",
+    "hasImage": false
+  },
+  {
+  "number": 4,
+    "questionText": "The main reason why it is advisable to do proper clearing and washing up of utensils in the food laboratory after the day's work is to",
+    "options": [
+      "keep the family healthy.",
+      "increase the lifespan of equipment.",
+      "rid the food laboratory of pest.",
+      "prevent accidents in the food laboratory."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Proper clearing and washing up of utensils after use removes corrosive food substances and residues, thereby increasing the lifespan of the equipment[cite: 29].",
+    "topic": "Food & Laboratory Safety",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "A major cause of cholera in most of the communities is due to",
+    "options": [
+      "indiscriminate disposal of household refuse.",
+      "improper disposal of pollutants.",
+      "drinking water contaminated with pollutants.",
+      "indiscriminate open defecation."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Indiscriminate open defecation contamination of water bodies and food supply is a major transmission path for cholera bacteria[cite: 29, 30].",
+    "topic": "Environmental Health & Sanitation",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Food nutrients needed for healthy body development but required in very minute quantity is",
+    "options": [
+      "vitamins.",
+      "protein.",
+      "mineral elements.",
+      "fats and oils."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Mineral elements (micronutrients) are essential for proper body functions and development but are needed only in minute quantities[cite: 29, 30].",
+    "topic": "Nutrition & Food Science",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Amanda wants to make an opening on a garment she is sewing in her shop. After considering all types of openings, she decided to use the continuous wrap opening. Which of the following garments will be most suitable for the opening she has chosen?",
+    "options": [
+      "Children's clothes",
+      "Blouses for women",
+      "A pair of trousers",
+      "Children pair of slacks"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Continuous wrap openings are standard and well-suited for children's clothes because they provide easy, durable plackets[cite: 29, 30].",
+    "topic": "Garment Construction",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "To ensure that her children are safe from illnesses, a mother should encourage them to",
+    "options": [
+      "maintain good personal hygiene practices.",
+      "avoid eating outside the home.",
+      "maintain good food hygiene practices.",
+      "avoid eating with friends."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Practicing good personal hygiene is fundamental to preventing infections and maintaining child safety against common illnesses[cite: 29, 30].",
+    "topic": "Personal Hygiene & Health",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "When sewing a shirt for Sara, in order to obtain his shoulder length, measure",
+    "options": [
+      "from base of neck to top of arm.",
+      "across the shoulder between sleeve seams.",
+      "across back and divide by two.",
+      "around the neck and divide by three."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Shoulder length or width is measured across the back from shoulder point to shoulder point (between sleeve seams)[cite: 29, 30].",
+    "topic": "Body Measurements & Pattern Making",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "The reason why cotton is most attractive fabric suitable for all occasions is its ability to",
+    "options": [
+      "resist creases and bleaches.",
+      "absorb different dyes easily.",
+      "withstand high temperatures.",
+      "be made into different textures."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cotton fiber has high absorbency, making it easily dyeable into versatile, attractive colours and patterns for all occasions[cite: 29, 30].",
+    "topic": "Textiles & Fibres",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "The best tool Kofi can use to unpick unwanted stitches on a pair of shorts he bought from the supermarket is",
+    "options": [
+      "safety pin.",
+      "dressmakers' pin.",
+      "seam ripper.",
+      "stiletto."
+    ],
+    "correctAnswer": "C",
+    "explanation": "A seam ripper is specifically designed to cut and remove unwanted stitches safely without tearing the fabric[cite: 29, 30].",
+    "topic": "Sewing Tools",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Mary is sewing a petticoat for her sister and cannot afford lace trimming. The most appropriate decorative stitch she can use for the hem is",
+    "options": [
+      "French knots.",
+      "satin stitches.",
+      "lazy daisy stitches.",
+      "chain stitches."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Chain stitches provide a versatile, prominent decorative line finish along borders and hems[cite: 29, 30].",
+    "topic": "Embroidery & Decorative Stitches",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The best cooking method that can easily be handled by a beginner in food preparation is",
+    "options": [
+      "steaming.",
+      "roasting.",
+      "boiling.",
+      "grilling."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Boiling is a simple, basic moist-heat cooking method that requires minimal technical skills and equipment[cite: 29, 30].",
+    "topic": "Food Preparation & Cooking Methods",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "A dish that can be served both as a snack and dessert is",
+    "options": [
+      "jam rolls.",
+      "pancake.",
+      "ice cream.",
+      "chocolate."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Jam rolls are versatile baked items suitable for serving both as light snacks and sweet desserts[cite: 29, 30].",
+    "topic": "Meal Planning & Catering",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "A form of business organization in which the business is owned and controlled by those who use its services is termed",
+    "options": [
+      "sole proprietorship.",
+      "cooperative.",
+      "partnership.",
+      "limited liability company."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A cooperative is an autonomous association owned and democratically controlled by its user-members[cite: 29, 30].",
+    "topic": "Entrepreneurship & Business Management",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Which of the following conditions is favourable for the growth of micro-organisms in food?",
+    "options": [
+      "Food, moisture and warmth",
+      "Moisture, temperature and warmth",
+      "Warmth and air",
+      "Food and temperature"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Micro-organisms require nutrients (food), adequate moisture, and suitable warmth to grow and multiply rapidly[cite: 29, 30].",
+    "topic": "Food Safety & Preservation",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Uncooked ingredients needed to prepare variety of dishes are generally termed",
+    "options": [
+      "perishable foods.",
+      "convenient foods.",
+      "non-perishable foods.",
+      "food commodities."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Raw, unprocessed, or bulk ingredients used in culinary production are referred to as food commodities[cite: 29, 30].",
+    "topic": "Food Commodities & Ingredients",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "An important safety rule to observe in the food laboratory is to",
+    "options": [
+      "avoid carrying tiny objects and tools in the pocket.",
+      "ensure efficient lighting and ventilation.",
+      "avoid long sleeve dresses when cooking.",
+      "cut away from the body when using cutting tools."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Ensuring adequate lighting and proper ventilation in a food laboratory maintains clear visibility and removes smoke and toxic fumes safely[cite: 29, 30].",
+    "topic": "Laboratory Safety",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Whilst cereals, fats and oils provide energy to the body, fruits and vegetables provide",
+    "options": [
+      "growth.",
+      "satiety.",
+      "repair.",
+      "protection."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Fruits and vegetables supply vitamins and minerals that act as protective foods, guarding the body against diseases[cite: 29, 30].",
+    "topic": "Nutrition Science",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Select from the options below, a mechanical kitchen appliance used to make a pawpaw puree.",
+    "options": [
+      "Juicer",
+      "Blender",
+      "Mixer",
+      "Toaster"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A electric/mechanical blender purées fruits like pawpaw into smooth, uniform consistencies[cite: 29, 30].",
+    "topic": "Kitchen Appliances",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Students have been tasked to prepare metal workpieces for the production of artefacts. To obtain safe edges after cutting and filing, it is appropriate to",
+    "options": [
+      "brush off metal chips from workpieces.",
+      "knurl the sides of workpieces.",
+      "oil all sides of workpieces.",
+      "remove burrs from workpieces."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Deburring removes sharp, raised edges or fins leftover after cutting and filing metal to ensure smooth, safe handling[cite: 29, 30].",
+    "topic": "Metalwork & Benchwork",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "The specification for the construction of nursery school furniture demands that the furniture should be finished with oil paint. Which solvent is most appropriate for mixing oil paint for application?",
+    "options": [
+      "Kerosene",
+      "Thinner",
+      "Turpentine",
+      "Water"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Turpentine is the standard solvent and thinner used for oil-based paints and varnishes[cite: 29, 30].",
+    "topic": "Finishes & Solvents",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Career Technology students have been tasked to measure by volume materials for mixing concrete. The most appropriate measuring tool to use is",
+    "options": [
+      "gauge box.",
+      "mould box.",
+      "shovel.",
+      "wheel barrow."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A gauge box is built to accurate, standard volumetric specifications for batching materials like cement, sand, and aggregate[cite: 29, 30].",
+    "topic": "Building Construction Tools",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "Craftsmen working with plumbing fittings have been advised to use materials made of non-ferrous alloys because such materials have been developed to",
+    "options": [
+      "break under instant force.",
+      "bend well with little pressure.",
+      "have good resistance to corrosion.",
+      "melt at very low heat."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Non-ferrous alloys (such as brass or bronze) contain no iron and resist corrosion caused by water exposure[cite: 29, 30].",
+    "topic": "Materials Science & Metals",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "The main reason why children's furniture often become weak is due to",
+    "options": [
+      "broken tongue.",
+      "chairs not painted.",
+      "chairs not polished.",
+      "shrinkage of timber used."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Using unseasoned timber leads to shrinkage as moisture leaves, causing joints to loosen and structural integrity to weaken[cite: 29, 30].",
+    "topic": "Woodwork & Furniture Design",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "The use of active flux such as zinc chloride in soldering metals is very necessary. However, it needs to be washed off immediately after joining the metals because it is",
+    "options": [
+      "difficult to clean.",
+      "highly indelible.",
+      "mild on metals.",
+      "very corrosive."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Active fluxes contain acid compounds that leave highly corrosive residues capable of degrading the joint if not washed off post-soldering[cite: 29, 30].",
+    "topic": "Soldering & Joining Metals",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "In a construction workshop, preventing accidents is a top priority to ensure a",
+    "options": [
+      "complex artefact.",
+      "portable artefact.",
+      "reliable evaluation.",
+      "safe environment."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Enforcing safety protocols and accident prevention measures fosters a safe working environment for all workshop operators[cite: 29, 30].",
+    "topic": "Workshop Safety & Health",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "One property of cardboard that makes it suitable for making greeting cards is its",
+    "options": [
+      "elasticity.",
+      "flexibility.",
+      "softness.",
+      "stiffness."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Stiffness gives cardboard structural stability, allowing greeting cards to stand upright unsupported[cite: 29, 30].",
+    "topic": "Paper & Cardboard Work",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Smart materials respond to changes in temperature by altering their properties. Thermochromic materials change colour when exposed to",
+    "options": [
+      "dust.",
+      "heat.",
+      "light.",
+      "moisture."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Thermochromic substances react directly to temperature variations (heat) by changing their color pigments[cite: 29, 30].",
+    "topic": "Smart Materials",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Figure 1 shows an illustration of a structure. Use it to answer questions 30 and 31.\n\nThe structure helps to",
+    "options": [
+      "reduce weight.",
+      "increase stability.",
+      "make unit attractive.",
+      "make handling easier."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Diagonal bracing adds rigid support, increasing structural stability against external forces[cite: 29, 30].",
+    "topic": "Structures & Framing",
+    "hasImage": true
+  },
+  {
+    "number": 31,
+    "questionText": "Figure 1 shows an illustration of a structure. Use it to answer questions 30 and 31.\n\nThe member labelled P helps to create",
+    "options": [
+      "linkage.",
+      "strut.",
+      "tie.",
+      "triangulation."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The diagonal member creates rigid triangular shapes, a principle called triangulation, which prevents structural distortion[cite: 29, 30].",
+    "topic": "Structures & Framing",
+    "hasImage": true
+  },
+  {
+    "number": 32,
+    "questionText": "Career Technology students working on their project work informed their class teacher that they were preparing the sequence of operation. The exact stage of the design process the students have reached is",
+    "options": [
+      "construction.",
+      "evaluation.",
+      "investigation.",
+      "specification."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Determining the step-by-step sequence of production operations forms part of the detailed specification and planning stage prior to actual construction[cite: 29, 30].",
+    "topic": "Design Process",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "A furniture designer is cutting along the grain of a mahogany board to make a door. The method of sawing used is",
+    "options": [
+      "cross-cutting.",
+      "felling.",
+      "ripping.",
+      "straight-cutting."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Sawing parallel to or along the direction of the wood grain is known as ripping[cite: 29, 30].",
+    "topic": "Woodworking Operations",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "A technician working on a water-tight container needs to join two pieces of sheet metal. The best technique to use is",
+    "options": [
+      "bolting.",
+      "riveting.",
+      "screwing.",
+      "soldering."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Soldering fills gaps between metal sheets with molten filler metal, creating a sealed, water-tight joint[cite: 29, 30].",
+    "topic": "Sheet Metalwork & Joining",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "A Career Technology teacher uses real life examples to explain three-dimensional figures. The most suitable object to use is",
+    "options": [
+      "football.",
+      "map.",
+      "paper.",
+      "poster."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A football is a 3D spherical object (having height, width, and depth), unlike flat 2D maps, paper, or posters[cite: 29, 30].",
+    "topic": "Drawing & Geometry",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "In a career day programme organized to highlight the attributes of an entrepreneur, students learnt that entrepreneurs are",
+    "options": [
+      "introverts.",
+      "outgoing.",
+      "outspoken.",
+      "risk takers."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Calculated risk-taking is a defining core characteristic of successful entrepreneurs[cite: 29, 30].",
+    "topic": "Entrepreneurship",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "During an interview, one of the panelists asked Fuseina, whether as a woman, she can handle the physical demands of the job. This type of bias is referred to as",
+    "options": [
+      "cultural bias.",
+      "gender bias in recruitment.",
+      "stereotyping in recruitment.",
+      "unequal opportunities."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Questioning candidates based on their gender roles/capabilities during hiring constitutes gender bias in recruitment[cite: 29, 30].",
+    "topic": "Employment & Career Rights",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "A group of students designed a water-filtering device for rural communities to purify water from nearby rivers. Before distributing the device, they need to test and evaluate its",
+    "options": [
+      "aesthetics.",
+      "cost.",
+      "functionality.",
+      "size."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Testing functionality verifies whether the device effectively purifies water as intended before deployment[cite: 29, 30].",
+    "topic": "Design Evaluation",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "A student followed a detailed operational sequence to make a functional wooden try-square. Which operation was performed first?",
+    "options": [
+      "Cutting and folding the workpiece",
+      "Marking and dimensioning the workpiece",
+      "Sanding and finishing the workpiece",
+      "Shaping the right-angle of the tool"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Marking out dimensions onto stock material precedes all cutting, shaping, and finishing operations in workshop production[cite: 29, 30].",
+    "topic": "Woodwork Procedures",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Descriptive notes on possible solutions are important because they give",
+    "options": [
+      "clarity and explanations.",
+      "functionality and testing.",
+      "quick feedback.",
+      "visual representation."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Accompanying sketches with descriptive notes provides clarity and explanatory details regarding how design solutions operate[cite: 29, 30].",
+    "topic": "Design Communication",
+    "hasImage": false
+  }
+]

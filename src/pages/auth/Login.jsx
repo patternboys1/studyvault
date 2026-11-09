@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
@@ -8,12 +8,20 @@ import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { user, loading: authLoading } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && user) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [authLoading, navigate, user]);
 
   const ensureUserProfile = async (user, fallbackName = "Student") => {
     const userRef = doc(db, "users", user.uid);
@@ -23,9 +31,6 @@ export default function Login() {
         uid: user.uid,
         email: user.email || "",
         displayName: user.displayName || fallbackName,
-        plan: "free",
-        isPremium: false,
-        billingCycle: null,
         updatedAt: serverTimestamp(),
       },
       { merge: true }
@@ -37,8 +42,12 @@ export default function Login() {
     setLoading(true);
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
-      await ensureUserProfile(result.user, result.user.displayName || "Student");
-      navigate("/dashboard");
+      try {
+        await ensureUserProfile(result.user, result.user.displayName || "Student");
+      } catch (profileError) {
+        // A profile write failure should not keep an authenticated user on login.
+        console.warn("Unable to save user profile after sign-in:", profileError);
+      }
     } catch (error) {
       alert(error.message);
     } finally {
@@ -49,11 +58,17 @@ export default function Login() {
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
+      setLoading(true);
       const result = await signInWithPopup(auth, provider);
-      await ensureUserProfile(result.user, result.user.displayName || "Student");
-      navigate("/dashboard");
+      try {
+        await ensureUserProfile(result.user, result.user.displayName || "Student");
+      } catch (profileError) {
+        console.warn("Unable to save user profile after Google sign-in:", profileError);
+      }
     } catch (error) {
       alert(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 

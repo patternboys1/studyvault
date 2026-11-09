@@ -1,10 +1,14 @@
 import admin from 'firebase-admin';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
+import process from 'node:process';
 
 const require = createRequire(import.meta.url);
-const serviceAccount = require('./serviceAccountKey.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const serviceAccount = require(path.join(__dirname, 'serviceAccountKey.json'));
 
 // Initialize only once
 if (!admin.apps.length) {
@@ -28,11 +32,31 @@ if (!subjectArg || !yearArg || !typeArg) {
   process.exit(1);
 }
 
+function normalizeSubjectFolderName(subjectName) {
+  const map = {
+    'science': 'science',
+    'integrated science': 'science',
+    'english': 'english',
+    'social studies': 'socialStudies',
+    'socialstudies': 'socialStudies',
+    'rme': 'Rme',
+    'mathematics': 'maths',
+    'maths': 'maths',
+    'french': 'french',
+    'creative art': 'creativeArt',
+    'creativeart': 'creativeArt',
+  };
+
+  const key = String(subjectName || '').trim().toLowerCase().replace(/[_-]+/g, ' ');
+  return map[key] || String(subjectName || '').trim().replace(/\s+/g, '');
+}
+
 async function uploadPaper() {
   // 2. Dynamically build the file path
   // Assumes your folder is: data/conversions/science/science_2025_theory.json
-  const fileName = `${subjectArg.toLowerCase()}_${yearArg}_${typeArg.toLowerCase() === 'objectives' ? 'obj' : 'theory'}.json`;
-  const filePath = path.join('../src/data/conversions', subjectArg.toLowerCase(), fileName);
+  const folderName = normalizeSubjectFolderName(subjectArg);
+  const fileName = `${subjectArg.toLowerCase().replace(/\s+/g, '')}_${yearArg}_${typeArg.toLowerCase() === 'objectives' ? 'obj' : 'theory'}.json`;
+  const filePath = path.join(__dirname, '..', 'src', 'data', 'conversions', folderName, fileName);
 
   try {
     if (!fs.existsSync(filePath)) {

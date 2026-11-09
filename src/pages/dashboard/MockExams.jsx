@@ -16,7 +16,18 @@ import {
   XCircle,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { getPapers, getQuestionsByPaper, reserveMockAttempt, saveMockAttempt } from "../../services/studyContentService";
+import { getPapers, getQuestionsByPaper, reserveMockAttempt, saveMockAttempt, saveTheoryMockAttempt } from "../../services/studyContentService";
+
+const ACTIVE_THEORY_EXAM_KEY = "bece-prep-active-theory-exam";
+
+function readActiveTheoryExam() {
+  try {
+    const activeExam = JSON.parse(sessionStorage.getItem(ACTIVE_THEORY_EXAM_KEY) || "null");
+    return activeExam?.section === "Theory" && activeExam?.attemptId ? activeExam : null;
+  } catch {
+    return null;
+  }
+}
 
 const formatTime = (totalSeconds) => {
   const minutes = Math.floor(totalSeconds / 60);
@@ -37,8 +48,8 @@ const isCorrect = (question, selectedAnswer) => {
 };
 
 export default function MockExams() {
-  const [activeExam, setActiveExam] = useState(null);
-  const [view, setView] = useState("repository");
+  const [activeExam, setActiveExam] = useState(readActiveTheoryExam);
+  const [view, setView] = useState(() => activeExam ? "exam" : "repository");
   const [startError, setStartError] = useState("");
   const { isPremium, userProfile } = useAuth();
   const [freeMocksOverride, setFreeMocksOverride] = useState(null);
@@ -66,7 +77,9 @@ export default function MockExams() {
     try {
       const reservation = await reserveMockAttempt({ paper, section, attemptId });
       if (reservation.freeMocksRemaining !== null) setFreeMocksOverride(reservation.freeMocksRemaining);
-      setActiveExam({ paper, section, attemptId });
+      const nextExam = { paper, section, attemptId, startedAt: Date.now() };
+      if (section === "Theory") sessionStorage.setItem(ACTIVE_THEORY_EXAM_KEY, JSON.stringify(nextExam));
+      setActiveExam(nextExam);
       setView("exam");
     } catch (error) {
       setStartError(error.message || "Unable to start this mock exam.");
@@ -74,12 +87,13 @@ export default function MockExams() {
   };
 
   const exitExam = () => {
+    sessionStorage.removeItem(ACTIVE_THEORY_EXAM_KEY);
     setActiveExam(null);
     setView("repository");
   };
 
   if (view === "exam" && activeExam) {
-    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
+    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} startedAt={activeExam.startedAt} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
   }
 
   return <MockExamRepository papers={papers} isLoading={papersLoading} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
@@ -159,11 +173,11 @@ function MockPaperCard({ paper, onStart }) {
   );
 }
 
-function MockExamSession({ paper, section, attemptId, questions, isLoading, onExit }) {
+function MockExamSession({ paper, section, attemptId, startedAt, questions, isLoading, onExit }) {
   const { user } = useAuth();
 
   if (section === "Theory") {
-    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
+    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} startedAt={startedAt} userId={user?.uid} onExit={onExit} />;
   }
 
   return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
@@ -313,15 +327,29 @@ function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, 
   );
 }
 
-function TheoryExamSession({ paper, questions, isLoading, attemptId, userId, onExit }) {
+function TheoryExamSession({ paper, questions, isLoading, attemptId, startedAt, userId, onExit }) {
   const durationInSeconds = (paper.durationMinutes || 60) * 60;
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [responses, setResponses] = useState({});
+  const draftKey = `bece-prep-theory-draft:${userId}:${attemptId}`;
+  const [responses, setResponses] = useState(() => {
+    try {
+      return JSON.parse(sessionStorage.getItem(draftKey) || "{}");
+    } catch {
+      return {};
+    }
+  });
   const [flaggedQuestions, setFlaggedQuestions] = useState({});
-  const [timeRemaining, setTimeRemaining] = useState(durationInSeconds);
+  const [timeRemaining, setTimeRemaining] = useState(() => Math.max(
+    0,
+    durationInSeconds - Math.floor((Date.now() - (startedAt || Date.now())) / 1000),
+  ));
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [showSubmitPrompt, setShowSubmitPrompt] = useState(false);
   const submitPromptRef = useRef(null);
+
+  useEffect(() => {
+    sessionStorage.setItem(draftKey, JSON.stringify(responses));
+  }, [draftKey, responses]);
 
   useEffect(() => {
     if (hasSubmitted || isLoading || questions.length === 0) return undefined;
@@ -368,7 +396,7 @@ function TheoryExamSession({ paper, questions, isLoading, attemptId, userId, onE
   };
 
   if (hasSubmitted) {
-    return <TheoryResults paper={paper} questions={questions} responses={responses} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
+    return <TheoryResults paper={paper} questions={questions} responses={responses} attemptId={attemptId} userId={userId} draftKey={draftKey} onRestart={restartExam} onExit={onExit} />;
   }
 
   return (
@@ -438,20 +466,32 @@ function TheoryExamSession({ paper, questions, isLoading, attemptId, userId, onE
   );
 }
 
-function TheoryResults({ paper, questions, responses, attemptId, userId, onRestart, onExit }) {
+function TheoryResults({ paper, questions, responses, attemptId, userId, draftKey, onRestart, onExit }) {
   const draftedCount = Object.values(responses).filter((response) => response.trim()).length;
+  const [saveStatus, setSaveStatus] = useState(userId ? "saving" : "error");
+  const [saveAttempt, setSaveAttempt] = useState(0);
 
   useEffect(() => {
-    if (!userId) return;
-    saveMockAttempt(userId, { id: attemptId, section: "Theory" })
-      .catch((error) => console.error("Unable to complete theory mock:", error));
-  }, [attemptId, userId]);
+    if (!userId) return undefined;
+    let active = true;
+    saveTheoryMockAttempt(userId, { id: attemptId, responses })
+      .then(() => {
+        sessionStorage.removeItem(draftKey);
+        sessionStorage.removeItem(ACTIVE_THEORY_EXAM_KEY);
+        if (active) setSaveStatus("saved");
+      })
+      .catch((error) => {
+        console.error("Unable to save theory mock:", error);
+        if (active) setSaveStatus("error");
+      });
+    return () => { active = false; };
+  }, [attemptId, draftKey, responses, saveAttempt, userId]);
 
   return (
     <div className="space-y-7 pb-10">
       <section className="overflow-hidden rounded-3xl bg-slate-950 p-7 text-white shadow-xl shadow-slate-200 md:p-10">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-200">Theory mock complete</p>
-        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p></div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
+        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p><p className="mt-2 text-sm font-bold text-blue-200">{saveStatus === "saving" ? "Saving your responses…" : saveStatus === "saved" ? "Your responses are saved." : "Could not save your responses. Your draft is kept in this tab."}</p>{saveStatus === "error" && <button type="button" onClick={() => { setSaveStatus("saving"); setSaveAttempt((count) => count + 1); }} className="mt-2 rounded-lg bg-white px-3 py-2 text-sm font-black text-blue-800">Retry saving</button>}</div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
       </section>
       <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Start another attempt</button></div></div>

@@ -246,13 +246,30 @@ function Report() {
   const reportData = processReportData(visibleAttempts);
   const focusSubject = location.state?.focusSubject;
   const handleShare = async () => {
+    if (!isYearlyPlan) {
+      setShareMessage("Parent report sharing is included with Pro Yearly.");
+      return;
+    }
+    const exportId = typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `report-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    let authorized = false;
     try {
-      if (!isYearlyPlan) throw new Error("Parent report sharing is included with Pro Yearly.");
-      const authorization = await authorizeParentReportExport();
+      const authorization = await authorizeParentReportExport(exportId);
+      authorized = true;
       setParentExportsOverride(authorization.parentExportsRemaining);
       setShareMessage(await shareOrCopy(buildParentSummary(attempts)));
     } catch (error) {
-      if (error.name !== "AbortError") setShareMessage(error.message || "Unable to share the report from this browser.");
+      if (authorized) {
+        try {
+          const release = await authorizeParentReportExport(exportId, "release");
+          setParentExportsOverride(release.parentExportsRemaining);
+        } catch (releaseError) {
+          console.error("Unable to restore the unused parent report export:", releaseError);
+        }
+      }
+      if (error.name === "AbortError") setShareMessage("Sharing cancelled. Your export allowance has been restored.");
+      else setShareMessage(error.message || "Unable to share the report from this browser. Your export allowance has been restored where possible.");
     }
   };
   const handleExportCsv = () => downloadCsv("bece-progress-report.csv", [
