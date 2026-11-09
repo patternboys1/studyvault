@@ -99,7 +99,7 @@ const About = () => {
       role: "Founder & Lead Developer",
       badge: "FOUNDER",
       badgeColor: "bg-blue-600",
-      bio: "Veteran educator with 10 years of Ghanaian curriculum experience."
+      bio: "Computer Scientist and Software Engineer focused on building reliable,user-centered web and mobile applications."
     },
     {
       name: "Twene Samuel Sekyere",
