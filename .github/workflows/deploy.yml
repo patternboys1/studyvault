@@ -34,7 +34,7 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run build
+        run: npm run build:github-pages
 
       - name: Add SPA route fallback
         run: cp dist/index.html dist/404.html

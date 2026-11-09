@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/studyvault/',
   server: {
     proxy: {
       '/api': {
@@ -18,4 +17,3 @@ export default defineConfig({
     },
   },
 })
-
