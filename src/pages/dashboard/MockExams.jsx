@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
@@ -48,16 +49,18 @@ const isCorrect = (question, selectedAnswer) => {
 };
 
 export default function MockExams() {
+  const navigate = useNavigate();
   const [activeExam, setActiveExam] = useState(readActiveTheoryExam);
   const [view, setView] = useState(() => activeExam ? "exam" : "repository");
   const [startError, setStartError] = useState("");
-  const { isPremium, userProfile } = useAuth();
+  const { isPremium, userProfile, user } = useAuth();
   const [freeMocksOverride, setFreeMocksOverride] = useState(null);
   const freeMocksRemaining = freeMocksOverride ?? userProfile?.freeMocksRemaining;
 
-  const { data: papers = [], isLoading: papersLoading } = useQuery({
-    queryKey: ["mock-exam-papers"],
+  const { data: papers = [], isLoading: papersLoading, isError: papersError, error: paperLoadError } = useQuery({
+    queryKey: ["mock-exam-papers", user?.uid],
     queryFn: getPapers,
+    enabled: Boolean(user?.uid),
   });
 
   const { data: questions = [], isLoading: questionsLoading } = useQuery({
@@ -71,6 +74,10 @@ export default function MockExams() {
 
   const startExam = async (paper, section) => {
     setStartError("");
+    if (paper.requiresPro && !isPremium) {
+      navigate("/dashboard/upgrade");
+      return;
+    }
     const attemptId = typeof crypto !== "undefined" && crypto.randomUUID
       ? crypto.randomUUID()
       : `${paper.id}-${Date.now()}`;
@@ -96,10 +103,10 @@ export default function MockExams() {
     return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} startedAt={activeExam.startedAt} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
   }
 
-  return <MockExamRepository papers={papers} isLoading={papersLoading} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
+  return <MockExamRepository papers={papers} isLoading={papersLoading} papersError={papersError ? paperLoadError : null} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
 }
 
-function MockExamRepository({ papers, isLoading, onStart, startError, isPremium, freeMocksRemaining }) {
+function MockExamRepository({ papers, isLoading, papersError, onStart, startError, isPremium, freeMocksRemaining }) {
   const [selectedSubject, setSelectedSubject] = useState("All Subjects");
   const subjects = useMemo(() => [...new Set(papers.map((paper) => paper.subjectName).filter(Boolean))], [papers]);
   const availablePapers = papers.filter((paper) => selectedSubject === "All Subjects" || paper.subjectName === selectedSubject);
@@ -127,7 +134,7 @@ function MockExamRepository({ papers, isLoading, onStart, startError, isPremium,
       <section className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <h2 className="text-2xl font-black text-gray-950">Choose a paper</h2>
-          <p className="mt-1 text-sm text-gray-500">Every available Firebase paper can be used as a timed mock exam.</p>
+          <p className="mt-1 text-sm text-gray-500">Published papers are shared across accounts. Papers marked Pro require an upgrade to start.</p>
         </div>
         <label className="text-sm font-bold text-gray-700">
           Subject
@@ -138,16 +145,17 @@ function MockExamRepository({ papers, isLoading, onStart, startError, isPremium,
         </label>
       </section>
 
-      {isLoading ? <LoadingCard label="Loading available mock papers..." /> : availablePapers.length > 0 ? (
+      {papersError ? <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 font-semibold text-red-800">Unable to load mock papers: {papersError.message || "Please try again."}</p> : isLoading ? <LoadingCard label="Loading available mock papers..." /> : availablePapers.length > 0 ? (
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {availablePapers.map((paper) => <MockPaperCard key={paper.id} paper={paper} onStart={onStart} />)}
+          {availablePapers.map((paper) => <MockPaperCard key={paper.id} paper={paper} onStart={onStart} isPremium={isPremium} />)}
         </section>
       ) : <EmptyState />}
     </div>
   );
 }
 
-function MockPaperCard({ paper, onStart }) {
+function MockPaperCard({ paper, onStart, isPremium }) {
+  const requiresPro = paper.requiresPro && !isPremium;
   return (
     <article className="flex flex-col rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-100 hover:shadow-lg hover:shadow-blue-50">
       <div className="flex items-start justify-between gap-4">
@@ -156,6 +164,7 @@ function MockPaperCard({ paper, onStart }) {
       </div>
       <h3 className="mt-7 text-xl font-black text-gray-950">{paper.subjectName}</h3>
       <p className="mt-2 text-sm font-medium text-gray-500">{paper.type || "Theory + Objectives"}</p>
+      {requiresPro && <p className="mt-2 text-xs font-bold text-amber-700">Pro access required · Upgrade to unlock</p>}
       <div className="mt-6 grid grid-cols-2 gap-3 border-y border-slate-100 py-5 text-sm">
         <span className="flex items-center gap-2 font-bold text-gray-600"><FileQuestion size={16} className="text-blue-700" />{paper.questionCount || 0} questions</span>
         <span className="flex items-center gap-2 font-bold text-gray-600"><Timer size={16} className="text-blue-700" />{paper.durationMinutes || 60} min</span>
@@ -163,10 +172,10 @@ function MockPaperCard({ paper, onStart }) {
       <p className="mt-5 text-sm leading-relaxed text-gray-500">Choose objective questions for automatic marking or theory questions for structured written practice.</p>
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <button type="button" onClick={() => onStart(paper, "Objectives")} className="flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-4 py-3.5 text-sm font-black text-white shadow-md shadow-blue-100 transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-100">
-          <Play size={16} fill="currentColor" /> Objectives
+          <Play size={16} fill="currentColor" /> {requiresPro ? "Upgrade to unlock" : "Objectives"}
         </button>
         <button type="button" onClick={() => onStart(paper, "Theory")} className="flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3.5 text-sm font-black text-blue-800 transition hover:border-blue-300 hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-100">
-          <FileQuestion size={16} /> Theory
+          <FileQuestion size={16} /> {requiresPro ? "Upgrade to unlock" : "Theory"}
         </button>
       </div>
     </article>
@@ -231,12 +240,11 @@ function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, 
   }
 
   const answeredCount = Object.keys(answers).length;
-  const correctCount = questions.filter((question) => isCorrect(question, answers[question.id])).length;
   const restartExam = () => {
     onExit();
   };
 
-  if (hasSubmitted) return <MockResults paper={paper} questions={questions} answers={answers} correctCount={correctCount} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
+  if (hasSubmitted) return <MockResults paper={paper} questions={questions} answers={answers} attemptId={attemptId} userId={userId} onRestart={restartExam} onExit={onExit} />;
 
   const question = questions[currentIndex];
   const selectedAnswer = answers[question.id];
@@ -519,13 +527,14 @@ function TheoryResults({ paper, questions, responses, attemptId, userId, draftKe
   );
 }
 
-function MockResults({ paper, questions, answers, correctCount, attemptId, userId, onRestart, onExit }) {
-  const score = Math.round((correctCount / questions.length) * 100);
-  const missedQuestions = questions.filter((question) => !isCorrect(question, answers[question.id]));
+function MockResults({ paper, questions, answers, attemptId, userId, onRestart, onExit }) {
+  const [submission, setSubmission] = useState(null);
+  const [saveError, setSaveError] = useState("");
+  const [saveAttempt, setSaveAttempt] = useState(0);
 
   useEffect(() => {
     if (!userId) return undefined;
-
+    let cancelled = false;
     saveMockAttempt(userId, {
       id: attemptId,
       answers,
@@ -534,14 +543,34 @@ function MockResults({ paper, questions, answers, correctCount, attemptId, userI
       subjectName: paper.subjectName,
       year: paper.year,
       section: "Objectives",
-      score,
-      correctCount,
+      score: 0,
+      correctCount: 0,
       answeredCount: Object.keys(answers).length,
       totalQuestions: questions.length,
-    }).catch((error) => console.error("Unable to save mock attempt:", error));
+    }).then((result) => {
+      if (!cancelled) setSubmission(result);
+    }).catch((error) => {
+      if (!cancelled) setSaveError(error.message || "Unable to save and mark this mock attempt.");
+    });
+    return () => { cancelled = true; };
+  }, [answers, attemptId, paper.id, paper.subjectId, paper.subjectName, paper.year, questions.length, saveAttempt, userId]);
 
-    return undefined;
-  }, [answers, attemptId, correctCount, paper.id, paper.subjectId, paper.subjectName, paper.year, questions.length, score, userId]);
+  const displayedSaveError = saveError || (!userId ? "Sign in again to save this mock attempt." : "");
+  if (!submission) {
+    return (
+      <div className="mx-auto max-w-2xl rounded-3xl border border-slate-100 bg-white p-10 text-center shadow-sm">
+        <h1 className="text-2xl font-black text-gray-950">{displayedSaveError ? "Mock submission needs attention" : "Marking your mock exam…"}</h1>
+        <p role={displayedSaveError ? "alert" : undefined} className="mt-3 text-sm text-gray-600">{displayedSaveError || "Your answers are being checked securely."}</p>
+        {displayedSaveError && <div className="mt-6 flex justify-center gap-3"><button type="button" onClick={() => { setSaveError(""); setSaveAttempt((count) => count + 1); }} disabled={!userId} className="rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white disabled:opacity-50">Retry submission</button><button type="button" onClick={onExit} className="rounded-xl border px-5 py-3 text-sm font-black text-gray-700">Back to papers</button></div>}
+      </div>
+    );
+  }
+
+  const score = submission.score;
+  const finalCorrectCount = submission.correctCount;
+  const reviewById = new Map((submission.review || []).map((item) => [item.questionId, item]));
+  const reviewedQuestions = questions.map((question) => ({ ...question, ...reviewById.get(question.id) }));
+  const missedQuestions = reviewedQuestions.filter((question) => !isCorrect(question, answers[question.id]));
 
   return (
     <div className="space-y-7 pb-10">
@@ -551,9 +580,9 @@ function MockResults({ paper, questions, answers, correctCount, attemptId, userI
       </section>
 
       <section className="grid gap-4 sm:grid-cols-3">
-        <ResultStat label="Correct" value={correctCount} icon={<CheckCircle2 size={22} />} color="text-emerald-700 bg-emerald-50" />
-        <ResultStat label="Incorrect" value={questions.length - correctCount} icon={<XCircle size={22} />} color="text-red-700 bg-red-50" />
-        <ResultStat label="Answered" value={`${Object.keys(answers).length}/${questions.length}`} icon={<FileQuestion size={22} />} color="text-blue-700 bg-blue-50" />
+        <ResultStat label="Correct" value={finalCorrectCount} icon={<CheckCircle2 size={22} />} color="text-emerald-700 bg-emerald-50" />
+        <ResultStat label="Incorrect" value={questions.length - finalCorrectCount} icon={<XCircle size={22} />} color="text-red-700 bg-red-50" />
+        <ResultStat label="Answered" value={`${submission.answeredCount}/${submission.totalQuestions}`} icon={<FileQuestion size={22} />} color="text-blue-700 bg-blue-50" />
       </section>
 
       <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">

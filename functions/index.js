@@ -99,11 +99,28 @@ const getSignedImageUrl = async (value) => {
   const configuredBucket = admin.app().options.storageBucket;
   if (configuredBucket && match[1] !== configuredBucket) return null;
 
-  const [url] = await getStorage().bucket(match[1]).file(match[2]).getSignedUrl({
-    action: "read",
-    expires: Date.now() + 60 * 60 * 1000,
-  });
-  return url;
+  const file = getStorage().bucket(match[1]).file(match[2]);
+  try {
+    const [url] = await file.getSignedUrl({
+      action: "read",
+      expires: Date.now() + 60 * 60 * 1000,
+    });
+    return url;
+  } catch (signingError) {
+    console.warn(
+      "Unable to sign a study image URL; loading image data instead:",
+      signingError?.message || signingError,
+    );
+  }
+
+  const [[contents], [metadata]] = await Promise.all([
+    file.download(),
+    file.getMetadata(),
+  ]);
+  if (!metadata.contentType?.startsWith("image/")) {
+    throw new Error(`Study image has an invalid content type: ${metadata.contentType || "unknown"}`);
+  }
+  return `data:${metadata.contentType};base64,${contents.toString("base64")}`;
 };
 
 const normalizePaystackSecret = (value) =>
@@ -420,7 +437,12 @@ export const getStudyContent = onRequest(async (req, res) => {
         .get();
       const papers = snapshot.docs
         .map((paperDoc) => ({ ...paperDoc.data(), id: paperDoc.id }))
-        .filter((paper) => premium || FREE_PAPER_YEARS.has(String(paper.year)));
+        .map((paper) => ({
+          ...paper,
+          // Paper metadata is shared so students can see the complete library.
+          // The actual question payload remains protected below.
+          requiresPro: !premium && !FREE_PAPER_YEARS.has(String(paper.year)),
+        }));
       papers.sort((first, second) => Number(second.year || 0) - Number(first.year || 0));
       return res.json({ papers, isPremium: premium });
     }
@@ -437,6 +459,16 @@ export const getStudyContent = onRequest(async (req, res) => {
     const mode = req.body?.mode === "mock" ? "mock" : "practice";
     if (!subjectId || !/^\d{4}$/.test(year)) {
       return res.status(400).json({ error: "A valid subject and paper year are required." });
+    }
+    const publishedPapers = await admin.firestore().collection("papers")
+      .where("isPublished", "==", true)
+      .get();
+    const paperIsPublished = publishedPapers.docs.some((paperDoc) => {
+      const paper = paperDoc.data();
+      return String(paper.subjectId || "") === subjectId && String(paper.year || "") === year;
+    });
+    if (!paperIsPublished) {
+      return res.status(404).json({ error: "This paper is not published or is unavailable." });
     }
     if (!premium && !FREE_PAPER_YEARS.has(year)) {
       return res.status(403).json({ error: "This paper is available with Pro access." });
@@ -467,7 +499,9 @@ export const getStudyContent = onRequest(async (req, res) => {
       const data = { ...questionDoc.data(), id: questionDoc.id };
       if (!premium) {
         for (const field of hiddenFields) delete data[field];
-        if (mode === "practice") delete data.correctAnswer;
+        // Never send the answer key with an active free mock. Objective scores
+        // are computed from the private Firestore questions on submission.
+        delete data.correctAnswer;
       }
       await Promise.all(imageFields.map(async (field) => {
         if (data[field]) {
@@ -695,7 +729,20 @@ export const completeMockAttempt = onRequest(async (req, res) => {
       });
       return { alreadySaved: false };
     });
-    return res.json({ ok: true, saved: true, alreadySaved: result.alreadySaved });
+    return res.json({
+      ok: true,
+      saved: true,
+      alreadySaved: result.alreadySaved,
+      score,
+      correctCount,
+      answeredCount,
+      totalQuestions: questions.length,
+      review: questions.map((question) => ({
+        questionId: question.id,
+        correctAnswer: question.correctAnswer || "",
+        explanation: question.explanation || "",
+      })),
+    });
   } catch (error) {
     console.error("Mock completion failed:", error?.message || error);
     return res.status(500).json({ error: "Unable to save this mock attempt." });

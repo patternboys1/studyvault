@@ -39,7 +39,7 @@ const normalizeOptions = (options = []) => {
 
 // --- MAIN COMPONENT ---
 export default function PastQuestions() {
-  const { isPremium } = useAuth();
+  const { isPremium, user } = useAuth();
   const navigate = useNavigate();
   const [mode, setMode] = useState("library");
   const [selectedPaperId, setSelectedPaperId] = useState(null);
@@ -54,9 +54,10 @@ export default function PastQuestions() {
     queryFn: getSubjects,
   });
 
-  const { data: firestorePapers = [], isLoading: papersLoading } = useQuery({
-    queryKey: ["papers"],
+  const { data: firestorePapers = [], isLoading: papersLoading, isError: papersError, error: paperLoadError } = useQuery({
+    queryKey: ["papers", user?.uid],
     queryFn: getPapers,
+    enabled: Boolean(user?.uid),
   });
 
   const selectedPaper = firestorePapers.find((paper) => paper.id === selectedPaperId);
@@ -150,11 +151,27 @@ export default function PastQuestions() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {papersLoading ? (
+        {papersError ? (
+          <div role="alert" className="col-span-full rounded-2xl border border-red-200 bg-red-50 p-6 text-center font-semibold text-red-800">
+            Unable to load past papers: {paperLoadError?.message || "Please try again."}
+          </div>
+        ) : papersLoading ? (
           <div className="col-span-full py-20 text-center animate-pulse text-gray-400 font-bold">Synchronizing Repository...</div>
         ) : displayPapers.length > 0 ? (
           displayPapers.map(paper => (
-            <PaperCard key={paper.id} paper={paper} onClick={() => { setSelectedPaperId(paper.id); setMode("practice"); }} />
+            <PaperCard
+              key={paper.id}
+              paper={paper}
+              requiresPro={paper.requiresPro && !isPremium}
+              onClick={() => {
+                if (paper.requiresPro && !isPremium) {
+                  navigate("/dashboard/upgrade");
+                  return;
+                }
+                setSelectedPaperId(paper.id);
+                setMode("practice");
+              }}
+            />
           ))
         ) : (
           <div className="col-span-full py-20 text-center border-2 border-dashed rounded-3xl bg-gray-50">
@@ -265,7 +282,7 @@ function FilterDropdown({ label, value, options, onChange }) {
   );
 }
 
-function PaperCard({ paper, onClick }) {
+function PaperCard({ paper, onClick, requiresPro }) {
   return (
     <div onClick={onClick} className="bg-white p-6 rounded-3xl border border-gray-100 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-50 cursor-pointer transition-all group">
       <div className="flex justify-between mb-4">
@@ -273,6 +290,7 @@ function PaperCard({ paper, onClick }) {
         <span className="bg-blue-700 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest">{paper.year}</span>
       </div>
       <h3 className="font-black text-gray-900 text-lg group-hover:text-blue-700 transition-colors">{paper.subjectName}</h3>
+      {requiresPro && <p className="mt-1 text-xs font-bold text-amber-700">Pro access required · View plans</p>}
       <p className="text-[11px] text-gray-400 font-bold uppercase mb-4 tracking-tight">{paper.type || "Theory + Objectives"}</p>
       <div className="flex gap-4 text-[11px] font-bold text-gray-500 pt-4 border-t border-gray-50">
         <span className="flex items-center gap-1"><FileText size={14} className="text-blue-600"/> {paper.questionCount || 0} Questions</span>

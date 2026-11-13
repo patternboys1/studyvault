@@ -57,13 +57,8 @@ export async function getSubjects() {
  * Fetches paper metadata
  */
 export async function getPapers() {
-  try {
-    const { papers = [] } = await callFunction("getStudyContent", { operation: "papers" });
-    return papers;
-  } catch (error) {
-    console.error("Error fetching papers:", error);
-    return [];
-  }
+  const { papers = [] } = await callFunction("getStudyContent", { operation: "papers" });
+  return papers;
 }
 
 /**
