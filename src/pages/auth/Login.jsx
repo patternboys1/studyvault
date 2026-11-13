@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
@@ -14,6 +15,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [resetMessage, setResetMessage] = useState("");
+  const [isSendingReset, setIsSendingReset] = useState(false);
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
 
@@ -72,6 +75,25 @@ export default function Login() {
     }
   };
 
+  const handlePasswordReset = async () => {
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) {
+      setResetMessage("Enter your email address first, then request a reset link.");
+      return;
+    }
+
+    setIsSendingReset(true);
+    setResetMessage("");
+    try {
+      await sendPasswordResetEmail(auth, normalizedEmail);
+      setResetMessage("If an account exists for that email, a password reset link has been sent.");
+    } catch (error) {
+      setResetMessage(error.message || "Unable to send a password reset email. Please try again.");
+    } finally {
+      setIsSendingReset(false);
+    }
+  };
+
   return (
     <div className="flex min-h-screen bg-white">
       {/* LEFT SIDE: Visual/Marketing (Based on design) */}
@@ -124,9 +146,11 @@ export default function Login() {
                 </label>
                 <button
                   type="button"
+                  onClick={handlePasswordReset}
+                  disabled={isSendingReset}
                   className="text-sm font-semibold text-indigo-600 hover:underline"
                 >
-                  Forgot Password?
+                  {isSendingReset ? "Sending reset link…" : "Forgot Password?"}
                 </button>
               </div>
               <input
@@ -138,6 +162,7 @@ export default function Login() {
                 required
               />
             </div>
+            {resetMessage && <p role="status" className="-mt-2 text-sm text-indigo-700">{resetMessage}</p>}
 
             <div className="flex items-center">
               <input

@@ -34,7 +34,17 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run build:github-pages
+        env:
+          VITE_PAYSTACK_PUBLIC_KEY: ${{ vars.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_c46e03248bd2014b3f8627821942614e2d8f72d7' }}
+        run: |
+          if [[ ! "$VITE_PAYSTACK_PUBLIC_KEY" =~ ^pk_(test|live)_ ]]; then
+            echo "::error::A valid Paystack public key is required before deploying."
+            exit 1
+          fi
+          if [[ "$VITE_PAYSTACK_PUBLIC_KEY" =~ ^pk_test_ ]]; then
+            echo "::warning::Paystack test mode is active. Transactions will not charge real money."
+          fi
+          npm run build:github-pages
 
       - name: Add SPA route fallback
         run: cp dist/index.html dist/404.html

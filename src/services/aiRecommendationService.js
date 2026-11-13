@@ -110,7 +110,8 @@ export function buildRuleBasedRecommendations(attempts = []) {
 }
 
 export async function getStudyRecommendations(attempts = [], options = {}) {
-  const endpoint = import.meta.env.VITE_AI_RECOMMENDATION_ENDPOINT || "/api/recommendations";
+  const endpoint = import.meta.env.VITE_AI_RECOMMENDATION_ENDPOINT
+    || "https://us-central1-bece-prep.cloudfunctions.net/recommendations";
   const shouldUseRemote = Boolean(endpoint) && options.allowRemote !== false && Boolean(options.user?.uid);
 
   if (!shouldUseRemote) {
@@ -178,6 +179,7 @@ export async function getStudyRecommendations(attempts = [], options = {}) {
     const result = {
       recommendations: buildRuleBasedRecommendations(attempts),
       provider: "rules",
+      fallbackReason: "provider_error",
     };
     cacheRecommendations(cacheKey, result);
     return result;

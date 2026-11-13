@@ -91,6 +91,11 @@ const AIFocusCard = ({ attempts = [], isPremium = true }) => {
       </div>
 
       <div className="space-y-4 flex-1">
+        {!isLoading && isPremium && fallbackReason && (
+          <p role="status" className="rounded-xl border border-amber-300/30 bg-amber-300/10 px-3 py-2 text-xs font-medium leading-relaxed text-amber-100">
+            AI recommendations are temporarily unavailable. This study plan is based on your results.
+          </p>
+        )}
         {isLoading ? (
           <div className="space-y-3 animate-pulse">
             <div className="h-20 rounded-xl bg-white/10" />

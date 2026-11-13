@@ -20,6 +20,9 @@ const getPlanAmount = (planId) => {
   return 0;
 };
 
+const PAYSTACK_PUBLIC_KEY = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || "";
+const IS_PAYSTACK_TEST_MODE = PAYSTACK_PUBLIC_KEY.startsWith("pk_test_");
+
 let paystackScriptPromise;
 
 const loadPaystackScript = () => {
@@ -98,7 +101,7 @@ const pricingPlans = [
     period: "year",
     color: "emerald",
     buttonText: "Get Yearly Access",
-    badge: "Save 16%",
+    badge: "Save 15%",
     featured: true,
     features: [
       { text: "Unlimited mock exams", included: true },
@@ -134,8 +137,8 @@ function Upgrade() {
   const [isRecoveringPayment, setIsRecoveringPayment] = useState(false);
 
   useEffect(() => {
-    loadPaystackScript().catch((error) => {
-      setPaymentMessage(error.message || "Unable to load Paystack checkout.");
+    loadPaystackScript().catch(() => {
+      setPaymentMessage("Online payments are temporarily unavailable. Please try again later.");
     });
   }, []);
 
@@ -154,16 +157,17 @@ function Upgrade() {
       return;
     }
 
-    const publicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY;
-    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT;
+    const publicKey = PAYSTACK_PUBLIC_KEY;
+    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT
+      || "https://us-central1-bece-prep.cloudfunctions.net/verifyPaystackPayment";
 
     if (!publicKey) {
-      setPaymentMessage("Add your Paystack public key in VITE_PAYSTACK_PUBLIC_KEY to enable live payments.");
+      setPaymentMessage("Online payments are temporarily unavailable. Please try again later.");
       return;
     }
 
     if (!verifyEndpoint) {
-      setPaymentMessage("Set VITE_PAYSTACK_VERIFY_ENDPOINT to your deployed Cloud Function URL before enabling premium payments.");
+      setPaymentMessage("We couldn't start checkout right now. Please try again later.");
       return;
     }
 
@@ -203,21 +207,8 @@ function Upgrade() {
               body: JSON.stringify({ reference, planId }),
             });
 
-            const verificationData = await verificationResponse.json();
             if (!verificationResponse.ok) {
-              const providerMessage = verificationData?.details?.message
-                || verificationData?.details?.data?.gateway_response;
-              const amountMismatch = verificationData?.expectedAmount != null
-                ? `Expected GHS ${(verificationData.expectedAmount / 100).toFixed(2)}, received ${verificationData.receivedCurrency || "unknown currency"} ${((verificationData.receivedAmount || 0) / 100).toFixed(2)}.`
-                : "";
-              const message = [
-                verificationData?.error || "Payment verification failed.",
-                providerMessage,
-                amountMismatch,
-                `(HTTP ${verificationResponse.status})`,
-              ].filter(Boolean).join(" ");
-
-              throw new Error(message);
+              throw new Error("PAYMENT_VERIFICATION_FAILED");
             }
 
             await refreshUserProfile(user);
@@ -226,8 +217,8 @@ function Upgrade() {
           };
 
           verifyPayment()
-            .catch((error) => {
-              setPaymentMessage(error.message || "Payment verification failed. Please contact support.");
+            .catch(() => {
+              setPaymentMessage(`We couldn't confirm your payment. If you were charged, contact support with reference ${reference}.`);
             })
             .finally(() => setProcessingPlan(null));
         },
@@ -235,13 +226,13 @@ function Upgrade() {
           setProcessingPlan(null);
           setPaymentMessage("Payment window closed. No charge was made.");
         },
-        onError: (error) => {
+        onError: () => {
           setProcessingPlan(null);
-          setPaymentMessage(error.message || "Paystack could not start this transaction.");
+          setPaymentMessage("Checkout couldn't be started. Please try again in a moment.");
         },
       });
-    } catch (error) {
-      setPaymentMessage(error.message || "Payment failed. Please try again.");
+    } catch {
+      setPaymentMessage("Checkout couldn't be started. Please try again in a moment.");
       setProcessingPlan(null);
     }
   };
@@ -249,9 +240,10 @@ function Upgrade() {
   const handleRecoverPayment = async (event) => {
     event.preventDefault();
 
-    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT;
+    const verifyEndpoint = import.meta.env.VITE_PAYSTACK_VERIFY_ENDPOINT
+      || "https://us-central1-bece-prep.cloudfunctions.net/verifyPaystackPayment";
     if (!verifyEndpoint) {
-      setPaymentMessage("Payment verification is not configured. Contact support with your transaction reference.");
+      setPaymentMessage("We couldn't verify that payment right now. Please try again later.");
       return;
     }
 
@@ -272,17 +264,15 @@ function Upgrade() {
         }),
       });
 
-      const data = await response.json();
       if (!response.ok) {
-        const providerMessage = data?.details?.message || data?.error;
-        throw new Error(providerMessage || `Payment verification failed (HTTP ${response.status}).`);
+        throw new Error("PAYMENT_VERIFICATION_FAILED");
       }
 
       await refreshUserProfile(user);
       setPaymentMessage("Your existing payment was verified and Premium access is active.");
       navigate("/dashboard");
-    } catch (error) {
-      setPaymentMessage(error.message || "Unable to verify that payment. Check the reference and selected plan.");
+    } catch {
+      setPaymentMessage(`We couldn't verify that payment. If you were charged, contact support with reference ${recoveryReference.trim()}.`);
     } finally {
       setIsRecoveringPayment(false);
     }
@@ -329,9 +319,15 @@ function Upgrade() {
         {isPremium && userProfile?.premiumExpiresAt && <p className="mt-3 text-sm font-bold text-emerald-800">Pro access is active through {new Date(userProfile.premiumExpiresAt).toLocaleDateString()}.</p>}
 
         {paymentMessage && (
-          <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-900">
+          <div role="status" aria-live="polite" className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-800">
             {paymentMessage}
           </div>
+        )}
+
+        {IS_PAYSTACK_TEST_MODE && (
+          <p role="status" className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-900">
+            Test mode is active. No real money will be charged.
+          </p>
         )}
 
         <details className="mt-5 rounded-xl border border-slate-200 p-4">

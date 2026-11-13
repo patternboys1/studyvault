@@ -2,13 +2,17 @@ import { onRequest } from "firebase-functions/v2/https";
 
 import { defineSecret } from "firebase-functions/params";
 
-import admin from "firebase-admin";
-
+import { getApp, initializeApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
+import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 
 import { GoogleGenAI } from "@google/genai";
 
-admin.initializeApp();
+initializeApp();
+const app = getApp();
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 const paystackSecretKey = defineSecret("PAYSTACK_SECRET_KEY");
 
@@ -49,7 +53,7 @@ const getAuthenticatedUser = async (req) => {
   const authHeader = req.headers.authorization || "";
   const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : "";
   if (!token) return null;
-  return admin.auth().verifyIdToken(token);
+  return auth.verifyIdToken(token);
 };
 
 const sendAuthRequired = (res, message = "Authentication required.") =>
@@ -80,13 +84,13 @@ const resolveLegacyPremium = async (userRef, userData) => {
   const premiumExpiresAt = new Date(paidAt.getTime() + duration);
   const stillActive = premiumExpiresAt.getTime() > Date.now();
   await userRef.set({
-    premiumExpiresAt: admin.firestore.Timestamp.fromDate(premiumExpiresAt),
+    premiumExpiresAt: Timestamp.fromDate(premiumExpiresAt),
     plan: stillActive ? "premium" : "free",
     isPremium: stillActive,
   }, { merge: true });
   return {
     ...userData,
-    premiumExpiresAt: admin.firestore.Timestamp.fromDate(premiumExpiresAt),
+    premiumExpiresAt: Timestamp.fromDate(premiumExpiresAt),
     plan: stillActive ? "premium" : "free",
     isPremium: stillActive,
   };
@@ -96,7 +100,7 @@ const getSignedImageUrl = async (value) => {
   if (!value || !String(value).startsWith("gs://")) return value;
   const match = String(value).match(/^gs:\/\/([^/]+)\/(.+)$/);
   if (!match) return null;
-  const configuredBucket = admin.app().options.storageBucket;
+  const configuredBucket = app.options.storageBucket;
   if (configuredBucket && match[1] !== configuredBucket) return null;
 
   const file = getStorage().bucket(match[1]).file(match[2]);
@@ -228,7 +232,7 @@ export const verifyPaystackPayment = onRequest(
           .json({ error: "Authentication required to verify payment." });
       }
 
-      const decodedToken = await admin.auth().verifyIdToken(token);
+      const decodedToken = await auth.verifyIdToken(token);
 
       const reference = String(req.body?.reference || "").trim();
 
@@ -308,8 +312,7 @@ export const verifyPaystackPayment = onRequest(
         });
       }
 
-      const userRef = admin
-        .firestore()
+      const userRef = db
         .collection("users")
         .doc(decodedToken.uid);
 
@@ -317,7 +320,7 @@ export const verifyPaystackPayment = onRequest(
       const cycle = planId === "yearly" ? "yearly" : "monthly";
       const duration = cycle === "yearly" ? YEARLY_PREMIUM_MS : MONTHLY_PREMIUM_MS;
       const now = Date.now();
-      const result = await admin.firestore().runTransaction(async (firestoreTransaction) => {
+      const result = await db.runTransaction(async (firestoreTransaction) => {
         const [paymentSnap, userSnap] = await Promise.all([
           firestoreTransaction.get(paymentRef),
           firestoreTransaction.get(userRef),
@@ -332,7 +335,7 @@ export const verifyPaystackPayment = onRequest(
 
         const previousExpiry = userData.premiumExpiresAt?.toDate?.()?.getTime?.() || 0;
         const expiryBase = isPremiumActive(userData, now) ? previousExpiry : now;
-        const premiumExpiresAt = admin.firestore.Timestamp.fromMillis(expiryBase + duration);
+        const premiumExpiresAt = Timestamp.fromMillis(expiryBase + duration);
         firestoreTransaction.set(userRef, {
           uid: decodedToken.uid,
           email: userData.email || decodedToken.email || "",
@@ -342,15 +345,15 @@ export const verifyPaystackPayment = onRequest(
           billingCycle: cycle,
           premiumExpiresAt,
           lastPaymentReference: reference,
-          paymentVerifiedAt: admin.firestore.FieldValue.serverTimestamp(),
-          updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          paymentVerifiedAt: FieldValue.serverTimestamp(),
+          updatedAt: FieldValue.serverTimestamp(),
         }, { merge: true });
         firestoreTransaction.create(paymentRef, {
           reference,
           planId: cycle,
           amount: expectedAmount,
           currency: transaction.currency,
-          verifiedAt: admin.firestore.FieldValue.serverTimestamp(),
+          verifiedAt: FieldValue.serverTimestamp(),
         });
         return { alreadyApplied: false, premiumExpiresAt };
       });
@@ -388,7 +391,7 @@ export const getMyEntitlements = onRequest(async (req, res) => {
   try {
     const decodedToken = await getAuthenticatedUser(req);
     if (!decodedToken) return sendAuthRequired(res);
-    const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
+    const userRef = db.collection("users").doc(decodedToken.uid);
     let userData = (await userRef.get()).data() || {};
     userData = await resolveLegacyPremium(userRef, userData);
 
@@ -425,14 +428,14 @@ export const getStudyContent = onRequest(async (req, res) => {
   try {
     const decodedToken = await getAuthenticatedUser(req);
     if (!decodedToken) return sendAuthRequired(res);
-    const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
+    const userRef = db.collection("users").doc(decodedToken.uid);
     let userData = (await userRef.get()).data() || {};
     userData = await resolveLegacyPremium(userRef, userData);
     const premium = isPremiumActive(userData);
     const operation = req.body?.operation;
 
     if (operation === "papers") {
-      const snapshot = await admin.firestore().collection("papers")
+      const snapshot = await db.collection("papers")
         .where("isPublished", "==", true)
         .get();
       const papers = snapshot.docs
@@ -460,7 +463,7 @@ export const getStudyContent = onRequest(async (req, res) => {
     if (!subjectId || !/^\d{4}$/.test(year)) {
       return res.status(400).json({ error: "A valid subject and paper year are required." });
     }
-    const publishedPapers = await admin.firestore().collection("papers")
+    const publishedPapers = await db.collection("papers")
       .where("isPublished", "==", true)
       .get();
     const paperIsPublished = publishedPapers.docs.some((paperDoc) => {
@@ -490,7 +493,7 @@ export const getStudyContent = onRequest(async (req, res) => {
       }
     }
 
-    const questionsRef = admin.firestore().collection("BECE").doc(subjectId)
+    const questionsRef = db.collection("BECE").doc(subjectId)
       .collection(year).doc(section).collection("Questions");
     const questionsSnapshot = await questionsRef.orderBy("number", "asc").get();
     const imageFields = ["imageUrl", "answerImageUrl", "modelAnswerImageUrl", "answerImage"];
@@ -538,7 +541,6 @@ export const reserveMockAttempt = onRequest(async (req, res) => {
       return res.status(400).json({ error: "A valid mock exam selection is required." });
     }
 
-    const db = admin.firestore();
     const paperSnap = await db.collection("papers").doc(paperId).get();
     if (!paperSnap.exists || paperSnap.data()?.isPublished !== true) {
       return res.status(404).json({ error: "This paper is unavailable." });
@@ -581,7 +583,7 @@ export const reserveMockAttempt = onRequest(async (req, res) => {
           section,
           monthKey,
           status: "started",
-          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+          createdAt: FieldValue.serverTimestamp(),
         });
         return { alreadyReserved: false, remaining: FREE_MOCKS_PER_MONTH - usage.size - 1 };
       }
@@ -595,7 +597,7 @@ export const reserveMockAttempt = onRequest(async (req, res) => {
         section,
         monthKey,
         status: "started",
-        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        createdAt: FieldValue.serverTimestamp(),
       });
       return { alreadyReserved: false, remaining: null };
     });
@@ -622,7 +624,7 @@ export const completeMockAttempt = onRequest(async (req, res) => {
     if (!/^[A-Za-z0-9_-]{8,100}$/.test(attemptId)) {
       return res.status(400).json({ error: "A valid mock attempt is required." });
     }
-    const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
+    const userRef = db.collection("users").doc(decodedToken.uid);
     const reservationRef = userRef.collection("mockReservations").doc(attemptId);
     const attemptRef = userRef.collection("mockAttempts").doc(attemptId);
     const reservationSnap = await reservationRef.get();
@@ -630,7 +632,7 @@ export const completeMockAttempt = onRequest(async (req, res) => {
     const reservation = reservationSnap.data();
 
     if (reservation.section === "Theory") {
-      const theoryQuestions = await admin.firestore().collection("BECE")
+      const theoryQuestions = await db.collection("BECE")
         .doc(reservation.subjectId).collection(String(reservation.year))
         .doc("Theory").collection("Questions").orderBy("number", "asc").get();
       const validQuestionIds = new Set(theoryQuestions.docs.map((questionDoc) => questionDoc.id));
@@ -641,7 +643,7 @@ export const completeMockAttempt = onRequest(async (req, res) => {
         .filter(([questionId, response]) => validQuestionIds.has(questionId) && typeof response === "string")
         .map(([questionId, response]) => [questionId, response.slice(0, 20000)]));
       const theoryAttemptRef = userRef.collection("mockTheoryAttempts").doc(attemptId);
-      const result = await admin.firestore().runTransaction(async (tx) => {
+      const result = await db.runTransaction(async (tx) => {
         const [currentReservation, existingAttempt] = await Promise.all([
           tx.get(reservationRef),
           tx.get(theoryAttemptRef),
@@ -661,11 +663,11 @@ export const completeMockAttempt = onRequest(async (req, res) => {
           responses,
           answeredCount: Object.values(responses).filter((response) => response.trim()).length,
           totalQuestions: theoryQuestions.size,
-          completedAt: admin.firestore.FieldValue.serverTimestamp(),
+          completedAt: FieldValue.serverTimestamp(),
         });
         tx.update(reservationRef, {
           status: "completed",
-          completedAt: admin.firestore.FieldValue.serverTimestamp(),
+          completedAt: FieldValue.serverTimestamp(),
         });
         return { alreadySaved: false };
       });
@@ -677,7 +679,7 @@ export const completeMockAttempt = onRequest(async (req, res) => {
     }
 
     const answers = req.body?.answers && typeof req.body.answers === "object" ? req.body.answers : {};
-    const questionsSnapshot = await admin.firestore().collection("BECE")
+    const questionsSnapshot = await db.collection("BECE")
       .doc(reservation.subjectId).collection(String(reservation.year))
       .doc("Objectives").collection("Questions").orderBy("number", "asc").get();
     const questions = questionsSnapshot.docs.map((questionDoc) => ({ id: questionDoc.id, ...questionDoc.data() }));
@@ -710,7 +712,7 @@ export const completeMockAttempt = onRequest(async (req, res) => {
       answeredCount,
       totalQuestions: questions.length,
     };
-    const result = await admin.firestore().runTransaction(async (tx) => {
+    const result = await db.runTransaction(async (tx) => {
       const [currentReservation, existingAttempt] = await Promise.all([
         tx.get(reservationRef),
         tx.get(attemptRef),
@@ -721,11 +723,11 @@ export const completeMockAttempt = onRequest(async (req, res) => {
       tx.create(attemptRef, {
         ...attempt,
         userId: decodedToken.uid,
-        completedAt: admin.firestore.FieldValue.serverTimestamp(),
+        completedAt: FieldValue.serverTimestamp(),
       });
       tx.update(reservationRef, {
         status: "completed",
-        completedAt: admin.firestore.FieldValue.serverTimestamp(),
+        completedAt: FieldValue.serverTimestamp(),
       });
       return { alreadySaved: false };
     });
@@ -757,7 +759,7 @@ export const authorizeParentReportExport = onRequest(async (req, res) => {
   try {
     const decodedToken = await getAuthenticatedUser(req);
     if (!decodedToken) return sendAuthRequired(res);
-    const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
+    const userRef = db.collection("users").doc(decodedToken.uid);
     const monthKey = getUtcMonthKey();
     const usageRef = userRef.collection("parentReportUsage").doc(monthKey);
     const exportId = String(req.body?.exportId || "");
@@ -766,7 +768,7 @@ export const authorizeParentReportExport = onRequest(async (req, res) => {
       return res.status(400).json({ error: "A valid report export ID is required." });
     }
     const exportRef = usageRef.collection("exports").doc(exportId);
-    const result = await admin.firestore().runTransaction(async (tx) => {
+    const result = await db.runTransaction(async (tx) => {
       const [userSnap, usageSnap, exportSnap] = await Promise.all([
         tx.get(userRef), tx.get(usageRef), tx.get(exportRef),
       ]);
@@ -778,16 +780,16 @@ export const authorizeParentReportExport = onRequest(async (req, res) => {
       if (action === "release") {
         if (exportSnap.exists && exportSnap.data()?.status === "authorized") {
           const releasedCount = Math.max(0, count - 1);
-          tx.set(usageRef, { count: releasedCount, monthKey, updatedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
-          tx.update(exportRef, { status: "released", releasedAt: admin.firestore.FieldValue.serverTimestamp() });
+          tx.set(usageRef, { count: releasedCount, monthKey, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
+          tx.update(exportRef, { status: "released", releasedAt: FieldValue.serverTimestamp() });
           return { remaining: PARENT_EXPORTS_PER_MONTH - releasedCount };
         }
         return { remaining: Math.max(0, PARENT_EXPORTS_PER_MONTH - count) };
       }
       if (exportSnap.exists) return { remaining: Math.max(0, PARENT_EXPORTS_PER_MONTH - count) };
       if (count >= PARENT_EXPORTS_PER_MONTH) throw new Error("PARENT_EXPORT_LIMIT");
-      tx.set(usageRef, { count: count + 1, monthKey, updatedAt: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
-      tx.create(exportRef, { exportId, status: "authorized", createdAt: admin.firestore.FieldValue.serverTimestamp() });
+      tx.set(usageRef, { count: count + 1, monthKey, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
+      tx.create(exportRef, { exportId, status: "authorized", createdAt: FieldValue.serverTimestamp() });
       return { remaining: PARENT_EXPORTS_PER_MONTH - count - 1 };
     });
     return res.json({ ok: true, parentExportsRemaining: result.remaining });
@@ -825,10 +827,9 @@ export const leaderboard = onRequest(async (req, res) => {
         .json({ error: "Authentication required to view the leaderboard." });
     }
 
-    const decodedToken = await admin.auth().verifyIdToken(token);
+    const decodedToken = await auth.verifyIdToken(token);
 
-    const attemptsSnapshot = await admin
-      .firestore()
+    const attemptsSnapshot = await db
       .collectionGroup("mockAttempts")
       .get();
 
@@ -887,7 +888,7 @@ export const leaderboard = onRequest(async (req, res) => {
 
     const userProfiles = await Promise.all(
       visibleUsers.map((entry) =>
-        admin.firestore().collection("users").doc(entry.userId).get(),
+        db.collection("users").doc(entry.userId).get(),
       ),
     );
 
@@ -944,12 +945,12 @@ export const recommendations = onRequest(
 
       let decodedToken;
       try {
-        decodedToken = await admin.auth().verifyIdToken(token);
+        decodedToken = await auth.verifyIdToken(token);
       } catch {
         return res.status(401).json({ error: "Your sign-in session is invalid. Sign in again." });
       }
 
-      const userRef = admin.firestore().collection("users").doc(decodedToken.uid);
+      const userRef = db.collection("users").doc(decodedToken.uid);
       let userData = (await userRef.get()).data() || {};
       userData = await resolveLegacyPremium(userRef, userData);
       const isPremium = isPremiumActive(userData);
@@ -973,6 +974,7 @@ export const recommendations = onRequest(
           recommendations: buildFallbackRecommendations(attempts),
 
           provider: "rules",
+          fallbackReason: "provider_unavailable",
         });
       }
 

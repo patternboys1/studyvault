@@ -356,7 +356,7 @@ const About = () => {
           </h2>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link to="/signup" className="bg-white text-blue-900 px-8 py-3.5 rounded-xl font-bold shadow-md hover:bg-slate-100 transition">
-              Start Free Trial
+              Create Free Account
             </Link>
             <Link to="/pricing" className="border-2 border-blue-400 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-800/50 transition">
               Explore Plans

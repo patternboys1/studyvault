@@ -1,4 +1,5 @@
-import admin from 'firebase-admin';
+import { cert, getApps, initializeApp } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -11,13 +12,13 @@ const __dirname = path.dirname(__filename);
 const serviceAccount = require(path.join(__dirname, 'serviceAccountKey.json'));
 
 // Initialize only once
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+if (!getApps().length) {
+  initializeApp({
+    credential: cert(serviceAccount)
   });
 }
 
-const db = admin.firestore();
+const db = getFirestore();
 
 // 1. Capture Arguments from Terminal
 // Command: node uploader.js [subject] [year] [type]
@@ -45,6 +46,8 @@ function normalizeSubjectFolderName(subjectName) {
     'french': 'french',
     'creative art': 'creativeArt',
     'creativeart': 'creativeArt',
+    'career technology': 'careerTech',
+    'careertech': 'careerTech',
   };
 
   const key = String(subjectName || '').trim().toLowerCase().replace(/[_-]+/g, ' ');
@@ -86,6 +89,7 @@ async function uploadPaper() {
 
   } catch (error) {
     console.error('❌ Upload failed: ', error.message);
+    process.exitCode = 1;
   }
 }
 

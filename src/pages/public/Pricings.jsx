@@ -73,7 +73,7 @@ const pricingPlans = [
     color: "emerald",
     buttonText: "Get Yearly Access",
     buttonLink: "/signup?plan=yearly",
-    badge: "Save 16%",
+    badge: "Save 15%",
     featured: true,
     features: [
       { text: "Unlimited mock exams", included: true },

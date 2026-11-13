@@ -23,6 +23,7 @@ import {
 const Contact = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
+  const [formMessage, setFormMessage] = useState("");
 
   // Form State
   const [formData, setFormData] = useState({
@@ -36,9 +37,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Contact form submitted:', formData);
-    alert('Thank you! Your message has been sent.');
+    // The form has no delivery service yet. Do not log personal contact details
+    // or claim the message was sent when it was not.
+    setFormMessage("This contact form is not connected yet. Your message was not sent.");
   };
 
   const navLinks = [
@@ -174,7 +175,7 @@ const Contact = () => {
               Send Message
             </a>
             <Link to="/signup" className="bg-white border border-slate-200 text-slate-700 px-7 py-3 rounded-xl font-bold hover:bg-slate-50 transition">
-              Start Free Trial
+              Create Free Account
             </Link>
           </div>
         </div>
@@ -210,6 +211,7 @@ const Contact = () => {
             <p className="text-slate-500 text-sm mb-8">Fill out the form below and our academic consultants will get back to you shortly.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {formMessage && <p role="alert" className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm font-semibold text-amber-900">{formMessage}</p>}
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-bold uppercase text-slate-600 mb-2">Full Name</label>
