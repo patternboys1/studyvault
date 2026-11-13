@@ -133,7 +133,7 @@ export default function PastQuestions() {
         <FilterDropdown 
           label="Year" 
           value={filters.year} 
-          options={["All Years", "2025", "2024", "2023", "2022", "2021", "2020"]} 
+          options={["All Years", "2026", "2025", "2024", "2023", "2022", "2021", "2020"]} 
           onChange={(v) => setFilters(f => ({ ...f, year: v }))} 
         />
         <FilterDropdown 
