@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { 
-  LayoutDashboard, FileText, 
-  BarChart2, Settings, Trophy, X, ClipboardList 
+  LayoutDashboard, FileText,
+  BarChart2, Settings, Trophy, X, ClipboardList, MessageCircle,
 } from "lucide-react";
 import LogoutButton from "./LogoutButton";
 import logo from "../assets/logo.png"
@@ -11,6 +11,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   const menuItems = [
     { label: "Overview", path: "/dashboard", icon: <LayoutDashboard size={20} /> },
+    { label: "AI Study Chat", path: "/dashboard/ai-chat", icon: <MessageCircle size={20} /> },
     { label: "Past Questions", path: "/dashboard/past-questions", icon: <FileText size={20} /> },
     { label: "Mock Exams", path: "/dashboard/mock-exams", icon: <Trophy size={20} /> },
     { label: "Performance", path: "/dashboard/performance", icon: <BarChart2 size={20} /> },

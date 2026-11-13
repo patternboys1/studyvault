@@ -20,6 +20,7 @@ import {
   Menu,
   X,
   TrendingUp,
+  MessageCircle,
 } from 'lucide-react';
 
 const Features = () => {
@@ -79,6 +80,20 @@ const Features = () => {
       ],
       badge: "AI Recommendations",
       color: "purple"
+    },
+    {
+      id: "ai-chat",
+      icon: <MessageCircle size={24} className="text-indigo-600" />,
+      title: "AI Study Tutor",
+      tagline: "Ask Questions, Learn Step by Step",
+      desc: "Get conversational help with BECE topics, examples, and revision plans from an AI tutor.",
+      bullets: [
+        "Ask follow-up questions in one conversation",
+        "Explanations shaped for BECE learners",
+        "Up to 15 messages per day with Pro"
+      ],
+      badge: "Pro Study Chat",
+      color: "indigo"
     },
     {
       id: "reports",

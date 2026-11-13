@@ -1,3 +1,5 @@
+import { auth } from "../firebase/firebase";
+
 const SUBJECT_TOPIC_MAP = {
   Mathematics: ["Algebra", "Geometry", "Statistics"],
   "Mathematics (with Statistics)": ["Algebra", "Geometry", "Statistics"],
@@ -14,6 +16,39 @@ const CACHE_PREFIX = "bece-prep-ai-recommendations-v2:";
 const MEMORY_CACHE = new Map();
 const GEMINI_CACHE_MS = 6 * 60 * 60 * 1000;
 const FALLBACK_CACHE_MS = 15 * 60 * 1000;
+const FUNCTIONS_BASE_URL = "https://us-central1-bece-prep.cloudfunctions.net";
+
+async function callAIChatEndpoint(payload) {
+  const user = auth.currentUser;
+  if (!user) throw new Error("Sign in to use AI Study Chat.");
+
+  const token = await user.getIdToken();
+  const response = await fetch(`${FUNCTIONS_BASE_URL}/aiChat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(payload),
+  });
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const error = new Error(data?.error || "AI Study Chat is temporarily unavailable.");
+    error.remainingToday = data?.remainingToday;
+    throw error;
+  }
+
+  return data;
+}
+
+export async function getAIChatStatus() {
+  return callAIChatEndpoint({ operation: "status" });
+}
+
+export async function sendAIChatMessage(message, history = []) {
+  return callAIChatEndpoint({ message, history: history.slice(-8) });
+}
 
 function getCachedRecommendations(key) {
   const memoryEntry = MEMORY_CACHE.get(key);

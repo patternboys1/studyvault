@@ -25,6 +25,7 @@ const Settings = lazy(() => import("./pages/dashboard/Settings"));
 const PastQuestions = lazy(() => import("./pages/dashboard/PastQuestions"));
 const Report = lazy(() => import("./pages/dashboard/Report"));
 const Upgrade = lazy(() => import("./pages/dashboard/Upgrade"));
+const AIChat = lazy(() => import("./pages/dashboard/AIChat"));
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="mock-exams" element={<MockExams/>} />
         <Route path="settings" element={<Settings/>} />
         <Route path="upgrade" element={<Upgrade/>} />
+        <Route path="ai-chat" element={<AIChat/>} />
         <Route path="past-questions" element={<PastQuestions/>} />
         <Route path="reports" element={<Report/>} />
           </Route>
