@@ -23,7 +23,7 @@ export default function AIChat() {
     if (!isPremium) return;
     getAIChatStatus()
       .then((status) => setRemainingToday(status.remainingToday))
-      .catch(() => setError("Couldn't check today's message allowance. You can still try sending a question."));
+      .catch(() => setError("We couldn't load your daily message count. You can still send a question; your limit will be checked when you send."));
   }, [isPremium]);
 
   if (authLoading || !userProfile) {
@@ -118,7 +118,7 @@ export default function AIChat() {
       <form onSubmit={handleSubmit} className="border-t border-slate-100 bg-white p-4 md:p-5">
         <label htmlFor="ai-chat-message" className="sr-only">Your study question</label>
         <div className="flex items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-100">
-          <textarea id="ai-chat-message" value={draft} onChange={(event) => setDraft(event.target.value.slice(0, 1500))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); event.currentTarget.form?.requestSubmit(); } }} rows={2} maxLength={1500} placeholder="Ask your study question…" disabled={isSending || remainingToday <= 0} className="max-h-36 min-h-12 flex-1 resize-y bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 disabled:opacity-50" />
+          <textarea id="ai-chat-message" value={draft} onChange={(event) => setDraft(event.target.value.slice(0, 1500))} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); event.currentTarget.form?.requestSubmit(); } }} rows={2} maxLength={1500} placeholder="Ask your study question…" disabled={isSending || remainingToday === 0} className="max-h-36 min-h-12 flex-1 resize-y bg-transparent px-3 py-2 text-sm text-slate-900 outline-none placeholder:text-slate-400 disabled:opacity-50" />
           <button type="submit" disabled={isSending || !draft.trim() || remainingToday === 0} className="mb-0.5 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-700 px-4 text-sm font-bold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:bg-slate-300">
             <Send size={16} /><span className="hidden sm:inline">Send</span>
           </button>
