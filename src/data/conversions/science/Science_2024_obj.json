@@ -1,0 +1,562 @@
+[
+    {
+      "number": 1,
+      "questionText": "A natural phenomenon that illustrates the dispersal of light is",
+      "options": [
+        "an echo.",
+        "an eclipse.",
+        "a rainbow.",
+        "a rainfall."
+      ],
+      "correctAnswer": "C",
+      "explanation": "A rainbow is formed by the refraction, dispersion, and reflection of sunlight through water droplets in the atmosphere[cite: 115].",
+      "topic": "Science (Light)",
+      "hasImage": false
+    },
+    {
+      "number": 2,
+      "questionText": "Canned foods and drinks have expiry dates on them. The hazard involved in taking an expired drink is",
+      "options": [
+        "food poisoning.",
+        "impaired hearing.",
+        "suffocation.",
+        "poor circulation of blood"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Consuming expired foods or drinks can introduce harmful toxins or bacteria, leading to food poisoning[cite: 115].",
+      "topic": "Science (Safety & Health)",
+      "hasImage": false
+    },
+    {
+      "number": 3,
+      "questionText": "Which of the following sets of devices operate on the principle of magnetism?",
+      "options": [
+        "Loudspeakers, compass, alarms",
+        "Loudspeakers, alarms, LCD TV",
+        "Compass, loudspeakers, LCD TV",
+        "Compass, alarms, LCD TV"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Loudspeakers, magnetic compasses, and electric alarms rely on magnetic fields and electromagnets to function[cite: 115].",
+      "topic": "Science (Magnetism)",
+      "hasImage": false
+    },
+    {
+      "number": 4,
+      "questionText": "A hunter experiences a backward force upon firing a gun. Which of the Newton's laws of motion is demonstrated in the situation?",
+      "options": [
+        "First law",
+        "Second law",
+        "Law of inertia",
+        "Third law"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Newton's third law of motion states that for every action, there is an equal and opposite reaction (recoil of the gun)[cite: 115].",
+      "topic": "Science (Force & Motion)",
+      "hasImage": false
+    },
+    {
+      "number": 5,
+      "questionText": "A bowl of water on a gas stove was initially cold. It became warm after sometime. What was the mode of heat transfer in the water?",
+      "options": [
+        "Conduction",
+        "Radiation",
+        "Convection",
+        "Emission"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Heat transfer in liquids (like water) primarily takes place through convection currents[cite: 115].",
+      "topic": "Science (Heat Transfer)",
+      "hasImage": false
+    },
+    {
+      "number": 6,
+      "questionText": "A livestock farmer wants to achieve good health for the animals being reared. Which of the following activities should be undertaken by the farmer?\nI. Have vaccination schedules for the animals\nII. Provide balanced ration to the animals\nIII. Provide good sanitation for the animals",
+      "options": [
+        "I and II only",
+        "II and III only",
+        "I, II and III",
+        "I and III only"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Vaccinations, balanced nutrition, and proper sanitation are all essential pillars of good livestock health management[cite: 116].",
+      "topic": "Science (Agriculture)",
+      "hasImage": false
+    },
+    {
+      "number": 7,
+      "questionText": "Grasshopper management is crucial because of all the following reasons except",
+      "options": [
+        "damage to crops.",
+        "incomplete metamorphosis.",
+        "livestock harm.",
+        "ecosystem disruption."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Incomplete metamorphosis is a biological characteristic/life cycle of grasshoppers, not a reason or harmful effect for why they require management[cite: 116].",
+      "topic": "Science (Agriculture & Pests)",
+      "hasImage": false
+    },
+    {
+      "number": 8,
+      "questionText": "A student who complained of stomach upset was given first aid with Mg(OH)2 boldly written on it. What could be the common name of the first aid the student was given?",
+      "options": [
+        "Milk of aluminium",
+        "Milk of magnesia",
+        "Martins liver salt",
+        "Trisilicate"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Magnesium hydroxide [Mg(OH)2] is commonly known as Milk of Magnesia, used as an antacid[cite: 116].",
+      "topic": "Science (Chemistry)",
+      "hasImage": false
+    },
+    {
+      "number": 9,
+      "questionText": "An electric bulb is rated 0.5 A, 120 V. Determine the power produced when the bulb is turned on.",
+      "options": [
+        "30 W",
+        "60 W",
+        "60 kW",
+        "30 kW"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Power (P) = Voltage (V) × Current (I) = 120 V × 0.5 A = 60 W[cite: 114, 116].",
+      "topic": "Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": 10,
+      "questionText": "The consequences of the greenhouse effect on humans include\nI. flooding of coastal cities\nII. desertification of fertile areas\nIII. increased number of storms\nIV. increased use of fossil fuels",
+      "options": [
+        "I and II only",
+        "II and III only",
+        "I, II, III and IV",
+        "I, II and III only"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Flooding, desertification, and severe storms are consequences of global warming/greenhouse effect, whereas increased use of fossil fuels is a cause, not a consequence[cite: 116].",
+      "topic": "Science (Environmental Studies)",
+      "hasImage": false
+    },
+    {
+      "number": 11,
+      "questionText": "The simplest way of making well water suitable for laundry is by",
+      "options": [
+        "adding chlorine.",
+        "filtering.",
+        "adding copper sulphate.",
+        "boiling."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Filtering removes suspended solid particles and debris, making well water suitable for laundry purposes[cite: 116].",
+      "topic": "Science (Water Treatment)",
+      "hasImage": false
+    },
+    {
+      "number": 12,
+      "questionText": "Which of the following sources of energy is non-renewable?\nI. Coal\nII. Solar\nIII. Wind\nIV. Uranium-236",
+      "options": [
+        "I, II and III only",
+        "II, III and IV only",
+        "II and III only",
+        "I and IV only"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Coal (fossil fuel) and Uranium-236 (nuclear fuel) are non-renewable sources of energy, while solar and wind are renewable[cite: 116].",
+      "topic": "Science (Energy Sources)",
+      "hasImage": false
+    },
+    {
+      "number": 13,
+      "questionText": "Oil from a mechanic workshop accidentally spilled into a pool of water which was breeding mosquitoes. After sometime, the pool of water was no longer breeding mosquitoes. Which control method may have been deployed?",
+      "options": [
+        "Biological control",
+        "Chemical control",
+        "Environmental control",
+        "Genetic control"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Spilling oil forms a film over the water surface that cuts off oxygen supply, suffocating mosquito larvae (chemical/oil film method)[cite: 117].",
+      "topic": "Science (Vector Control)",
+      "hasImage": false
+    },
+    {
+      "number": 14,
+      "questionText": "The following devices work based on the principle of pressure in fluids except",
+      "options": [
+        "water pumps.",
+        "flutes.",
+        "siphons.",
+        "drinking straws."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Flutes produce sound through vibrating air columns and musical acoustics, whereas water pumps, siphons, and straws operate on fluid pressure principles[cite: 117].",
+      "topic": "Science (Pressure in Fluids)",
+      "hasImage": false
+    },
+    {
+      "number": 15,
+      "questionText": "Which of the following statements best describes the term green economy? It includes",
+      "options": [
+        "degrading the environment.",
+        "loss of biodiversity.",
+        "reduced ecological services.",
+        "reduced carbon emissions."
+      ],
+      "correctAnswer": "D",
+      "explanation": "A green economy focuses on sustainable development, aiming for reduced carbon emissions and pollution[cite: 117].",
+      "topic": "Science (Environment)",
+      "hasImage": false
+    },
+    {
+      "number": 16,
+      "questionText": "The energy transformation that occurs when sodium hydroxide is dissolved in water is",
+      "options": [
+        "heat to kinetic energy.",
+        "chemical to light energy.",
+        "heat to potential energy.",
+        "chemical to heat energy."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dissolving sodium hydroxide in water is an exothermic process, converting chemical energy into heat energy[cite: 117].",
+      "topic": "Science (Energy Transformations)",
+      "hasImage": false
+    },
+    {
+      "number": 17,
+      "questionText": "The primary purpose of respiration in man is to\nI. take in oxygen.\nII. release carbon dioxide.\nIII. regulate body temperature.",
+      "options": [
+        "I and II only",
+        "I and III only",
+        "I, II and III",
+        "II and III only"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Respiration involves gas exchange (taking in oxygen and releasing carbon dioxide) to release energy for metabolic processes[cite: 117].",
+      "topic": "Science (Respiration)",
+      "hasImage": false
+    },
+    {
+      "number": 18,
+      "questionText": "A substance that could be used in large scale treatment of domestic water is",
+      "options": [
+        "Chlorine.",
+        "Hydrogen sulphide.",
+        "Nitrogen.",
+        "Carbon dioxide."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Chlorine is widely used as a disinfectant in large-scale municipal water treatment to kill pathogens[cite: 117].",
+      "topic": "Science (Water Treatment)",
+      "hasImage": false
+    },
+    {
+      "number": 19,
+      "questionText": "The following processes are chemical changes except",
+      "options": [
+        "rusting of iron.",
+        "burning of wood.",
+        "crumpling of paper.",
+        "mixing of an acid and a base."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Crumpling of paper is a physical change because no new chemical substance is formed[cite: 117].",
+      "topic": "Science (Physical & Chemical Changes)",
+      "hasImage": false
+    },
+    {
+      "number": 20,
+      "questionText": "Cockroaches in a cupboard were killed after an insecticide had been sprayed. The insecticide reached the cockroaches by the process of",
+      "options": [
+        "radiation.",
+        "absorption.",
+        "osmosis.",
+        "diffusion."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Insecticide particles spread through the air of the enclosed space via diffusion[cite: 117].",
+      "topic": "Science (Diffusion)",
+      "hasImage": false
+    },
+    {
+      "number": 21,
+      "questionText": "Chlorophyll helps plants absorb energy from the sun as they undergo the process of photosynthesis. It is located in a structure called",
+      "options": [
+        "nucleus.",
+        "mitochondrion.",
+        "chloroplast.",
+        "vacuole."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Chlorophyll pigments are housed within chloroplasts in plant cells[cite: 117].",
+      "topic": "Science (Cell Biology)",
+      "hasImage": false
+    },
+    {
+      "number": 22,
+      "questionText": "Which of the following natural cycles directly involves the sun?\nI. Carbon cycle\nII. Water cycle\nIII. Nitrogen cycle",
+      "options": [
+        "I only",
+        "I and II only",
+        "I, II and III",
+        "II and III only"
+      ],
+      "correctAnswer": "B",
+    "explanation": "The sun drives evaporation in the water cycle and provides solar energy for photosynthesis in the carbon cycle[cite: 118].",
+    "topic": "Science (Natural Cycles)",
+    "hasImage": false
+    },
+    {
+      "number": 23,
+      "questionText": "When a stick is dipped into a pool of water, it appears to",
+      "options": [
+        "bend towards the surface.",
+        "bend away from the surface.",
+        "be longer than its length.",
+        "be seen straight in the water."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Due to refraction of light as it travels from water to air, a submerged stick appears bent towards the surface[cite: 114, 118].",
+      "topic": "Science (Light & Refraction)",
+      "hasImage": false
+    },
+    {
+      "number": 24,
+      "questionText": "The building block of a material with the smallest unit of matter that retains the properties of an element is",
+      "options": [
+        "an ion.",
+        "an atom.",
+        "a proton.",
+        "a molecule."
+      ],
+      "correctAnswer": "B",
+      "explanation": "An atom is defined as the smallest unit of matter that retains the chemical properties of an element[cite: 118].",
+      "topic": "Science (Matter)",
+      "hasImage": false
+    },
+    {
+      "number": 25,
+      "questionText": "Digestion of rice in humans starts from the",
+      "options": [
+        "colon.",
+        "gullet.",
+        "stomach.",
+        "mouth"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Rice contains starch, and its chemical digestion begins in the mouth with the action of salivary amylase[cite: 118].",
+      "topic": "Science (Digestion)",
+      "hasImage": false
+    },
+    {
+      "number": 26,
+      "questionText": "A mother took her child to the hospital and upon investigation, it was noticed that the child's diet was lacking in zinc. What could this result in?\nI. Decreased growth in the child\nII. Anaemia and constipation\nIII. Inability of the body to fight infection",
+      "options": [
+        "I and II only",
+        "I and III only",
+        "I, II and III",
+        "II and III only"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Zinc deficiency leads to growth retardation, immune system dysfunction (inability to fight infection), but not primarily anemia/constipation (which relate more to iron and fiber)[cite: 114, 118].",
+      "topic": "Science (Nutrition & Health)",
+      "hasImage": false
+    },
+    {
+      "number": 27,
+      "questionText": "In making ornaments and jewellery, non-reactive metals are preferred because they",
+      "options": [
+        "are corrosive.",
+        "are attractive.",
+        "do not react with atmospheric oxygen.",
+        "do not retain their lustre."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Precious and non-reactive metals (like gold and platinum) do not tarnish or react with atmospheric oxygen, preserving their shine[cite: 115, 118].",
+      "topic": "Science (Metals & Reactivity)",
+      "hasImage": false
+    },
+    {
+      "number": 28,
+      "questionText": "A metallic laddle was left in a boiling soup. After sometime, the handle became hot. This is because the particles in the laddle",
+      "options": [
+        "circulate as a result of the temperature differences.",
+        "contain free electrons which are able to transfer heat energy.",
+        "undergo rapid, random motion.",
+        "are separated by large distances."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Metals conduct heat via conduction, facilitated by delocalized free electrons that transfer thermal energy rapidly[cite: 115, 118].",
+      "topic": "Science (Heat Conduction)",
+      "hasImage": false
+    },
+    {
+      "number": 29,
+      "questionText": "Which of the following elements has four electron shells?",
+      "options": [
+        "19K",
+        "13Al",
+        "15P",
+        "5B"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Potassium (K) has an atomic number of 19, with an electronic configuration of 2, 8, 8, 1, spanning four electron shells[cite: 115, 119].",
+      "topic": "Science (Atomic Structure)",
+      "hasImage": false
+    },
+    {
+      "number": 30,
+      "questionText": "An electrical engineer was in your school to replace a 20 W bulb with a 50 W bulb. The unit inscribed on the bulb measures its",
+      "options": [
+        "workdone.",
+        "electricity.",
+        "power.",
+        "energy."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Watts (W) is the SI unit for measuring electrical power[cite: 115, 119].",
+      "topic": "Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": 31,
+      "questionText": "The 50 W bulb is likely to\nI. increase the brightness in the room.\nII. increase the amount of electricity consumed.\nIII. destroy the habitat of pests.",
+      "options": [
+        "I and II only",
+        "I and III only",
+        "I, II and III",
+        "II and III only"
+      ],
+      "correctAnswer": "A",
+      "explanation": "A higher wattage bulb increases luminosity (brightness) and consumes more electrical energy[cite: 115, 119].",
+      "topic": "Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": 32,
+      "questionText": "Two unknown solutions labelled A and B were brought to a JHS 3 class. It was observed that in solution A, red litmus paper changed colour to blue, whiles in solution B, red litmus paper retained its colour. What could be the content of solution A?",
+      "options": [
+        "Salt",
+        "Car battery fluid",
+        "Orange juice",
+        "Baking soda"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Solutions that turn red litmus paper blue are basic or alkaline. Baking soda is mildly alkaline, whereas battery fluid and orange juice are acidic[cite: 115, 119].",
+      "topic": "Science (Acids and Bases)",
+      "hasImage": false
+    },
+    {
+      "number": 33,
+      "questionText": "Which of the following nursery beds is suitable for a flood prone area?",
+      "options": [
+        "Flat bed",
+        "Sunken bed",
+        "Plain bed",
+        "Raised bed"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Raised beds elevate seedlings above waterlogged or flood-prone ground, preventing root rot[cite: 115, 119].",
+      "topic": "Science (Agriculture)",
+      "hasImage": false
+    },
+    {
+      "number": 34,
+      "questionText": "The portion of air which acts as a solvent is",
+      "options": [
+        "an inert gas.",
+        "carbon (IV) oxide.",
+        "oxygen.",
+        "nitrogen."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Nitrogen makes up the largest proportion of air (~78%) and acts as the solvent gas in this gaseous solution[cite: 115, 119].",
+      "topic": "Science (Air & Solutions)",
+      "hasImage": false
+    },
+    {
+      "number": 35,
+      "questionText": "Which of the following pairs of energy sources is environmentally friendly?",
+      "options": [
+        "Biogas and thermal energy",
+        "Wind and biogas",
+        "Coal and thermal energy",
+        "Wind and coal"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Wind and biogas are renewable, clean, and environmentally friendly energy sources[cite: 115, 119].",
+      "topic": "Science (Environment & Energy)",
+      "hasImage": false
+    },
+    {
+      "number": 36,
+      "questionText": "A poultry farmer observed that the layers were producing thin-shelled eggs. The defect identified is mostly caused by a deficiency in",
+      "options": [
+        "calcium.",
+        "phosphorus.",
+        "zinc.",
+        "magnesium."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Calcium is essential for strong eggshell formation; deficiency leads to thin or soft shells[cite: 115, 120].",
+      "topic": "Science (Animal Production)",
+      "hasImage": false
+    },
+    {
+      "number": 37,
+      "questionText": "What ingredient could be added to the feed to correct the defect? [thin-shelled eggs / calcium deficiency]",
+      "options": [
+        "Oyster shell meal",
+        "Soya bean meal",
+        "Maize",
+        "Cowpea"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Oyster shell meal is a rich natural source of calcium used in poultry feeds to strengthen eggshells[cite: 115, 120].",
+      "topic": "Science (Animal Production)",
+      "hasImage": false
+    },
+    {
+      "number": 38,
+      "questionText": "A student is to measure 20 cm3 of a sodium hydroxide solution. What instrument could be used?",
+      "options": [
+        "Hydrometer",
+        "Hygrometer",
+        "Measuring tape",
+        "Measuring cylinder"
+      ],
+      "correctAnswer": "D",
+      "explanation": "A measuring cylinder is designed for accurate measurement of liquid volumes in a laboratory[cite: 115, 120].",
+      "topic": "Science (Laboratory Apparatus)",
+      "hasImage": false
+    },
+    {
+      "number": 39,
+      "questionText": "Which of the following electrical appliances can convert electrical energy to heat energy?\nI. Electric iron\nII. Kettle\nIII. Water heater",
+      "options": [
+        "I and II only",
+        "I and III only",
+        "I, II and III",
+        "II and III only"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Electric irons, kettles, and water heaters all contain heating elements that convert electrical energy into thermal energy[cite: 115, 120].",
+      "topic": "Science (Energy Conversions)",
+      "hasImage": false
+    },
+    {
+      "number": 40,
+      "questionText": "Nitrogen deficiency in soils causes",
+      "options": [
+        "fruit drop.",
+        "yellowing of leaves.",
+        "poor seed formation.",
+        "purple colouration."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Nitrogen deficiency leads to chlorosis, characterized by the yellowing of older leaves in plants[cite: 115, 120].",
+      "topic": "Science (Soil Science)",
+      "hasImage": false
+    }
+  ]

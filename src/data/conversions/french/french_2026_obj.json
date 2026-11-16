@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Il y a ........ membres dans la famille Tandoh.",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Le texte indique: 'Nous sommes cinq frères et deux sœurs' plus les deux parents, ce qui fait un total de 9 membres[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Nana Kwame est le .......... enfant.",
+    "options": [
+      "troisième",
+      "quatrième",
+      "sixième",
+      "septième"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Il y a 5 frères et 2 sœurs (7 enfants au total). Ses sœurs sont Selina et Rosaline, la cadette née juste après lui, ce qui fait de Nana Kwame le sixième enfant[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Les sœurs de Nana Kwame travaillent",
+    "options": [
+      "à l'hôpital",
+      "à l'université",
+      "au marché",
+      "au tribunal"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Le texte mentionne que les sœurs sont infirmières, elles travaillent donc à l'hôpital[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "La ville natale de la famille Tandoh est",
+    "options": [
+      "Kumasi",
+      "Mampong",
+      "Swedru",
+      "Winneba"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le texte indique: 'Mes parents viennent de Mampong'[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Le père de Mme Tandoh est",
+    "options": [
+      "professeur",
+      "avocat",
+      "médecin",
+      "infirmier"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte mentionne: 'Mon père, M. Tandoh, est médecin comme mon grand-père maternel' (le père de Mme Tandoh)[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Pierre invite son amie",
+    "options": [
+      "au cinéma",
+      "au marché",
+      "à faire du sport",
+      "à danser la salsa"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Pierre dit: 'Je voulais t'inviter au terrain de sport'[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Que fait Rebecca les samedis?",
+    "options": [
+      "Elle regarde la télévision.",
+      "Elle fait des courses.",
+      "Elle danse avec Pierre.",
+      "Elle joue au tennis."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Rebecca répond: 'je dois aller au marché' (ce qui correspond à faire des courses)[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Pierre aime",
+    "options": [
+      "regarder le sport",
+      "faire le sport",
+      "écouter de la musique",
+      "danser à la musique"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Pierre invite Rebecca au terrain de sport pour jouer et propose du volley, basket, etc.[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Qui aiment la danse?",
+    "options": [
+      "Pierre et Joujou",
+      "Pierre et Rebecca",
+      "Rebecca et Joujou",
+      "Anastasia et Rebecca"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Rebecca dit: 'j'aime plutôt écouter de la musique et danser. Je danse la salsa avec Joujou'[cite: 125, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Selon le passage,",
+    "options": [
+      "Rebecca aime le sport",
+      "Pierre aime chanter",
+      "Anastasia aime le tennis",
+      "Joujou aime chanter"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Rebecca précise: 'c'est ma sœur Anastasia qui joue au tennis'[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Atsu se lève",
+    "options": [
+      "tard",
+      "tôt",
+      "après l'heure",
+      "avant l'heure"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Atsu dit: 'Je me lève de bonne heure' (tôt)[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "A cinq heures, Atsu ........ dans le salon.",
+    "options": [
+      "court",
+      "mange",
+      "travaille",
+      "étudie"
+    ],
+    "correctAnswer": "C",
+    "explanation": "A cinq heures, il balaie la cour et le salon (ce qui constitue un travail / une tâche)[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "........ Atsu cherche de l'eau à la rivière.",
+    "options": [
+      "5h 15",
+      "5h 45",
+      "6h 15",
+      "6h 45"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Il se lève à 5h, balaie (ce qui prend un moment) puis va chercher de l'eau à 'six heures moins le quart' (5h45)[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "Juste après son retour de la rivière, Atsu",
+    "options": [
+      "prend son repas",
+      "fait la lessive",
+      "lave les assiettes",
+      "balaie la cour"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte indique: 'je vais chercher de l'eau à la rivière. Puis, je fais la vaisselle' (lave les assiettes)[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "Comment Atsu va-t-il à l'école?",
+    "options": [
+      "En voiture",
+      "En bus",
+      "A pied",
+      "A vélo"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte précise: 'avant d'arriver à l'école à pied'[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Le jour de la rentrée, c'est",
+    "options": [
+      "le jour où les élèves vont à l'école",
+      "le jour où les élèves quittent la maison",
+      "le premier jour de l'année scolaire",
+      "le dernier jour de l'année scolaire"
+    ],
+    "correctAnswer": "C",
+    "explanation": "La rentrée correspond au premier jour de l'année scolaire après les vacances[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Selon le texte, les élèves sont tristes parce qu'ils",
+    "options": [
+      "se retrouvent",
+      "s'embrassent",
+      "quittent leurs parents et amis",
+      "se racontent des histoires"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte indique: 'Ils quittent leurs parents et amis pour aller à l'école'[cite: 126, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Certains élèves qui habitent loin de l'école arrivent",
+    "options": [
+      "à pied",
+      "à vélo",
+      "en taxi",
+      "en bus"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le texte dit: 'Le jour de la rentrée, certains élèves prennent le bus. D'autres arrivent en taxi.' (Ceux qui habitent loin prennent ces transports)[cite: 127, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Selon le passage,",
+    "options": [
+      "chaque élève arrive à l'école à pied",
+      "chaque élève arrive à l'école en taxi",
+      "tous les élèves habitent loin de l'école",
+      "quelques élèves habitent loin de l'école"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Le texte mentionne que 'Ceux qui habitent près de l'école...' ce qui implique que d'autres (quelques élèves) habitent loin[cite: 127, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Les élèves se racontent des histoires drôles en riant parce qu'ils sont",
+    "options": [
+      "fatigués",
+      "heureux",
+      "mécontents",
+      "tristes"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Le texte dit: 'Tous les apprenants sont contents...' ce qui signifie qu'ils sont heureux[cite: 127, 131].",
+    "topic": "French (Reading Comprehension)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "D'habitude, les élèves ne ........ pas les matins.",
+    "options": [
+      "se couchent",
+      "se lavent",
+      "se lèvent",
+      "s'habillent"
+    ],
+    "correctAnswer": "A",
+    "explanation": "On ne se couche pas le matin (le coucher se fait le soir)[cite: 127, 131].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Le moyen de transport le plus rapide pour un voyage du Ghana vers la France est",
+    "options": [
+      "la pirogue",
+      "la voiture",
+      "le train",
+      "l'avion"
+    ],
+    "correctAnswer": "D",
+    "explanation": "L'avion est le moyen de transport le plus rapide pour traverser les continents[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Pour se faire couper les cheveux, mon père va chez un",
+    "options": [
+      "tailleur",
+      "chauffeur",
+      "coiffeur",
+      "chasseur"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le coiffeur est la personne qui coupe les cheveux[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "Un ........ siffle pendant un match de foot.",
+    "options": [
+      "joueur",
+      "gardien",
+      "arbitre",
+      "entraineur"
+    ],
+    "correctAnswer": "C",
+    "explanation": "L'arbitre siffle pour diriger le match de football[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "Pour féliciter un ami, je lui dis:",
+    "options": [
+      "Bonne chance!",
+      "Bravo!",
+      "Du courage!",
+      "Enchanté!"
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Bravo !' est l'exclamation appropriée pour féliciter quelqu'un[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Les apprenants font des dessins avec",
+    "options": [
+      "une table",
+      "une chaise",
+      "un crayon",
+      "un tableau"
+    ],
+    "correctAnswer": "C",
+    "explanation": "On utilise un crayon pour dessiner[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Chaque matin, ........ les nouvelles à la radio.",
+    "options": [
+      "je suis",
+      "je regarde",
+      "j'étudie",
+      "j'achète"
+    ],
+    "correctAnswer": "A",
+    "explanation": "On écoute ou 'on suit' (je suis) les nouvelles à la radio[cite: 127, 131].",
+    "topic": "French (Grammar & Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Chantale a peur de l'eau, donc elle ne ........ pas.",
+    "options": [
+      "boit",
+      "nage",
+      "se lave",
+      "s'habille"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Avoir peur de l'eau empêche généralement de nager[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Pour protéger son corps contre le froid, Amina porte",
+    "options": [
+      "un manteau",
+      "un maillot",
+      "une culotte",
+      "une chemise"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Un manteau est un vêtement chaud utilisé contre le froid[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Ce matin, Simon a un rendez-vous avec son oncle; c'est-à-dire avec",
+    "options": [
+      "le père de son frère",
+      "le père de sa mère",
+      "le frère de son père",
+      "le frère de sa sœur"
+    ],
+    "correctAnswer": "C",
+    "explanation": "L'oncle paternel ou maternel est le frère du père ou de la mère; ici 'le frère de son père' est l'option correcte proposée[cite: 127, 131].",
+    "topic": "French (Vocabulary)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Korley est un garçon qui ........ une école primaire...",
+    "options": [
+      "fréquente",
+      "attend",
+      "va",
+      "marche"
+    ],
+    "correctAnswer": "A",
+    "explanation": "On 'fréquente' une école[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "...une école primaire ........ beaucoup de parents envoient leurs enfants.",
+    "options": [
+      "qui",
+      "dont",
+      "que",
+      "où"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Le pronom relatif 'où' indique le lieu (l'école) où l'on envoie les enfants[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Korley veut toujours arriver ........ avance à l'école.",
+    "options": [
+      "d'",
+      "à",
+      "en",
+      "l'"
+    ],
+    "correctAnswer": "C",
+    "explanation": "L'expression correcte est 'en avance'[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Tous les jours, il se lève tôt ........ faire le nettoyage...",
+    "options": [
+      "pour",
+      "de",
+      "avant",
+      "à"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'Pour' exprime le but (dans le but de faire le nettoyage)[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "...le nettoyage ........ son frère.",
+    "options": [
+      "et",
+      "puis",
+      "pourtant",
+      "avec"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Il fait le nettoyage 'avec' son frère[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "........, il se prépare et après le petit déjeuner...",
+    "options": [
+      "Quand",
+      "Ensuite",
+      "Aussitôt que",
+      "Pendant que"
+    ],
+    "correctAnswer": "B",
+    "explanation": "'Ensuite' indique la succession chronologique des actions[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "<< Jima, tu ........ là? >>",
+    "options": [
+      "as",
+      "a",
+      "es",
+      "est"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Le verbe être à la deuxième personne du singulier avec 'tu' est 'es' (tu es là ?)[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "<< Oui, et je suis prêt >>, ........ Jima.",
+    "options": [
+      "réponds",
+      "répond",
+      "répondre",
+      "répondez"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Jima est à la troisième personne du singulier (il), donc le verbe au présent est 'répond'[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "Après les cours, quand ........ ouvre la bibliothèque...",
+    "options": [
+      "on",
+      "à",
+      "dans",
+      "en"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Le pronom indéfini 'on' sert de sujet pour indiquer l'ouverture de la bibliothèque[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "...les deux meilleurs élèves ........ la classe y vont.",
+    "options": [
+      "à",
+      "dans",
+      "en",
+      "de"
+    ],
+    "correctAnswer": "D",
+    "explanation": "On dit 'les meilleurs élèves de la classe' pour marquer l'appartenance[cite: 128, 131].",
+    "topic": "French (Cloze Passage)",
+    "hasImage": false
+  }
+]

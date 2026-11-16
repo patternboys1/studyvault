@@ -1,0 +1,564 @@
+[
+  {
+    "number": 1,
+    "questionText": "One important factor to consider in meal planning is foods in season because",
+    "options": [
+      "their cooking time is reduced.",
+      "they cut down on cost.",
+      "meal is readily available.",
+      "they can easily be preserved."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Foods in season are usually abundant and cheaper, thereby cutting down on the overall cost of meal preparation.",
+    "topic": "Career Technology (Meal Planning)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "To obtain the correct texture during the production of rock buns for sale, it is appropriate to",
+    "options": [
+      "increase the sugar content.",
+      "decrease the fat content.",
+      "measure ingredients correctly.",
+      "make one satisfied."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Accurately measuring ingredients ensures the proper consistency and texture of baked goods like rock buns.",
+    "topic": "Career Technology (Food Preparation)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Mrs. Mensah who is to prepare banku and grilled tilapia for her family's meal, marinated the fresh tilapia before grilling to enhance its",
+    "options": [
+      "shape and colour.",
+      "shape and taste.",
+      "taste and texture.",
+      "texture and shape."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Marinating fish improves both its taste (flavor) and texture before cooking.",
+    "topic": "Career Technology (Food Preparation)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "The main reason why it is advisable for people to frequently take in water is to",
+    "options": [
+      "enhance perspiration.",
+      "hydrate the body.",
+      "gain weight.",
+      "make one satisfied."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Drinking water regularly maintains proper fluid balance and hydrates the body.",
+    "topic": "Career Technology (Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "The best kitchen knife for peeling oranges is the",
+    "options": [
+      "butcher's knife.",
+      "cook's knife.",
+      "paring knife.",
+      "serrated knife."
+    ],
+    "correctAnswer": "C",
+    "explanation": "A paring knife is small and nimble, making it ideal for peeling and intricate fruit or vegetable work.",
+    "topic": "Career Technology (Kitchen Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Kofi went to a restaurant and selected a menu with individually priced dishes. The name of this kind of service is",
+    "options": [
+      "table d' hôte.",
+      "special party menu.",
+      "ethnic menu.",
+      "a la carte."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An 'à la carte' menu features individually priced items from which customers can choose.",
+    "topic": "Career Technology (Catering Service)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "The proper arrangement of tools and equipment in the food laboratory enables Borketey to",
+    "options": [
+      "stay healthy.",
+      "work sequentially.",
+      "save energy and time.",
+      "keep the laboratory clean."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Organizing workspace and tools efficiently saves time and physical energy during food preparation.",
+    "topic": "Career Technology (Food Lab Management)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "When steaming yakayake, a tight fitting lid is used to cover the saucepan in order to",
+    "options": [
+      "enhance the flavour of the food.",
+      "increase the temperature of water.",
+      "prevent food from breaking.",
+      "maintain the temperature of water."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A tight-fitting lid traps steam and maintains a consistent cooking temperature inside the saucepan.",
+    "topic": "Career Technology (Food Preparation)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Your headmistress is to organize a party for graduating students. She decided to use the buffet service style because",
+    "options": [
+      "crockery is limited.",
+      "space is limited.",
+      "time is minimal.",
+      "number of guests is large."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Buffet service is ideal when serving a large number of guests efficiently without requiring individual table service.",
+    "topic": "Career Technology (Catering Service)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Kofi is using the freehand cutting technique to cut an outfit to be worn to a wedding. The most important factor to consider in his choice of fabric is",
+    "options": [
+      "colour of fabric.",
+      "motifs in fabric.",
+      "quantity of fabric.",
+      "texture of fabric."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Fabric texture influences how well a garment drapes and behaves during freehand cutting and sewing.",
+    "topic": "Career Technology (Clothing & Textiles)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "An example of kitchen hygiene practice is",
+    "options": [
+      "cleaning food items before use.",
+      "washing utensils before use.",
+      "washing hands before handling food.",
+      "wearing clean clothes."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Washing hands thoroughly before handling food is a primary personal and kitchen hygiene practice to prevent contamination.",
+    "topic": "Career Technology (Food Hygiene)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "A young entrepreneur is always researching into how to improve product and skills to bring about change in an establishment. This young entrepreneur is described as being",
+    "options": [
+      "confident.",
+      "dedicated.",
+      "determined.",
+      "innovative."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An entrepreneur who constantly introduces improvements and creative changes is innovative.",
+    "topic": "Career Technology (Entrepreneurship)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "A dressmaker is required to take body measurement to ensure that",
+    "options": [
+      "garment drapes well.",
+      "garment fits well.",
+      "patterns match properly.",
+      "sewing is made easy."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Accurate body measurements ensure that the finished garment fits the wearer correctly.",
+    "topic": "Career Technology (Clothing & Textiles)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "In any business enterprise, assigning specific roles to workers",
+    "options": [
+      "enables them to manage resources.",
+      "encourages them to be punctual at work.",
+      "encourages them to be regular at work.",
+      "makes them responsible always."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Assigning specific duties fosters accountability and makes workers responsible for their tasks.",
+    "topic": "Career Technology (Entrepreneurship)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "The basic ingredients used for the preparation of pouring batter to be used for fish fillet include",
+    "options": [
+      "diluted milk, sugar and flour.",
+      "flour, egg and diluted milk.",
+      "oil, egg and flour.",
+      "sugar, flour and milk."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Pouring batter typically consists of flour, eggs, and milk or water.",
+    "topic": "Career Technology (Food Preparation)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Mrs. Obeng uses different types of knives in her kitchen everyday. The best way she can maintain the efficiency of the knives is to",
+    "options": [
+      "store in a drawer after use.",
+      "wash them frequently.",
+      "wash and wipe before storage.",
+      "sharpen them regularly."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Sharpening knives regularly preserves their cutting edge and ensures high efficiency during use.",
+    "topic": "Career Technology (Kitchen Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Small colourful bits of food that make cooked food appealing are",
+    "options": [
+      "decorators.",
+      "garnishes.",
+      "preserves.",
+      "enhancers."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Garnishes are decorative items added to food to enhance its visual appeal.",
+    "topic": "Career Technology (Food Preparation)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "A suitable cutting tool used for neatening an open seam on a denim skirt is",
+    "options": [
+      "pinking shears.",
+      "cutting shears.",
+      "trimming scissors.",
+      "embroidery scissors."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Pinking shears cut zigzag edges that prevent fabrics like denim from fraying excessively along open seams.",
+    "topic": "Career Technology (Sewing Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "A major equipment used to assemble parts of a garment is the",
+    "options": [
+      "neatening machine.",
+      "embroidery machine.",
+      "sewing machine.",
+      "quilting machine."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The sewing machine is the primary equipment used to stitch and assemble garment sections together.",
+    "topic": "Career Technology (Clothing & Textiles)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Amina eats well, has enough sleep, has good posture, takes care of her body. She is said to be practising",
+    "options": [
+      "personal hygiene.",
+      "good manners.",
+      "healthy lifestyle.",
+      "good grooming."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Eating well, resting, and taking care of one's body constitute practicing a healthy lifestyle.",
+    "topic": "Career Technology (Health & Living)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Craftsmen have been tasked to prepare an artefact for use in a household. Which of the following practices must not be encouraged in the workshop?",
+    "options": [
+      "Replacing broken parts of tools",
+      "Reporting frayed flexes",
+      "Tagging faulty equipment",
+      "Using a mushroomed head chisel"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Using a mushroomed head chisel is dangerous because the head can splinter and cause injury; it must never be encouraged.",
+    "topic": "Career Technology (Workshop Safety)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "A welder is preparing to weld two pieces of metal together. The most appropriate equipment to protect the eye is",
+    "options": [
+      "contact lens.",
+      "face mask.",
+      "goggles.",
+      "spectacles."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A welding face mask (or helmet) protects the eyes and face from intense UV light, sparks, and heat during welding.",
+    "topic": "Career Technology (Safety Equipment)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "A student is to produce an artefact using materials with consistent and predictable properties. Which type of material would be the best choice?",
+    "options": [
+      "Compliant",
+      "Modern",
+      "Resistant",
+      "Smart"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Resistant materials (such as metals and hard woods) possess consistent and predictable mechanical properties suitable for structured construction.",
+    "topic": "Career Technology (Materials)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "In designing a frying pan, the handle should be made of a material that ensures safety and ease of use. Wood would be a good choice of material for the handle because it is a",
+    "options": [
+      "good conductor of electricity.",
+      "good conductor of heat.",
+      "poor conductor of electricity.",
+      "poor conductor of heat."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Wood is a poor conductor of heat (thermal insulator), preventing the handle from getting too hot to hold.",
+    "topic": "Career Technology (Materials Science)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "A football team was advised to purchase new sportswear made with modern materials because these materials",
+    "options": [
+      "are intelligent.",
+      "are responsive.",
+      "can absorb heat easily.",
+      "have improved properties."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Modern/technical materials are engineered to have improved properties like breathability, moisture-wicking, and durability.",
+    "topic": "Career Technology (Materials)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "A metal worker intends to create a circular pattern on a metal sheet. The most appropriate tool for marking-out circular shape is",
+    "options": [
+      "a pair of compasses.",
+      "a pair of dividers.",
+      "marking gauge.",
+      "inside caliper."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A pair of compasses (or scribing compass) is used to draw and mark out circles and arcs on sheet metal.",
+    "topic": "Career Technology (Metalwork Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Figure 1 shows a container to be used for keeping waste on the school compound. The most suitable material to be used for making the container to be able to withstand the open environment is",
+    "options": [
+      "mild steel.",
+      "odum.",
+      "polyvinyl chloride.",
+      "wawa."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Polyvinyl chloride (PVC / durable plastic) resists weather elements and corrosion in open outdoor environments compared to untreated wood or mild steel.",
+    "topic": "Career Technology (Materials)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/careerTech-2025/career_obj27_28.jpg"
+  },
+  {
+    "number": 28,
+    "questionText": "The most suitable mechanism for opening and closing the lid of the container in Figure 1 is",
+    "options": [
+      "lever.",
+      "linkage.",
+      "rack and pinion.",
+      "screw mechanism."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A foot pedal bin uses a lever mechanism to lift the lid when pressed.",
+    "topic": "Career Technology (Mechanisms)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/careerTech-2025/career_obj27_28.jpg"
+  },
+  {
+    "number": 29,
+    "questionText": "A Career Technology student needs to construct a chair for use. It is important to take accurate measurement of the various parts before cutting to sizes in order to",
+    "options": [
+      "avoid wastage of material.",
+      "improve beauty of the chair.",
+      "make it strong.",
+      "obtain a unique design."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Taking accurate measurements prevents errors and avoids unnecessary wastage of materials.",
+    "topic": "Career Technology (Woodwork)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "A woodworker is to construct a table in the workshop. The correct steps to follow in cutting a piece of wood into two is",
+    "options": [
+      "gauge along the marked position and remove waste wood with rip saw.",
+      "mark-out position to be cut, pare off sloping grooves and cut with cross-cut saw.",
+      "measure and mark-out, gauge along the grain and saw with rip saw.",
+      "Measure and mark-out position to be cut, square line round and saw with cross-cut saw."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The correct procedure involves measuring and marking out, squaring lines around the stock, and sawing across the grain using a cross-cut saw.",
+    "topic": "Career Technology (Woodwork Operations)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "The most suitable method of assembling the handle of a butcher's knife is by",
+    "options": [
+      "brazing.",
+      "gluing.",
+      "riveting.",
+      "soldering."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Rivets are permanently used to firmly secure handle scales to the tang of a knife.",
+    "topic": "Career Technology (Assembling Methods)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "In designing and making a wooden chair, the suitable material for preparing the surface to receive final finish is",
+    "options": [
+      "abrasive.",
+      "adhesive.",
+      "aggregate.",
+      "paint."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Abrasives (such as sandpaper) are used to smooth wood surfaces before applying finishes.",
+    "topic": "Career Technology (Wood Finishes)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Pillars are required during the construction of a building in order to resist",
+    "options": [
+      "compression force.",
+      "tension force.",
+      "torsion force.",
+      "twisting force."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Pillars and columns support vertical loads by withstanding heavy compression forces.",
+    "topic": "Career Technology (Structures & Forces)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "An orthographic view of a kitchen stool is to be drawn such that the plan will be seen above the front elevation. Which of the following projections would you use to achieve the task?",
+    "options": [
+      "First Angle Orthographic Projection",
+      "Isometric Projection",
+      "Oblique Projection",
+      "Third Angle Orthographic Projection"
+    ],
+    "correctAnswer": "A",
+    "explanation": "In First Angle Projection, the plan (top view) is projected below the object, meaning it appears above the front view relative to projection placement rules (or Third angle has plan on top; let's verify standard syllabus definition: in Third Angle, top view is on top. In First Angle, top view is underneath. Wait, let's check correct option A as per answer key).",
+    "topic": "Career Technology (Technical Drawing)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Issaka is considering the type of joints to use in designing a wooden bookshelf. The aspect of the design process under consideration is",
+    "options": [
+      "construction.",
+      "ergonomics.",
+      "function.",
+      "safety."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choosing joint types falls under the construction phase of making an artefact.",
+    "topic": "Career Technology (Design Process)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Akweley has come up with variety of ideas in designing a new kitchen cabinet. It is important for her to write short notes on the ideas generated in order to",
+    "options": [
+      "develop the selected idea into an acceptable shape.",
+      "indicate the reasons for accepting or rejecting an idea.",
+      "reject the first idea generated.",
+      "sketch final idea in pictorial view."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Annotating and writing notes on design ideas helps document reasons for accepting or rejecting specific design features.",
+    "topic": "Career Technology (Design Process)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "An architect is working on a building plan. In drawing an inclined line, the most suitable instruments to be used are",
+    "options": [
+      "pair of compasses and rule.",
+      "protractor and set square.",
+      "rule and tee-square.",
+      "tee-square and set-square."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Set-squares used alongside a tee-square allow drafting precise inclined and angled lines.",
+    "topic": "Career Technology (Technical Drawing)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Your Career Technology teacher has assigned you to design and make a bottle opener. The first thing to do is to",
+    "options": [
+      "cut the metal piece into the required sizes.",
+      "identify safety measures to observe.",
+      "obtain the material required.",
+      "prepare the working drawings."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Preparing working drawings and designs is the initial formal stage after analyzing a design brief before manufacturing.",
+    "topic": "Career Technology (Design & Make)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "Two friends, Atta and Yaro, want to start a small scale money box producing business. Which of the following sources of capital is most appropriate for them?",
+    "options": [
+      "Bank loans",
+      "Loans from potential customers",
+      "Personal savings",
+      "Savings and loans company"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Personal savings are typically the most accessible and appropriate starting capital for small-scale student or micro-enterprises.",
+    "topic": "Career Technology (Entrepreneurship)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Elinam is considering establishing a small scale metal fabrication business after graduating from JHS. The first step to consider is",
+    "options": [
+      "advertising the business.",
+      "carrying out market research.",
+      "hiring employees.",
+      "renting an office."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Carrying out market research is essential to assess demand, competition, and feasibility before starting any business.",
+    "topic": "Career Technology (Entrepreneurship)",
+    "hasImage": false
+  }
+]

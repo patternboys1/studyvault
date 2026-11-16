@@ -1,0 +1,563 @@
+[
+    {
+      "number": 1,
+      "questionText": "To demonstrate to a class, the steps to be taken to create a PivotTable from a set of data in Microsoft Excel worksheet, click on",
+      "options": [
+        "Insert Tab, then PivotTable.",
+        "Home Tab, then PivotTable.",
+        "Data Tab, then PivotTable.",
+        "View Tab, then PivotTable."
+      ],
+      "correctAnswer": "A",
+      "explanation": "To create a PivotTable in Excel, you go to the Insert tab and select PivotTable[cite: 92].",
+      "topic": "Computing (Spreadsheet)",
+      "hasImage": false
+    },
+    {
+      "number": 2,
+      "questionText": "Settings and permissions that are specific to a user and determines the activities the user can perform on windows environment on the computer is known as",
+      "options": [
+        "log.",
+        "account.",
+        "configuration.",
+        "customization."
+      ],
+      "correctAnswer": "B",
+      "explanation": "A user account controls permissions and activities in a Windows environment[cite: 92].",
+      "topic": "Computing (Operating Systems)",
+      "hasImage": false
+    },
+    {
+      "number": 3,
+      "questionText": "Social media users can regulate the type of information they share on their pages. Privacy setting which is one of such activities they can regulate is used to",
+      "options": [
+        "make posts visible to everyone.",
+        "control who can see one's posts and information.",
+        "automatically share posts with everyone.",
+        "prevent one from using the platform."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Privacy settings on social media are specifically designed to control who can view your posts and personal information[cite: 92].",
+      "topic": "Computing (Internet & Social Media)",
+      "hasImage": false
+    },
+    {
+      "number": 4,
+      "questionText": "Four students in a class wrote the following function in Microsoft Excel. Which of the functions written by the students will return an output?",
+      "options": [
+        "=SUM(A10:A17)",
+        "=SUM(A10:17A)",
+        "=SUM(10A:A17)",
+        "=SUM(10A:17A)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Valid cell references in Excel start with the column letter followed by the row number (e.g., A10:A17)[cite: 92].",
+      "topic": "Computing (Spreadsheet)",
+      "hasImage": false
+    },
+    {
+      "number": 5,
+      "questionText": "In computer programming, debugging is a technique used to",
+      "options": [
+        "test the code.",
+        "create bugs intentionally.",
+        "write code to play games.",
+        "fix errors in the code."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Debugging is the process of identifying and fixing errors or bugs in computer source code[cite: 92].",
+      "topic": "Computing (Programming)",
+      "hasImage": false
+    },
+    {
+      "number": 6,
+      "questionText": "In Desktop Publishing, a user can create a new document through the following ways except for",
+      "options": [
+        "blank publication.",
+        "print publication.",
+        "built-in template.",
+        "featured template."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Print publication is an output format/type rather than a new document creation wizard method compared to blank publications and templates[cite: 92].",
+      "topic": "Computing (Desktop Publishing)",
+      "hasImage": false
+    },
+    {
+      "number": 7,
+      "questionText": "Arku entered 20 into a computer as quantity of pencils bought. How will the figure be represented in the computer for processing?",
+      "options": [
+        "11001",
+        "10010",
+        "10100",
+        "10011"
+      ],
+      "correctAnswer": "C",
+      "explanation": "The decimal number 20 converted to binary is 10100 (16 + 4 = 10100₂)[cite: 92].",
+      "topic": "Computing (Number Systems)",
+      "hasImage": false
+    },
+    {
+      "number": 8,
+      "questionText": "A quiz master asked participants to complete the statement: whiles the Internet Explorer is used to access information from the internet, Windows File Explorer is used to",
+      "options": [
+        "manage and organize files and folders.",
+        "edit files in the explorer window.",
+        "manage and organize music and videos.",
+        "browse the internet using explorer."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Windows File Explorer is the utility used to manage and organize files and folders on a Windows PC[cite: 93].",
+      "topic": "Computing (Operating Systems)",
+      "hasImage": false
+    },
+    {
+      "number": 9,
+      "questionText": "The central device that communicates with other network devices and manages resources is a",
+      "options": [
+        "client.",
+        "server.",
+        "switch.",
+        "hub."
+      ],
+      "correctAnswer": "B",
+      "explanation": "A network server manages core network resources, data, and services for other devices[cite: 93].",
+      "topic": "Computing (Computer Networks)",
+      "hasImage": false
+    },
+    {
+      "number": 10,
+      "questionText": "One of your classmates continuously sends threat messages through social media platforms to you. This act is known as",
+      "options": [
+        "cyberstalking.",
+        "cyberattack.",
+        "cyberbullying.",
+        "cybersecurity."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Sending threatening or harassing messages online to intimidate someone is defined as cyberbullying[cite: 93].",
+      "topic": "Computing (Internet Safety)",
+      "hasImage": false
+    },
+    {
+      "number": 11,
+      "questionText": "Computer manufacturing went through series of developmental stages with each stage characterized by a unique technological advancement. The use of integrated circuits is a characteristic of the",
+      "options": [
+        "fourth generation.",
+        "third generation.",
+        "second generation.",
+        "first generation."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Third-generation computers are characterized by the use of Integrated Circuits (ICs)[cite: 93].",
+      "topic": "Computing (Computer History)",
+      "hasImage": false
+    },
+    {
+      "number": 12,
+      "questionText": "Good health practice suggests that we take intermittent breaks while working. The importance of taking breaks during prolonged computer use is to",
+      "options": [
+        "conserve energy in the computer.",
+        "avoid eye strain and muscle fatigue.",
+        "increase productivity in users.",
+        "increase screen time when working."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Intermittent breaks help prevent digital eye strain and musculoskeletal fatigue caused by prolonged screen time[cite: 93].",
+      "topic": "Computing (Health & Ergonomics)",
+      "hasImage": false
+    },
+    {
+      "number": 13,
+      "questionText": "The peripheral device shown in Figure 1 is used to capture",
+      "options": [
+        "video data.",
+        "image data.",
+        "textual data.",
+        "audio data."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Figure 1 shows a handheld scanner (or digital capture device), which is used to capture image data from physical documents.",
+      "topic": "Computing (Hardware)",
+      "hasImage": true,
+      "imageUrl":"gs://bece-prep.firebasestorage.app/computing-2025/com_obj_a13.png"
+    },
+    {
+      "number": 14,
+      "questionText": "The introduction of Artificial Intelligence has come with its related ethical concerns such as",
+      "options": [
+        "improved healthcare.",
+        "increased productivity.",
+        "job creation.",
+        "bias in algorithm."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Algorithmic bias and fairness are major ethical concerns associated with AI deployment[cite: 93].",
+      "topic": "Computing (Artificial Intelligence)",
+      "hasImage": false
+    },
+    {
+      "number": 15,
+      "questionText": "Cindy was trying to access information from the WAEC website but whenever she enters the URL, it takes her to a different website. Her friend advised that she must ensure the URL entered is correct because it identifies",
+      "options": [
+        "the address of the web resource.",
+        "the graphics used in the web resource.",
+        "the ads in the web resource.",
+        "the texts of the web resource."
+      ],
+      "correctAnswer": "A",
+      "explanation": "A URL (Uniform Resource Locator) specifies the unique address of a web resource on the internet[cite: 93].",
+      "topic": "Computing (Internet)",
+      "hasImage": false
+    },
+    {
+      "number": 16,
+      "questionText": "A teacher tasked students to demonstrate an activity using a flowchart diagram. The appropriate symbol to be used at the processing stage of the activity is",
+      "options": [
+        "parallelogram.",
+        "rhombus.",
+        "oval.",
+        "rectangle."
+      ],
+      "correctAnswer": "D",
+      "explanation": "A rectangle is the standard flowchart symbol used to represent processing steps[cite: 93].",
+      "topic": "Computing (Flowcharts)",
+      "hasImage": false
+    },
+    {
+      "number": 17,
+      "questionText": "In pseudocode, the keyword FOR indicates",
+      "options": [
+        "variables or constants in the code.",
+        "input or output structure in the code.",
+        "decision control structure in the code.",
+        "loop with fixed number of iterations in the code."
+      ],
+      "correctAnswer": "D",
+      "explanation": "The 'FOR' keyword in programming/pseudocode is used for a counted loop with a fixed number of iterations[cite: 93].",
+      "topic": "Computing (Programming)",
+      "hasImage": false
+    },
+    {
+      "number": 18,
+      "questionText": "Cybercriminals can obstruct data in transmission to and from a device or a network using a data threat attack technique called",
+      "options": [
+        "interruption.",
+        "fabrication.",
+        "modification.",
+        "interception."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Interception is an attack where an unauthorized party gains access to data while it is being transmitted[cite: 94].",
+      "topic": "Computing (Cybersecurity)",
+      "hasImage": false
+    },
+    {
+      "number": 19,
+      "questionText": "A student inserted a picture into a Microsoft PowerPoint presentation and needed to work on the picture to adjust the brightness and contrast to make it more clearer. The best tool to help the student achieve the task is",
+      "options": [
+        "Picture Effects.",
+        "Format Picture.",
+        "Picture Layout.",
+        "Picture Size."
+      ],
+      "correctAnswer": "B",
+      "explanation": "The Format Picture pane/tools provide granular controls for brightness, contrast, and color adjustments[cite: 94].",
+      "topic": "Computing (Presentation Software)",
+      "hasImage": false
+    },
+    {
+      "number": 20,
+      "questionText": "A user who selected 4x3 in the insert table grid in a Word document will insert",
+      "options": [
+        "a table of 4 rows and 3 columns.",
+        "12 tables.",
+        "4 tables.",
+        "a table of 4 columns and 3 rows."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Table grid selection notation is generally formatted as Columns x Rows (4 columns and 3 rows)[cite: 94].",
+      "topic": "Computing (Word Processing)",
+      "hasImage": false
+    },
+    {
+      "number": 21,
+      "questionText": "The social media platform that allows members to post questions, start a discussion or contribute to various discussions is",
+      "options": [
+        "WhatsApp.",
+        "Messenger.",
+        "Facebook.",
+        "Forums."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Online forums are specifically structured for community members to post questions and hold threaded discussions[cite: 94].",
+      "topic": "Computing (Internet & Social Media)",
+      "hasImage": false
+    },
+    {
+      "number": 22,
+      "questionText": "The Merge & Center button in a Spreadsheet application is used to",
+      "options": [
+        "create a new worksheet and center the content.",
+        "combine and center the content of selected cells.",
+        "combine and center the content of the worksheet.",
+        "select multiple cells and center the content."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Merge & Center combines multiple selected adjacent cells into a single larger cell and centers the contents[cite: 94].",
+      "topic": "Computing (Spreadsheet)",
+      "hasImage": false
+    },
+    {
+      "number": 23,
+      "questionText": "The concept of Artificial Intelligence's ability to suggest related information to a user who regularly surfs the internet is referred to as",
+      "options": [
+        "deep learning.",
+        "computer vision.",
+        "neural network.",
+        "logical reasoning."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Deep learning models power recommendation systems that analyze user behavior to suggest related content[cite: 94].",
+      "topic": "Computing (Artificial Intelligence)",
+      "hasImage": false
+    },
+    {
+      "number": 24,
+      "questionText": "Which of the following services best describes an entrepreneurial opportunity in computer networking?",
+      "options": [
+        "Developing game applications for schools",
+        "Setting up Wi-Fi networks for cafes and schools",
+        "Designing websites for businesses and schools",
+        "Teaching desktop publishing in schools"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Setting up Wi-Fi and local area networks is a direct commercial service opportunity in computer networking[cite: 94].",
+      "topic": "Computing (Networking & Entrepreneurship)",
+      "hasImage": false
+    },
+    {
+      "number": 25,
+      "questionText": "The practice of the use of computers and related electronic resources in an environmentally responsible manner is termed",
+      "options": [
+        "green computing.",
+        "environmental friendliness.",
+        "safety precautions.",
+        "ergonomics."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Green computing refers to environmentally sustainable computing practices[cite: 94].",
+      "topic": "Computing (Green Computing)",
+      "hasImage": false
+    },
+    {
+      "number": 26,
+      "questionText": "Collaborative robot is a category of robots that",
+      "options": [
+        "makes both fast and slow movements.",
+        "paints pictures for commercial sale.",
+        "dances to audience for entertainment.",
+        "works alongside humans."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Collaborative robots (cobots) are specifically designed to interact and work safely alongside human workers in shared workspaces[cite: 94].",
+      "topic": "Computing (Robotics)",
+      "hasImage": false
+    },
+    {
+      "number": 27,
+      "questionText": "A teacher sends class assignment to his students using an e-mail. The protocol used by the e-mail to send the assignment over the Internet is",
+      "options": [
+        "TCP.",
+        "HTTP.",
+        "FTP.",
+        "SMTP."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Simple Mail Transfer Protocol (SMTP) is the standard protocol used for sending email messages across the internet[cite: 94].",
+      "topic": "Computing (Protocols)",
+      "hasImage": false
+    },
+    {
+      "number": 28,
+      "questionText": "A student is watching video from a pen drive using a computer. The process the computer uses to access the video from the pen drive is known as",
+      "options": [
+        "caching.",
+        "burning.",
+        "reading.",
+        "writing."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Accessing and retrieving data from an external storage medium like a pen drive is called 'reading'[cite: 95].",
+      "topic": "Computing (Data Storage)",
+      "hasImage": false
+    },
+    {
+      "number": 29,
+      "questionText": "A user is to apply predefined formatting styles to texts in Microsoft PowerPoint application. The best feature to use is",
+      "options": [
+        "WordArt.",
+        "Font Colour.",
+        "Text Effects.",
+        "Quick Styles."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Quick Styles provide predefined formatting options for shapes and text in Office applications[cite: 95].",
+      "topic": "Computing (Presentation Software)",
+      "hasImage": false
+    },
+    {
+      "number": 30,
+      "questionText": "A teacher tasked her students to create a date with year, month and day format. The most appropriate Microsoft Excel function to achieve the date format is",
+      "options": [
+        "DATEVALUE().",
+        "DATE().",
+        "CURDATE().",
+        "DATEDIF()."
+      ],
+      "correctAnswer": "B",
+      "explanation": "The DATE(year, month, day) function in Excel constructs a valid date from individual year, month, and day arguments[cite: 95].",
+      "topic": "Computing (Spreadsheet Functions)",
+      "hasImage": false
+    },
+    {
+      "number": 31,
+      "questionText": "The Screenshot feature under the Insert Tab of a Microsoft PowerPoint application allows a user to insert a screenshot of",
+      "options": [
+        "downloaded applications.",
+        "opened applications.",
+        "foreground applications.",
+        "active applications."
+      ],
+      "correctAnswer": "D",
+      "explanation": "The Screenshot feature lets you quickly insert pictures of any active windows currently open on your desktop[cite: 95].",
+      "topic": "Computing (Presentation Software)",
+      "hasImage": false
+    },
+    {
+      "number": 32,
+      "questionText": "The robotic club of a school is to construct a robot to be able to detect objects around it. The most appropriate sensor to be used is",
+      "options": [
+        "torque sensor.",
+        "tactile sensor.",
+        "light sensor.",
+        "proximity sensor."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Proximity sensors are used to detect the presence or distance of nearby objects without physical contact[cite: 95].",
+      "topic": "Computing (Robotics)",
+      "hasImage": false
+    },
+    {
+      "number": 33,
+      "questionText": "A student in the computer laboratory wants to change the style, size and colour of a typeface in Microsoft Word application. The appropriate tool to be used is",
+      "options": [
+        "font.",
+        "paragraph.",
+        "styles.",
+        "clipboard."
+      ],
+      "correctAnswer": "A",
+      "explanation": "The Font group on the Home tab contains tools for changing typeface style, size, and color[cite: 95].",
+      "topic": "Computing (Word Processing)",
+      "hasImage": false
+    },
+    {
+      "number": 34,
+      "questionText": "A computing project work requires students to design a blog for a school. The best item to be used for customizing the blog is the school's",
+      "options": [
+        "flag.",
+        "uniform.",
+        "logo.",
+        "crest."
+      ],
+      "correctAnswer": "C",
+      "explanation": "A school logo is the standard graphical branding asset used when designing and customizing web layouts or blogs[cite: 95].",
+      "topic": "Computing (Web Design)",
+      "hasImage": false
+    },
+    {
+      "number": 35,
+      "questionText": "A blog has many sections. The purpose of the comment section is to",
+      "options": [
+        "share personal information with readers.",
+        "engage with readers and encourage discussion.",
+        "promote other blogs on the same platform.",
+        "sell products and services to readers and friends."
+      ],
+      "correctAnswer": "B",
+      "explanation": "The comment section facilitates reader interaction, feedback, and community discussion on blog posts[cite: 95].",
+      "topic": "Computing (Web Design)",
+      "hasImage": false
+    },
+    {
+      "number": 36,
+      "questionText": "The examination scores in Computing of a class was entered into a Microsoft Excel worksheet. The appropriate function for finding the largest score in the class is",
+      "options": [
+        "MAX.",
+        "MIN.",
+        "SUM.",
+        "AVG."
+      ],
+      "correctAnswer": "A",
+      "explanation": "The MAX function returns the largest value in a set of numeric values in Excel[cite: 95].",
+      "topic": "Computing (Spreadsheet Functions)",
+      "hasImage": false
+    },
+    {
+      "number": 37,
+      "questionText": "What does the formula =IF(A1>10, \"Pass\", \"Fail\") do in a Spreadsheet application?",
+      "options": [
+        "Checks if the value in cell A1 is greater than 10 and returns Pass",
+        "Checks if the value in cell A1 is less than 10 and returns Pass",
+        "Checks if the value in cell A1 is equal to 10 and returns Fail",
+        "Checks if the value in cell A1 is greater than 10 and returns Fail"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The IF statement evaluates whether A1 > 10; if true, it outputs 'Pass', otherwise 'Fail'[cite: 95].",
+      "topic": "Computing (Spreadsheet Functions)",
+      "hasImage": false
+    },
+    {
+      "number": 38,
+      "questionText": "In a computer shop, the attendant advised a customer to buy the fifth generation computer due to its feature that uses",
+      "options": [
+        "microprocessors.",
+        "transistors.",
+        "artificial intelligence.",
+        "vacuum tubes."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Fifth-generation computers are based on artificial intelligence technologies[cite: 95].",
+      "topic": "Computing (Computer History)",
+      "hasImage": false
+    },
+    {
+      "number": 39,
+      "questionText": "The Desktop Publishing feature that best helps a user to align objects, texts and elements in a publication is called",
+      "options": [
+        "margins.",
+        "layout.",
+        "guides.",
+        "ruler."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Guides (gridlines and alignment guides) help users accurately position and align objects in desktop publishing[cite: 96].",
+      "topic": "Computing (Desktop Publishing)",
+      "hasImage": false
+    },
+    {
+      "number": 40,
+      "questionText": "In a printing industry, the device that uses the mechanism of laying down a transparent dye and melting dots of wax-based ink to produce an output is a",
+      "options": [
+        "thermal heater.",
+        "thermal printer.",
+        "wax heater.",
+        "wax printer."
+      ],
+      "correctAnswer": "D",
+      "explanation": "A wax printer (solid ink printer) melts wax-based ink blocks to print images onto paper[cite: 96].",
+      "topic": "Computing (Hardware)",
+      "hasImage": false
+    }
+  ]

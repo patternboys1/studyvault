@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "The stage of development between childhood and adulthood in humans is known as",
+    "options": [
+      "infancy.",
+      "adolescence.",
+      "teenage.",
+      "puberty."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Adolescence is the transitional stage of physical and psychological development between childhood and adulthood[cite: 92, 103].",
+    "topic": "Integrated Science (Human Growth & Development)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Oxygen gas is represented by the chemical symbol $O_{2}$. This symbol represents two",
+    "options": [
+      "atoms of oxygen.",
+      "molecules of oxygen.",
+      "ions of oxygen.",
+      "elements of oxygen."
+    ],
+    "correctAnswer": "A",
+    "explanation": "The subscript 2 in $O_2$ indicates that one molecule of oxygen gas consists of two chemically bonded atoms of oxygen[cite: 92, 103].",
+    "topic": "Integrated Science (Elements, Compounds & Mixtures)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Use the information on the simple food chain below: Cassava -> Rat -> Snake -> Hawk. The primary consumer is the",
+    "options": [
+      "rat.",
+      "cassava.",
+      "hawk.",
+      "snake."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cassava is the producer, so the rat that feeds directly on the producer is the primary consumer[cite: 92, 103].",
+    "topic": "Integrated Science (Ecosystems & Food Chains)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Which of the following planets are closer to the sun than the earth?",
+    "options": [
+      "Venus and Mercury",
+      "Venus and Mars",
+      "Venus and Saturn",
+      "Mercury and Mars"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Mercury is the 1st planet and Venus is the 2nd planet from the Sun, placing both closer to the Sun than Earth (the 3rd planet)[cite: 92, 103].",
+    "topic": "Integrated Science (The Solar System)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "The chemical component of milk of magnesia is",
+    "options": [
+      "potassium hydroxide.",
+      "calcium hydroxide.",
+      "sodium hydroxide.",
+      "magnesium hydroxide."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Milk of magnesia is an aqueous suspension of magnesium hydroxide ($Mg(OH)_2$) used as an antacid[cite: 92, 103].",
+    "topic": "Integrated Science (Acids, Bases & Salts)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "The ways of conserving electrical energy include:\nI. putting off electrical appliances when not in use\nII. ironing clothes one at a time\nIII. ironing clothes in bulk",
+    "options": [
+      "II only",
+      "I only",
+      "I and III only",
+      "I and II only"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Turning off unused appliances (I) and ironing in bulk (III) prevent electricity wastage, whereas ironing single items repeatedly wastes energy[cite: 92, 103].",
+    "topic": "Integrated Science (Energy Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Which of the following methods are used in making magnets?\nI. Induction\nII. Stroking\nIII. Hitting",
+    "options": [
+      "I and III only",
+      "I and II only",
+      "I, II and III",
+      "II and III only"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Magnetic induction and stroking with a permanent magnet are standard methods of magnetization, while hitting/hammering demagnetizes a magnet[cite: 92, 103].",
+    "topic": "Integrated Science (Magnetism)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Which of the following practices is not a cultural practice in crop production?",
+    "options": [
+      "Pest control",
+      "Nursing",
+      "Weeding",
+      "Mulching"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Pest control, weeding, and mulching are field cultural practices performed after planting, while nursing is a pre-planting nursery operation[cite: 92, 103].",
+    "topic": "Integrated Science (Crop Production)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "The linear sequence of feeding relationship among living things is called",
+    "options": [
+      "food chain.",
+      "food web.",
+      "producer.",
+      "ecology."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A food chain represents a single linear pathway of energy and nutrient flow from producers to consumers[cite: 92, 103].",
+    "topic": "Integrated Science (Ecosystems & Food Chains)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "What is formed when the path of light rays is blocked by an opaque object?",
+    "options": [
+      "Echo",
+      "Shadow",
+      "Penumbra",
+      "Umbra"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Because light travels in straight lines, an opaque object blocking light produces a dark region called a shadow[cite: 92, 103].",
+    "topic": "Integrated Science (Light Energy)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Which of the following statements about photosynthesis is correct?",
+    "options": [
+      "Oxygen is the main product.",
+      "It occurs in the presence of light energy.",
+      "Plants obtain water from the atmosphere to make food.",
+      "Leaves without chlorophyll are able to photosynthesize."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Photosynthesis requires light energy trapped by chlorophyll to convert carbon dioxide and water into glucose (the main product) and oxygen[cite: 92, 103].",
+    "topic": "Integrated Science (Photosynthesis)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "The force that opposes motion is",
+    "options": [
+      "gravitational force.",
+      "magnetic force.",
+      "frictional force.",
+      "electrostatic force."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Frictional force acts between two surfaces in contact to oppose relative motion[cite: 92, 103].",
+    "topic": "Integrated Science (Forces & Motion)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The transistor in an electronic device is used\nI. as a switch\nII. for amplifying alternating signals\nIII. in preventing overheating in electric irons",
+    "options": [
+      "I and II only",
+      "I only",
+      "I, II and III",
+      "I and III only"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Transistors function primarily as electronic switches and signal amplifiers; thermostats prevent overheating in irons[cite: 92, 103].",
+    "topic": "Integrated Science (Basic Electronics)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "A hazardous substance that may be emitted from car exhaust fumes is",
+    "options": [
+      "CO",
+      "$CO_{2}$",
+      "$H_{2}$",
+      "$H_{2}O$"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Carbon monoxide ($CO$) is a poisonous, toxic gas formed by the incomplete combustion of fuel in vehicle engines[cite: 92, 103].",
+    "topic": "Integrated Science (Air Pollution)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "In order to maintain soil fertility, a farmer should not practice",
+    "options": [
+      "continuous cropping.",
+      "crop rotation.",
+      "consistent manuring.",
+      "fertilizer application."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Continuous cropping on the same piece of land without rest or replenishment depletes soil nutrients and reduces fertility[cite: 92, 103].",
+    "topic": "Integrated Science (Soil Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Green plants have the ability to make their own food hence they are known as",
+    "options": [
+      "parasites.",
+      "producers.",
+      "decomposers.",
+      "consumers."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Green plants synthesize their own organic food through photosynthesis, making them primary producers in ecosystems[cite: 93, 103].",
+    "topic": "Integrated Science (Ecosystems)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "The energy transformation that takes place in electric pressing iron is",
+    "options": [
+      "electrical energy -> sound energy.",
+      "electrical energy -> potential energy.",
+      "electrical energy -> chemical energy.",
+      "electrical energy -> heat energy."
+    ],
+    "correctAnswer": "D",
+    "explanation": "An electric pressing iron converts electrical energy directly into thermal (heat) energy to press clothes[cite: 93, 103].",
+    "topic": "Integrated Science (Forms & Transformation of Energy)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Mosquitoes cannot breed in a",
+    "options": [
+      "swamp.",
+      "pool.",
+      "pond.",
+      "river."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Mosquitoes require stagnant or still water to lay eggs and develop larvae; fast-flowing water in a river washes larvae away[cite: 93, 103].",
+    "topic": "Integrated Science (Infectious Diseases & Vectors)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Which of the following foods contains the greatest amount of protein?",
+    "options": [
+      "Plantain",
+      "Cheese",
+      "Mushroom",
+      "Yam"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cheese is a concentrated dairy product rich in animal protein, whereas plantain and yam are predominantly carbohydrates[cite: 93, 103].",
+    "topic": "Integrated Science (Food & Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Which of the following statements is true of anions? They contain",
+    "options": [
+      "more protons than electrons.",
+      "more protons than neutrons.",
+      "the same number of protons and neutrons.",
+      "less protons than electrons."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Anions are negatively charged ions formed when neutral atoms gain electrons, resulting in fewer protons than electrons[cite: 93, 103].",
+    "topic": "Integrated Science (Atomic Structure & Ions)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "The combining powers of sodium and oxygen atoms are 1 and 2 respectively. The chemical formula of a stable compound formed between them is",
+    "options": [
+      "$Na_2O$",
+      "$NaO$",
+      "$NaO_2$",
+      "$Na_2O_2$"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Exchanging valencies of $Na^+$ (1) and $O^{2-}$ (2) gives two sodium ions for every oxide ion: $Na_2O$[cite: 93, 103].",
+    "topic": "Integrated Science (Chemical Formulae)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "The appropriate apparatus for the separation of a mixture of water and kerosene is",
+    "options": [
+      "filter funnel.",
+      "separating funnel.",
+      "condenser.",
+      "evaporating dish."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Water and kerosene are immiscible liquids of different densities, which are separated using a separating funnel[cite: 93, 103].",
+    "topic": "Integrated Science (Separation of Mixtures)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "The most suitable tool for transplanting vegetable seedlings is the",
+    "options": [
+      "cutlass.",
+      "hoe.",
+      "hand trowel.",
+      "hand fork."
+    ],
+    "correctAnswer": "C",
+    "explanation": "A hand trowel is designed to lift seedlings along with a ball of soil without damaging their delicate roots[cite: 93, 103].",
+    "topic": "Integrated Science (Agricultural Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "The hardest part of the tooth is the",
+    "options": [
+      "dentine.",
+      "enamel.",
+      "cement.",
+      "pulp."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Tooth enamel is the mineralized outer covering of the crown and the hardest substance in the human body[cite: 93, 103].",
+    "topic": "Integrated Science (Human Dentition)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "Hand trowel is used in farming to",
+    "options": [
+      "remove weeds.",
+      "level soil surface.",
+      "turn manure during compost making.",
+      "transplant seedlings."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The primary horticultural function of a hand trowel is digging small holes and transplanting seedlings[cite: 93, 103].",
+    "topic": "Integrated Science (Agricultural Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Which of the following methods could conserve soil water on a farm?\nI. Adequate spacing\nII. Disease control\nIII. Cover cropping",
+    "options": [
+      "I and III only",
+      "I and II only",
+      "I, II and III",
+      "II and III only"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Adequate spacing reduces competition for moisture and cover cropping shades the soil to reduce evaporation[cite: 93, 103].",
+    "topic": "Integrated Science (Soil & Water Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "An example of a simple lever which has its effort at the centre is",
+    "options": [
+      "a pair of scissors.",
+      "a bottle opener.",
+      "the beam balance.",
+      "a pair of forceps."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A pair of forceps is a third-class lever where the effort is applied between the fulcrum and the load[cite: 93, 103].",
+    "topic": "Integrated Science (Simple Machines)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "A student who was accidentally trapped in a cupboard died because",
+    "options": [
+      "the greater part of oxygen in the cupboard was used up.",
+      "only nitrogen was left in the cupboard.",
+      "carbon dioxide run short in the cupboard.",
+      "all the air in the cupboard was used up."
+    ],
+    "correctAnswer": "A",
+    "explanation": "In an enclosed airtight space, respiration consumes the available oxygen until it drops below levels needed to sustain life[cite: 93, 103].",
+    "topic": "Integrated Science (Respiration & Air)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Which of the following statements about noble gases is correct? They are",
+    "options": [
+      "monoatomic molecules.",
+      "charged gases.",
+      "very reactive.",
+      "diatomic molecules."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Noble gases have complete valence electron shells, making them chemically unreactive and stable as single (monoatomic) atoms[cite: 93, 103].",
+    "topic": "Integrated Science (Periodic Table)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "The bottom of a pool of water appears closer to the surface than it is. Which of the following properties accounts for this observation?",
+    "options": [
+      "Transparency of water",
+      "Reflection",
+      "Rectilinear propagation",
+      "Refraction"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Refraction (bending of light rays as they pass from water into air) creates an apparent depth shallower than the real depth[cite: 93, 103].",
+    "topic": "Integrated Science (Light Energy)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "In which of the following systems does the farmer rely on animals in case of crop failure?",
+    "options": [
+      "Mixed farming",
+      "Crop rotation",
+      "Organic farming",
+      "Mixed cropping"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Mixed farming combines crop cultivation and livestock rearing on the same farm, providing financial security if crops fail[cite: 93, 103].",
+    "topic": "Integrated Science (Farming Systems)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Two atoms of the same element with symbols ${}_{6}^{12}X$ and ${}_{6}^{14}X$ differ by their",
+    "options": [
+      "proton numbers.",
+      "electron numbers.",
+      "atomic numbers.",
+      "neutron numbers."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Isotopes of the same element have identical proton/atomic numbers (6) but different mass numbers due to different numbers of neutrons (6 vs 8)[cite: 93, 103].",
+    "topic": "Integrated Science (Atomic Structure)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "The best method of preventing teenage pregnancy is to",
+    "options": [
+      "avoid having sex.",
+      "use a pill.",
+      "practise safe sex.",
+      "have only one sexual partner."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Total sexual abstinence is the safest and most effective method of preventing teenage pregnancy[cite: 94, 103].",
+    "topic": "Integrated Science (Adolescent Reproductive Health)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "An example of an inclined plane is a",
+    "options": [
+      "see-saw.",
+      "flat road surface.",
+      "pulley.",
+      "path of a hill."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A sloping surface like a ramp or the winding path up a hill acts as an inclined plane[cite: 94, 103].",
+    "topic": "Integrated Science (Simple Machines)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Which of the following substances contains natural acid?",
+    "options": [
+      "Wood ash",
+      "Vinegar",
+      "Saliva",
+      "Bile"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vinegar contains ethanoic (acetic) acid, a naturally occurring organic acid[cite: 94, 103].",
+    "topic": "Integrated Science (Acids & Bases)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "The gas evolved when a small piece of sodium is dropped into a beaker containing water is",
+    "options": [
+      "hydrogen.",
+      "carbon dioxide.",
+      "chlorine.",
+      "oxygen."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Sodium reacts vigorously with water to produce sodium hydroxide and hydrogen gas ($2Na + 2H_2O \\rightarrow 2NaOH + H_2$)[cite: 94, 103].",
+    "topic": "Integrated Science (Chemical Reactions)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "Which of the following types of human teeth is used for biting food?",
+    "options": [
+      "Canines",
+      "Incisors",
+      "Molars",
+      "Premolars"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Incisors are sharp, chisel-shaped front teeth adapted for cutting and biting off pieces of food[cite: 94, 103].",
+    "topic": "Integrated Science (Human Dentition)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Which of the following human activities maintains the balance of nature?",
+    "options": [
+      "Pollution",
+      "Deforestation",
+      "Mining",
+      "Afforestation"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Afforestation (planting trees) restores ecosystems, absorbs carbon dioxide, and maintains ecological balance[cite: 94, 103].",
+    "topic": "Integrated Science (Environmental Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "The recommended floor space per bird in a poultry house is $0.6m^{2}$. Determine the number of layers that would occupy a poultry house of an area of $72m^{2}$.",
+    "options": [
+      "72",
+      "40",
+      "300",
+      "120"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Number of layers = Total Area / Space per bird = $72\\text{ m}^2 / 0.6\\text{ m}^2 = 120$ birds[cite: 94, 103].",
+    "topic": "Integrated Science (Animal Husbandry)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "The force that results when a comb is rubbed through dry hair is",
+    "options": [
+      "frictional force.",
+      "magnetic force.",
+      "gravitational force.",
+      "electrostatic force."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Rubbing transfers electrons between the hair and the comb, generating static electric charges and electrostatic force[cite: 94, 103].",
+    "topic": "Integrated Science (Electrostatics)",
+    "hasImage": false
+  }
+]

@@ -1,0 +1,564 @@
+ [
+    {
+      "number": 1,
+      "questionText": "The nature of God is expressed through His attributes. Identify which of these attributes of God cannot be demonstrated by humankind.",
+      "options": [
+        "Kindness",
+        "All-knowing",
+        "Mercy",
+        "Patience"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Being All-knowing (omniscience) is an exclusive, incommunicable attribute of God that cannot be demonstrated or possessed by human beings[cite: 70, 71].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 2,
+      "questionText": "The declaration of faith in Islam does not include one of the following as a central tenet?",
+      "options": [
+        "Obligation to wage Jihad",
+        "Belief in one God (Allah) and Prophet Muhammad (SAW) His messenger",
+        "Performance of the five pillars of Islam",
+        "Submission to the will of God (Allah)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The Shahada (declaration of faith) specifically asserts belief in the oneness of Allah and the prophethood of Muhammad, excluding the obligation to wage Jihad as a central tenet of the declaration itself[cite: 70, 71].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 3,
+      "questionText": "How does God's creation reflect His wisdom and creativity? Through the",
+      "options": [
+        "complexity and order of the natural world",
+        "beauty and diversity of the natural world",
+        "power and strength of the natural world",
+        "randomness and chaos of the natural world"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The intricate complexity and structured order seen throughout the natural world demonstrate God's profound wisdom and creative power[cite: 70, 71].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 4,
+      "questionText": "During a community gathering, attendees engaged in a discussion about behaviours that demonstrated courtesy. Which of the following behaviours at the gathering would be considered most courteous?",
+      "options": [
+        "Interrupting others while they speak",
+        "Ignoring others' contributions to the discussions",
+        "Listening attentively to others' opinion",
+        "Speaking loudly and dominating the discussions"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Listening attentively to others' views shows respect, consideration, and active courtesy in social interactions[cite: 70, 71].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 5,
+      "questionText": "When Christians pray, give us this day our daily bread, the specific type of prayer being offered in this context is",
+      "options": [
+        "intercessory.",
+        "confessional.",
+        "supplicatory.",
+        "thanksgiving."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Supplicatory prayer involves making humble requests or petitions to God for personal or daily needs[cite: 70, 71].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 6,
+      "questionText": "In a traditional African village, the community members gathered to mourn the death of an elderly person. The family of the deceased performed all the necessary funeral rites. What is the main purpose of the funeral rites that were performed by the family? To",
+      "options": [
+        "ensure smooth transition to the afterlife",
+        "celebrate the life of the deceased",
+        "maintain harmony within the community",
+        "preserve the good memory of the departed"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Traditional African funeral rites primarily serve to purify and assist the spirit of the deceased to transition smoothly into the ancestral realm/afterlife[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 7,
+      "questionText": "What best describes the primary significance of the communal deer hunt during the Aboakyire festival? It",
+      "options": [
+        "reinforces the Efutu's spiritual connection to the ancestors.",
+        "demonstrates the Efutu hunting skills.",
+        "serves as a rite of passage for the young men.",
+        "symbolizes the Efutu's cultural identity and community cohesion."
+      ],
+      "correctAnswer": "D",
+      "explanation": "The deer hunt during Aboakyire brings the Asafo companies together, representing the cultural heritage and unity of the Efutu people[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 8,
+      "questionText": "Two family members who recently lost their jobs are going through significant anxiety over their lack of employment. Concerned loved ones are consoling them to have hope and trust that things will work out well in time. What attribute are these persons expected to demonstrate in order to overcome their anxiety?",
+      "options": [
+        "Forgiveness",
+        "Compassion",
+        "Mercy",
+        "Patience"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Patience enables individuals to endure trials and joblessness calmly while holding onto hope for better future opportunities[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 9,
+      "questionText": "Which of the following statement is true regarding cultural belief systems and their role in protecting the environment?",
+      "options": [
+        "Cultural practices have no influence on sustainable resource use.",
+        "Most cultural belief systems prioritize economic growth over environmental protection.",
+        "Indigenous belief systems often emphasize respect for nature and sustainable living.",
+        "Cultural diversity has no impact on global environmental challenges."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Indigenous traditions often incorporate taboos, sacred groves, and totems that foster deep reverence for nature and environmental conservation[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 10,
+      "questionText": "Which of these is the best representation of a positive attitude towards work?",
+      "options": [
+        "Desire for autonomy",
+        "Desire for responsibility",
+        "Desire for recognition",
+        "Eagerness to learn"
+      ],
+      "correctAnswer": "D",
+      "explanation": "An eagerness to learn reflects humility, dedication, and a commitment to personal growth and efficiency at work[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 11,
+      "questionText": "A 45 year old government employee has been contributing to a pension scheme through his employer. What benefit is the employee most likely to receive from the pension scheme when he retires in 15 years? A",
+      "options": [
+        "monthly payment based on his contributions and interest.",
+        "half payment of his total contributions.",
+        "one-time payment of the total interest on his contribution.",
+        "refund of his total contributions without interest."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Pension schemes provide regular monthly financial payouts to retirees calculated from their accrued contributions and investment returns[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 12,
+      "questionText": "Which of the following is a common characteristic of the early life of many indigenous traditional leaders in Ghana? They were",
+      "options": [
+        "converted to Christianity and Islam at a young age.",
+        "born into wealthy families and received formal education.",
+        "orphans and had to fend for themselves at a young age.",
+        "trained from a young age in traditional practices and leadership roles."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Royals and prospective traditional leaders in Ghana undergo early apprenticeship and informal grooming in court etiquette, customs, and governance[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 13,
+      "questionText": "A 15 year old JHS student has been using drugs regularly to cope with stress. The student has started experiencing difficulty concentrating, mood swings etc. What is a likely effect of the drug addiction on the student?",
+      "options": [
+        "Breakdown of social relationships",
+        "A harmless coping mechanism",
+        "Enhanced academic performance",
+        "Improved mental health"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Substance abuse often causes severe behavioral changes, leading to isolation, conflicts, and ruined relationships with family and friends[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 14,
+      "questionText": "What was the significance of Uthman Ibn Affan's standardization of the Quran? To",
+      "options": [
+        "ensure uniformity and consistency across the Muslim community",
+        "allow for variations and regional differences in the text",
+        "introduce new verses into the Quran",
+        "adhere to purely an administrative decision"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Caliph Uthman produced a standardized master copy of the Quran to eliminate dialectal variations in recitation across the expanding Islamic empire[cite: 70, 72].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 15,
+      "questionText": "Nancy was excited when her grandmother told her she would undergo a ceremony that will mark her transition to adulthood. Which of the following ceremonies is Nancy expected to undergo?",
+      "options": [
+        "Confirmation",
+        "Baptism",
+        "Marriage",
+        "Puberty"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Puberty rites formally usher adolescents into adulthood within traditional societies[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 16,
+      "questionText": "In a religion class, the teacher emphasized one of the attributes of Prophet Muhammad (SAW) as Al-Amin. The class was tasked to identify the significance of this attribute and its relevance to the Prophet's character and leadership. Which of the following will be the best response from the students? His",
+      "options": [
+        "exceptional wealth",
+        "bravery in battle",
+        "honesty and trustworthiness",
+        "knowledge of Islamic scripture"
+      ],
+      "correctAnswer": "C",
+      "explanation": "The title Al-Amin means 'The Trustworthy' or 'The Honest', which was bestowed upon Prophet Muhammad (SAW) even before his prophethood[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 17,
+      "questionText": "Which of the following is considered one of the primary benefits of effective time management?",
+      "options": [
+        "Improved physical fitness and health",
+        "Enhanced creativity and innovation",
+        "Increased productivity and efficiency",
+        "Higher levels of social interactions"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Properly organizing and planning one's time maximizes focus, reducing wasted effort and boosting output efficiency[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 18,
+      "questionText": "What does the creation story in the Bible teaches about how humans are unique and different from other creatures? They",
+      "options": [
+        "have power over animals.",
+        "have the ability to sin.",
+        "were created in God's image.",
+        "were created on the last day."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Genesis teaches that human beings alone were created in the image and likeness of God (Imago Dei), giving them unique spiritual dignity[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 19,
+      "questionText": "Which of the following characteristics is least typical of religious songs?",
+      "options": [
+        "Melodic complexity",
+        "Devotional lyrics",
+        "Spiritual themes",
+        "Reflective moods"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Religious songs prioritize devotional content and spiritual reflection over intricate or complex musical structures[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 20,
+      "questionText": "As the newly appointed director of a multicultural community which is a home to people from various religious backgrounds, there has been minor but increasing tensions among the groups due to religious differences. Which of these approaches would be the most effective in achieving your goal of fostering peaceful co-existence among community members?",
+      "options": [
+        "Establishing an interfaith council to facilitate dialogue and address common issues",
+        "Building places of worship for each religious group",
+        "Organizing separate cultural events for each group to celebrate their traditions.",
+        "Implementing strict policies to penalize any behaviour of intolerance"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interfaith councils create structured platforms for continuous communication, mutual understanding, and conflict resolution[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 21,
+      "questionText": "A group of Muslim travellers needed to pray but could not find water for ablution. What alternative practice would you recommend to purify them for prayers?",
+      "options": [
+        "Nikah",
+        "Janazah",
+        "Tayamum",
+        "Wudu"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Tayamum is the dry purification ritual using clean sand or dust performed when water is unavailable for Wudu[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 22,
+      "questionText": "Khadijah's contributions to the life of Prophet Muhammad (SAW) and the early development of Islam were significant because they",
+      "options": [
+        "highlighted her skills as a military strategist and leader.",
+        "demonstrated the importance of women in Islamic societies.",
+        "provided foundation for spiritual and financial support.",
+        "showcased her wealth and social status."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Khadijah comforted the Prophet during early revelations and used her wealth to support the emerging Muslim community[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 23,
+      "questionText": "A local mosque has been vandalized through offensive writings and the Muslim community is feeling targeted and fearful. Tensions between religious groups are rising with some individuals expressing opposition to the construction of a new mosque. What is the most likely reason for the religious intolerance and vandalism?",
+      "options": [
+        "Fear of cultural and religious diversity",
+        "Desire for political power and control",
+        "Lack of economic opportunities and resources.",
+        "Lack of religious and political leaders in the community"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Religious intolerance frequently stems from fear, ignorance, and prejudice regarding unfamiliar faiths and diverse cultures[cite: 70, 73].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 24,
+      "questionText": "Which of the following moral teachings are common to the three major religions in Ghana?\nI Compassion and charity towards the needy,\nII Honesty and truthfulness in all dealings,\nIII Protection of the environment and natural resources,\nIV Respect for human life and dignity.",
+      "options": [
+        "I, II and IV",
+        "I, II and III",
+        "I, III and IV",
+        "I, II, III and IV"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Christianity, Islam, and African Traditional Religion all advocate charity, truthfulness, environmental care, and respect for human life[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 25,
+      "questionText": "What would be considered the most appropriate and considerate appearance to an official event?",
+      "options": [
+        "Showing out in a casual workout attire",
+        "Formal and moderately attired",
+        "Wearing ripped jeans, t-shirt and flip flops",
+        "Wearing bright attention seeking accessories"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Dressing formally and modestly demonstrates respect for the hosts and aligns with professional etiquette[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 26,
+      "questionText": "Why is it important for a community to reward volunteers for the preservation of the environment? Because",
+      "options": [
+        "it is our duty to clean the environment",
+        "appreciating them will encourage others",
+        "there is no money to pay for the cleaning service",
+        "people need to be hero worshipped"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Public recognition and rewards motivate existing volunteers and inspire other citizens to participate in civic duties[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 27,
+      "questionText": "Ali and Fatima, devoted Muslims, are preparing for their marriage ceremony. As they plan for the event, they reflected on the significance of various Islamic rites and traditions associated with marriage. Which rite holds the most significance to the would-be couple in Islamic marriage?",
+      "options": [
+        "Istikhara",
+        "Aqd",
+        "Nikah",
+        "Walima"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Nikah is the formal Islamic marriage contract that legalizes the union between husband and wife[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 28,
+      "questionText": "What is the primary purpose of naming ceremonies in many African societies? To",
+      "options": [
+        "introduce the child to the moral codes of the society",
+        "dedicate the child to the gods",
+        "introduce the child to the community and give it identity",
+        "protect the child against evil spirits"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Naming ceremonies welcome newborns into the extended family and community, bestowing a formal name and identity[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 29,
+      "questionText": "What moral value is Yaa Asantewaa's leadership and actions most likely to inspire in others?",
+      "options": [
+        "Diplomacy and international relations",
+        "Accountability and transparency",
+        "Generosity and human relations",
+        "Women leadership and courage"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Yaa Asantewaa's bravery in leading the 1900 Ashanti uprising against British colonial rule inspires female empowerment, boldness, and patriotism[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 30,
+      "questionText": "Anything that is legally accepted for the exchange of goods and services is termed",
+      "options": [
+        "money.",
+        "income.",
+        "trade.",
+        "wealth."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Money serves as an officially recognized medium of exchange for purchasing goods and settling debts[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 31,
+      "questionText": "What is the main reason for which individuals in the society should practice obedience to authority? To",
+      "options": [
+        "challenge and question established power structure",
+        "avoid punishment and consequences",
+        "maintain social order and stability",
+        "prioritize personal freedom and autonomy"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Obeying constituted authority prevents lawlessness and guarantees peace, security, and social harmony[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 32,
+      "questionText": "Which of the following is one key benefit of entrepreneurship that distinguishes it from traditional employment?",
+      "options": [
+        "Increased stress",
+        "Higher income",
+        "Opportunity for innovation",
+        "Risk of business failure"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Entrepreneurs enjoy the creative freedom to innovate, create new products, and implement novel business models[cite: 70, 74].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 33,
+      "questionText": "Which among the following attitudes can help foster positive relationship within the family system?",
+      "options": [
+        "Indifference",
+        "Blame shifting",
+        "Open communication",
+        "Selfishness"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Transparent and honest communication resolves misunderstandings and builds trust among family members[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 34,
+      "questionText": "Which ritual most reflects the core value and cultural significance of Eid-ul-adha to Muslims?",
+      "options": [
+        "Gathering with family and community for a feast",
+        "Exchanging gifts and making charitable donations",
+        "Performing the animal based charity",
+        "Sacrificing a livestock animal like cow, goat, ram etc"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Sacrificing an animal (Qurbani) symbolizes Prophet Ibrahim's obedience to God and forms the core ritual of Eid-ul-Adha[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 35,
+      "questionText": "The Owusu family resides in a household where grandparents, parents and children live together and have common arrangements for food and shelter. They also share responsibilities and experiences. What will be an advantage of this situation to the Owusu family?",
+      "options": [
+        "Effective socialization",
+        "Decreased family cohesion",
+        "Greater independence",
+        "Limited interaction"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Multigenerational households enhance moral training, wisdom sharing, and effective socialization for younger members[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 36,
+      "questionText": "What is the most effective way of reducing bribery and corruption among workers?",
+      "options": [
+        "Implementing strict penalties for those found engaging in the act",
+        "Ensuring that each worker belongs to a union",
+        "Ignoring the issue of bribery and focussing on productivity",
+        "Increasing salaries to make bribery less appealing."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Strict legal penalties and consistent enforcement act as strong deterrents against corrupt practices[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 37,
+      "questionText": "Maria, a marketing executive, has been working long hours for several months. She feels stressed and lacks creativity. A friend suggested she takes a vacation. She adhered to the advice and returned from her vacation feeling refreshed. Which of the following benefits of leisure is most efficient in Maria's case?",
+      "options": [
+        "Improved physical health and well being",
+        "Enhanced social relationship and connections",
+        "Increased productivity and creativity",
+        "Increased opportunities for personal growth"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Rest and leisure relieve mental fatigue, renewing cognitive focus, creative problem-solving, and work productivity[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 38,
+      "questionText": "A friend sought your advice on how to mend a broken relationship. What would you recommend as the initial step for reconciliation?",
+      "options": [
+        "Realization and acceptance of fault",
+        "Confession and asking for pardon",
+        "Resolving never to repeat the offence",
+        "Showing genuine remorse for the act"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Reconciliation begins when the offending party personally realizes and admits their fault before apologizing[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 39,
+      "questionText": "Which of the following events made the 12th birthday of Prophet Muhammad (SAW) memorable? The",
+      "options": [
+        "battle of Badr",
+        "construction of Kaaba in Mecca",
+        "migration of the Prophet Muhammad (SAW) from Madinah to Mecca",
+        "revelation of the Quran to Prophet Muhammad (SAW)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Prophet Muhammad (SAW) received the first revelation of the Quran during the month of Rabi' al-Awwal (celebrated on the 12th day by many Muslims)[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": 40,
+      "questionText": "Which of these drugs is considered highly addictive and commonly abused?",
+      "options": [
+        "Heroin",
+        "Caffeine",
+        "Ibuprofen",
+        "Paracetamol"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Heroin is an illegal opioid known for severe physical addiction, high abuse potential, and destructive health effects[cite: 70, 75].",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    }
+  ]
+
+  

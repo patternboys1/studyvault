@@ -1,18 +1,28 @@
 import { onRequest } from "firebase-functions/v2/https";
+import { onDocumentCreated, onDocumentWritten } from "firebase-functions/v2/firestore";
+import { onSchedule } from "firebase-functions/v2/scheduler";
+import { onInit } from "firebase-functions/v2/core";
 
 import { defineSecret } from "firebase-functions/params";
 
-import { getApp, initializeApp } from "firebase-admin/app";
-import { getAuth } from "firebase-admin/auth";
-import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
-import { getStorage } from "firebase-admin/storage";
+let app;
+let auth;
+let db;
+let FieldValue;
+let Timestamp;
 
-import { GoogleGenAI } from "@google/genai";
-
-initializeApp();
-const app = getApp();
-const auth = getAuth(app);
-const db = getFirestore(app);
+onInit(async () => {
+  const [appSdk, authSdk, firestoreSdk] = await Promise.all([
+    import("firebase-admin/app"),
+    import("firebase-admin/auth"),
+    import("firebase-admin/firestore"),
+  ]);
+  appSdk.initializeApp();
+  app = appSdk.getApp();
+  auth = authSdk.getAuth(app);
+  db = firestoreSdk.getFirestore(app);
+  ({ FieldValue, Timestamp } = firestoreSdk);
+});
 
 const paystackSecretKey = defineSecret("PAYSTACK_SECRET_KEY");
 
@@ -41,6 +51,38 @@ const YEARLY_PREMIUM_MS = 365 * 24 * 60 * 60 * 1000;
 const FREE_MOCKS_PER_MONTH = 3;
 const PARENT_EXPORTS_PER_MONTH = 3;
 const FREE_PAPER_YEARS = new Set(["2020", "2021"]);
+const NOTIFICATION_CATEGORIES = new Set(["mocks", "weekly", "questions", "parent"]);
+
+const getNotificationChannel = (settings, channel, category) => {
+  const value = settings?.[channel]?.[category];
+  if (typeof value === "boolean") return value;
+  // Existing accounts stored one boolean per category. Preserve it as in-app opt-in.
+  return channel === "inApp" && typeof settings?.[category] === "boolean"
+    ? settings[category]
+    : false;
+};
+
+const createUserNotification = async (userId, notification) => {
+  if (!NOTIFICATION_CATEGORIES.has(notification.category)) return;
+  const userRef = db.collection("users").doc(userId);
+  const userSnap = await userRef.get();
+  if (!userSnap.exists) return;
+  const settings = userSnap.data()?.notificationSettings || {};
+  const inAppEnabled = getNotificationChannel(settings, "inApp", notification.category);
+  if (!inAppEnabled) return;
+  const notificationRef = userRef.collection("notifications").doc(notification.id);
+  await notificationRef.create({
+    category: notification.category,
+    title: notification.title,
+    message: notification.message,
+    href: notification.href || "/dashboard",
+    visibleInApp: inAppEnabled,
+    read: false,
+    createdAt: FieldValue.serverTimestamp(),
+  }).catch((error) => {
+    if (error.code !== 6 && error.code !== "already-exists") throw error;
+  });
+};
 
 const isPremiumActive = (userData, now = Date.now()) => {
   const expiresAt = userData?.premiumExpiresAt?.toDate?.()?.getTime?.();
@@ -103,7 +145,8 @@ const getSignedImageUrl = async (value) => {
   const configuredBucket = app.options.storageBucket;
   if (configuredBucket && match[1] !== configuredBucket) return null;
 
-  const file = getStorage().bucket(match[1]).file(match[2]);
+  const { getStorage } = await import("firebase-admin/storage");
+  const file = getStorage(app).bucket(match[1]).file(match[2]);
   try {
     const [url] = await file.getSignedUrl({
       action: "read",
@@ -380,6 +423,120 @@ export const verifyPaystackPayment = onRequest(
         .status(500)
         .json({ error: "Unable to verify Paystack payment." });
     }
+  },
+);
+
+const publishMockCompletionNotifications = async (userId, attempt, id) => {
+  const subject = attempt.subjectName || "Mock exam";
+  const scoreText = Number.isFinite(Number(attempt.score)) ? ` You scored ${Number(attempt.score)}%.` : "";
+  await createUserNotification(userId, {
+    id: `mock-${id}`,
+    category: "mocks",
+    title: "Mock exam complete",
+    message: `${subject} ${attempt.year || ""} is saved.${scoreText}`,
+    href: "/dashboard/performance",
+  });
+
+  const userSnap = await db.collection("users").doc(userId).get();
+  if (userSnap.exists) await createUserNotification(userId, {
+    id: `parent-report-${id}`,
+    category: "parent",
+    title: "Your parent report is ready",
+    message: `${subject} ${attempt.year || ""} mock exam is complete. You can review and share the report from your Reports page.${scoreText}`,
+    href: "/dashboard/reports",
+  });
+};
+
+export const notifyCompletedObjectiveMock = onDocumentCreated(
+  "users/{userId}/mockAttempts/{attemptId}",
+  async (event) => publishMockCompletionNotifications(
+    event.params.userId,
+    event.data?.data() || {},
+    event.params.attemptId,
+  ),
+);
+
+export const notifyCompletedTheoryMock = onDocumentCreated(
+  "users/{userId}/mockTheoryAttempts/{attemptId}",
+  async (event) => publishMockCompletionNotifications(
+    event.params.userId,
+    event.data?.data() || {},
+    event.params.attemptId,
+  ),
+);
+
+export const notifyNewPublishedPaper = onDocumentWritten(
+  "papers/{paperId}",
+  async (event) => {
+    const paper = event.data?.after.data();
+    const wasPublished = event.data?.before.data()?.isPublished === true;
+    if (!paper || paper.isPublished !== true || wasPublished) return;
+    const users = await db.collection("users").get();
+    await Promise.all(users.docs.map((userSnap) => createUserNotification(userSnap.id, {
+      id: `paper-${event.params.paperId}`,
+      category: "questions",
+      title: "New past questions are available",
+      message: `${paper.subjectName || "A subject"} ${paper.year || ""} has been added to the library.`,
+      href: "/dashboard/past-questions",
+    })));
+  },
+);
+
+const getDateKeyInAccra = (date) => new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Africa/Accra", year: "numeric", month: "2-digit", day: "2-digit",
+}).format(date);
+const getWeekdayInAccra = (date) => new Intl.DateTimeFormat("en-US", {
+  timeZone: "Africa/Accra", weekday: "short",
+}).format(date);
+const getHourMinuteInAccra = (date) => new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Africa/Accra", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+}).format(date);
+
+export const sendStudyNotificationSchedules = onSchedule(
+  { schedule: "0 * * * *", timeZone: "Africa/Accra" },
+  async () => {
+    const now = new Date();
+    const todayKey = getDateKeyInAccra(now);
+    const weekday = getWeekdayInAccra(now);
+    const currentTime = getHourMinuteInAccra(now);
+    const users = await db.collection("users").get();
+    await Promise.all(users.docs.map(async (userSnap) => {
+      const settings = userSnap.data().notificationSettings || {};
+      const schedule = settings.schedule || {};
+      const userRef = userSnap.ref;
+      if (getNotificationChannel(settings, "inApp", "mocks")
+        && weekday === (schedule.reminderDay || "Sun") && currentTime === (schedule.reminderTime || "17:00")) {
+        const dayStart = new Date(`${todayKey}T00:00:00Z`);
+        const [recentMocks, recentTheoryMocks] = await Promise.all([
+          userRef.collection("mockAttempts").where("completedAt", ">=", Timestamp.fromDate(dayStart)).limit(1).get(),
+          userRef.collection("mockTheoryAttempts").where("completedAt", ">=", Timestamp.fromDate(dayStart)).limit(1).get(),
+        ]);
+        if (recentMocks.empty && recentTheoryMocks.empty) await createUserNotification(userSnap.id, {
+          id: `mock-reminder-${todayKey}`,
+          category: "mocks",
+          title: "Your weekly mock exam reminder",
+          message: "Set aside a little time for a timed practice paper this week.",
+          href: "/dashboard/mock-exams",
+        });
+      }
+      if (weekday === "Mon" && currentTime === "08:00"
+        && getNotificationChannel(settings, "inApp", "weekly")) {
+        const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const attempts = await userRef.collection("mockAttempts")
+          .where("completedAt", ">=", Timestamp.fromDate(weekAgo)).get();
+        if (!attempts.empty) {
+          const scores = attempts.docs.map((attempt) => Number(attempt.data().score) || 0);
+          const average = Math.round(scores.reduce((total, score) => total + score, 0) / scores.length);
+          await createUserNotification(userSnap.id, {
+            id: `weekly-summary-${todayKey}`,
+            category: "weekly",
+            title: "Your weekly study summary",
+            message: `You completed ${scores.length} mock exam${scores.length === 1 ? "" : "s"} this week with an average score of ${average}%.`,
+            href: "/dashboard/performance",
+          });
+        }
+      }
+    }));
   },
 );
 
@@ -978,6 +1135,7 @@ export const recommendations = onRequest(
         });
       }
 
+      const { GoogleGenAI } = await import("@google/genai");
       const gemini = new GoogleGenAI({ apiKey });
 
       const context =
@@ -1203,6 +1361,7 @@ export const aiChat = onRequest(
         "Tutor:",
       ].join("\n\n");
 
+      const { GoogleGenAI } = await import("@google/genai");
       const gemini = new GoogleGenAI({ apiKey });
       const result = await gemini.interactions.create({
         model: AI_CHAT_MODEL,

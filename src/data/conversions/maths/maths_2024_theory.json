@@ -1,0 +1,177 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": "A fair die and a fair coin are thrown together once. Write down the set of all possible outcomes.",
+    "modelAnswer": "S = {(H, 1), (H, 2), (H, 3), (H, 4), (H, 5), (H, 6), (T, 1), (T, 2), (T, 3), (T, 4), (T, 5), (T, 6)}[cite: 143]",
+    "topic": "Mathematics (Probability)",
+    "hasImage": false
+  },
+  {
+    "number": "1.a.ii",
+    "questionText": "Find the probability of obtaining a prime number and a tail.",
+    "modelAnswer": "Favourable outcomes E = {(T, 2), (T, 3), (T, 5)}[cite: 143]. P(E) = 3 / 12 = 1 / 4[cite: 143].",
+    "topic": "Mathematics (Probability)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "The map of a field is drawn to a scale of 1: 100. If the width and area of the field on the map are 8 cm and 88 cm² respectively, find in m² the area of the actual field.",
+    "modelAnswer": "Scale 1:100 means 1 cm = 1 m. Actual width = 8 m. Actual length = 11 m. Actual area = 11 m × 8 m = 88 m²[cite: 143].",
+    "topic": "Mathematics (Scale Drawing & Mensuration)",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "Copy and complete the 3×3 magic square such that the sum of the numbers in each row, column and diagonal is equal to 21.",
+    "modelAnswer": "Row 1: 10, 3, 8\nRow 2: 7, 5, 9\nRow 3: 11, 6, 4[cite: 144, 153]",
+    "topic": "Mathematics (Number Puzzles / Magic Square)",
+    "hasImage": false,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/maths-2025/maths_1cq.png",
+    "answerImageUrl":"gs://bece-prep.firebasestorage.app/maths-2025/maths_1cans.png"
+  },
+  {
+    "number": "2.a",
+    "questionText": "Given the vectors p = (m + 3, 2 - n) and q = (3m - 1, n - 8) and p = q, find the values of m and n.",
+    "modelAnswer": "m + 3 = 3m - 1 ⇒ 2m = 4 ⇒ m = 2[cite: 146]. 2 - n = n - 8 ⇒ 2n = 10 ⇒ n = 5[cite: 146].",
+    "topic": "Mathematics (Vectors)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b.i",
+    "questionText": "A man shared an amount of money between his children Baaba and William in the ratio 6:5. Baaba received GH¢1,200.00. Find the total amount shared.",
+    "modelAnswer": "Total parts = 6 + 5 = 11[cite: 146]. (6/11)y = 1200 ⇒ y = (11 × 1200) / 6 = GH¢2,200.00[cite: 146].",
+    "topic": "Mathematics (Ratio & Proportion)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b.ii",
+    "questionText": "William invested his share in an account at the rate of 20% simple interest per annum for 2 years. Find the total amount in his account at the end of the 2 years.",
+    "modelAnswer": "William's share = GH¢2,200 - GH¢1,200 = GH¢1,000[cite: 147]. Interest I = (1000 × 20 × 2) / 100 = GH¢400[cite: 147]. Total amount = GH¢1,000 + GH¢400 = GH¢1,400.00[cite: 147].",
+    "topic": "Mathematics (Simple Interest)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "Simplify: 3√50 + 2√45 - √2 + √5.",
+    "modelAnswer": "= 3(5√2) + 2(3√5) - √2 + √5 = 15√2 + 6√5 - √2 + √5 = 14√2 + 7√5[cite: 148].",
+    "topic": "Mathematics (Surds)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "A wire of length 38 cm is bent into the shape of a rectangle whose length is 7 cm more than the width. Find the area of the rectangle.",
+    "modelAnswer": "Let width = w, length = w + 7[cite: 148]. 2(w + 7 + w) = 38 ⇒ 4w + 14 = 38 ⇒ 4w = 24 ⇒ w = 6 cm[cite: 148]. Length = 13 cm[cite: 148]. Area = 6 × 13 = 78 cm²[cite: 148].",
+    "topic": "Mathematics (Algebra & Mensuration)",
+    "hasImage": false
+  },
+  {
+    "number": "3.c",
+    "questionText": "If 15% of the length of a rope is 720 metres, find half of the length of the rope.",
+    "modelAnswer": "Total length = 720 / 0.15 = 4800 m. Half of the length = 4800 / 2 = 2,400 metres[cite: 148].",
+    "topic": "Mathematics (Percentages)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "Using a ruler and a pair of compasses only, construct ΔPQR such that angle PQR = 90°, |PQ| = 5.5 cm and |QR| = 8 cm.",
+    "modelAnswer": "Construct line segment PQ = 5.5 cm, construct a 90° angle at Q, and mark arc QR = 8 cm to locate R. Complete triangle PQR[cite: 149].",
+    "topic": "Mathematics (Construction)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_4aTocans.png"
+  },
+  {
+    "number": "4.b",
+    "questionText": "Construct a perpendicular to PR from Q.",
+    "modelAnswer": "Construct a perpendicular line from vertex Q to meet line PR[cite: 149].",
+    "topic": "Mathematics (Construction)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_4aTocans.png"
+  },
+  {
+    "number": "4.c",
+    "questionText": "Locate M, the intersection of the perpendicular and PR.",
+    "modelAnswer": "Point M is marked at the intersection point of the perpendicular line from Q and line PR[cite: 149].",
+    "topic": "Mathematics (Construction)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_4aTocans.png"
+  },
+  {
+    "number": "4.d.i",
+    "questionText": "Measure |MR|.",
+    "modelAnswer": "|MR| = 6.6 ± 0.1 cm[cite: 149].",
+    "topic": "Mathematics (Geometry & Measurement)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_4aTocans.png"
+  },
+  {
+    "number": "4.d.ii",
+    "questionText": "Measure |QM|.",
+    "modelAnswer": "|QM| = 4.6 ± 0.1 cm[cite: 149].",
+    "topic": "Mathematics (Geometry & Measurement)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/math-2024/figure_triangle.png"
+  },
+  {
+    "number": "4.e",
+    "questionText": "Calculate, correct to the nearest whole number, the area of triangle QMR.",
+    "modelAnswer": "Area = 1/2 × |MR| × |MQ| = 1/2 × 6.6 × 4.6 = 15.18 cm² ≅ 15 cm²[cite: 149].",
+    "topic": "Mathematics (Mensuration)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/math-2024/figure_triangle.png"
+  },
+  {
+    "number": "5.a.i",
+    "questionText": "In the diagram, ΔPQR is an enlargement of ΔPST. |PS| = 4 cm, |QS| = 2 cm and |QR| = 10 cm. Find the length of ST.",
+    "modelAnswer": "|PQ| = 4 + 2 = 6 cm. By similarity, |ST| / |QR| = |SP| / |PQ| ⇒ |ST| / 10 = 4 / 6 ⇒ |ST| = 20 / 3 = 6.67 cm (or 6⅔ cm)[cite: 150].",
+    "topic": "Mathematics (Similar Triangles)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_5aq.jpg"
+  },
+  {
+    "number": "5.a.ii",
+    "questionText": "If |PQ| = |PR|, find the area of ΔPQR.",
+    "modelAnswer": "Height h² + 5² = 6² ⇒ h² = 36 - 25 = 11 ⇒ h = √11 cm[cite: 150]. Area = 1/2 × 10 × √11 = 5√11 cm²[cite: 150].",
+    "topic": "Mathematics (Geometry & Mensuration)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_5aq.jpg"
+  },
+  {
+    "number": "5.b",
+    "questionText": "The total area of a school compound is 900½ m². The areas of the Administration and Classroom block, Library and School Park are 300¼ m², 200½ m², and 120⅛ m² respectively. Find the area covered by Roads and Walkways altogether.",
+    "modelAnswer": "Total built/park area = 300¼ + 200½ + 120⅛ = 620⅞ m²[cite: 150, 151]. Area of roads and walkways = 900½ - 620⅞ = 279⅝ m²[cite: 151].",
+    "topic": "Mathematics (Fractions)",
+    "hasImage": false
+  },
+  {
+    "number": "6.a",
+    "questionText": "Copy and complete the table for the relation F = (9/5)C + 32 where F and C are degrees Fahrenheit and degrees Celsius respectively.",
+    "modelAnswer": "For C = 0: F = 32\nFor C = 5: F = 41\nFor C = 10: F = 50\nFor C = 15: F = 59\nFor C = 20: F = 68\nFor C = 25: F = 77\nFor C = 30: F = 86[cite: 151, 152]",
+    "topic": "Mathematics (Linear Relations & Tables)",
+    "hasImage": false,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/maths-2025/maths_6aQ.png",
+    "answerImageUrl":"gs://bece-prep.firebasestorage.app/maths-2025/maths_6aans.png"
+  },
+  {
+    "number": "6.b",
+    "questionText": "Using a scale of 2 cm to 10 units on the vertical axis (°F) and 2 cm to 5 units on the horizontal axis (°C), draw a linear graph for the relation.",
+    "modelAnswer": "A straight-line graph plotted correctly with the given coordinates and scales[cite: 151, 152].",
+    "topic": "Mathematics (Graphical Analysis)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_6bans.png"
+  },
+  {
+    "number": "6.c",
+    "questionText": "Use the graph to find the temperature in degrees Celsius when F = 55 degrees.",
+    "modelAnswer": "C = 12.75 ± 0.5°C (approx 12.5°C to 13°C)[cite: 151].",
+    "topic": "Mathematics (Graphical Analysis)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/math-2024/temperature_graph.png"
+  },
+  {
+    "number": "6.d",
+    "questionText": "Interpret the slope of the relation.",
+    "modelAnswer": "The slope is 9/5 or 1.8, which means for every 1°C increase in temperature, the Fahrenheit temperature changes by 1.8°F (or a 5 unit change in °C corresponds to a 9 unit change in °F)[cite: 151].",
+    "topic": "Mathematics (Linear Functions & Slope)",
+    "hasImage": false
+  }
+]

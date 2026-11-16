@@ -1,0 +1,79 @@
+ [
+    {
+      "number": "1.a",
+      "questionText": "FORMULAIRE: Votre nom",
+      "modelAnswer": "Nom de famille et prénom (e.g., Mensah Kofi)",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.b",
+      "questionText": "FORMULAIRE: Date (en lettres)",
+      "modelAnswer": "Vendredi 12 juillet 2024",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c",
+      "questionText": "FORMULAIRE: Moment du vol",
+      "modelAnswer": "Le soir / La nuit / Entre 2 heures et 3 heures du matin",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.d",
+      "questionText": "FORMULAIRE: Lieu du vol",
+      "modelAnswer": "Dans notre maison / Le salon / Kumasi",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.e",
+      "questionText": "FORMULAIRE: Objet(s) volé(s)",
+      "modelAnswer": "Un téléphone portable et de l'argent",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.f",
+      "questionText": "FORMULAIRE: Taille du voleur",
+      "modelAnswer": "Grand et mince",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.g",
+      "questionText": "FORMULAIRE: Teint du voleur",
+      "modelAnswer": "Noir / Teint clair",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.h",
+      "questionText": "FORMULAIRE: Habillement du voleur",
+      "modelAnswer": "Un T-shirt noir et un pantalon jeans avec des lunettes noires",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.i",
+      "questionText": "FORMULAIRE: Numéro de téléphone",
+      "modelAnswer": "024 123 4567",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "1.j",
+      "questionText": "FORMULAIRE: Signature et date",
+      "modelAnswer": "Signature / 12 juillet 2024",
+      "topic": "French (Form Filling)",
+      "hasImage": false
+    },
+    {
+      "number": "2",
+      "questionText": "COMPOSITION: Vous venez de terminer votre BECE. Votre oncle qui habite en France vous fait un cadeau de mille cedis pour organiser une fête. Dans un message WhatsApp, dites-lui comment vous allez utiliser l'argent. (50 à 60 mots)",
+      "modelAnswer": "Cher Oncle,\n\nMerci beaucoup pour le cadeau de 1000 cedis! Pour fêter la fin de mon BECE, je vais organiser une petite fête à la maison avec mes amis. J'achèterai des boissons, de la nourriture et un gâteau. Nous allons écouter de la musique et danser. Merci encore pour ta générosité!\n\nTon neveu/Ta nièce.",
+      "topic": "French (Composition / Essay)",
+      "hasImage": false
+    }
+  ]

@@ -7,7 +7,7 @@ const DashboardLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden font-sans">
+    <div className="dashboard-shell flex h-screen bg-gray-50 overflow-hidden font-sans">
       {/* Sidebar with Mobile State */}
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 

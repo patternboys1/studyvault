@@ -1,0 +1,562 @@
+ [
+    {
+      "number": 1,
+      "questionText": "Maman donne combien à Ali?",
+      "options": [
+        "13 cedis",
+        "25 cedis",
+        "30 cedis",
+        "100 cedis"
+      ],
+      "correctAnswer": "D",
+      "explanation": "In the text, Ali confirms he received 'cent cedis' (100 cedis) from his mother[cite: 75, 76].",
+      "topic": "French (Comprehension - Text 1)",
+      "hasImage": false
+    },
+    {
+      "number": 2,
+      "questionText": "Qui vend du poisson fumé ?",
+      "options": [
+        "Ali",
+        "Maman",
+        "Maman Titi",
+        "Tantie Adzo"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Maman asks Ali to buy smoked fish and meat from Tantie Adzo ('du poisson fumé et un kilo de viande chez Tantie Adzo')[cite: 76].",
+      "topic": "French (Comprehension - Text 1)",
+      "hasImage": false
+    },
+    {
+      "number": 3,
+      "questionText": "Ali va dépenser ... chez Tantie Adzo.",
+      "options": [
+        "25 cedis",
+        "30 cedis",
+        "50 cedis",
+        "55 cedis"
+      ],
+      "correctAnswer": "D",
+      "explanation": "At Tantie Adzo's, Ali spends 25 cedis on meat and 30 cedis on fish, totaling 55 cedis[cite: 76].",
+      "topic": "French (Comprehension - Text 1)",
+      "hasImage": false
+    },
+    {
+      "number": 4,
+      "questionText": "Combien coûte une tablette de savon?",
+      "options": [
+        "3.50 cedis",
+        "7.00 cedis",
+        "14.00 cedis",
+        "25.50 cedis"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Two bars of soap cost 7.00 cedis total ('sept cedis pour le savon'), which means one bar costs 3.50 cedis[cite: 76].",
+      "topic": "French (Comprehension - Text 1)",
+      "hasImage": false
+    },
+    {
+      "number": 5,
+      "questionText": "Il reste 13 cedis pour .....",
+      "options": [
+        "Ali",
+        "la poche",
+        "le bus",
+        "Maman"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Maman states that the remaining 13 cedis is for transport ('C'est pour le transport')[cite: 76].",
+      "topic": "French (Comprehension - Text 1)",
+      "hasImage": false
+    },
+    {
+      "number": 6,
+      "questionText": "Les deux personnes sont en train de ....",
+      "options": [
+        "faire du sport",
+        "jouer au tennis",
+        "parler du sport",
+        "parler du jogging"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Atangi and Adwoa are discussing their hobbies and exercise routines ('Deux amis discutent de leurs passe-temps')[cite: 77].",
+      "topic": "French (Comprehension - Text 2)",
+      "hasImage": false
+    },
+    {
+      "number": 7,
+      "questionText": "Adwoa reste en bonne santé grâce ....",
+      "options": [
+        "au club",
+        "au cousin",
+        "au jogging",
+        "au sport"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Adwoa stays healthy by doing sports ('Qu'est-ce que tu fais pour être en bonne santé? - Du sport.')[cite: 77].",
+      "topic": "French (Comprehension - Text 2)",
+      "hasImage": false
+    },
+    {
+      "number": 8,
+      "questionText": "Atangi fait du sport ... fois par semaine.",
+      "options": [
+        "une",
+        "trois",
+        "six",
+        "sept"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Atangi does jogging every morning ('je fais du jogging chaque matin'), which equals 7 times a week[cite: 77].",
+      "topic": "French (Comprehension - Text 2)",
+      "hasImage": false
+    },
+    {
+      "number": 9,
+      "questionText": "Adwoa passe ... au club.",
+      "options": [
+        "une heure",
+        "deux heures et demie",
+        "dix-sept heures",
+        "dix neuf heures et demie"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Adwoa stays at the club from 17:00 to 19:30, which is 2 hours and 30 minutes ('de 17h à 19h30')[cite: 77].",
+      "topic": "French (Comprehension - Text 2)",
+      "hasImage": false
+    },
+    {
+      "number": 10,
+      "questionText": "Selon le texte, combien de personnes font du sport?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Four people are mentioned who play/do sports: Atangi, Adwoa, Kojo, and Aba[cite: 77].",
+      "topic": "French (Comprehension - Text 2)",
+      "hasImage": false
+    },
+    {
+      "number": 11,
+      "questionText": "Le marché de Makola a lieu",
+      "options": [
+        "les samedis",
+        "les dimanches",
+        "six jours de la semaine",
+        "sept jours de la semaine"
+      ],
+      "correctAnswer": "C",
+      "explanation": "The text states Makola market takes place every day except Sunday ('chaque jour sauf le dimanche'), which means 6 days a week[cite: 78].",
+      "topic": "French (Comprehension - Text 3)",
+      "hasImage": false
+    },
+    {
+      "number": 12,
+      "questionText": "Comment Monique et maman vont-elles au marché?",
+      "options": [
+        "Elles courent.",
+        "Elles marchent.",
+        "Elles prennent le bus.",
+        "Elles vont en voiture."
+      ],
+      "correctAnswer": "B",
+      "explanation": "The text mentions they arrive at the market on foot ('Nous arrivons au marché à pied')[cite: 78].",
+      "topic": "French (Comprehension - Text 3)",
+      "hasImage": false
+    },
+    {
+      "number": 13,
+      "questionText": "Arrivées au marché, Monique et Maman achètent",
+      "options": [
+        "de la sauce",
+        "des fruits",
+        "seulement des légumes",
+        "seulement du poisson"
+      ],
+      "correctAnswer": "B",
+      "explanation": "They buy vegetables, fish, meat, and also fruits for dessert ('Nous achetons aussi des fruits pour le dessert')[cite: 78].",
+      "topic": "French (Comprehension - Text 3)",
+      "hasImage": false
+    },
+    {
+      "number": 14,
+      "questionText": "Au marché, les deux femmes passent combien de temps?",
+      "options": [
+        "3 heures",
+        "4 heures",
+        "8 heures",
+        "11 heures"
+      ],
+      "correctAnswer": "A",
+      "explanation": "They arrive at 8:00 and leave at 11:00, spending 3 hours at the market[cite: 78].",
+      "topic": "French (Comprehension - Text 3)",
+      "hasImage": false
+    },
+    {
+      "number": 15,
+      "questionText": "Monique aime faire les courses avec Maman....",
+      "options": [
+        "parce qu'elles vont au marché les samedis",
+        "parce qu'elles vont au marché à pied",
+        "parce que Papa vient les chercher en voiture",
+        "parce que Maman lui donne des cadeaux"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Monique likes going because her mother always buys her treats/gifts like yogurt and doughnuts ('ma mère m'achète toujours du yaourt et des beignets')[cite: 78].",
+      "topic": "French (Comprehension - Text 3)",
+      "hasImage": false
+    },
+    {
+      "number": 16,
+      "questionText": "Où vont les apprenants?",
+      "options": [
+        "À la maison.",
+        "À l'école.",
+        "En excursion.",
+        "En vacances."
+      ],
+      "correctAnswer": "C",
+      "explanation": "The students are going on an excursion to visit Mount Afadza ('demain, nous allons visiter la montagne Afadza')[cite: 79].",
+      "topic": "French (Comprehension - Text 4)",
+      "hasImage": false
+    },
+    {
+      "number": 17,
+      "questionText": "À quelle heure les apprenants doivent-ils être prêts?",
+      "options": [
+        "Avant six heures.",
+        "Après six heures.",
+        "Avant six heures et demie.",
+        "Après six heures et demie."
+      ],
+      "correctAnswer": "A",
+      "explanation": "The teacher instructs them to be ready by 6:00 at the latest ('Soyez prêts au plus tard à 6 heures')[cite: 79].",
+      "topic": "French (Comprehension - Text 4)",
+      "hasImage": false
+    },
+    {
+      "number": 18,
+      "questionText": "Ce n'est pas permis de mettre les repas dans....",
+      "options": [
+        "les cartables",
+        "le sac",
+        "le bus",
+        "la poche"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Meals must be carried in bags and not in school bags ('dans vos sacs et non pas dans vos cartables')[cite: 79].",
+      "topic": "French (Comprehension - Text 4)",
+      "hasImage": false
+    },
+    {
+      "number": 19,
+      "questionText": "Les apprenants peuvent apporter leurs téléphones portables pour ....",
+      "options": [
+        "faire des appels",
+        "faire des photos",
+        "recevoir des appels",
+        "recevoir des photos"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Phones may be brought to take pictures ('pour prendre des images')[cite: 79].",
+      "topic": "French (Comprehension - Text 4)",
+      "hasImage": false
+    },
+    {
+      "number": 20,
+      "questionText": "Les apprenants doivent apporter des manteaux pour se protéger contre",
+      "options": [
+        "la hauteur",
+        "le temps",
+        "les accidents",
+        "les images"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Coats are needed because of the cold weather ('comme il fait froid là-bas')[cite: 79].",
+      "topic": "French (Comprehension - Text 4)",
+      "hasImage": false
+    },
+    {
+      "number": 21,
+      "questionText": "Vous avez le paludisme. Pour votre guérison rapide, prenez ce médicament trois ... par jour.",
+      "options": [
+        "fois",
+        "heures",
+        "parts",
+        "temps"
+      ],
+      "correctAnswer": "A",
+      "explanation": "'Trois fois par jour' means 'three times a day'[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 22,
+      "questionText": "J'ai un enfant à nourrir et d'autres choses à faire. Je n'ai pas ... de temps pour avoir cette conversation.",
+      "options": [
+        "assez",
+        "moins",
+        "peu",
+        "si"
+      ],
+      "correctAnswer": "A",
+      "explanation": "'Pas assez de temps' means 'not enough time'[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 23,
+      "questionText": "- Je cherche de l'eau pour me laver.\n- Attends un peu, Papa. Julie revient de la rivière avec un ... d'eau.",
+      "options": [
+        "saut",
+        "sceau",
+        "seau",
+        "sot"
+      ],
+      "correctAnswer": "C",
+      "explanation": "'Un seau d'eau' translates to 'a bucket of water'[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 24,
+      "questionText": "Pour éviter les maladies, il est conseillé de se laver les mains avec ... et de l'eau.",
+      "options": [
+        "du papier",
+        "un mouchoir",
+        "du savon",
+        "une serviette"
+      ],
+      "correctAnswer": "C",
+      "explanation": "'Du savon' (soap) is used with water to wash hands[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 25,
+      "questionText": "Mes chers amis, je vous présente Histro. Il a quarante-six ans. C'est ... célèbre.",
+      "options": [
+        "une femme",
+        "une fille",
+        "un garçon",
+        "un homme"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Histro is described using the pronoun 'Il' and age 46, making 'un homme' (a man) the correct noun[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 26,
+      "questionText": "Quand il est temps de rentrer chez eux, Jean dit au revoir à Marie et elle répond « .... »",
+      "options": [
+        "À Bientôt!",
+        "Bonjour!",
+        "Merci!",
+        "Pas de quoi!"
+      ],
+      "correctAnswer": "A",
+      "explanation": "'À Bientôt!' (See you soon!) is an appropriate response to 'Au revoir'[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 27,
+      "questionText": "Stefan ... d'Allemagne. Alors, il est allemand.",
+      "options": [
+        "arrive",
+        "descend",
+        "sort",
+        "vient"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Vient d'Allemagne' means 'comes from Germany'[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 28,
+      "questionText": "Pour gagner de l'argent, ma nièce ... des vêtements au marché.",
+      "options": [
+        "partage",
+        "porte",
+        "prend",
+        "vend"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Vend des vêtements' (sells clothes) fits the context of earning money[cite: 80].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 29,
+      "questionText": "Il est conseillé d'emmener les voleurs ... au lieu de les tuer pour respecter les droits de l'homme.",
+      "options": [
+        "au bureau",
+        "au commissariat",
+        "à la gare",
+        "à la maison"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Thieves should be taken to the police station ('au commissariat')[cite: 81].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 30,
+      "questionText": "Quand Edouard est libre, il aime aller ... pour voir des spectacles.",
+      "options": [
+        "à la banque",
+        "au cinéma",
+        "à l'hôpital",
+        "au théâtre"
+      ],
+      "correctAnswer": "D",
+      "explanation": "One goes to the theater ('au théâtre') to watch live shows/performances[cite: 81].",
+      "topic": "French (Grammar & Vocabulary)",
+      "hasImage": false
+    },
+    {
+      "number": 31,
+      "questionText": "Nos parents sont contents -31- tout...",
+      "options": [
+        "à",
+        "de",
+        "en",
+        "pour"
+      ],
+      "correctAnswer": "B",
+      "explanation": "The adjective 'content' takes the preposition 'de' ('content de quelque chose')[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 32,
+      "questionText": "...tout ce -32- nous faisons.",
+      "options": [
+        "dont",
+        "que",
+        "qui",
+        "où"
+      ],
+      "correctAnswer": "B",
+      "explanation": "'Que' is the direct object relative pronoun required before 'nous faisons'[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 33,
+      "questionText": "Papa n'est pas avare -33- d'autres pères.",
+      "options": [
+        "avec",
+        "ainsi",
+        "comme",
+        "pareil"
+      ],
+      "correctAnswer": "C",
+      "explanation": "'Comme' means 'like' or 'as' for comparison ('comme d'autres pères')[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 34,
+      "questionText": "-34- des livres.",
+      "options": [
+        "exemple",
+        "sans",
+        "selon",
+        "surtout"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Surtout' means 'especially' or 'above all'[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 35,
+      "questionText": "Le soir, -35- il rentre, il vient dans...",
+      "options": [
+        "dès",
+        "mais",
+        "pendant",
+        "quand"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Quand' means 'when' ('Quand il rentre' = when he returns)[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 36,
+      "questionText": "...il vient dans -36- chambres.",
+      "options": [
+        "leur",
+        "leurs",
+        "notre",
+        "nos"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Nos' is the possessive adjective matching 'our rooms' ('chambres' is plural)[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 37,
+      "questionText": "-37- s'il est fatigué, il écoute...",
+      "options": [
+        "Avant",
+        "Quand",
+        "Même",
+        "Pourtant"
+      ],
+      "correctAnswer": "C",
+      "explanation": "'Même s'il est fatigué' translates to 'Even if he is tired'[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 38,
+      "questionText": "...ce que nous voulons -38- dire.",
+      "options": [
+        "elle",
+        "la",
+        "le",
+        "lui"
+      ],
+      "correctAnswer": "D",
+      "explanation": "'Lui dire' means 'to tell him' (indirect object pronoun for a single person)[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 39,
+      "questionText": "Quelquefois, il aide maman à -39- le repas.",
+      "options": [
+        "prépare",
+        "préparé",
+        "préparer",
+        "prépares"
+      ],
+      "correctAnswer": "C",
+      "explanation": "After the preposition 'à', the verb remains in its infinitive form ('préparer')[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    },
+    {
+      "number": 40,
+      "questionText": "Quant -40- maman, elle nous enseigne la propreté...",
+      "options": [
+        "à",
+        "de",
+        "pour",
+        "selon"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The fixed prepositional phrase is 'Quant à' (As for)[cite: 81].",
+      "topic": "French (Cloze Passage)",
+      "hasImage": false
+    }
+  ]

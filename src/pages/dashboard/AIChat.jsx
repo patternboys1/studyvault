@@ -23,7 +23,9 @@ export default function AIChat() {
     if (!isPremium) return;
     getAIChatStatus()
       .then((status) => setRemainingToday(status.remainingToday))
-      .catch(() => setError("We couldn't load your daily message count. You can still send a question; your limit will be checked when you send."));
+      .catch(() => {
+        // Keep the standard daily allowance visible; the server checks the actual limit on send.
+      });
   }, [isPremium]);
 
   if (authLoading || !userProfile) {

@@ -1,0 +1,563 @@
+[
+  {
+    "number": 1,
+    "questionText": "Some school authorities use passwords on their school's Wi-Fi to prevent",
+    "options": [
+      "access to important information.",
+      "unauthorized access.",
+      "the use of pendrives.",
+      "data loss."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Passwords on Wi-Fi networks restrict access strictly to permitted users, preventing unauthorized access[cite: 112].",
+    "topic": "Computing (Network Security)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "In the construction and operation of a robot, the robot control system is required to",
+    "options": [
+      "regulate the robot's movement.",
+      "detect objects in the robot's environment.",
+      "supply electrical power to the robot.",
+      "make decisions based on artificial intelligence."
+    ],
+    "correctAnswer": "A",
+    "explanation": "The control system directs and regulates the robot's movements and operations[cite: 112].",
+    "topic": "Computing (Robotics)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "The device shown is used to (External portable hard drive)",
+    "options": [
+      "scan information.",
+      "store information.",
+      "print information.",
+      "process information."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The pictured external hard drive is a secondary storage device used to store digital information[cite: 101, 112].",
+    "topic": "Computing (Hardware & Storage Devices)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/computing_obj_3Q.png"
+  },
+  {
+    "number": 4,
+    "questionText": "A secretary is working on a document in Microsoft Word that contains the dollar sign. The tool to help the secretary to replace the dollar sign with the Ghana cedis sign is the",
+    "options": [
+      "shapes tool.",
+      "wordart tool.",
+      "symbol tool.",
+      "equation tool."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Special characters and currency symbols like the Ghana cedi sign (₵) are inserted using the symbol tool[cite: 112].",
+    "topic": "Computing (Word Processing Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "The feature in Word processing application that allows a user to bold, italicize or underline a selected text is found on the",
+    "options": [
+      "standard toolbar.",
+      "menu bar.",
+      "format toolbar.",
+      "title bar."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Text formatting features (bold, italicize, underline) are located on the formatting toolbar or Home tab ribbon[cite: 112].",
+    "topic": "Computing (Word Processing Formatting)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "In a computing class, the teacher delivered a lesson using a presentation in Microsoft PowerPoint application with transition effects. The purpose of the transition effects is to",
+    "options": [
+      "make the slides look colourful.",
+      "create a printable slide presentation.",
+      "add sound effects to the slides.",
+      "create a smooth flow between slides."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Slide transitions govern how the presentation moves smoothly from one slide to the next[cite: 112].",
+    "topic": "Computing (Presentation Software)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "To access the location to an event, one can either type the GPS address or scan the",
+    "options": [
+      "SMS code.",
+      "Bar code.",
+      "Pass code.",
+      "QR code."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Quick Response (QR) codes are frequently used to encode digital location data and URLs for easy scanning[cite: 112].",
+    "topic": "Computing (Digital Technologies)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "The use of scientific knowledge to create tools and techniques for solving problem is termed",
+    "options": [
+      "information.",
+      "intelligence.",
+      "technology.",
+      "computing."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Technology is defined as the application of scientific knowledge for practical purposes and problem-solving[cite: 112].",
+    "topic": "Computing (Basic Concepts)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "The National Information Technology Authority provides educational resources to schools by using",
+    "options": [
+      "web services.",
+      "print services.",
+      "mail services.",
+      "client services."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Educational resources and digital portals are distributed online via web services[cite: 112].",
+    "topic": "Computing (Internet & Web Services)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "In defining the logic of a program, conditional statements are used to",
+    "options": [
+      "declare variable.",
+      "make decisions.",
+      "write comments.",
+      "create loops."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Conditional statements (like IF-THEN-ELSE) allow programs to test conditions and make logical decisions[cite: 112].",
+    "topic": "Computing (Programming Logic)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "A school's computer network setup includes computers, routers and switches. The function of the router is to",
+    "options": [
+      "connect multiple network.",
+      "allow users to use the network.",
+      "amplify the network signal.",
+      "connect devices within the network."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A router directs traffic and connects multiple distinct networks together (e.g., connecting a local network to the internet)[cite: 112].",
+    "topic": "Computing (Networking)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "A friend approached you to assist in selecting a software to prepare a presentation. The appropriate software to recommend is",
+    "options": [
+      "PowerPoint.",
+      "Publisher.",
+      "Photoshop.",
+      "Excel."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Microsoft PowerPoint is the standard software designed for creating slide presentations[cite: 112].",
+    "topic": "Computing (Application Software)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The element of design in Desktop Publishing application that helps a user to ensure consistent font styles and sizes for headings and body text when designing a product is",
+    "options": [
+      "typography.",
+      "transition.",
+      "orientation.",
+      "animation."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Typography involves the style, arrangement, and appearance of text to maintain consistency and readability in publications[cite: 112].",
+    "topic": "Computing (Desktop Publishing)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "A clerk at the reception of a hospital uses an input device connected to the computer to",
+    "options": [
+      "send information to the computer.",
+      "process information in the computer.",
+      "store information on the computer.",
+      "remove information from the computer."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Input devices are hardware components used to feed data and send information into the computer system[cite: 112].",
+    "topic": "Computing (Computer Hardware)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "Kofi was saving a file on the computer but the computer gave an error message on the name of the file because the file name",
+    "options": [
+      "used capital letter to separate words.",
+      "described the content of the file.",
+      "used short and meaningful words.",
+      "contained special characters."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Operating systems prohibit the use of reserved special characters (such as /, \\, *, ?, \", <, >, |) in file names[cite: 112].",
+    "topic": "Computing (File Management)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Which network device serves as the central connection point for all workstation computers in a typical wired Internet cafe setup?",
+    "options": [
+      "Repeater",
+      "Modem",
+      "Gateway",
+      "Switch"
+    ],
+    "correctAnswer": "D",
+    "explanation": "A network switch acts as a central hub connecting devices together in a wired Local Area Network (LAN)[cite: 112].",
+    "topic": "Computing (Networking Hardware)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "The primary location to find All Programs that have been installed on the computer is through the",
+    "options": [
+      "notification area.",
+      "start menu.",
+      "system tray.",
+      "task view."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Start Menu provides access to the full list of all software applications installed on a Windows computer[cite: 112].",
+    "topic": "Computing (Operating Systems)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "The period for the evolution of the fourth generation of computer started from",
+    "options": [
+      "2006.",
+      "1994.",
+      "1995.",
+      "1971."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The fourth generation of computers, marked by the invention of the microprocessor, began around 1971[cite: 112].",
+    "topic": "Computing (History of Computers)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "To place a text close to and around an image in a desktop publishing document, use",
+    "options": [
+      "Send Backward.",
+      "Align Middle.",
+      "Bring Forward.",
+      "Wrap Text."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Text wrapping allows text to flow tightly around images and graphics in desktop publishing and word processing documents[cite: 112].",
+    "topic": "Computing (Desktop Publishing)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "To search for Microsoft Excel file in a folder, the file extension to use is",
+    "options": [
+      ".ppt",
+      ".docx",
+      ".pub",
+      ".xlsx"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Modern Microsoft Excel spreadsheet files use the standard file extension `.xlsx`[cite: 112].",
+    "topic": "Computing (File Formats)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Computer programmers use data types to hold information when developing software. The data type that is not valid in programming is",
+    "options": [
+      "Float.",
+      "Boolean.",
+      "Integer.",
+      "Circular."
+    ],
+    "correctAnswer": "D",
+    "explanation": "'Circular' is not a standard programming data type (whereas Float, Boolean, and Integer are valid types)[cite: 112].",
+    "topic": "Computing (Programming Data Types)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "The following activities are types of robotic locomotion except",
+    "options": [
+      "shouting.",
+      "jumping.",
+      "crawling.",
+      "rolling."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Shouting is vocalization, whereas jumping, crawling, and rolling are physical forms of robotic locomotion (movement)[cite: 112].",
+    "topic": "Computing (Robotics)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "A group of interconnected computers and other computing devices connected to share resources is referred to as",
+    "options": [
+      "link.",
+      "network.",
+      "system.",
+      "hyperlink."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A computer network links multiple devices together for resource sharing and communication[cite: 112].",
+    "topic": "Computing (Networking)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "The Artificial Intelligence concept that is limited to a specific area of application is considered to be",
+    "options": [
+      "weak AI.",
+      "smart AI.",
+      "super AI.",
+      "strong AI."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Weak AI (or Narrow AI) is designed and trained for a specific, narrow task or application area[cite: 112].",
+    "topic": "Computing (Artificial Intelligence)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "One thousand candidates wrote an examination and their scores have been tabulated in a Microsoft Excel worksheet. The function that can be used to determine candidates who passed is ....",
+    "options": [
+      "IF",
+      "SUMIF",
+      "COUNT",
+      "COUNTIF"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The logical `IF` function evaluates conditions to determine pass or fail status based on a passing score threshold[cite: 112].",
+    "topic": "Computing (Spreadsheet Functions)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "A step-by-step procedure or set of instructions for solving a problem is known as",
+    "options": [
+      "loop.",
+      "algorithm",
+      "function.",
+      "instruction."
+    ],
+    "correctAnswer": "B",
+    "explanation": "An algorithm is formally defined as a step-by-step set of instructions designed to solve a specific problem[cite: 112].",
+    "topic": "Computing (Algorithms)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "A partially displayed text in Microsoft Excel worksheet cell can be fully displayed by adjusting the column width or row height using the",
+    "options": [
+      "View tab.",
+      "Edit menu.",
+      "Insert tab.",
+      "Format menu."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Row height and column width formatting adjustments are found under the Format menu/options in spreadsheets[cite: 112].",
+    "topic": "Computing (Spreadsheet Formatting)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "A small portable and battery-operated projector that is designed to project content from a smartphone or laptop is called",
+    "options": [
+      "data projector.",
+      "video projector.",
+      "pico projector.",
+      "multimedia projector."
+    ],
+    "correctAnswer": "C",
+    "explanation": "A pico projector is an ultra-portable, pocket-sized, battery-powered projector designed for mobile devices[cite: 112].",
+    "topic": "Computing (Hardware Devices)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "A student entered data into a worksheet and realized a wrong entry. The action to correct the error is to",
+    "options": [
+      "double-click on the cell.",
+      "click outside the cell.",
+      "right-click on the cell.",
+      "right-click on sheet1."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Double-clicking on a spreadsheet cell enables editing mode to correct data entries directly[cite: 112].",
+    "topic": "Computing (Spreadsheet Editing)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "The feature that allows a user to freeze specific rows or columns in a spreadsheet application is",
+    "options": [
+      "freeze tab.",
+      "freeze panes.",
+      "freeze cells.",
+      "freeze sheets."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The 'Freeze Panes' feature keeps specific rows or columns visible while scrolling through large spreadsheets[cite: 112].",
+    "topic": "Computing (Spreadsheet Features)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "The flowchart symbol that requires one point entry and two points exit is the",
+    "options": [
+      "parallelogram.",
+      "diamond.",
+      "rectangle.",
+      "oval."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The diamond symbol represents a decision point in a flowchart, having one entry flow and branching into two exit paths (Yes/No)[cite: 112].",
+    "topic": "Computing (Flowcharts)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Students were tasked to surf the Internet for information on cyberbullying. This information could be accessed through the use of",
+    "options": [
+      "Domain Name Server.",
+      "Uniform Resource Locator.",
+      "User Datagram Protocol.",
+      "Transmission Control Protocol."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A Uniform Resource Locator (URL) serves as the web address used to locate and access specific web pages on the Internet[cite: 112].",
+    "topic": "Computing (Internet Basics)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "For computers to multi-task and provide user friendly environment, computer manufacturers introduced the windows operating system during the",
+    "options": [
+      "second generation.",
+      "fourth generation.",
+      "third generation.",
+      "fifth generation."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Graphical user interfaces and advanced operating systems like Windows evolved and gained prominence during the fourth generation of computers[cite: 112].",
+    "topic": "Computing (Computer Generations & OS)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "A potential consequence of a student spending too much time on social media platform is",
+    "options": [
+      "enhanced physical fitness.",
+      "improved concentration.",
+      "increased social isolation.",
+      "enhanced sleep quality."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Excessive screen and social media time often leads to reduced real-world interaction and increased social isolation[cite: 112].",
+    "topic": "Computing (Digital Citizenship & Health)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "In a class, the teacher explained that current technology allows applications to analyse a user's previous music listening history to suggest new songs for the user. This technology is best described as",
+    "options": [
+      "Artificial Intelligence.",
+      "Augmented Reality.",
+      "Perceptual Computing.",
+      "Virtual Reality."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Recommendation systems powered by machine learning algorithms are a key application of Artificial Intelligence[cite: 112].",
+    "topic": "Computing (Artificial Intelligence)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Sam is using a computer and notices that the screen is glaring. The most likely reason for the glare screen is that",
+    "options": [
+      "the computer is over heated.",
+      "the computer is running too many programs.",
+      "the computer screen is too small.",
+      "there is too much light reflecting off the screen."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Screen glare occurs when external light sources reflect directly off the monitor display surface[cite: 112].",
+    "topic": "Computing (Computer Ergonomics)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "A Microsoft PowerPoint Presentation contains inconsistent colour scheme. The tab that will help a user to apply a consistent colour scheme is the",
+    "options": [
+      "Insert tab.",
+      "Review tab.",
+      "Design tab.",
+      "Animation tab."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The Design tab in PowerPoint provides themes and color variants to establish a uniform presentation style[cite: 112].",
+    "topic": "Computing (Presentation Formatting)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "In a computing class, the teacher taught the students that it is important to regularly update software because, updates",
+    "options": [
+      "make the computer run faster.",
+      "change the appearance of the user interface.",
+      "improve the performance of the software.",
+      "delete unnecessary files from the software."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Software updates patch vulnerabilities, fix bugs, and improve overall software performance and stability[cite: 112].",
+    "topic": "Computing (Software Maintenance)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "The purpose of a hashtag (#) on social media platforms is to",
+    "options": [
+      "categorize and group contents on the site.",
+      "highlight important texts on the site.",
+      "pose questions to users on the site.",
+      "represent sarcasm on the site."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Hashtags are metadata tags used to categorize, index, and group related content across social media platforms[cite: 112].",
+    "topic": "Computing (Social Media)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "What does the function IF do in a spreadsheet formula?",
+    "options": [
+      "Counts the number of cells in a range",
+      "Adds up a range of cells",
+      "Perform conditional testing",
+      "Multiplies two numbers"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The `IF` function performs conditional testing, returning one value if a condition is true and another if it is false[cite: 112].",
+    "topic": "Computing (Spreadsheet Functions)",
+    "hasImage": false
+  }
+]

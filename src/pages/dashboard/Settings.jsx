@@ -3,7 +3,6 @@ import {
   Bell,
   CheckCircle2,
   KeyRound,
-  Mail,
   MonitorSmartphone,
   Moon,
   Save,
@@ -18,10 +17,10 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase/firebase";
 
 const notificationOptions = [
-  { id: "mocks", label: "Mock exam reminders", default: true },
-  { id: "weekly", label: "Weekly performance summary", default: true },
-  { id: "questions", label: "New past question uploads", default: false },
-  { id: "parent", label: "Parent report emails", default: true },
+  { id: "mocks", label: "Mock exam reminders and updates", detail: "A weekly practice reminder and confirmation when a mock is saved." },
+  { id: "weekly", label: "Weekly performance summary", detail: "A Monday summary when you completed a mock that week." },
+  { id: "questions", label: "New past questions", detail: "An alert when a new paper is published." },
+  { id: "parent", label: "Parent progress reports", detail: "An in-app alert when a completed mock report is ready to share." },
 ];
 
 const studyPreferencesOptions = [
@@ -31,8 +30,20 @@ const studyPreferencesOptions = [
   { id: "timer", label: "Exam timer warning", options: ["5 minutes", "10 minutes", "15 minutes", "No warning"], default: "10 minutes" },
 ];
 
-const defaultNotifications = Object.fromEntries(notificationOptions.map(({ id, default: value }) => [id, value]));
+const defaultNotifications = {
+  inApp: { mocks: true, weekly: true, questions: true, parent: false },
+  schedule: { reminderDay: "Sun", reminderTime: "17:00" },
+};
 const defaultPreferences = Object.fromEntries(studyPreferencesOptions.map(({ id, default: value }) => [id, value]));
+
+function normalizeNotificationSettings(saved = {}) {
+  const inApp = { ...defaultNotifications.inApp };
+  notificationOptions.forEach(({ id }) => {
+    if (typeof saved.inApp?.[id] === "boolean") inApp[id] = saved.inApp[id];
+    else if (typeof saved[id] === "boolean") inApp[id] = saved[id];
+  });
+  return { inApp, schedule: { ...defaultNotifications.schedule, ...saved.schedule } };
+}
 
 function Settings() {
   const { user, userProfile, isPremium } = useAuth();
@@ -52,7 +63,7 @@ function Settings() {
         const snapshot = await getDoc(doc(db, "users", user.uid));
         if (!active || !snapshot.exists()) return;
         const data = snapshot.data();
-        setNotifications({ ...defaultNotifications, ...data.notificationSettings });
+        setNotifications(normalizeNotificationSettings(data.notificationSettings));
         setPreferences({ ...defaultPreferences, ...data.studyPreferences });
         setSchool(data.school || "");
         setClassLevel(data.classLevel || "");
@@ -67,7 +78,11 @@ function Settings() {
   }, [user.uid]);
 
   const handleNotificationToggle = (id) => {
-    setNotifications((prev) => ({ ...prev, [id]: !prev[id] }));
+    setNotifications((prev) => ({ ...prev, inApp: { ...prev.inApp, [id]: !prev.inApp[id] } }));
+  };
+
+  const handleNotificationScheduleChange = (field, value) => {
+    setNotifications((prev) => ({ ...prev, schedule: { ...prev.schedule, [field]: value } }));
   };
 
   const handlePreferenceChange = (id, value) => {
@@ -76,6 +91,11 @@ function Settings() {
 
   const handleSave = async () => {
     if (isLoadingSettings) return;
+    if (notifications.inApp.mocks
+      && !/^([01]\d|2[0-3]):00$/.test(notifications.schedule.reminderTime)) {
+      setSaveStatus("error:Choose an on-the-hour time for the weekly mock reminder.");
+      return;
+    }
     setSaveStatus("saving");
     try {
       await setDoc(doc(db, "users", user.uid), {
@@ -106,7 +126,7 @@ function Settings() {
   };
 
   return (
-    <div className="space-y-8 pb-10 dark:bg-slate-900">
+    <div className="space-y-8 pb-10">
       <section className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
         <div>
           <h1 className="text-3xl font-black tracking-tight text-gray-950 dark:text-white md:text-4xl">
@@ -141,7 +161,11 @@ function Settings() {
         <main className="space-y-6">
           <AccountForm user={user} school={school} setSchool={setSchool} classLevel={classLevel} setClassLevel={setClassLevel} />
           <PreferencesCard preferences={preferences} onPreferenceChange={handlePreferenceChange} />
-          <NotificationsCard notifications={notifications} onToggle={handleNotificationToggle} />
+          <NotificationsCard
+            notifications={notifications}
+            onToggle={handleNotificationToggle}
+            onScheduleChange={handleNotificationScheduleChange}
+          />
         </main>
       </section>
     </div>
@@ -326,7 +350,7 @@ function PreferencesCard({ preferences, onPreferenceChange }) {
   );
 }
 
-function NotificationsCard({ notifications, onToggle }) {
+function NotificationsCard({ notifications, onToggle, onScheduleChange }) {
   return (
     <article className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
       <div className="mb-6 flex items-center gap-3">
@@ -335,36 +359,50 @@ function NotificationsCard({ notifications, onToggle }) {
         </div>
         <div>
           <h2 className="text-xl font-black text-gray-950 dark:text-white">Notifications</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            Choose which learning alerts you want to receive.
-          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Choose which study alerts appear in your dashboard.</p>
         </div>
       </div>
 
-      <div className="space-y-3">
-        {notificationOptions.map((opt) => (
-          <div
-            key={opt.id}
-            className="flex items-center justify-between rounded-xl border border-slate-100 px-4 py-4 dark:border-slate-700"
-          >
-            <p className="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-gray-300">
-              <Mail size={16} className="text-gray-400 dark:text-gray-500" />
-              {opt.label}
-            </p>
-            <button
-              onClick={() => onToggle(opt.id)}
-              className={`relative h-7 w-12 rounded-full transition ${
-                notifications[opt.id] ? "bg-blue-700 dark:bg-blue-600" : "bg-slate-200 dark:bg-slate-600"
-              }`}
-            >
-              <span
-                className={`absolute top-1 h-5 w-5 rounded-full bg-white transition ${
-                  notifications[opt.id] ? "left-6" : "left-1"
-                }`}
-              />
-            </button>
+      <p className="text-sm font-bold text-gray-700 dark:text-gray-300">Notification type</p>
+      <div className="mt-2 overflow-x-auto rounded-xl border border-slate-100 dark:border-slate-700">
+        <div className="grid min-w-[380px] grid-cols-[1fr_92px] items-center bg-slate-50 px-4 py-3 text-xs font-black uppercase tracking-wide text-gray-500 dark:bg-slate-700 dark:text-gray-300">
+          <span>Alert</span><span className="text-center">In app</span>
+        </div>
+        {notificationOptions.map((option) => (
+          <div key={option.id} className="grid min-w-[380px] grid-cols-[1fr_92px] items-center gap-2 border-t border-slate-100 px-4 py-4 dark:border-slate-700">
+            <div>
+              <p className="text-sm font-bold text-gray-800 dark:text-gray-200">{option.label}</p>
+              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{option.detail}</p>
+            </div>
+            <div className="flex justify-center">
+              <button
+                type="button"
+                role="switch"
+                aria-label={`${option.label}: in-app`}
+                aria-checked={notifications.inApp[option.id]}
+                onClick={() => onToggle(option.id)}
+                className={`relative h-7 w-12 rounded-full transition ${notifications.inApp[option.id] ? "bg-blue-700 dark:bg-blue-600" : "bg-slate-200 dark:bg-slate-600"}`}
+              >
+                <span className={`absolute top-1 h-5 w-5 rounded-full bg-white transition ${notifications.inApp[option.id] ? "left-6" : "left-1"}`} />
+              </button>
+            </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-5">
+        <div className="grid grid-cols-2 gap-3">
+          <label>
+            <span className="mb-2 block text-sm font-black text-gray-700 dark:text-gray-300">Reminder day</span>
+            <select value={notifications.schedule.reminderDay} onChange={(event) => onScheduleChange("reminderDay", event.target.value)} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-gray-700 dark:border-slate-600 dark:bg-slate-700 dark:text-gray-200">
+              {[["Mon", "Monday"], ["Tue", "Tuesday"], ["Wed", "Wednesday"], ["Thu", "Thursday"], ["Fri", "Friday"], ["Sat", "Saturday"], ["Sun", "Sunday"]].map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+            </select>
+          </label>
+          <label>
+            <span className="mb-2 block text-sm font-black text-gray-700 dark:text-gray-300">Reminder time (Ghana)</span>
+            <input type="time" step="3600" value={notifications.schedule.reminderTime} onChange={(event) => onScheduleChange("reminderTime", event.target.value)} className="w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-gray-700 dark:border-slate-600 dark:bg-slate-700 dark:text-gray-200" />
+          </label>
+        </div>
       </div>
     </article>
   );

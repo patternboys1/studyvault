@@ -1,0 +1,16 @@
+[
+  {
+    "number": "1",
+    "questionText": "Donnez des conseils aux personnes suivantes en indiquant ce qu'elles doivent faire.\n(a) Je veux de la viande.\n(b) J'ai sommeil.\n(c) Nous avons besoin de tomates.\n(d) Mon bébé pleure.\n(e) Ma voiture est en panne.\n(f) On a volé mes bagages.\n(g) Nous voulons des livres à lire.\n(h) J'ai besoin d'argent.\n(i) J'ai mal aux dents.\n(j) J'arrive toujours en retard à l'école.",
+    "modelAnswer": "(a) Allez au marché. / Allez à la boucherie. / Allez au restaurant[cite: 98].\n(b) Allez vous coucher. / Allez au lit. / Dormez un peu. / Reposez-vous[cite: 98].\n(c) Allez au marché. / Achetez-en au marché. / Allez au supermarché[cite: 98].\n(d) Donnez-lui du lait. / Chantez pour lui. / Bercez-le. / Donnez-lui à manger[cite: 98].\n(e) Allez chez le mécanicien. / Allez au garage. / Appelez un mécanicien[cite: 98].\n(f) Allez au poste de police. / Allez à la police. / Criez au voleur[cite: 98].\n(g) Allez à la bibliothèque. / Allez à la librairie. / Achetez des livres[cite: 98].\n(h) Allez à la banque. / Cherchez du travail. / Demandez à vos parents[cite: 98].\n(i) Allez chez le dentiste. / Allez à la clinique. / Allez à l'hôpital[cite: 98].\n(j) Réveillez-vous tôt. / Quittez la maison tôt. / Couchez-vous tôt le soir[cite: 98].",
+    "topic": "French (Practical Advice & Imperative)",
+    "hasImage": false
+  },
+  {
+    "number": "2",
+    "questionText": "Votre ami(e), sur Facebook, vous demande des conseils pour réussir aux épreuves de BECE. Offrez-lui des suggestions sur ce qu'il/elle doit faire et ce qu'il/elle ne doit pas faire. (50 à 60 mots)",
+    "modelAnswer": "Salut mon ami, Pour réussir au BECE, tu dois étudier sérieusement. Il faut écouter attentivement tes professeurs en classe et faire tous tes devoirs. Aussi, tu dois dormir très tôt. Cependant, tu ne dois pas regarder trop la télévision. Ne joue pas beaucoup avec tes amis et ne sois pas paresseux. Bon courage pour l'examen ! À bientôt[cite: 98].",
+    "topic": "French (Composition / Letter Writing)",
+    "hasImage": false
+  }
+]

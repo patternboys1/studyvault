@@ -1,0 +1,86 @@
+ [
+    {
+      "number": "1.a",
+      "questionText": "Friends in your neighbourhood have received invitations to a diverse event with people from various backgrounds. They have come to you seeking advice on what to wear to the event.\nIdentify four factors that you will consider in your advice to them.",
+      "modelAnswer": "1. The type of occasion or function being attended (e.g., wedding, funeral, church, party).\n2. The profile/personality of the audience or guests present.\n3. The time of the day and venue for the event.\n4. The cultural or religious background of the attendees.\n5. The age, gender, and social status of the individual.\n6. The prevailing weather conditions and dress code specified.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "1.b",
+      "questionText": "What, in your opinion, are four factors contributing to the inappropriate ways of dressing by the youth?",
+      "modelAnswer": "1. Peer pressure and the desire to conform to friend groups.\n2. Negative influence from social media and western pop culture.\n3. Ignorance or disregard for cultural modesty norms.\n4. Lack of positive role models and parental guidance.\n5. Desire for attention and misconceptions about modern fashion.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "1.c",
+      "questionText": "State four behaviours that are considered courteous in the society.",
+      "modelAnswer": "1. Using polite language and saying 'please' or 'thank you'.\n2. Listening attentively without interrupting when others speak.\n3. Being punctual and respecting people's privacy and opinions.\n4. Apologizing sincerely when in the wrong and showing humility/respect.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "2.a",
+      "questionText": "A JHS student, once the beloved child of the parents, was consistently receptive of their guidance. However, upon reaching adolescence has begun experiencing conflict with the parents on issues at home.\nExplain four emotional changes the student may be going through which might have affected the relationship with the parents.",
+      "modelAnswer": "1. Mood swings: Frequent, rapid shifts between happiness, anger, and sadness.\n2. Desire for independence: Strong urge to exercise personal autonomy and resist parental control.\n3. Heightened self-consciousness: Over-sensitivity regarding personal appearance and peer evaluation.\n4. Peer influence: Placing greater value on peer approval than parental guidance.\n5. Emotional stress: Anxiety arising from academic demands and bodily changes.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "2.b",
+      "questionText": "Explain four cultural significance puberty rites hold in traditional Ghanaian societies.",
+      "modelAnswer": "1. Marks the formal transition from childhood to adult responsibilities.\n2. Promotes chastity, moral discipline, and health education among youth.\n3. Reinforces cultural identity and passes down ancestral traditions.\n4. Brings social honour and prestige to both the initiate and their family.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "3.a",
+      "questionText": "'Remember the Sabbath day and keep it holy'\nIn what four ways will you fulfill the above commandment?",
+      "modelAnswer": "1. Attending religious worship services and prayer meetings.\n2. Resting from all routine manual labor, academic work, and commercial activities.\n3. Reading and studying holy scriptures with family members.\n4. Performing acts of charity, such as visiting the sick, needy, or elderly.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "3.b",
+      "questionText": "Explain four benefits one derives from observing the above commandment.",
+      "modelAnswer": "1. Physical and mental rejuvenation through restful breaks.\n2. Spiritual growth and a deeper personal relationship with God.\n3. Strengthened family bonds through dedicated time spent together.\n4. Attraction of divine blessings, protection, and inner peace.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "4.a",
+      "questionText": "At a community gathering, the local counsellor led a discussion on the role of leadership in addressing societal challenges. With your knowledge on various ways through which individuals obtain authority and how leaders can contribute positively to society using their authority:\nIdentify four ways through which individuals obtain authority within a community.",
+      "modelAnswer": "1. Election through democratic processes.\n2. Hereditary succession or traditional royal lineage.\n3. Appointment by constitutional or higher authorities.\n4. Advanced age, wisdom, educational achievements, or special skills.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "4.b",
+      "questionText": "Explain four ways by which leaders can use authority in the best interest of society.",
+      "modelAnswer": "1. Enforcing laws to protect human rights, justice, and equality.\n2. Implementing economic policies that generate employment and reduce poverty.\n3. Investing in public infrastructure, healthcare, and quality education.\n4. Promoting civic engagement, transparency, and peaceful co-existence.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "5.a",
+      "questionText": "The Adjei family, living in Kumasi represents the nuclear family model. Mornings start with breakfast together before everyone goes to work or school. Evenings are spent together over dinner, followed by individual activities and relaxation. Weekends are reserved for family outings and bonding activities, emphasizing their strong, and close relationship. With your knowledge on the family system:\nOutline four advantages that the Adjei family enjoy in their home.",
+      "modelAnswer": "1. Strong emotional bonds and intense mutual affection.\n2. Greater privacy and autonomy in daily family life.\n3. Concentrated financial resources for better child education and care.\n4. Clearer communication and fewer interpersonal domestic conflicts.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "5.b",
+      "questionText": "Highlight four responsibilities of Mr. Adjei to his family.",
+      "modelAnswer": "1. Providing financial support for food, shelter, clothing, and education.\n2. Acting as a positive moral role model for his children.\n3. Ensuring safety, security, and discipline within the home.\n4. Showing love, emotional support, and respect to his spouse and children.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    },
+    {
+      "number": "5.c",
+      "questionText": "Suggest two ways by which the Adjei family can promote good relationship among themselves.",
+      "modelAnswer": "1. Maintaining open, honest, and regular family communication.\n2. Practicing mutual forgiveness, empathy, and tolerance of individual differences.",
+      "topic": "Religious and Moral Education",
+      "hasImage": false
+    }
+  ]

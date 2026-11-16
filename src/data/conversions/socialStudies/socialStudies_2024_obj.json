@@ -1,0 +1,562 @@
+[
+    {
+      "number": 1,
+      "questionText": "You need to make a detailed map of a mountainous area. This map will be used by the people who enjoy outdoor activities and by people who manage the land. Which of the following options is the best way to make an accurate map?",
+      "options": [
+        "Add 3D and colour gradient imagery",
+        "Rely primarily on satellite imagery",
+        "Conduct field surveys and measure elevation",
+        "Simplify the contour lines"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Conducting field surveys and measuring elevation is the most accurate method for mapping relief and mountainous topography.",
+      "topic": "Geography & Map Work",
+      "hasImage": false
+    },
+    {
+      "number": 2,
+      "questionText": "Which of the following military rulers of Ghana implemented the Economic Recovery Program (ERP)?",
+      "options": [
+        "Frederick K. Akuffo",
+        "Jerry J. Rawlings",
+        "Ignatius K. Acheampong",
+        "Joseph A. Ankrah"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Flt. Lt. Jerry John Rawlings' PNDC government introduced the Economic Recovery Program (ERP) in 1983 to stabilize Ghana's economy.",
+      "topic": "History & Government",
+      "hasImage": false
+    },
+    {
+      "number": 3,
+      "questionText": "Two political events occurred in Ghana in 1960. One of the events was the presidential election. Which of the following political developments happened after the presidential election in 1960?",
+      "options": [
+        "Ghana became a colony again",
+        "Ghana remained a monarchy",
+        "Ghana became a republic",
+        "Ghana was divided into a northern and southern territory"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Following the 1960 plebiscite and presidential election, Ghana officially became a republic on July 1, 1960.",
+      "topic": "History & Government",
+      "hasImage": false
+    },
+    {
+      "number": 4,
+      "questionText": "A market square in your community is in need of a clean-up and restoration. Which of the following options will best help address the challenge?",
+      "options": [
+        "Donating money to the market square but not getting involved personally",
+        "Joining community volunteer groups to help in the clean-up exercise",
+        "Ignoring the issue and hoping someone else will take care of it",
+        "Organizing a solo clean-up exercise"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Joining community volunteer groups fosters communal spirit and directly solves local sanitation challenges.",
+      "topic": "Civic Education & Community Development",
+      "hasImage": false
+    },
+    {
+      "number": 5,
+      "questionText": "Ghana's public sector faces various challenges with respect to human resource development. Which of the following challenges is the most suitable challenge in the above given scenario?",
+      "options": [
+        "Financial challenges",
+        "Inefficient bureaucracy",
+        "Limited career advancement opportunities",
+        "Limited access to quality education"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Limited career advancement opportunities constrain professional growth and human resource development in the public sector.",
+      "topic": "Social and Economic Development",
+      "hasImage": false
+    },
+    {
+      "number": 6,
+      "questionText": "Every Ghanaian citizen is expected to demonstrate commitment to democratic values. Which of the following actions best demonstrates the above expectation?",
+      "options": [
+        "Voting in national elections",
+        "Criticizing the government on social media",
+        "Volunteering for community service",
+        "Participating in peaceful protests"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Voting in national elections is the primary democratic duty through which citizens exercise sovereignty and choose their leaders.",
+      "topic": "Civic Education & Democracy",
+      "hasImage": false
+    },
+    {
+      "number": 7,
+      "questionText": "What is the most likely effect of a large family size on the family's living conditions?",
+      "options": [
+        "Environmental conditions enhanced",
+        "Increased access to resources",
+        "Improved housing conditions",
+        "Overcrowding and reduced space"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Large family sizes often strain household income, leading to overcrowding and reduced living space.",
+      "topic": "Population & Family Life",
+      "hasImage": false
+    },
+    {
+      "number": 8,
+      "questionText": "The best approach to help resolve the difference between political parties during general elections is",
+      "options": [
+        "allowing the formation of more political parties.",
+        "encouraging youth participation in national politics.",
+        "encouraging traditional leaders to play partisan politics.",
+        "strengthening the judiciary."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Strengthening the judiciary ensures impartial arbitration and rule of law during electoral disputes.",
+      "topic": "Law, Order and Nation Building",
+      "hasImage": false
+    },
+    {
+      "number": 9,
+      "questionText": "What is the most common form of marriage in Ghana?",
+      "options": [
+        "Arranged marriage",
+        "Monogamous marriage",
+        "Common-Law marriage",
+        "Polygamous marriage"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Monogamous marriage (ordinance and Christian/Islamic marriage) is widely practiced and recognized as a primary form of marriage in Ghana.",
+      "topic": "Social Studies & Culture",
+      "hasImage": false
+    },
+    {
+      "number": 10,
+      "questionText": "Ghana is made up of people with different cultures. What is the primary benefit if all the people unite? It will",
+      "options": [
+        "improve national security.",
+        "increase economic growth.",
+        "improve international reputation.",
+        "strengthen social cohesion."
+      ],
+      "correctAnswer": "D",
+      "explanation": "National unity across diverse cultural groups bridges ethnic divides and strengthens social cohesion.",
+      "topic": "National Unity & Integration",
+      "hasImage": false
+    },
+    {
+      "number": 11,
+      "questionText": "A region experiences a significant decrease in temperature and rainfall over a few decades. What factor could be the most likely cause of this?",
+      "options": [
+        "Deforestation",
+        "Rise in global temperature",
+        "Increase in ocean current",
+        "Shift in wind pattern"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Deforestation disrupts local microclimates, reducing evapo-transpiration and leading to decreased rainfall and altered temperatures.",
+      "topic": "The Environment & Climate",
+      "hasImage": false
+    },
+    {
+      "number": 12,
+      "questionText": "What is the best way to address deviant behaviour in an adolescent?",
+      "options": [
+        "Punishment",
+        "Ignoring it",
+        "Counselling",
+        "Parental neglect"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Counselling addresses the root psychological and social causes of adolescent deviant behaviour constructively.",
+      "topic": "Social Development & Guidance",
+      "hasImage": false
+    },
+    {
+      "number": 13,
+      "questionText": "One similarity between Ghana and its neighbouring country, Togo, is they both have",
+      "options": [
+        "a border with Nigeria.",
+        "same colonial parties.",
+        "a coastline along the Atlantic ocean.",
+        "similar population size."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Both Ghana and Togo are coastal nations bordering the Gulf of Guinea (Atlantic Ocean) in West Africa.",
+      "topic": "Geography & Map Work",
+      "hasImage": false
+    },
+    {
+      "number": 14,
+      "questionText": "In 1966, a military Coup d'etat overthrew the government of Dr. Kwame Nkrumah. What was the main reason for the Coup?",
+      "options": [
+        "Economic mismanagement and corruption",
+        "Failure to implement socialist policies",
+        "External interference from the Russian government",
+        "Political instability and tribal conflicts"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Economic hardships, rising inflation, and allegations of corruption and authoritarian rule were cited as primary reasons for the 1966 coup.",
+      "topic": "History & Government",
+      "hasImage": false
+    },
+    {
+      "number": 15,
+      "questionText": "Which type of map will be most suitable for determining the elevation of a mountain range?",
+      "options": [
+        "Political map",
+        "Topographical map",
+        "Road map",
+        "Weather map"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Topographical maps use contour lines to represent physical elevations and relief features of the earth's surface.",
+      "topic": "Geography & Map Work",
+      "hasImage": false
+    },
+    {
+      "number": 16,
+      "questionText": "Which of the following challenges did Ghana face soon after independence in 1957?",
+      "options": [
+        "Building of new roads and drainage systems with limited funds",
+        "Dealing with internal conflicts and political instability",
+        "Building of ports and harbours",
+        "Sourcing for donor support"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Post-independence Ghana inherited infrastructural deficits requiring the construction of roads and amenities amid limited financial resources.",
+      "topic": "History & Development",
+      "hasImage": false
+    },
+    {
+      "number": 17,
+      "questionText": "There is an ongoing illegal mining activity in a community. The miners are using earth moving machines, cyanide and mercury. Sixty acres of vegetation cover is pulled down every hour. Which of the following options best describes the long term effect of their activities on the land?",
+      "options": [
+        "Erosion",
+        "Degradation",
+        "Depletion",
+        "Percolation"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Widespread destruction of vegetation and soil structure by illegal mining (galamsey) results in severe environmental degradation.",
+      "topic": "Environmental Issues",
+      "hasImage": false
+    },
+    {
+      "number": 18,
+      "questionText": "One way to maintain peace and security in your community is by",
+      "options": [
+        "ignoring your neighbours.",
+        "starting a fight.",
+        "joining a gang.",
+        "volunteering for community service."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Volunteering for community service builds social capital, trust, and peaceful cooperation among residents.",
+      "topic": "Peace and Security",
+      "hasImage": false
+    },
+    {
+      "number": 19,
+      "questionText": "Which of the following fundamental human rights is protected by the 1992 constitution of Ghana? The right to",
+      "options": [
+        "use arms.",
+        "free education at tertiary level.",
+        "full employment.",
+        "freedom of speech."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Freedom of speech and expression is a fundamental human right explicitly guaranteed under Chapter 5 of the 1992 Constitution of Ghana.",
+      "topic": "Human Rights & Constitution",
+      "hasImage": false
+    },
+    {
+      "number": 20,
+      "questionText": "A company is expanding globally and needs to socialize employees to new cultural norms. Which of the following approaches would be most effective?",
+      "options": [
+        "Encourage employees to adapt to the new culture on their own",
+        "Provide employees with a cultural sensitivity training program",
+        "Encourage employees to maintain their existing cultural practices",
+        "Provide employees with a detailed guide to world cultures"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Cultural sensitivity training programs equip employees with practical skills and understanding to navigate new cultural environments effectively.",
+      "topic": "Social and Economic Development",
+      "hasImage": false
+    },
+    {
+      "number": 21,
+      "questionText": "Which one of the following took place after the 27th April, 1960 referendum?",
+      "options": [
+        "Ghana became a democratic state",
+        "The first political party was formed",
+        "Kwame Nkrumah was inaugurated as Prime Minister",
+        "Queen Elizabeth II was inaugurated as Prime Minister"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Following the April 1960 constitutional referendum establishing the republic, Kwame Nkrumah was subsequently inaugurated (though as Executive President, historical multiple choice options align with his ascendance to supreme executive power).",
+      "topic": "History & Government",
+      "hasImage": false
+    },
+    {
+      "number": 22,
+      "questionText": "Which of the following scenarios explain the main purpose of the Internet?",
+      "options": [
+        "Connecting electronic devices and making lives more convenient",
+        "Robots building several vehicles at a time",
+        "Developing new medicine kits",
+        "Scientists going to space and other planets"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The global internet connects computers and digital electronic devices worldwide to facilitate communication and convenience.",
+      "topic": "Computing & Society",
+      "hasImage": false
+    },
+    {
+      "number": 23,
+      "questionText": "Two communities are claiming ownership of a river which serves as their livelihood. This has resulted in conflicts between the two communities for many years. Which of the following mediations will best help to resolve the conflict?",
+      "options": [
+        "Avoid future conflicts",
+        "Facilitate communication and mutually acceptable solutions",
+        "Determine who is right or wrong",
+        "Impose a solution on the parties"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Effective mediation facilitates open communication between disputing parties to arrive at mutually acceptable, lasting solutions.",
+      "topic": "Conflict Resolution",
+      "hasImage": false
+    },
+    {
+      "number": 24,
+      "questionText": "The following factors affect Ghana's ability to exploit its natural resources effectively except",
+      "options": [
+        "low level technology.",
+        "inadequate capital resource.",
+        "limited technical expertise.",
+        "farming activities."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Traditional farming activities are a core use of land resources rather than an impediment to national resource exploitation.",
+      "topic": "Economic Development",
+      "hasImage": false
+    },
+    {
+      "number": 25,
+      "questionText": "A company is planning to build a soap factory in a rural area. The factory will provide jobs for the youth but may also pollute nearby rivers. Which of the following options best represents a sustainable development approach?",
+      "options": [
+        "Build the factory without environmental considerations",
+        "Build the factory with environmental impact assessment",
+        "Build the factory with some environmental considerations",
+        "Reject the factory proposal to protect the environment"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Conducting an Environmental Impact Assessment (EIA) ensures industrial development balances economic gains with environmental protection.",
+      "topic": "Sustainable Development",
+      "hasImage": false
+    },
+    {
+      "number": 26,
+      "questionText": "Respecting the rights of others and performing our responsibilities to the state help to promote",
+      "options": [
+        "building political parties.",
+        "responsible citizenship.",
+        "community development.",
+        "national integration."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Balancing rights with civic duties is the hallmark of responsible citizenship.",
+      "topic": "Civic Education",
+      "hasImage": false
+    },
+    {
+      "number": 27,
+      "questionText": "In 1957 the people of Ghana gained independence from the British colonial rule after a long political struggle. What was the main reason for Ghana's independence? To",
+      "options": [
+        "adopt a new political system and form a government",
+        "make Ghanaian culture and traditions superior to the British",
+        "gain economic freedom and control our natural resources",
+        "unite with other African countries and form a single nation"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Self-determination aimed primarily at restoring sovereignty so Ghanaians could manage their economy and control national resources.",
+      "topic": "Ghanaian History",
+      "hasImage": false
+    },
+    {
+      "number": 28,
+      "questionText": "People join social security and pension schemes in order to",
+      "options": [
+        "ensure retirement income.",
+        "raise money to satisfy political ambitions.",
+        "maintain standard of living in the cities.",
+        "supplement income for relations in the villages."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Social security and pension schemes are established primarily to guarantee a steady income upon retirement from active service.",
+      "topic": "Social Security",
+      "hasImage": false
+    },
+    {
+      "number": 29,
+      "questionText": "The most significant attitude that helps to enhance self identity of the individual in the community is",
+      "options": [
+        "always wearing clean clothes.",
+        "engaging in peer teaching in school.",
+        "avoiding peer influence in the community.",
+        "showing respect to the elderly."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Respecting elders is a core cultural value in Ghanaian society that validates an individual's good character and community identity.",
+      "topic": "Culture & Socialization",
+      "hasImage": false
+    },
+    {
+      "number": 30,
+      "questionText": "A farmer is preparing to plant crops next week. Why is it important for the farmer to check the weather forecast? To",
+      "options": [
+        "prepare for a storm.",
+        "plan a harvest festival.",
+        "determine the ideal time for planting.",
+        "predict the best time for irrigation."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Checking weather patterns helps farmers determine optimal rainfall conditions for planting seeds successfully.",
+      "topic": "Agriculture & Environment",
+      "hasImage": false
+    },
+    {
+      "number": 31,
+      "questionText": "The destruction of farm lands by cattle and the confrontation between herdsmen and farming communities in Ghana can best be resolved by",
+      "options": [
+        "allowing the game and wildlife department to take charge of cattle rearing in the communities.",
+        "local farmers always standing by to drive away herdsmen.",
+        "encouraging the practice of cattle ranching in our communities.",
+        "seizing and distributing some of the cattle to the affected communities."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Cattle ranching confines livestock to designated fenced areas, preventing stray cattle from destroying farms.",
+      "topic": "Agriculture & Land Management",
+      "hasImage": false
+    },
+    {
+      "number": 32,
+      "questionText": "What is the main function of socialization? To",
+      "options": [
+        "enforce laws and regulations.",
+        "teach individuals how to survive.",
+        "provide education.",
+        "transmit culture and values."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Socialization is the lifelong process through which culture, norms, and values are transmitted across generations.",
+      "topic": "Socialization & Culture",
+      "hasImage": false
+    },
+    {
+      "number": 33,
+      "questionText": "Which of the following entrepreneurial skills is most important for someone starting a business to acquire in order to help overcome unexpected challenges?",
+      "options": [
+        "Leadership",
+        "Risk taking",
+        "Adaptability",
+        "Savings"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Adaptability allows entrepreneurs to adjust their strategies and survive unforeseen economic or operational changes.",
+      "topic": "Entrepreneurship",
+      "hasImage": false
+    },
+    {
+      "number": 34,
+      "questionText": "The first general election held in the Gold Coast in 1951 was won by the",
+      "options": [
+        "Convention People's Party.",
+        "National Alliance for the Liberals.",
+        "National Liberation Movement.",
+        "United Gold Coast Convention."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Dr. Kwame Nkrumah's Convention People's Party (CPP) won the landmark 1951 general elections.",
+      "topic": "Ghanaian History",
+      "hasImage": false
+    },
+    {
+      "number": 35,
+      "questionText": "It has been observed that the population of Ghana has been rising rapidly over the years. What is the primary reason for the rapidly growing population?",
+      "options": [
+        "High birth rate and low death rate",
+        "Improved health care and sanitation",
+        "Increased education and family planning",
+        "Increased immigration and low emigration"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Rapid population growth is primarily driven by high birth rates coupled with declining death rates due to better health conditions.",
+      "topic": "Population Studies",
+      "hasImage": false
+    },
+    {
+      "number": 36,
+      "questionText": "Which of the following scenarios, best describes an application of social security benefits?",
+      "options": [
+        "A teacher receives a scholarship to study abroad",
+        "A family member receives financial support after the death of the breadwinner",
+        "A community receives funds for a new irrigation project",
+        "An entrepreneur receives a loan to expand the business"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Survivor benefits under social security schemes provide financial assistance to dependents after the death of a contributing breadwinner.",
+      "topic": "Social Security",
+      "hasImage": false
+    },
+    {
+      "number": 37,
+      "questionText": "What type of climate, typically found near the equator is characterized by very high temperatures and very low rainfall?",
+      "options": [
+        "Desert climate",
+        "Temperate climate",
+        "Polar climate",
+        "Tropical climate"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Desert (arid) climates feature extremely high temperatures and very low annual rainfall.",
+      "topic": "Climatology",
+      "hasImage": false
+    },
+    {
+      "number": 38,
+      "questionText": "Controlling plastic waste has become a major environmental concern to the city authorities in Ghana. Which of the following options best helps minimize the negative impact of plastic waste disposal problem?",
+      "options": [
+        "Arresting all plastic waste producers",
+        "Placing a ban on single use plastics",
+        "Levying plastic waste producers",
+        "Using jute and paper bags"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Promoting biodegradable alternatives like jute and paper bags effectively reduces plastic accumulation in municipal waste.",
+      "topic": "Environmental Management",
+      "hasImage": false
+    },
+    {
+      "number": 39,
+      "questionText": "Which of the following agricultural practices helps to prevent soil erosion?",
+      "options": [
+        "Cover cropping",
+        "Mono-culture",
+        "Crop rotation",
+        "Shifting cultivation"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cover crops protect topsoil from being washed away by heavy rains or blown away by wind.",
+      "topic": "Agriculture & Soil Conservation",
+      "hasImage": false
+    },
+    {
+      "number": 40,
+      "questionText": "A teacher, Mr. Jones, encourages his students to work together on a group project. What agency of socialization is influencing the students' behaviour?",
+      "options": [
+        "Education",
+        "Media",
+        "Family",
+        "Peer group"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Schools and formal educational institutions serve as primary formal agencies of socialization.",
+      "topic": "Socialization",
+      "hasImage": false
+    }
+  ]

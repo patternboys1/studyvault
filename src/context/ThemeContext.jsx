@@ -5,6 +5,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase";
 
 const ThemeContext = createContext();
+const DEFAULT_DARK_MODE = false;
 
 function updateDOM(isDarkMode) {
   document.documentElement.classList.toggle("dark", isDarkMode);
@@ -32,25 +33,20 @@ export const ThemeProvider = ({ children }) => {
             updateDOM(isDarkMode);
             console.log("Theme loaded from Firebase:", isDarkMode ? "dark" : "light");
           } else {
-            // New user or no preference - check system preference
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            setIsDark(prefersDark);
-            updateDOM(prefersDark);
-            console.log("Using system preference:", prefersDark ? "dark" : "light");
+            // New user or no saved preference: default to light mode.
+            setIsDark(DEFAULT_DARK_MODE);
+            updateDOM(DEFAULT_DARK_MODE);
           }
         } catch (error) {
           console.error("Error loading theme from Firebase:", error);
-          // Fall back to system preference
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          setIsDark(prefersDark);
-          updateDOM(prefersDark);
+          // Fall back to light mode if the saved preference cannot be loaded.
+          setIsDark(DEFAULT_DARK_MODE);
+          updateDOM(DEFAULT_DARK_MODE);
         }
       } else {
-        // User is not logged in - use system preference
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setIsDark(prefersDark);
-        updateDOM(prefersDark);
-        console.log("User logged out, using system preference");
+        // User is not logged in: use the light mode default.
+        setIsDark(DEFAULT_DARK_MODE);
+        updateDOM(DEFAULT_DARK_MODE);
       }
 
       setLoading(false);

@@ -1,0 +1,93 @@
+[
+  {
+    "number": "1.a",
+    "questionText": "Identify four sources of energy that can be used in Ghana efficiently for every citizen to easily afford.",
+    "modelAnswer": "Solar energy (from the sun), Wood fuel (Firewood / Charcoal), Wind energy, Liquefied Petroleum Gas (LPG), Biogas / Biomass energy, Hydro-electric power (from rivers/dams)[cite: 187].",
+    "topic": "Social Studies (The Environment - Energy Sources)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "Describe four ways of conserving energy to your classmates in a class discussion.",
+    "modelAnswer": "1. Switching off appliances when not in use: Turning off lights, fans, and televisions when leaving a room[cite: 187].\n2. Using energy-efficient appliances: Replacing traditional incandescent bulbs with LED bulbs[cite: 187].\n3. Utilizing natural light and ventilation: Opening windows and curtains during the day instead of using electric bulbs[cite: 187].\n4. Ironing in bulk: Gathering a large number of clothes to iron at once rather than ironing single items frequently[cite: 187].",
+    "topic": "Social Studies (The Environment - Energy Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "List two examples each of renewable energy and non-renewable energy.",
+    "modelAnswer": "Renewable energy: Solar energy, Wind energy, Hydro energy, Tidal energy, Geothermal energy, Biomass[cite: 187].\nNon-renewable energy: Crude oil (Petroleum), Natural gas, Coal, Nuclear energy (Uranium)[cite: 187].",
+    "topic": "Social Studies (The Environment - Energy Types)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a",
+    "questionText": "What four republican constitutions has Ghana enacted and experienced since independence?",
+    "modelAnswer": "1. The 1960 Republican Constitution (First Republic)[cite: 187]\n2. The 1969 Republican Constitution (Second Republic)[cite: 187]\n3. The 1979 Republican Constitution (Third Republic)[cite: 187]\n4. The 1992 Republican Constitution (Fourth Republic)[cite: 187]",
+    "topic": "Social Studies (Law, Order and Nation Building - Constitutions)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "State four ways you can acquire Ghanaian citizenship as a foreign national who has lived in Ghana for ten years.",
+    "modelAnswer": "1. By Naturalization: A foreigner who has lived in Ghana continuously for a specified period, is of good character, and can speak an indigenous Ghanaian language[cite: 187].\n2. By Registration (Marriage): A foreign national married to a Ghanaian citizen[cite: 187].\n3. By Conferment / Honorary Citizenship: Granted by the President for exceptional contributions to national development[cite: 187].\n4. By Adoption: A minor adopted by a Ghanaian citizen[cite: 187].",
+    "topic": "Social Studies (Law, Order and Nation Building - Citizenship)",
+    "hasImage": false
+  },
+  {
+    "number": "2.c",
+    "questionText": "Explain the term Democracy to a group of friends.",
+    "modelAnswer": "Democracy is a system of government in which power is vested in the people, who rule either directly or through freely elected representatives (governement of the people, by the people, and for the people), ensuring the protection of human rights and the rule of law[cite: 188].",
+    "topic": "Social Studies (Law, Order and Nation Building - Democracy)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "Explain four functions of District Assemblies in Ghana.",
+    "modelAnswer": "1. Provision of basic amenities: Providing essential facilities like public schools, clinics, toilets, and water[cite: 188].\n2. Maintenance of law and order: Ensuring local peace and security via security agencies and watch committees[cite: 188].\n3. Revenue mobilization: Collecting local taxes, market tolls, and property rates[cite: 188].\n4. Environmental sanitation: Managing waste disposal and organizing communal labor[cite: 188].",
+    "topic": "Social Studies (Governance - District Assemblies)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "Highlight four institutions that maintain Law and Order in your country.",
+    "modelAnswer": "1. The Ghana Police Service[cite: 188]\n2. The Ghana Armed Forces (Military)[cite: 188]\n3. The Judiciary (Courts/Magistrates)[cite: 188]\n4. The Ghana Prisons Service (or CHRAJ, Traditional Authorities)[cite: 188]",
+    "topic": "Social Studies (Law, Order and Nation Building - Institutions)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "As a Human Resource Manager in a Ghanaian company, what four measures would you put in place to develop the skills and competencies of your employees?",
+    "modelAnswer": "1. Organizing regular in-service training/workshops[cite: 188].\n2. Sponsoring employees for further education (scholarships/study leave)[cite: 188].\n3. Job rotation across different departments[cite: 188].\n4. Mentorship and coaching by pairing inexperienced workers with senior staff[cite: 188].",
+    "topic": "Social Studies (Social and Economic Development - Human Resource)",
+    "hasImage": false
+  },
+  {
+    "number": "4.b.i",
+    "questionText": "Identify two main types of human resource you have studied.",
+    "modelAnswer": "1. Skilled human resource (Professionals)[cite: 188, 189]\n2. Unskilled human resource (Manual labourers) or Semi-skilled[cite: 188, 189]",
+    "topic": "Social Studies (Social and Economic Development - Human Resource Types)",
+    "hasImage": false
+  },
+  {
+    "number": "4.b.ii",
+    "questionText": "Explain each type of human resource you have identified in (b)(i).",
+    "modelAnswer": "Skilled human resource: Workers who have received specialized training and formal education to perform complex tasks (e.g., Doctors, Engineers)[cite: 189].\nUnskilled human resource: Workers lacking specialized formal training who perform tasks requiring physical strength or basic abilities (e.g., Cleaners, Laborers)[cite: 189].",
+    "topic": "Social Studies (Social and Economic Development - Human Resource Explanations)",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "Highlight four features of Ghana's fourth republic.",
+    "modelAnswer": "1. Supremacy of the 1992 Constitution[cite: 189].\n2. Executive Presidency (President is both Head of State and Government)[cite: 189].\n3. Separation of Powers across the three arms of government[cite: 189].\n4. Multi-party Democracy and guarantee of fundamental human rights[cite: 189].",
+    "topic": "Social Studies (Law, Order and Nation Building - Fourth Republic)",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "List four importance of Science and Technology Education in Ghana.",
+    "modelAnswer": "1. Promotes industrialization and manufacturing[cite: 189].\n2. Improves healthcare delivery through modern medical equipment[cite: 189].\n3. Enhances agricultural productivity through mechanization[cite: 189].\n4. Equips students with practical, employable skills to reduce unemployment[cite: 189].",
+    "topic": "Social Studies (Social and Economic Development - Science & Technology)",
+    "hasImage": false
+  }
+]

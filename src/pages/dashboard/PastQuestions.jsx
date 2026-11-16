@@ -10,6 +10,7 @@ import {
   Clock3,
   FileText,
   Lightbulb,
+  LoaderCircle,
   Sigma,
   X,
   ClipboardCheck,
@@ -156,7 +157,10 @@ export default function PastQuestions() {
             Unable to load past papers: {paperLoadError?.message || "Please try again."}
           </div>
         ) : papersLoading ? (
-          <div className="col-span-full py-20 text-center animate-pulse text-gray-400 font-bold">Synchronizing Repository...</div>
+          <div role="status" aria-live="polite" className="col-span-full flex items-center justify-center gap-3 py-20 text-sm font-semibold text-slate-500">
+            <LoaderCircle size={18} className="animate-spin" aria-hidden="true" />
+            Loading past questions...
+          </div>
         ) : displayPapers.length > 0 ? (
           displayPapers.map(paper => (
             <PaperCard

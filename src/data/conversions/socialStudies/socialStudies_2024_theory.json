@@ -1,0 +1,93 @@
+ [
+    {
+      "number": "1.a",
+      "questionText": "How would you explain the term Environment to your study group?",
+      "modelAnswer": "Environment refers to our physical and social surroundings[cite: 89]. The physical surroundings include climate, mountains, rivers, and vegetation[cite: 89]. The social surroundings include human cultural, political, and religious beliefs[cite: 89].",
+      "topic": "Social Studies (The Environment)",
+      "hasImage": false
+    },
+    {
+      "number": "1.b",
+      "questionText": "In what four ways are water bodies in your community polluted?",
+      "modelAnswer": "1. Discharge of industrial waste[cite: 89].\n2. Use of chemicals for fishing[cite: 89].\n3. Indiscriminate dumping of solid and liquid waste[cite: 89].\n4. Pollution through mining activities (galamsey) and farming along water bodies[cite: 89].",
+      "topic": "Social Studies (The Environment)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c",
+      "questionText": "Suggest four workable ways by which water bodies in your community can be made safe for use.",
+      "modelAnswer": "1. Enforcing strict environmental laws against illegal mining and dumping.\n2. Treating industrial wastewater before discharge.\n3. Educating communities on proper waste disposal practices.\n4. Practicing eco-friendly farming methods away from river banks.",
+      "topic": "Social Studies (The Environment)",
+      "hasImage": false
+    },
+    {
+      "number": "2.a",
+      "questionText": "Having observed tension among the youth in your community, write to the Assemblyman four ways in which tensions could calm down and also prevent conflicts.",
+      "modelAnswer": "1. Promoting tolerance and mutual respect among community groups[cite: 90].\n2. Engaging the youth in open forums and inclusive decision-making[cite: 90].\n3. Setting up local committees for the peaceful settlement of misunderstandings[cite: 90].\n4. Providing counseling services and community-based compromise/negotiation[cite: 90].",
+      "topic": "Social Studies (Law, Order and Nation Building)",
+      "hasImage": false
+    },
+    {
+      "number": "2.b",
+      "questionText": "You are a member of a debating club in your school. Prepare a presentation using four major points on how peace and security can lead to development in Ghana.",
+      "modelAnswer": "1. Enables the provision of economic facilities like factories and markets[cite: 90].\n2. Attracts both domestic and foreign investments[cite: 90].\n3. Protects lives and property while fostering political stability[cite: 90].\n4. Encourages citizens to have confidence and contribute actively to nation-building[cite: 90].",
+      "topic": "Social Studies (Law, Order and Nation Building)",
+      "hasImage": false
+    },
+    {
+      "number": "3.a",
+      "questionText": "Explain four ways by which national elections promote democracy in Ghana.",
+      "modelAnswer": "1. Prevent dictatorial rule by offering regular transitions of power[cite: 91].\n2. Serve as a mechanism for selecting competent leaders[cite: 91].\n3. Express the sovereign will of the people[cite: 91].\n4. Promote accountability, transparency, and political legitimacy[cite: 91].",
+      "topic": "Social Studies (Law, Order and Nation Building)",
+      "hasImage": false
+    },
+    {
+      "number": "3.b",
+      "questionText": "In what four ways can citizens contribute to the development of the state?",
+      "modelAnswer": "1. By paying taxes regularly[cite: 91].\n2. By reporting criminal activities and being law-abiding[cite: 91, 92].\n3. By participating in communal labor and offering voluntary services[cite: 91, 92].\n4. By protecting national properties and preserving the environment[cite: 92].",
+      "topic": "Social Studies (Law, Order and Nation Building)",
+      "hasImage": false
+    },
+    {
+      "number": "4.a",
+      "questionText": "Identify four challenges mostly associated with human resource development in Ghana.",
+      "modelAnswer": "1. Brain drain (emigration of skilled professionals)[cite: 93].\n2. Poor conditions of service and inadequate training facilities[cite: 93].\n3. Financial constraints and inadequate job opportunities[cite: 93].\n4. Ineffective monitoring, supervision, and poor work ethics[cite: 93].",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    },
+    {
+      "number": "4.b",
+      "questionText": "Explain four ways in which your government can use the tourism industry to drive development in Ghana.",
+      "modelAnswer": "1. Generates foreign exchange earnings for the national economy.\n2. Brings about infrastructural development (roads, hotels, communication) in tourist areas[cite: 93].\n3. Creates massive employment opportunities for the youth.\n4. Promotes local industries, arts, and cultural heritage[cite: 93, 94].",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    },
+    {
+      "number": "5.a.i",
+      "questionText": "Define the term Technology.",
+      "modelAnswer": "Technology refers to the application of scientific knowledge, tools, machines, and techniques to solve practical human problems and improve life.",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    },
+    {
+      "number": "5.a.ii",
+      "questionText": "Imagine you are on a trip to a village in Ghana. What four technological gadgets will you take with you to make your trip more comfortable and enjoyable?",
+      "modelAnswer": "1. Mobile phone and charger[cite: 94].\n2. Portable power bank[cite: 94].\n3. Torchlight[cite: 94].\n4. Wristwatch[cite: 94].",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    },
+    {
+      "number": "5.a.iii",
+      "questionText": "Explain how each technology stated in (a)(ii) will help you.",
+      "modelAnswer": "1. Mobile phone: To help make communication with friends and relations easier[cite: 94].\n2. Portable power bank: To store electrical power in order to recharge devices like phones[cite: 94].\n3. Torchlight: To light up dark pathways during movement[cite: 94].\n4. Wristwatch: To help tell time accurately[cite: 94].",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    },
+    {
+      "number": "5.b",
+      "questionText": "List two challenges that you may encounter when using technology.",
+      "modelAnswer": "1. Internet connectivity issues such as slow data speeds[cite: 94].\n2. High cost of acquisition, maintenance, and frequent technological updates[cite: 94].",
+      "topic": "Social Studies (Social and Economic Development)",
+      "hasImage": false
+    }
+  ]

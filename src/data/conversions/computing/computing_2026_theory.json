@@ -1,0 +1,157 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": "Name the type of computer network that would be suitable for sharing project files between three computers in different classrooms.",
+    "modelAnswer": "Local Area Network (LAN)[cite: 84].",
+    "topic": "Computing (Computer Networks)",
+    "hasImage": false
+  },
+  {
+    "number": "1.a.ii",
+    "questionText": "List two hardware components required to set up this network.",
+    "modelAnswer": "1. Network Interface Cards (NIC)[cite: 84]\n2. Ethernet Cables (Twisted pair cables) / Switch or Hub / Wireless Access Point (WAP) / Router[cite: 84]",
+    "topic": "Computing (Networking Hardware)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "List two features the club would use to make the PowerPoint presentation engaging for the visitors.",
+    "modelAnswer": "1. Transitions[cite: 84]\n2. Animations / Inserting multimedia (Audio / Video clips) / Hyperlinks / SmartArt graphics / Attractive Themes[cite: 84]",
+    "topic": "Computing (Presentation Software)",
+    "hasImage": false
+  },
+  {
+    "number": "1.c",
+    "questionText": "Suggest two visual elements that would make the event flyer attractive and informative.",
+    "modelAnswer": "1. High-quality images / pictures[cite: 84]\n2. WordArt / Stylized text / Shapes / Borders / Consistent and attractive Colour schemes / Logos[cite: 84]",
+    "topic": "Computing (Desktop Publishing)",
+    "hasImage": false
+  },
+  {
+    "number": "1.d",
+    "questionText": "Write the algorithm using pseudocode for setting up a projector for the presentation.",
+    "modelAnswer": "1. START[cite: 84]\n2. Place projector on a stable surface facing the screen[cite: 84].\n3. Connect power cable to projector and plug into power outlet[cite: 84].\n4. Connect video cable (VGA/HDMI) from projector to the computer[cite: 84].\n5. Turn on the projector[cite: 84].\n6. Turn on the computer[cite: 84].\n7. Adjust projector focus and position for a clear image[cite: 84].\n8. END[cite: 84]",
+    "topic": "Computing (Algorithms & Pseudocode)",
+    "hasImage": false
+  },
+  {
+    "number": "1.e",
+    "questionText": "Draw a flowchart for serving a snack at the event based on the condition: If the amount donated by a visitor is more than GH¢ 200.00, serve meat pie and malt, otherwise serve biscuit and water.",
+    "modelAnswer": "A standard flowchart structure starting with an Oval 'START', passing to a Parallelogram 'INPUT: Visitor's Donation Amount in GH¢', leading to a Diamond decision box 'Is Donation > GH¢ 200.00?'. If YES, leads to a Rectangle 'Serve Meat Pie and Malt'; if NO, leads to a Rectangle 'Serve Biscuit and Water'. Both branches converge to an Oval 'END'[cite: 84, 85].",
+    "topic": "Computing (Flowcharts)",
+    "hasImage": true,
+    "anwerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/computing_1eQ.png"
+  },
+  {
+    "number": "1.f",
+    "questionText": "State one function of each of the following components used in constructing a robot: (i) Gears (ii) Grippers (iii) Motors.",
+    "modelAnswer": "(i) Gears: Used to transmit power/motion, change the speed, or alter the direction of movement within the robot[cite: 85].\n(ii) Grippers: Act as the hands of the robot, used to grasp, pick up, hold, or manipulate objects[cite: 85].\n(iii) Motors: Actuators that convert electrical energy into mechanical energy to provide movement and drive the robot's parts[cite: 85].",
+    "topic": "Computing (Robotics Components)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a",
+    "questionText": "Describe the term generation of computers in your own words.",
+    "modelAnswer": "Refers to specific periods of technological advancement in computing history, characterized by a major fundamental change in hardware technology (such as vacuum tubes, transistors, or microprocessors) that made computers smaller, faster, cheaper, and more powerful[cite: 85].",
+    "topic": "Computing (History of Computers)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "List three file management practices that Dan should use to organize his work better.",
+    "modelAnswer": "1. Create logical folders and subfolders to separate different types of work (Photos, Reports, Spreadsheets)[cite: 85].\n2. Use clear, descriptive, and consistent file names for easy identification[cite: 85].\n3. Delete or archive unwanted/old files regularly to free up space, or sort files by date/type[cite: 85].",
+    "topic": "Computing (File Management)",
+    "hasImage": false
+  },
+  {
+    "number": "2.c",
+    "questionText": "A student plays a computer game for 5 hours every night and experiences headache, dry and blurry eyes. (i) What computing-related disorder is likely experienced? (ii) Explain it.",
+    "modelAnswer": "(i) Eye Strain / Computer Vision Syndrome (CVS)[cite: 85].\n(ii) A condition resulting from focusing the eyes on a computer or digital display device for protracted periods without breaks, leading to dry eyes, headaches, blurred vision, and neck/shoulder pain due to screen glare and reduced blinking[cite: 85].",
+    "topic": "Computing (Ergonomics & Health)",
+    "hasImage": false
+  },
+  {
+    "number": "2.d",
+    "questionText": "State the most appropriate output device for performing the tasks: (i) Printing a detailed architectural blueprint; (ii) Presenting a movie to the entire class; (iii) Sharing a short animation clip on a tablet.",
+    "modelAnswer": "(i) Plotter / Large Format Printer[cite: 85].\n(ii) Projector / Smart Interactive Board[cite: 85].\n(iii) Tablet Screen (Monitor / Display screen)[cite: 85].",
+    "topic": "Computing (Output Devices)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "A student typed the title in ALL CAPS: BASIC EDUCATION CERTIFICATE EXAMINATION. (i) Which PowerPoint feature can fix it? (ii) Outline the steps.",
+    "modelAnswer": "(i) Change Case[cite: 85].\n(ii) Steps: 1. Select the typed text. 2. Go to the Home tab on the ribbon. 3. In the Font group, click on the Change Case icon (Aa). 4. Select 'Capitalize Each Word' (or Title Case)[cite: 85].",
+    "topic": "Computing (Presentation Software Features)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "State two advantages of using a pre-designed template in desktop publishing.",
+    "modelAnswer": "1. Saves time and effort as the layout is already built[cite: 85].\n2. Ensures a professional, consistent, and visually appealing design that is easy to use for beginners[cite: 85].",
+    "topic": "Computing (Desktop Publishing)",
+    "hasImage": false
+  },
+  {
+    "number": "3.c",
+    "questionText": "Given examination marks in cells A2(85), B2(90), and C2(95): (i) Write an Excel formula for total mark; (ii) Write an Excel function for average mark; (iii) Write the symbol that must begin every formula or function.",
+    "modelAnswer": "(i) Total mark formula: `=A2+B2+C2` or `=SUM(A2:C2)`[cite: 86].\n(ii) Average mark function: `=AVERAGE(A2:C2)`[cite: 86].\n(iii) Symbol to begin: Equals sign (`=`)[cite: 86].",
+    "topic": "Computing (Spreadsheet Formulas & Functions)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "List the two main types of networks used in the scenario where Kate uses a laptop on home Wi-Fi with a wireless headset, TV streaming, and a desktop computer.",
+    "modelAnswer": "1. Wireless Local Area Network (WLAN) / Wi-Fi[cite: 86]\n2. Personal Area Network (PAN) (for the wireless headset) or Local Area Network (LAN)[cite: 86]",
+    "topic": "Computing (Networking)",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "The Art club wants to share multiple digital photos and final artwork with members, parents, and teachers, and create a discussion forum and event page. (i) Which type of social media platform? (ii) State three reasons.",
+    "modelAnswer": "(i) Facebook / Instagram / WhatsApp[cite: 86].\n(ii) Reasons: 1. Allows easy uploading and sharing of multiple digital photos and artwork[cite: 86]. 2. Supports the creation of discussion forums or group chats for members[cite: 86]. 3. Enables the creation of an \"Event Page\" to invite parents and teachers easily[cite: 86].",
+    "topic": "Computing (Social Media Platforms)",
+    "hasImage": false
+  },
+  {
+    "number": "4.c",
+    "questionText": "List two methods of protecting data against threats.",
+    "modelAnswer": "1. Using strong passwords / Encryption[cite: 86].\n2. Installing and updating Antivirus and Firewall software / Performing regular data backups / Restricting physical access[cite: 86].",
+    "topic": "Computing (Data Security)",
+    "hasImage": false
+  },
+  {
+    "number": "4.d",
+    "questionText": "A student searched 'sharks' and got too many unrelated results. What two specific actions would you advise to improve the search?",
+    "modelAnswer": "1. Use specific keywords (e.g., \"shark anatomy\" or \"shark facts for students\")[cite: 86].\n2. Use quotation marks for exact phrases or use advanced search operators/filters by category[cite: 86].",
+    "topic": "Computing (Internet Searching Techniques)",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "What is the correct programming term for the code structure: repeat(2) { move(5) steps }?",
+    "modelAnswer": "Loop / Iteration / Repetition[cite: 86].",
+    "topic": "Computing (Programming Structures)",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "Calculate Total_Expenses = 12 * 200.00 + 150.00 + 7 * 23.00 using computer operator precedence.",
+    "modelAnswer": "Step 1 (Multiplication): 12 × 200.00 = 2400.00[cite: 86].\nStep 2 (Multiplication): 7 × 23.00 = 161.00[cite: 86].\nStep 3 (Addition): 2400.00 + 150.00 + 161.00 = GH¢ 2711.00[cite: 86].",
+    "topic": "Computing (Operator Precedence)",
+    "hasImage": false
+  },
+  {
+    "number": "5.c",
+    "questionText": "A robotic arm crushes a delicate light bulb when trying to pick it up. List two main components that need to be improved or added to handle both heavy and delicate objects safely.",
+    "modelAnswer": "1. Sensors (specifically tactile, force, or pressure sensors to detect object fragility)[cite: 86].\n2. Soft Grippers / Actuators (using pneumatic soft materials or advanced AI controllers to regulate gripping force)[cite: 86].",
+    "topic": "Computing (Robotics Components)",
+    "hasImage": false
+  },
+  {
+    "number": "5.d",
+    "questionText": "(i) Explain Artificial Intelligence. (ii) List two application areas.",
+    "modelAnswer": "(i) Artificial Intelligence (AI) is the simulation of human intelligence processes by machines and computer systems, enabling them to learn, reason, solve problems, and make decisions independently[cite: 86].\n(ii) Application areas: 1. Healthcare (medical diagnosis, robotic surgery)[cite: 86]. 2. Automotive (self-driving cars) / Finance / Customer Service / Education[cite: 86].",
+    "topic": "Computing (Artificial Intelligence)",
+    "hasImage": false
+  }
+]

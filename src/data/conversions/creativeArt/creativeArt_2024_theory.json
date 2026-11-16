@@ -1,0 +1,182 @@
+[
+  {
+    "number": "1.a",
+    "questionText": "Using crayon or colour pencil, draw a cone in the space provided and render it solid using the mass shading technique.",
+    "modelAnswer": "A pictorial sketch of a cone rendered solid using mass shading to show light and shadow gradations[cite: 182, 183].",
+    "topic": "Creative Arts & Design (Visual Art - Drawing)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creative_1aans.png"
+  },
+  {
+    "number": "1.b",
+    "questionText": "In the spaces provided below, draw any two different objects that are conical in shape. Use the stippling technique to shade the drawn object in Box 'A' and hatching technique to shade the other in Box 'B'.",
+    "modelAnswer": "Drawings of two conical objects (e.g., ice cream cone, party hat, funnel, etc.). Object in Box A shaded using dots (stippling), and object in Box B shaded using parallel lines (hatching)[cite: 182, 183].",
+    "topic": "Creative Arts & Design (Visual Art - Drawing & Shading Techniques)",
+    "hasImage": true,
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creative_1bans.jpg"
+  },
+  {
+    "number": "2.a",
+    "questionText": "Give two artworks that you would produce to solve the problem of educating learners on keeping the school compound and classrooms neat.",
+    "modelAnswer": "1. Posters / banners / signposts carrying environmental cleanliness messages[cite: 197].\n2. Refuse containers / litter bins / decorated waste baskets[cite: 197].",
+    "topic": "Creative Arts & Design (Visual Art - Design)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "State the appropriate technique that you would use to produce each artwork in 2(a) above.",
+    "modelAnswer": "1. For Posters/Banners: Printing, lettering, painting, or illustration[cite: 197].\n2. For Refuse Containers: Construction and assembling, or weaving[cite: 197].",
+    "topic": "Creative Arts & Design (Visual Art - Techniques)",
+    "hasImage": false
+  },
+  {
+    "number": "2.c",
+    "questionText": "In an orderly manner, state the first four design processes that you would use in designing the artworks.",
+    "modelAnswer": "1. Empathise / Identification of the situation or needs[cite: 197].\n2. Define / Definition of the problem and design brief[cite: 197].\n3. Ideate / Investigate / Research / Information gathering[cite: 197].\n4. Prototype / Developing possible solutions[cite: 197].",
+    "topic": "Creative Arts & Design (Design Process)",
+    "hasImage": false
+  },
+  {
+    "number": "2.d",
+    "questionText": "Balance is one of the key principles of design that could be used in the production of the artworks in 2(a). Identify any two types of balance and explain only one of them.",
+    "modelAnswer": "Types: Symmetrical (formal) balance, Asymmetrical (informal) balance, Radial balance, and Occult balance[cite: 197, 198].\nExplanation of Symmetrical Balance: Achieved by giving equal visual weight to elements across a central axis (horizontal, vertical, or diagonal), creating a mirrored or perfectly balanced equilibrium[cite: 197, 198].",
+    "topic": "Creative Arts & Design (Principles of Design)",
+    "hasImage": false
+  },
+  {
+    "number": "2.e",
+    "questionText": "Enumerate two precautions that should be observed during the production of the artworks in 2(a) above.",
+    "modelAnswer": "1. Ensure proper ventilation when using materials that emit fumes, such as paints, solvents, and adhesives[cite: 198].\n2. Keep the workspace clean, organized, and well-lit to prevent accidents and eye strain[cite: 198].",
+    "topic": "Creative Arts & Design (Workshop Safety)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "Your school intends to organize an exhibition during the upcoming 20th Anniversary Celebration. As the leader of the organizing team, explain three factors that will guide a successful planning and organizing of the exhibition.",
+    "modelAnswer": "1. Theme and Concept: Defining a clear theme, narrative, or unifying concept for the exhibition[cite: 198, 199].\n2. Venue and Space: Selecting a suitable venue considering lighting, wall space, and flooring[cite: 198, 199].\n3. Budget and Funding: Establishing a financial budget, securing resources, and allocating funds effectively for promotion and logistics[cite: 199].",
+    "topic": "Creative Arts & Design (Exhibition Planning)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b.i",
+    "questionText": "Identify two essential tools you would use for cutting of wires and papers.",
+    "modelAnswer": "1. Scissors[cite: 199, 200]\n2. Pliers / Wire cutters / Craft knives[cite: 199, 200]",
+    "topic": "Creative Arts & Design (Tools & Equipment)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b.ii",
+    "questionText": "Identify two essential tools you would use for making holes in metals and plastics.",
+    "modelAnswer": "1. Drills[cite: 200]\n2. Punches (dot/center punch) / Awls / Saws[cite: 200]",
+    "topic": "Creative Arts & Design (Tools & Equipment)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b.iii",
+    "questionText": "Identify two essential tools you would use for joining of lead and copper.",
+    "modelAnswer": "1. Soldering iron[cite: 200]\n2. Blowtorch / Riveting tools[cite: 200]",
+    "topic": "Creative Arts & Design (Tools & Equipment)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "On the music manuscript provided, notate the following letters on the Treble Staff using minims or half notes: (i) ECG; (ii) BAD; (iii) AGF.",
+    "modelAnswer": "Correct notation of the notes ECG, BAD, and AGF as minims (half notes) on the treble staff (or correct alternative for visually impaired: bass staff spaces A and C, A major key signature F#, C#, G#, and supertonic triad members A, C, E)[cite: 208, 212].",
+    "topic": "Creative Arts & Design (Music Notation)",
+    "hasImage": true,
+     "answerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creative_4aans.jpg"
+  },
+  {
+    "number": "4.b",
+    "questionText": "Place the underlisted instruments under their respective classification in the table: Donno, Seperewa, Mbira, Atenteben, Mmensuon.",
+    "modelAnswer": "Chordophone: Seperewa[cite: 212]. Idiophone: Mbira[cite: 212]. Membranophone: Donno[cite: 212]. Aerophone: Atenteben, Mmensuon[cite: 212].",
+    "topic": "Creative Arts & Design (Musical Instruments)",
+    "hasImage":true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/creativeArt-2025/creative_4bq.png"
+  },
+  {
+    "number": "4.c",
+    "questionText": "In a particular song, bar 1 has four quavers, bar 2 has one minim and bar 3 has two crotchets. Identify the time signature for the song.",
+    "modelAnswer": "2/4 (Two crotchet beats in a bar / simple duple time signature)[cite: 212].",
+    "topic": "Creative Arts & Design (Music Theory)",
+    "hasImage": false
+  },
+  {
+    "number": "4.d",
+    "questionText": "Explain why the song Yen ara asaase ni is in a binary form.",
+    "modelAnswer": "Because it has two contrasting or different musical sections described as 'A' and 'B', representing a first theme and a second theme[cite: 212].",
+    "topic": "Creative Arts & Design (Musical Form)",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "Using the tonic solfa notation, write the members of Chord I, Chord IV, and Chord V.",
+    "modelAnswer": "Chord I: d - m - s (or C - E - G in C major)[cite: 213].\nChord IV: f - l - d (or F - A - C in C major)[cite: 213].\nChord V: s - t - r (or G - B - D in C major)[cite: 213].",
+    "topic": "Creative Arts & Design (Music Theory)",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "Identify and describe any three voice parts that you would find delightful during a choral music performance.",
+    "modelAnswer": "1. Soprano (Treble): The highest-pitched vocal part, usually sung by females, carrying the main melody[cite: 213].\n2. Alto: The second-highest vocal part, lower than soprano, sung mostly by females to support the harmony[cite: 213].\n3. Bass: The lowest vocal part providing harmonic and rhythmic foundation, sung by males with deep voices[cite: 213].",
+    "topic": "Creative Arts & Design (Music)",
+    "hasImage": false
+  },
+  {
+    "number": "5.c",
+    "questionText": "Write short notes on Ephraim Amu focusing on his hometown, genre of work, one example of his works, and contribution made to society.",
+    "modelAnswer": "Hometown: Peki (Avetile), Volta Region[cite: 213].\nGenre of Work: Art music / Classical music[cite: 213].\nExample of Work: \"Yen Ara Asase Ni\"[cite: 213].\nContribution to Society: Pioneered the integration of indigenous Ghanaian musical elements, rhythms, and local languages into formal art music and education, and developed/upgraded the atenteben bamboo flute[cite: 209, 213].",
+    "topic": "Creative Arts & Design (Music History)",
+    "hasImage": false
+  },
+  {
+    "number": "6.a",
+    "questionText": "Adzo and Komla are about to perform the Bəbəəbə dance. List three costume items they would use.",
+    "modelAnswer": "1. Handkerchiefs[cite: 210]\n2. Scarves / Head wraps[cite: 210]\n3. Traditional cloth / Slit and kaba[cite: 210]",
+    "topic": "Creative Arts & Design (Dance Drama)",
+    "hasImage": false
+  },
+  {
+    "number": "6.b",
+    "questionText": "Describe how drummers, singers and dancers are arranged on a stage during the performance of 'Kpanlogo'.",
+    "modelAnswer": "1. Drummers: Arranged at the rear/back of the stage in a semi-circular pattern or straight line, with the lead master drummer in the middle[cite: 211].\n2. Dancers: Dance in front of the drummers, facing the audience to exhibit facial expressions and movements[cite: 211].\n3. Singers: Arranged behind or on the sides of the drummers[cite: 211].",
+    "topic": "Creative Arts & Design (Dance Drama)",
+    "hasImage": false
+  },
+  {
+    "number": "6.c",
+    "questionText": "Write short notes on Martin Owusu focusing on his profession, contribution to society, and an example of any of his works.",
+    "modelAnswer": "Profession: Renowned Ghanaian playwright, lecturer, and teacher of drama[cite: 211].\nContribution to Society: Contributed significantly to African theatre and literature by writing plays that explore politics, culture, and social issues, and training many leading Ghanaian actors[cite: 211].\nExample of Work: \"The Sudden Return\" or \"The Story Ananse Told\".",
+    "topic": "Creative Arts & Design (Performing Arts History)",
+    "hasImage": false
+  },
+  {
+    "number": "6.d",
+    "questionText": "State three significant roles of dance drama in the Ghanaian culture.",
+    "modelAnswer": "1. Preserving cultural heritage by passing down history, traditions, and ancestral experiences from one generation to another[cite: 214].\n2. Teaching societal morals, values, and behavioral norms[cite: 214].\n3. Providing entertainment and promoting community unity and a sense of belonging during festivals and ceremonies[cite: 214].",
+    "topic": "Creative Arts & Design (Dance Drama & Culture)",
+    "hasImage": false
+  },
+  {
+    "number": "7.a",
+    "questionText": "Group the listed traditional dances under their respective ethnic groups: Apatampa, Bamaya, Gahu, Gota, Kete, Nagla, and Takai.",
+    "modelAnswer": "Ewe: Gahu, Gota. Akan: Apatampa, Kete. Mole-Dagbani: Bamaya, Nagla, Takai.",
+    "topic": "Creative Arts & Design (Traditional Dances)",
+    "hasImage": false,
+    "answerImageUrl":"gs://bece-prep.firebasestorage.app/creativeArt-2025/creative_7aq.png"
+  },
+  {
+    "number": "7.b",
+    "questionText": "Describe each of the following types of dance movements: (i) Alignment; (ii) Balance.",
+    "modelAnswer": "1. Alignment: The proper placement and posture of body parts in relation to one another to maintain skeletal efficiency and line.\n2. Balance: The ability to maintain equilibrium and stability of the body whether stationary or during dynamic movement.",
+    "topic": "Creative Arts & Design (Dance Movements)",
+    "hasImage": false
+  },
+  {
+    "number": "7.c",
+    "questionText": "State two reasons why storytelling should still be encouraged in the Ghanaian culture.",
+    "modelAnswer": "1. It preserves and transmits cultural knowledge, history, and life experiences from one generation to the next[cite: 214].\n2. It teaches essential moral values, social norms, and guidelines for a meaningful life[cite: 214].",
+    "topic": "Creative Arts & Design (Culture & Tradition)",
+    "hasImage": false
+  }
+]

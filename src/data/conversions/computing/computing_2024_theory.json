@@ -1,0 +1,172 @@
+ [
+    {
+      "number": "1.a",
+      "questionText": "Which of the users has assumed the correct sitting posture?",
+      "modelAnswer": "User IV",
+      "topic": "Computing (Health & Ergonomics)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/com_1q.jpg"
+    },
+    {
+      "number": "1.b",
+      "questionText": "Prolonged use of the computer is associated with health-related problems. Suggest two possible safety measures the users should adapt to minimize workstation risks.",
+      "modelAnswer": "1. Evaluating the display screen and adjusting chair positions[cite: 97].\n2. Taking intermittent breaks and blinking the eyes frequently[cite: 97].",
+      "topic": "Computing (Health & Ergonomics)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c",
+      "questionText": "The users were tasked to produce a ten-page document using Microsoft Word. Outline the steps to be taken by the users to set the entire ten-page document to 2.0 line spacing.",
+      "modelAnswer": "1. Press CTRL + A to select the entire document[cite: 97].\n2. Click on the Home Tab[cite: 97].\n3. Under the Paragraph option, click on Line and Paragraph Spacing[cite: 97].\n4. Select 2.0 to set the double line spacing[cite: 97].",
+      "topic": "Computing (Word Processing)",
+      "hasImage": false
+    },
+    {
+      "number": "1.d",
+      "questionText": "The users were to type a report using Microsoft Word to be presented in class. User I typed 10 pages within 3 hours, user II typed 8 pages within 4 hours, user III typed 5 pages within 6 hours and user IV typed 6 pages within 2 hours. Suggest two Microsoft Excel chart types that will be most appropriate to show the relationship between the number of pages each user typed and the time spent in typing.",
+      "modelAnswer": "1. Column chart / Clustered column chart[cite: 98].\n2. Bar chart / Clustered bar chart[cite: 98].\n3. Line chart[cite: 98].",
+      "topic": "Computing (Spreadsheet Charts)",
+      "hasImage": false
+    },
+    {
+      "number": "1.e",
+      "questionText": "The users have been using their computers as standalone. State two benefits they will derive when their computers are networked.",
+      "modelAnswer": "1. It will allow multiple users to share hardware resources such as printers and scanners[cite: 98].\n2. It will promote communication, collaboration, and data sharing between multiple users and devices[cite: 98].",
+      "topic": "Computing (Computer Networks)",
+      "hasImage": false
+    },
+    {
+      "number": "1.f",
+      "questionText": "As a networking consultant, suggest two network topologies that could be used to network the computers for the users.",
+      "modelAnswer": "1. Star topology[cite: 99].\n2. Bus topology[cite: 99].",
+      "topic": "Computing (Computer Networks)",
+      "hasImage": false
+    },
+    {
+      "number": "1.g",
+      "questionText": "School routine activities:\n7:30 a.m.: Morning assembly\n7:40 a.m.: Classes hours\n9:40 a.m.: Morning break\n10:00 a.m.: Classes hours\n12:30 p.m.: Afternoon break\n1:00 p.m.: Classes hours\n2:30 p.m.: Closing\nAs a programming student, write an algorithm to demonstrate the activity.",
+      "modelAnswer": "IF time is 7:30 a.m.\nMorning assembly\nEND\nIF time is 7:40 a.m.\nClasses hours\nEND\nIF time is 9:40 a.m.\nMorning break\nEND\nIF time is 10:00 a.m.\nClasses hours\nEND\nIF time is 12:30 p.m.\nAfternoon break\nEND\nIF time is 1:00 p.m.\nClasses hours\nEND\nIF time is 2:30 p.m.\nClosing\nEND[cite: 99]",
+      "topic": "Computing (Algorithms & Programming)",
+      "hasImage": false
+    },
+    {
+      "number": "2.a",
+      "questionText": "Describe the processor of a computer to colleagues in your class.",
+      "modelAnswer": "The processor (CPU) is the brain of the computer; an integrated electronic circuit that performs calculations, executes instructions, and handles arithmetic, logic, and input/output operations[cite: 101].",
+      "topic": "Computing (Computer Hardware)",
+      "hasImage": false
+    },
+    {
+      "number": "2.b",
+      "questionText": "Write the name of the image shown in Figure 2.",
+      "modelAnswer": "QR code or Quick Response code[cite: 101]",
+      "topic": "Computing (Emerging Technologies)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/com_2bq.jpg"
+    },
+    {
+      "number": "2.c",
+      "questionText": "Describe to your colleagues, how the image shown in Figure 2 is accessed for information.",
+      "modelAnswer": "Using a smartphone with a QR reader app or Google Lens, open the camera or lens, point it at the QR code image, and the device will scan and display the embedded information or web link on the screen[cite: 101].",
+      "topic": "Computing (Emerging Technologies)",
+      "hasImage": false
+    },
+    {
+      "number": "2.d",
+      "questionText": "File extension is very important in naming a file. List three file extensions to be presented in the next computing class.",
+      "modelAnswer": "1. .docx (Word files)[cite: 102]\n2. .xlsx (Spreadsheet files)[cite: 102]\n3. .pdf (Page layout/Document files)[cite: 102]",
+      "topic": "Computing (File Management)",
+      "hasImage": false
+    },
+    {
+      "number": "3.a.i",
+      "questionText": "How many columns and rows are needed to create a table for the head teacher's items bought including ABC JHS as heading for the table without the serial numbers of the items?",
+      "modelAnswer": "Columns = 3, Rows = 7 (or Columns = 6, Rows = 4)[cite: 103]",
+      "topic": "Computing (Word Processing)",
+      "hasImage": false
+    },
+    {
+      "number": "3.a.ii",
+      "questionText": "Outline the steps to be followed to create the table mentioned in 3(a)(i) using Microsoft Word.",
+      "modelAnswer": "1. Click on the Insert Tab[cite: 103].\n2. Click on the Table button[cite: 103].\n3. Click on Insert Table[cite: 103].\n4. Enter the required number of columns and rows in the dialog box, then click OK[cite: 103].",
+      "topic": "Computing (Word Processing)",
+      "hasImage": false
+    },
+    {
+      "number": "3.b",
+      "questionText": "The file size of a presentation created by a student is too large to be sent through e-mail to a friend. Suggest one possible reason for the large file size.",
+      "modelAnswer": "Inclusion of too many heavy media files such as audios, videos, high-resolution pictures, or graphics[cite: 104].",
+      "topic": "Computing (Presentation Software)",
+      "hasImage": false
+    },
+    {
+      "number": "3.c",
+      "questionText": "State one feature of Microsoft Publisher.",
+      "modelAnswer": "Provides a variety of built-in templates and design layouts for creating flyers, brochures, and newsletters[cite: 104].",
+      "topic": "Computing (Desktop Publishing)",
+      "hasImage": false
+    },
+    {
+      "number": "3.d",
+      "questionText": "Write a function in Microsoft Excel to determine the lowest termly score for Kofi Malik.",
+      "modelAnswer": "=MIN(B2:D2) (or =MIN(B2, C2, D2))[cite: 104]",
+      "topic": "Computing (Spreadsheet Functions)",
+      "hasImage": false
+    },
+    {
+      "number": "4.a",
+      "questionText": "Computer networks come in several topologies. State two features of the ring topologies.",
+      "modelAnswer": "1. Data transmission is unidirectional and sequential, bit-by-bit[cite: 105].\n2. It uses repeaters to boost signal strength or token passing mechanisms[cite: 105].",
+      "topic": "Computing (Computer Networks)",
+      "hasImage": false
+    },
+    {
+      "number": "4.b",
+      "questionText": "Abu, the leader of a class does not understand how to use the Forward all feature in an e-mail to send a message to everyone in the class. Explain to Abu what Forward all means.",
+      "modelAnswer": "Forward all is an e-mail feature that allows the sender to forward an original message along with all its attachments to multiple recipients simultaneously[cite: 105].",
+      "topic": "Computing (Electronic Mail)",
+      "hasImage": false
+    },
+    {
+      "number": "4.c.i",
+      "questionText": "A Computing teacher has given a class an assignment to design a personal blog. What two design features should be used to design the blog?",
+      "modelAnswer": "1. Header or Title[cite: 105].\n2. Main content area with posts and sidebars[cite: 105].",
+      "topic": "Computing (Web Design)",
+      "hasImage": false
+    },
+    {
+      "number": "4.c.ii",
+      "questionText": "Write the name of one tool that can be used to design the blog.",
+      "modelAnswer": "WordPress (or Wix, Blogger, Medium)[cite: 105]",
+      "topic": "Computing (Web Design)",
+      "hasImage": false
+    },
+    {
+      "number": "5.a",
+      "questionText": "In computer operation, expressions are evaluated using operator precedence approach. Follow the approach and evaluate the expression: (1 + 3) * 5 + 7",
+      "modelAnswer": "(4) * 5 + 7 = 20 + 7 = 27[cite: 106]",
+      "topic": "Computing (Programming & Arithmetic)",
+      "hasImage": false
+    },
+    {
+      "number": "5.b",
+      "questionText": "How would you describe the term decomposition in programming to a friend who was not in class when it was taught?",
+      "modelAnswer": "Decomposition is the process of breaking down complex or large problems into smaller, manageable, and easily solvable sub-problems[cite: 106].",
+      "topic": "Computing (Programming Concepts)",
+      "hasImage": false
+    },
+    {
+      "number": "5.c",
+      "questionText": "Mention three software packages that are used in the construction of robotic artefacts.",
+      "modelAnswer": "1. Scratch[cite: 106]\n2. EV3[cite: 106]\n3. Mbot (or Webots, Snap)[cite: 106]",
+      "topic": "Computing (Robotics)",
+      "hasImage": false
+    },
+    {
+      "number": "5.d",
+      "questionText": "Write a possible IF-THEN statement for an imaginary expert system to execute the statement: You are a Monday born and a female which means you are called Adwoa.",
+      "modelAnswer": "IF you are a Monday born AND a female THEN you are called Adwoa[cite: 106].",
+      "topic": "Computing (Artificial Intelligence & Logic)",
+      "hasImage": false
+    }
+  ]

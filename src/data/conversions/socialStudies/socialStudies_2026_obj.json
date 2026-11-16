@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Which agent of socialization in your environment is responsible for teaching social norms and values?",
+    "options": [
+      "Family",
+      "Media",
+      "Government",
+      "Education"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The family is the primary agent of socialization responsible for teaching initial social norms and values[cite: 183].",
+    "topic": "Social Studies (Socialization)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Which of the following human activities in the highland areas of Ghana, mostly pollute the atmosphere?",
+    "options": [
+      "Herding",
+      "Quarrying",
+      "Mining",
+      "Farming"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Mining activities in highland areas contribute heavily to environmental and atmospheric pollution[cite: 183].",
+    "topic": "Social Studies (Environment)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Which mapping skill can assist you to identify and interpret symbols used on a map?",
+    "options": [
+      "Legend interpretation",
+      "Grid referencing",
+      "Use of scale",
+      "Map orientation"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Legend (or key) interpretation helps explain symbols used on a map[cite: 183].",
+    "topic": "Social Studies (Mapping Skills)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "How can vocational training programmes in your environment contribute to human resource developments in Ghana?",
+    "options": [
+      "promoting employment among the youth",
+      "improving the skills of the individual",
+      "limiting access to educational opportunities",
+      "encouraging reading and writing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vocational training builds and improves the practical skills of individuals[cite: 183, 184].",
+    "topic": "Social Studies (Human Resource Development)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "How can Ghanaians correct negative values and attitudes gained from colonization?",
+    "options": [
+      "Cultivating positive work ethics",
+      "Providing religious education in our schools",
+      "Introducing a new system of government",
+      "Learning English language in our schools"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cultivating positive work ethics helps correct negative imported values[cite: 183, 184].",
+    "topic": "Social Studies (Values & Culture)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "Creation of dams along major river bodies will mainly help reduce",
+    "options": [
+      "soil fertility.",
+      "water borne diseases.",
+      "perennial flooding.",
+      "farm yield."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Dams help regulate water flow and control perennial flooding[cite: 183, 184].",
+    "topic": "Social Studies (Water Resources)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "After working in a modern automobile mechanic shop owned by your father during the vacation, you noticed and realized that difficult tasks are done more easily and faster",
+    "options": [
+      "through the use of modern science and technology.",
+      "when labour is well educated.",
+      "when the work load is small.",
+      "when adequate capital is available."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Modern science and technology simplify and speed up tasks[cite: 183, 184].",
+    "topic": "Social Studies (Science and Technology)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "In order to live in peace and harmony in our communities, Ghanaians need to promote",
+    "options": [
+      "education.",
+      "fairness.",
+      "religion.",
+      "hardwork."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Promoting fairness builds trust and peace within communities[cite: 183, 185].",
+    "topic": "Social Studies (Peace Building)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "What role do parents play in supporting adolescent reproductive health?",
+    "options": [
+      "encourage a hygienic lifestyle.",
+      "provide accurate information on reproductive health.",
+      "provide physical needs of the adolescent.",
+      "encourage discussions on peer influence."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Providing accurate information equips adolescents to make healthy choices[cite: 183, 185].",
+    "topic": "Social Studies (Adolescent Reproductive Health)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Understanding the rights and obligations as a citizen of a state directly aligns to",
+    "options": [
+      "political awareness.",
+      "community development.",
+      "responsible citizenship.",
+      "peace building."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Knowing one's rights and obligations is central to responsible citizenship[cite: 183, 185].",
+    "topic": "Social Studies (Citizenship)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Ghana was ushered into the second republican government in",
+    "options": [
+      "1992.",
+      "1966.",
+      "1972.",
+      "1969."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The Second Republic of Ghana was ushered in under the 1969 Constitution[cite: 183, 185].",
+    "topic": "Social Studies (Ghana's Political History)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Ghana's population is described as youthful because a large proportion of the total population falls within ages",
+    "options": [
+      "61-80 years.",
+      "31-45 years.",
+      "46-60 years.",
+      "0-30 years."
+    ],
+    "correctAnswer": "D",
+    "explanation": "A youthful population consists predominantly of younger age brackets (0-30 years)[cite: 183, 185].",
+    "topic": "Social Studies (Population)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "Which of the following people do not have the right to vote during elections at your constituency for a new Member of Parliament?",
+    "options": [
+      "Mentally challenged",
+      "Deaf",
+      "Disabled",
+      "Visually Impaired"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Persons of unsound mind (mentally challenged) are legally disqualified from voting under electoral laws[cite: 183, 185].",
+    "topic": "Social Studies (Elections & Governance)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "The interpretation of the constitution is the responsibility of the",
+    "options": [
+      "Executive.",
+      "Judiciary.",
+      "Cabinet.",
+      "Legislature."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Judiciary arm of government interprets the laws and the constitution[cite: 183, 185].",
+    "topic": "Social Studies (Arms of Government)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "What is the most effective way energy can be conserved in our homes?",
+    "options": [
+      "Keeping lights on during the day to brighten the room",
+      "Leaving lights on in unoccupied rooms",
+      "Using energy-efficient LED light bulbs",
+      "Using standard incandescent bulbs"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Energy-efficient LED light bulbs consume significantly less electricity[cite: 183, 186].",
+    "topic": "Social Studies (Energy Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "The best way to make polluted water in rural communities safe for drinking at home is by",
+    "options": [
+      "filtration.",
+      "chlorination.",
+      "boiling.",
+      "distillation."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Boiling effectively kills disease-causing germs and pathogens in household water[cite: 183, 186].",
+    "topic": "Social Studies (Environmental Health)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Adolescents in your locality who engage in behaviours that are against the norms of the society are likely to",
+    "options": [
+      "become chaste.",
+      "have peer pressure.",
+      "distance themselves from parents.",
+      "be infected with malaria."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Deviant behaviours among adolescents often lead to a breakdown in communication and alienation or distancing from parents[cite: 183, 186].",
+    "topic": "Social Studies (Adolescent Behavior)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "The executive arm of government is responsible for",
+    "options": [
+      "controlling state spending.",
+      "interpreting laws of the country.",
+      "assenting to bills passed into laws.",
+      "enacting laws for the country."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Assenting to bills passed by parliament to make them law is a key function of the executive President, though executive functions broadly include implementing policies and state administration[cite: 183, 186].",
+    "topic": "Social Studies (Arms of Government)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Water bodies in their natural state are of great benefit to Ghanaians. Which of the following options is the main benefit derived from water bodies?",
+    "options": [
+      "Travelling",
+      "Swimming",
+      "Domestic use",
+      "Animal rearing"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Domestic use (drinking, cooking, washing) is a primary and essential benefit of natural water bodies[cite: 183, 186].",
+    "topic": "Social Studies (Natural Resources)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "How does access to contraceptives impact adolescent reproductive health in your community?",
+    "options": [
+      "increases the likelihood of unintended pregnancies.",
+      "reduces the likelihood of unintended pregnancies.",
+      "promotes early initiation of sexual activity.",
+      "increases the risk of sexually transmitted infections."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Access to contraceptives effectively reduces the rate of unintended pregnancies among adolescents[cite: 183, 186].",
+    "topic": "Social Studies (Reproductive Health)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Self-identity is important because it helps the individual to",
+    "options": [
+      "respect authority.",
+      "understand foreign languages.",
+      "live harmoniously with everyone.",
+      "get loans from friends."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Good self-awareness and identity promote positive social interactions and harmonious living[cite: 183, 186].",
+    "topic": "Social Studies (Self-Identity)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "What is the most common environmental challenge that results from rapid population growth in your community?",
+    "options": [
+      "Improper waste disposal",
+      "Soil erosion",
+      "Water pollution",
+      "Overgrazing"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Rapid population growth often overwhelms municipal systems, leading to improper waste disposal[cite: 183, 186].",
+    "topic": "Social Studies (Environment & Population)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "The President of the third republic of Ghana was",
+    "options": [
+      "Dr. Kwame Nkrumah.",
+      "Dr. Hilla Limann.",
+      "Prof. Evans Atta Mills.",
+      "Dr. K. A. Busia."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Dr. Hilla Limann led the Third Republic of Ghana from 1979 to 1981[cite: 183, 186].",
+    "topic": "Social Studies (Political History)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "You are having a discussion in class with your peers about Human Rights. Which of the following options is not a relevant body in Ghana preventing Human Rights abuse?",
+    "options": [
+      "Domestic Violence and Victim Support Unit (D.O.V.V.S.U.)",
+      "National Commission for Civic Education (N.C.C.E.)",
+      "Formed Police Unit (F.P.U.)",
+      "Committee on Youth Organization (C.Y.O.)"
+    ],
+    "correctAnswer": "D",
+    "explanation": "The Committee on Youth Organization (C.Y.O.) was a historical political youth wing, not a human rights protection agency[cite: 183, 186].",
+    "topic": "Social Studies (Human Rights Institutions)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "As a Ghanaian, you have realized many of your classmates and neighbours do not show interest in visiting tourist sites in Ghana. This is because",
+    "options": [
+      "people do not appreciate the value of leisure.",
+      "people learn about the culture of Ghana.",
+      "there are no tourist guards at the site.",
+      "people like to appreciate nature."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A general lack of interest in local tourism is often attributed to a low cultural appreciation for the value of leisure and recreation[cite: 183, 186].",
+    "topic": "Social Studies (Tourism & Leisure)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "How will the patronage of sceneries in your community promote employment opportunities?",
+    "options": [
+      "By moving around the scenery",
+      "By constructing rest houses",
+      "Through generation of income",
+      "Through construction of roads"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Developing tourist sites and sceneries requires building rest houses, hotels, and facilities that create jobs[cite: 183, 186].",
+    "topic": "Social Studies (Tourism Development)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "As a civil servant working in Ghana, what is the importance of having a social security number?",
+    "options": [
+      "helps you to receive retirement benefits.",
+      "provides access to free healthcare services.",
+      "enables you to open a bank account.",
+      "allows you to vote in elections."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Social security numbers track contributions to ensure workers receive pensions and retirement benefits[cite: 183, 186].",
+    "topic": "Social Studies (Financial Literacy & Security)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Human Rights abuse has become very common in the Ghanaian society lately. How best can this be prevented?",
+    "options": [
+      "Isolating offenders from the society",
+      "Responsible parenting",
+      "Media houses exposing the abuses",
+      "Advising the offenders"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Responsible parenting instils moral values and respect for human rights from an early age[cite: 183, 186].",
+    "topic": "Social Studies (Human Rights)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "One noticeable feature of technology in the world today is that it",
+    "options": [
+      "keeps improving at a faster rate.",
+      "needs time and attention.",
+      "enhances criminal activities.",
+      "involves a lot of money."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Technological innovation advances and updates at an extremely rapid pace globally[cite: 183, 186].",
+    "topic": "Social Studies (Technology)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "An example of a plateau with steep slopes in Ghana is",
+    "options": [
+      "Osudoku hills.",
+      "Kwahu scarp.",
+      "Akwapim ranges.",
+      "Afadzato mountains."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Kwahu scarp is a prominent plateau formation with steep slopes in Ghana[cite: 183, 186].",
+    "topic": "Social Studies (Physical Features of Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Which natural disaster causes sudden vibration of the Earth's surface, and often resulting in damage to buildings and infrastructure?",
+    "options": [
+      "Tornado",
+      "Tsunami",
+      "Earthquake",
+      "Hurricane"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Earthquakes involve sudden tectonic movements that cause ground vibrations[cite: 183, 187].",
+    "topic": "Social Studies (Natural Disasters)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "After spending so much time revising on Adolescent Reproductive Health, you can best explain it to your peers as",
+    "options": [
+      "taking care of the reproductive organs.",
+      "various stages in the growth of the adolescent.",
+      "the total well-being of the reproductive system.",
+      "a state of being in good health."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Reproductive health encompasses physical, mental, and social well-being in all matters relating to the reproductive system[cite: 183, 187].",
+    "topic": "Social Studies (Reproductive Health)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Which feature of the earth has a wide flat area of land, with minimal changes in elevation?",
+    "options": [
+      "Plateau",
+      "Delta",
+      "Mountain",
+      "Plain"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Plains are broad lowlands with relatively flat surfaces and minimal elevation changes[cite: 183, 187].",
+    "topic": "Social Studies (Physical Features)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "As a citizen of Ghana, which of the following actions best demonstrates your commitment to democratic values and nation building?",
+    "options": [
+      "Criticizing the government on social media",
+      "Participating in peaceful protest",
+      "Volunteering for community service",
+      "Voting during elections"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Voting during elections is a fundamental civic duty that directly demonstrates commitment to democracy[cite: 183, 187].",
+    "topic": "Social Studies (Democratic Values)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Positive Action was declared in the Gold Coast in January 1950 by",
+    "options": [
+      "Kwame Nkrumah.",
+      "G. A. Grant.",
+      "E. A. Ofori-Atta.",
+      "J. B. Danquah."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Dr. Kwame Nkrumah declared the campaign of 'Positive Action' on January 8, 1950[cite: 183, 187].",
+    "topic": "Social Studies (Ghana's Independence History)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "The primary function of the Judiciary is",
+    "options": [
+      "swearing of affidavits.",
+      "making of laws.",
+      "registration of citizens.",
+      "administration of justice."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The judiciary is tasked with administering justice impartially according to law[cite: 183, 187].",
+    "topic": "Social Studies (Judiciary)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "How can you reduce air pollution in your environment?",
+    "options": [
+      "chemicals to destroy mosquitoes",
+      "liquified petroleum gas",
+      "D.D.T. in fishing",
+      "fertilizer on farms"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Using cleaner energy sources like Liquified Petroleum Gas (LPG) reduces smoke and air pollution compared to charcoal or firewood[cite: 183, 187].",
+    "topic": "Social Studies (Environmental Pollution)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Imagine you are a youth leader in your community assigned to convey a message to promote peaceful elections. Which of the following creative ways will be most effective to use?",
+    "options": [
+      "Giving a speech in a school",
+      "Designing an animation for social media",
+      "Writing a letter to the editor",
+      "Organizing a political debate"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Social media animations reach broad modern audiences, especially youth, effectively and creatively[cite: 183, 187].",
+    "topic": "Social Studies (Civic Education & Communication)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "One positive effect of colonization you have studied and observed is",
+    "options": [
+      "introduction of democracy.",
+      "introduction of modern transportation facilities.",
+      "introduction of European culture.",
+      "creation of artificial geographical boundaries."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Colonization brought modern infrastructure and transportation networks like railways and roads[cite: 183, 187].",
+    "topic": "Social Studies (Colonial History)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "What role does entrepreneurship education play in fostering human development in Ghana?",
+    "options": [
+      "promotes the growth of Agro-Industries.",
+      "encourages job-seeking.",
+      "empowers individuals to start and manage businesses.",
+      "destroys the monopoly of manufacturing"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Entrepreneurship education equips individuals with the skills to create, start, and successfully manage their own businesses[cite: 183, 187].",
+    "topic": "Social Studies (Entrepreneurship)",
+    "hasImage": false
+  }
+]

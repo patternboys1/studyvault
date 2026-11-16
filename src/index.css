@@ -1,5 +1,48 @@
 @import "tailwindcss";
 
+/* Make dark: utilities follow the theme selected by the app. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Apply a consistent dark palette across every dashboard route and shared shell. */
+.dark .dashboard-shell {
+  color: #e2e8f0;
+  background-color: #0f172a;
+}
+
+.dark .dashboard-shell :is([class~="bg-white"], [class~="bg-gray-50"], [class~="bg-slate-50"]) {
+  background-color: #1e293b;
+}
+
+.dark .dashboard-shell :is([class~="bg-gray-100"], [class~="bg-slate-100"]) {
+  background-color: #334155;
+}
+
+.dark .dashboard-shell :is([class~="text-gray-950"], [class~="text-gray-900"], [class~="text-gray-800"], [class~="text-gray-700"], [class~="text-gray-600"], [class~="text-slate-900"], [class~="text-slate-800"], [class~="text-slate-700"], [class~="text-slate-600"]) {
+  color: #e2e8f0;
+}
+
+.dark .dashboard-shell :is([class~="text-gray-500"], [class~="text-gray-400"], [class~="text-slate-500"], [class~="text-slate-400"]) {
+  color: #94a3b8;
+}
+
+.dark .dashboard-shell :is([class~="border-gray-50"], [class~="border-gray-100"], [class~="border-gray-200"], [class~="border-slate-100"], [class~="border-slate-200"], [class~="border-slate-300"]) {
+  border-color: #334155;
+}
+
+.dark .dashboard-shell :is([class~="bg-blue-50"], [class~="hover:bg-gray-50"]:hover, [class~="hover:bg-slate-50"]:hover) {
+  background-color: #334155;
+}
+
+.dark .dashboard-shell :is([class~="text-blue-700"], [class~="hover:text-blue-600"]:hover) {
+  color: #93c5fd;
+}
+
+.dark .dashboard-shell input,
+.dark .dashboard-shell select,
+.dark .dashboard-shell textarea {
+  color-scheme: dark;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(12px);

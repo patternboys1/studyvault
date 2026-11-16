@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Select the benefit of using digital tools for freehand drawing.",
+    "options": [
+      "Always make drawings smaller",
+      "Always make drawings bigger",
+      "They have endless colour options",
+      "They have limited undo options"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Digital drawing tools offer a wide palette with endless colour options[cite: 150].",
+    "topic": "Creative Arts & Design (Digital Art)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Maame intends to make 1,000 yards of batik for one of her customers. Select the most suitable resist material she would use for the work.",
+    "options": [
+      "Starch",
+      "Twine",
+      "Raffia",
+      "Wax"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Wax is the standard resist material used in batik production[cite: 150].",
+    "topic": "Creative Arts & Design (Textiles)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Which of the following techniques is employed by the artist in decorating the T-shirt?",
+    "options": [
+      "Appliqué",
+      "Attachment",
+      "Crocheting",
+      "Hemming"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Stitching cut-out motifs onto a fabric base is known as appliqué[cite: 150].",
+    "topic": "Creative Arts & Design (Textiles)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Select the statement that explains the reason for decorating the T-shirt.",
+    "options": [
+      "To enhance the visual appeal",
+      "To create the initial concept",
+      "For easy identification of the T-shirt",
+      "For easy maintenance of the tools"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Decorating items like T-shirts primarily enhances their aesthetic and visual appeal[cite: 150].",
+    "topic": "Creative Arts & Design (Design)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Amadu, in an attempt to make his still-life drawing look real used parallel lines to depict the tones. This suggests that his shading is based on",
+    "options": [
+      "criss-crossing.",
+      "hatching.",
+      "mass shading.",
+      "stippling."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Using parallel lines to build up tone and shadow in drawing is called hatching[cite: 150].",
+    "topic": "Creative Arts & Design (Drawing)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "A school employed a professional dancer to train its learners on new dance movements for an upcoming dance competition. The technical name for the professional dancer is",
+    "options": [
+      "composer.",
+      "choreographer.",
+      "instructor.",
+      "producer."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A choreographer is a professional who creates and teaches dance movements[cite: 150].",
+    "topic": "Creative Arts & Design (Dance)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "The fur on a dog can be associated with which of these elements?",
+    "options": [
+      "Line",
+      "Shape",
+      "Space",
+      "Texture"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Fur relates to the tactile quality and surface feel, which represents texture[cite: 150].",
+    "topic": "Creative Arts & Design (Elements of Design)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Select the statement that describes a plot.",
+    "options": [
+      "An orderly arrangement of events of a play",
+      "A cue of a piece of drama",
+      "Systematic collection of stories and events",
+      "Summation of a story of a play"
+    ],
+    "correctAnswer": "A",
+    "explanation": "A plot is the structured, orderly sequence of events in a dramatic work[cite: 151].",
+    "topic": "Creative Arts & Design (Drama)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "In composing a piece of music, Emma decides to use chord I due to the soh in it. Select another chord that she can use apart from the chord I.",
+    "options": [
+      "Chord II",
+      "Chord III",
+      "Chord VI",
+      "Chord VII"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Chord VI shares common harmonic tones (like soh) and serves as a suitable alternative chord[cite: 151].",
+    "topic": "Creative Arts & Design (Music)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Adjawa is inspired by nature to draw trees in her sketchbook. How would she effectively depict the texture of the tree bark?",
+    "options": [
+      "Use of zigzag lines",
+      "Use of cool colours",
+      "Use of random lines",
+      "Use of bright colours"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Random lines effectively capture the rough and organic texture of tree bark[cite: 151].",
+    "topic": "Creative Arts & Design (Drawing)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Identify the number of quavers that make a semibreve.",
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A semibreve equals 4 beats, and since each quaver is half a beat, it takes 8 quavers to make a semibreve[cite: 151].",
+    "topic": "Creative Arts & Design (Music Theory)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Select the natural things that the learners can associate with the element dot.",
+    "options": [
+      "Sand particles, stones and seeds",
+      "Sand particles, vehicle tyres and balls",
+      "Seeds, balls and vehicle tyres",
+      "Seeds, balls and beads"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Sand particles, stones, and seeds are natural objects that visually represent the dot element[cite: 151].",
+    "topic": "Creative Arts & Design (Visual Arts)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The Fante people of Ghana are noted for displaying variety of dances during occasions. Among such dances include",
+    "options": [
+      "Adowa and Gome",
+      "Apatampa and Adowa",
+      "Bamaya and Bəbəəbə",
+      "Gome and Bəbəəbə"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Apatampa and Adowa (though Adowa is Akan generally, Apatampa is notably Fante) represent traditional Fante/Akan cultural dances[cite: 151].",
+    "topic": "Creative Arts & Design (Dance & Culture)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "As one of the learners, identify the main characteristic of the assemblage works displayed.",
+    "options": [
+      "Combines found objects into sculpture",
+      "Has two-dimensional art forms",
+      "Involves only natural materials",
+      "Involves only man-made objects"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Assemblage is a sculptural technique that combines found objects and everyday items into 3D art[cite: 151].",
+    "topic": "Creative Arts & Design (Sculpture)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "Which of the following notes is the fourth degree of a piece of music being performed in the key of A flat major?",
+    "options": [
+      "C flat",
+      "D flat",
+      "D natural",
+      "E natural"
+    ],
+    "correctAnswer": "B",
+    "explanation": "In the scale of A flat major, the notes are Ab, Bb, C, Db (fourth degree), Eb, F, G[cite: 151].",
+    "topic": "Creative Arts & Design (Music Theory)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Akosua wants to use the mass shading technique to render a two-dimensional drawing solid. Identify the most appropriate type of pencil for the task.",
+    "options": [
+      "H",
+      "2H",
+      "HB",
+      "2B"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Softer pencils like 2B produce dark, rich tones ideal for mass shading and rendering forms solid[cite: 151].",
+    "topic": "Creative Arts & Design (Drawing Tools)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Bəbəəbə is a traditional dance performed by the Ewe people of Ghana. Select the primary importance of this dance.",
+    "options": [
+      "For celebration of events",
+      "Expressing emotions",
+      "Preserving cultural heritage",
+      "For showcasing of wealth"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Traditional dances like Bəbəəbə primarily serve to preserve and transmit cultural heritage[cite: 151].",
+    "topic": "Creative Arts & Design (Dance & Culture)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "Red, yellow, green and black are colours used in the flag of Ghana. The colour yellow symbolizes",
+    "options": [
+      "agricultural prosperity.",
+      "artistic heritage of the country.",
+      "mineral wealth of the country.",
+      "sun and its energy."
+    ],
+    "correctAnswer": "C",
+    "explanation": "In the Ghanaian flag, yellow represents the country's rich mineral wealth[cite: 151].",
+    "topic": "Creative Arts & Design (Culture)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "The Atsiagbeko dance of the Ewe people of Ghana is said to be a",
+    "options": [
+      "recreational dance.",
+      "religious dance.",
+      "spontaneous dance.",
+      "war dance."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Atsiagbeko is historically known as a traditional Ewe war dance[cite: 151].",
+    "topic": "Creative Arts & Design (Dance)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "At what point should a designer share a prototype with a client for feedback?",
+    "options": [
+      "Define stage",
+      "Incubate stage",
+      "Ideate stage",
+      "Test stage"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Prototypes are evaluated and shared with users or clients during the testing stage[cite: 152].",
+    "topic": "Creative Arts & Design (Design Process)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Which of the following statements are true about Dance and Drama?\nI. They educate and entertain audience\nII. Both have elements\nIII. They have no characters\nIV. Both are taught in schools",
+    "options": [
+      "I and IV only",
+      "I and II only",
+      "I, II and III only",
+      "I, II and IV only"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Statements I, II, and IV accurately reflect the characteristics of both dance and drama[cite: 152].",
+    "topic": "Creative Arts & Design (Performing Arts)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Identify the appropriate printing method to be used in printing the clothes for the delegates.",
+    "options": [
+      "Block printing",
+      "Stencil printing",
+      "Frottage printing",
+      "Serigraphy"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Serigraphy (screen printing) is the most efficient method for mass-printing fabric for large numbers of delegates[cite: 152].",
+    "topic": "Creative Arts & Design (Printmaking)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Select the number of screens to be developed in printing the clothes.",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Since there are three party colours (Yellow, Blue, and Black), three separate screens must be developed[cite: 152].",
+    "topic": "Creative Arts & Design (Printmaking)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "Which of the following colours of voices/political party would be printed first?",
+    "options": [
+      "Blue",
+      "Black",
+      "Green",
+      "Yellow"
+    ],
+    "correctAnswer": "D",
+    "explanation": "In screen printing order, lighter colors (like yellow) are typically printed before darker tones[cite: 152].",
+    "topic": "Creative Arts & Design (Printmaking)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "Tim decides to design a pattern for his school's Friday wear. Identify the set of principles of design he would use.",
+    "options": [
+      "Variety, unity and balance",
+      "Balance, unity and colour",
+      "Contrast, balance and lines",
+      "Rhythm, variety and form"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Variety, unity, and balance are core foundational principles of design[cite: 152].",
+    "topic": "Creative Arts & Design (Principles of Design)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Select the moral lesson from the lyrics \"Mani mmere wo mpaboa no\" in the song \"Kwaku Ananse\" by Amerado.",
+    "options": [
+      "Do not be envious",
+      "Hard work always pay",
+      "Be determined",
+      "Be assertive"
+    ],
+    "correctAnswer": "B",
+    "explanation": "The song emphasizes contentment and the reward of hard work[cite: 152].",
+    "topic": "Creative Arts & Design (Music & Values)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "In designing a poster for a musical festival, which of the following lines would an artist use to depict energy and movement?",
+    "options": [
+      "Vertical",
+      "Horizontal",
+      "Diagonal",
+      "Curved"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Diagonal lines dynamically convey movement, action, and energy[cite: 152].",
+    "topic": "Creative Arts & Design (Elements of Design)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Anny wants his music to have three sections, with the last section sounding same as the first section. Select the form of music he would choose.",
+    "options": [
+      "CAC",
+      "ABC",
+      "ABA",
+      "BCA"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Ternary form (ABA) features three sections where the third section repeats the first[cite: 152].",
+    "topic": "Creative Arts & Design (Musical Form)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Which of the following is a technique for creating drama?",
+    "options": [
+      "Diction",
+      "Dynamics",
+      "Interpolation",
+      "Pitch"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Interpolation is recognized as a technical creative method used when building drama scripts or scenes[cite: 152].",
+    "topic": "Creative Arts & Design (Drama)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "In weaving a stole for graduation, Johnny uses warp and weft yarns. For every new weft yarn he inserts into the shed, he beats to the",
+    "options": [
+      "fell of the stole.",
+      "middle of the stole.",
+      "side of the stole.",
+      "selvedge of the stole."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Weft yarns are beaten firmly against the fell of the cloth during weaving[cite: 152].",
+    "topic": "Creative Arts & Design (Weaving)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "In designing a school bag, the role of working drawing is to",
+    "options": [
+      "make a sketch model.",
+      "evaluate the final product.",
+      "help in identifying problems.",
+      "serve as a guide for production."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Working drawings provide precise technical specifications to guide actual manufacturing and production[cite: 152].",
+    "topic": "Creative Arts & Design (Design & Technology)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Select the set of musical instruments that are mostly used for traditional ensembles.",
+    "options": [
+      "Piano and Donno",
+      "Rattle and Donno",
+      "Guitar and Donno",
+      "Organ and Donno"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Rattles and Donnos (talking drums) are traditional African instruments commonly played in ensembles[cite: 152].",
+    "topic": "Creative Arts & Design (Music)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "The Creative art teacher mounted different artworks in the classroom for the learners to appreciate them. What activity are the learners expected to do?",
+    "options": [
+      "Call their parents to come and buy the artworks",
+      "Only look and criticize the artworks displayed",
+      "Only look at the artworks and draw them in their sketchbooks",
+      "Talk about the good qualities in the artworks displayed"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Art appreciation involves analyzing, discussing, and highlighting the positive qualities of artworks[cite: 153].",
+    "topic": "Creative Arts & Design (Art Appreciation)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "The school choir of Kromkrom D/A JHS, performed the \"Hallelujah Chorus\" at the end of the year graduation ceremony. Which category of music can this rendition be associated with?",
+    "options": [
+      "Western pop music",
+      "Western folk music",
+      "Western art music",
+      "Western church music"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Handel's \"Hallelujah Chorus\" is a renowned classical piece belonging to Western art music[cite: 153].",
+    "topic": "Creative Arts & Design (Music History)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Identify the statement that best describes an art exhibition.",
+    "options": [
+      "It is a display of artworks for artists to compete among themselves",
+      "A permanent display of artworks to educate the public",
+      "A temporary display of artworks for sales and public viewing",
+      "It is a display of artworks to tell the history of the artists"
+    ],
+    "correctAnswer": "C",
+    "explanation": "An art exhibition is formally defined as a temporary public display of artworks for viewing and sales[cite: 153].",
+    "topic": "Creative Arts & Design (Art Business)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "A group called \"Young Stars\" of Kromkrom D/A JHS wants to create a skit to educate learners about the importance of proper handwashing. Identify the most effective way to convey their message to learners,",
+    "options": [
+      "Use complex scientific terms",
+      "Use humor and related characters",
+      "Show graphic images of germs and diseases",
+      "Give a talk on importance of handwashing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Using humor and relatable characters engages student audiences effectively in educational skits[cite: 153].",
+    "topic": "Creative Arts & Design (Drama)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "A quarter note is placed on the 4th line of the staff. Its stem will be drawn",
+    "options": [
+      "upward and on the right of the note.",
+      "upward and on the left of the note.",
+      "downward and on the left of the note.",
+      "downward and on the right of the note."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Notes on or above the middle line of the staff have their stems pointing downward and positioned on the left[cite: 153].",
+    "topic": "Creative Arts & Design (Music Notation)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "The famous Ablade Glover wants to paint a scene from a Ghanaian market. Which of the following techniques, is he likely to use?",
+    "options": [
+      "Fine detailed brush work",
+      "Fine detailed dubbing",
+      "Bold strokes with a palette knife",
+      "Splattering with a brush"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Professor Ablade Glover is internationally famous for his vibrant impasto style using bold palette knife strokes[cite: 153].",
+    "topic": "Creative Arts & Design (Visual Artists)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "An artist creates series of paintings that tell a story. The artist style of painting is associated with",
+    "options": [
+      "abstract art.",
+      "decorative art.",
+      "narrative art.",
+      "representational art."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Art that visually tells a story or depicts a sequence of events is termed narrative art[cite: 153].",
+    "topic": "Creative Arts & Design (Fine Arts)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Which of these artists makes paintings of marine animals and their environment?",
+    "options": [
+      "Ablade Glover",
+      "Ben Agbee",
+      "Betty Acquah",
+      "Kobina Nyarko"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Kobina Nyarko is well-known for his distinctive paintings featuring marine life and aquatic ecosystems[cite: 153].",
+    "topic": "Creative Arts & Design (Visual Artists)",
+    "hasImage": false
+  }
+]

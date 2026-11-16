@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "During classroom activities, several behaviours were noticed. Which of these behaviours showed lack of good manners?",
+    "options": [
+      "Interrupting someone while they are speaking",
+      "Greeting teachers politely when they arrive",
+      "Saying please and thank you when requesting for help",
+      "Waiting patiently for your turn during a discussion"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Interrupting someone while they are speaking is a sign of bad manners[cite: 191].",
+    "topic": "Religious and Moral Education (Good Manners)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Which of the following is the best way a student can use leisure?",
+    "options": [
+      "Attend extra classes",
+      "Attend church services",
+      "Acquire new skills",
+      "Perform house chores"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Acquiring new skills is a productive and beneficial way to spend leisure time[cite: 191].",
+    "topic": "Religious and Moral Education (Leisure)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Which of these drugs is commonly abused by individuals?",
+    "options": [
+      "Heroin",
+      "Caffeine",
+      "Ibuprofen",
+      "Paracetamol"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Heroin is an illicit substance frequently associated with severe drug abuse[cite: 191].",
+    "topic": "Religious and Moral Education (Substance Abuse)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Communities celebrate festivals for many reasons. Which one of these does not align with the reason for which your community celebrates its festivals?",
+    "options": [
+      "Giving thanks to the gods for favours received",
+      "Comparing the achievements of the living and the dead",
+      "Planning for developmental projects in the community",
+      "Promoting family and community reunion"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Festivals are not meant for comparing achievements of the living and the dead[cite: 191].",
+    "topic": "Religious and Moral Education (Festivals)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "During a school festival, students from different religions were tasked to plan a presentation. Which approach would best demonstrate religious tolerance in this case?",
+    "options": [
+      "Assigning mixed religion groups to encourage collaboration",
+      "Allowing students to form their own groups",
+      "Letting only students of one religion lead the festival",
+      "Separating students strictly by religion for all activities"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Assigning mixed religion groups promotes collaboration and mutual religious tolerance[cite: 191].",
+    "topic": "Religious and Moral Education (Religious Tolerance)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "In order to promote peaceful co-existence among members of different religions, there is the need to",
+    "options": [
+      "help spread other's beliefs.",
+      "report activities of other religions to your religious authority.",
+      "be tolerant of each other's beliefs.",
+      "bear witness of your beliefs to other people."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Tolerance of each other's beliefs is vital for peaceful religious co-existence[cite: 191].",
+    "topic": "Religious and Moral Education (Peaceful Co-existence)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Kwame took his friend's pen without asking and later realized that what he did was wrong. What should he do as the first step if he wants to make things right?",
+    "options": [
+      "Admit that he was wrong",
+      "Ask his teacher to punish him",
+      "Buy a new pen for his friend",
+      "Promise his friend he would never repeat his mistake"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Admitting one's fault is the essential first step toward making amends[cite: 191].",
+    "topic": "Religious and Moral Education (Moral Character)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "A parent wants to give their new born baby a name. What factor should they consider the most important?",
+    "options": [
+      "Date of the baby's birth",
+      "Age of the baby",
+      "Their tribe as parents",
+      "The place of birth of the baby"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Parents' tribe and cultural background heavily influence traditional naming systems[cite: 191].",
+    "topic": "Religious and Moral Education (Naming Systems)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Fatima wants to learn how Prophet Muhammed (SAW) prayed and behaved in his daily life. Which source should she study?",
+    "options": [
+      "Hadith",
+      "Fiqh",
+      "Sunnah",
+      "Qur'an"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The Sunnah details the practical lifestyle, practices, and behaviors of Prophet Muhammad (SAW)[cite: 191].",
+    "topic": "Religious and Moral Education (Islamic Studies)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Which of the following traditional leaders saved his people from the hands of a wicked king?",
+    "options": [
+      "Okomfo Anokye",
+      "Egya Ahor",
+      "Togbe Tsali",
+      "Toha Zie"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Togbe Tsali is traditionally noted for using his spiritual powers to save his people from a wicked king[cite: 191].",
+    "topic": "Religious and Moral Education (Traditional Leaders)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "What quality did Joseph display when he welcomed his brothers after many years?",
+    "options": [
+      "Forgiveness",
+      "Courage",
+      "Generosity",
+      "Wisdom"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Joseph demonstrated deep forgiveness by welcoming his brothers despite their past betrayal[cite: 191].",
+    "topic": "Religious and Moral Education (Biblical Teachings)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "A teacher explains that God's titles help people to understand who He is. Which of these actions shows how this knowledge can be applied?",
+    "options": [
+      "Praying and glorifying God",
+      "Following traditions carefully",
+      "Respecting God and helping others",
+      "Using it to guide decisions"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Understanding God's attributes leads believers to offer prayers and glorify Him[cite: 191].",
+    "topic": "Religious and Moral Education (Attributes of God)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "Which of these actions best reflects Yaa Asantewaa's leadership qualities?",
+    "options": [
+      "Leading a group to challenge unfair treatment collectively",
+      "Helping individuals to navigate difficulties on their own",
+      "Suggesting improvements without coordinating with others",
+      "Writing about fairness and justice in a school publication"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Yaa Asantewaa demonstrated bold, collective leadership in challenging colonial injustice[cite: 191, 192].",
+    "topic": "Religious and Moral Education (Ghanaian Leaders)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "A friend wants to start a program to help the less privileged in his community. How can she apply Khadijah's example?",
+    "options": [
+      "mentoring the children while supporting the programme",
+      "encouraging others to participate and contribute actively",
+      "offering both moral and material support to the initiative",
+      "organizing resources and planning the programme effectively"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Khadijah is celebrated for offering substantial moral and material support to noble causes[cite: 192].",
+    "topic": "Religious and Moral Education (Early Islamic Figures)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "In a traditional society, certain rules are made to control the behaviour of members. Which of the following best describe these prohibitions?",
+    "options": [
+      "Rules that are meant for only visitors",
+      "Ideas that are meant for only leaders",
+      "Rules that stop people from doing wrong",
+      "Suggestions for things people might like to do"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Taboos and prohibitions serve as moral guardrails to prevent people from doing wrong[cite: 192].",
+    "topic": "Religious and Moral Education (Taboos & Moral Rules)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "Which of the following is believed to be the most important part of performing Muslim prayer (Salat)?",
+    "options": [
+      "Tarawih",
+      "Ruku",
+      "Taslim",
+      "Wudu"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Ablution (Wudu) is an indispensable ritual purification required before performing Salat[cite: 192].",
+    "topic": "Religious and Moral Education (Islamic Practices)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Which of the following explanations best justifies the fact that low self-esteem can lead to drug abuse?",
+    "options": [
+      "can increase vulnerability to negative influences.",
+      "causes unavoidable addiction.",
+      "immediately results in criminal activities.",
+      "prevents student from socializing entirely."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Low self-esteem makes individuals more vulnerable to negative peer pressure and bad influences[cite: 192].",
+    "topic": "Religious and Moral Education (Self-Esteem & Drug Abuse)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "The family system in every society is functional in the following ways except",
+    "options": [
+      "procreation.",
+      "institution of reward system.",
+      "provision of basic needs.",
+      "socialization."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The institution of a formal reward system is not a core functional role of the family structure[cite: 192].",
+    "topic": "Religious and Moral Education (The Family System)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Mr Ansah pays part of his salary into a fund every month. Which benefit is he most likely to gain making this contribution after retirement?",
+    "options": [
+      "Personal investment",
+      "Educational funding",
+      "Capital for business",
+      "Financial security"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Regular contributions to social security provide reliable financial security upon retirement[cite: 192].",
+    "topic": "Religious and Moral Education (Financial Security)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "The Bible teaches that God created the sun, moon and stars for specific purposes. Which of the following is not one of the purposes?",
+    "options": [
+      "influence human decisions",
+      "give light to the earth",
+      "separate day from night",
+      "serve as objects of human worship"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Creation is meant to be admired and used, but not served as objects of human worship[cite: 192].",
+    "topic": "Religious and Moral Education (Creation)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Yaw was warned not to make noise during lessons but he ignored the warning. He was punished as a result. Why was this punishment necessary?",
+    "options": [
+      "deterred others from doing same.",
+      "embarrassed him in front of others.",
+      "made the student fear the teacher.",
+      "showed that the teacher has authority."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Classroom discipline and punishment serve to deter others from repeating similar infractions[cite: 192].",
+    "topic": "Religious and Moral Education (Discipline & Authority)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Which of these values can be inferred from the parable of the lost coin?",
+    "options": [
+      "Hard work always leads to prosperity.",
+      "Every individual has great worth.",
+      "Material possessions are more important than relationships.",
+      "Wealth should be carefully accumulated and protected."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The parable highlights how much value God places on every single individual[cite: 192].",
+    "topic": "Religious and Moral Education (Parables)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Abu is asked to give money to influence a clerk so he can get his results early but he refused. Which moral value is Abu demonstrating?",
+    "options": [
+      "Honesty",
+      "Fairness",
+      "Integrity",
+      "Responsibility"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Refusing bribery and standing by moral principles demonstrates high integrity[cite: 192].",
+    "topic": "Religious and Moral Education (Moral Values - Integrity)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "The Ewe name for God 'Mawu' signifies His being mighty. Which of these actions best explains how this understanding can influence the way people relate to God?",
+    "options": [
+      "Participate in religious activities",
+      "Approach God with reverence",
+      "See God as distant",
+      "Treat God with seriousness"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Recognizing God's ultimate might causes believers to approach Him with deep reverence[cite: 192].",
+    "topic": "Religious and Moral Education (Names of God)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "At a traffic junction, motorists were entreated to obey the traffic police. Why is obeying authority important in this situation?",
+    "options": [
+      "gives authority much power.",
+      "allows drivers more room to operate.",
+      "helps to ensure public safety.",
+      "stops people from driving at night."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Obeying traffic regulations and officers ensures public safety on the roads[cite: 192].",
+    "topic": "Religious and Moral Education (Authority & Safety)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "The following factors are causes of corruption in Ghana except",
+    "options": [
+      "excessive greed.",
+      "desire for popularity.",
+      "unhealthy competition.",
+      "suicidal tendencies."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Suicidal tendencies are a mental health issue and not a direct cause of societal corruption[cite: 192].",
+    "topic": "Religious and Moral Education (Corruption)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Ama always greets politely, listens attentively to classmates and waits patiently for her turn to speak. This behaviour best demonstrates",
+    "options": [
+      "integrity.",
+      "courtesy.",
+      "morality.",
+      "courage."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Polite greetings, attentive listening, and patience reflect good courtesy[cite: 192, 193].",
+    "topic": "Religious and Moral Education (Courtesy)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "Aku wants to buy a bag which is on top of her list, a pencil case and some snacks but her money is not enough to buy everything. What budgeting principles would she be practising if she decides to buy the bag?",
+    "options": [
+      "Prioritizing",
+      "Planning",
+      "Saving",
+      "Reviewing"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choosing the most important item when resources are limited is the principle of prioritizing[cite: 193].",
+    "topic": "Religious and Moral Education (Budgeting)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "Kwame receives 50 cedis as allowance. He decides to keep it safely in his wallet instead of spending it immediately so that he can buy a school bag later. Which characteristic of money is being illustrated here?",
+    "options": [
+      "Medium of exchange",
+      "Acceptability",
+      "Unit of account",
+      "Store of value"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Saving money for future use illustrates its function as a store of value[cite: 193].",
+    "topic": "Religious and Moral Education (Characteristics of Money)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "In which of the following ways does protecting forest reserves reflect human's responsibility to God's creation?",
+    "options": [
+      "Ensuring the survival of the biosphere",
+      "Allowing unrestricted logging to support economic growth",
+      "Providing space for recreational activities",
+      "Replacing natural forest with commercial plantation"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Protecting forests ensures environmental balance and the survival of the wider biosphere[cite: 193].",
+    "topic": "Religious and Moral Education (Environmental Care)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "Mr and Mrs Akoto often disagree on how to spend money at home. Sometimes, the argument becomes toxic and it is beginning to break their marriage. Which of the following actions do you think can best help them to have a peaceful home?",
+    "options": [
+      "Avoiding discussion on money matters",
+      "Allowing only one person to make decision on money",
+      "Complaining to neighbours about the issue",
+      "Sharing ideas and making decisions together"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Sharing financial ideas and making joint decisions promotes peace and understanding in a marriage[cite: 193, 198].",
+    "topic": "Religious and Moral Education (Family Life)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "Kojo who is fourteen years old has become rebellious and arrogant towards his parents and peers. What may be the possible cause of his behaviour?",
+    "options": [
+      "being influenced by his peers.",
+      "being influenced by social media.",
+      "going through physical changes at puberty.",
+      "undergoing emotional changes at puberty."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Adolescent behavioral shifts are often linked to emotional and psychological changes during puberty[cite: 193].",
+    "topic": "Religious and Moral Education (Adolescence)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "People enjoy religious songs for various reasons. Which of these best explains why these songs are meaningful to believers?",
+    "options": [
+      "help to fulfill their dreams.",
+      "connect them to their faith.",
+      "help them to put the world behind.",
+      "provide them with pleasure."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Religious songs deeply connect believers to their spiritual faith and devotion[cite: 193].",
+    "topic": "Religious and Moral Education (Religious Worship)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Amina noticed that students in her school often felt hungry after class. She decided to start selling healthy snacks. Which entrepreneurial skill is Amina applying?",
+    "options": [
+      "Obedience to rules",
+      "Financial management",
+      "Opportunity identification",
+      "Risk management"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Recognizing a gap or need and filling it demonstrates opportunity identification[cite: 193].",
+    "topic": "Religious and Moral Education (Entrepreneurial Skills)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Your classmate, Yaw, is always the first to come to school. On days that he is not the first, he tries not to miss school. Which attitude to work is Yaw practising?",
+    "options": [
+      "Honesty",
+      "Diligence",
+      "Punctuality",
+      "Responsibility"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Consistent early arrival at school exemplifies punctuality[cite: 193].",
+    "topic": "Religious and Moral Education (Work Ethics - Punctuality)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Which of the following is an advantage of the extended family over the nuclear family system?",
+    "options": [
+      "ensures that all family members live in the same house.",
+      "allows family members to share responsibilities.",
+      "makes parents less responsible for their children.",
+      "prevents conflicts from happening in the family."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The extended family network allows members to share financial, social, and domestic responsibilities[cite: 193].",
+    "topic": "Religious and Moral Education (Family Systems)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "A Muslim community wants to honour a deceased member, which of these actions would reflect their traditional practice?",
+    "options": [
+      "Performing ghusul",
+      "Preventing public viewing",
+      "Offering Janazah",
+      "Sacrificing a ram"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Offering the funeral prayer (Janazah) is the standard Islamic communal practice for honoring a deceased Muslim[cite: 193].",
+    "topic": "Religious and Moral Education (Islamic Funeral Rites)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "A school is having a challenge in deciding on an activity that would best reflect the key value of Idul-Adha. Which of these activities would you recommend?",
+    "options": [
+      "Preparing cultural display and traditional meals for celebration",
+      "Inviting parents and community members to celebrate with students",
+      "Organizing special prayers to mark the festivals",
+      "Organizing a seminar on obedience, sacrifice and generosity"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Idul-Adha core values revolve around obedience to God, supreme sacrifice, and generosity[cite: 193].",
+    "topic": "Religious and Moral Education (Islamic Festivals)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "According to the creation story, God separated the waters from the waters. What does this separation refer to?",
+    "options": [
+      "Day and night",
+      "Animals and humans",
+      "Lands and plants",
+      "Sky and sea"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Biblical creation accounts describe the separation between the waters above (sky) and waters below (seas)[cite: 193, 198].",
+    "topic": "Religious and Moral Education (Creation Story)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "During libation, why do the traditional worshippers address their prayers to the ancestor?",
+    "options": [
+      "closer to the gods.",
+      "controllers of charm.",
+      "god's divinities.",
+      "very courageous."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ancestors are revered as intermediaries who are closer to God and the divinities[cite: 193, 198].",
+    "topic": "Religious and Moral Education (Traditional Religion)",
+    "hasImage": false
+  }
+]

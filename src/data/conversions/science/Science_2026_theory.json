@@ -1,0 +1,258 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": "Mention one type of feed given to each of the animals labelled A (Cow), B (Rabbit), and C (Chicken).",
+    "modelAnswer": "A (Cow): Grass / Hay / Silage / Forage / Roughage[cite: 95].\nB (Rabbit): Pellets / Vegetables / Carrots / Grass / Hay[cite: 95].\nC (Chicken): Mash (e.g., Growers mash, Layers mash) / Grains / Corn[cite: 95].",
+    "topic": "Integrated Science (Animal Production & Nutrition)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/sci_26_1aQ.png"
+  },
+  {
+    "number": "1.a.ii",
+    "questionText": "Name one nutrient each from the types of feed mentioned in (i).",
+    "modelAnswer": "Grass/Hay: Carbohydrates / Fibre[cite: 95].\nPellets/Mash/Grains: Carbohydrates / Protein / Minerals / Vitamins[cite: 95].",
+    "topic": "Integrated Science (Animal Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": "1.a.iii",
+    "questionText": "Give one function each of the nutrient named in (ii).",
+    "modelAnswer": "Carbohydrates: Provide energy[cite: 95].\nProteins: For growth and repair of worn-out tissues[cite: 95].\nFibre/Roughage: Aids in digestion and prevents constipation[cite: 95].\nVitamins/Minerals: Protects the body against diseases / Ensures healthy growth[cite: 95].",
+    "topic": "Integrated Science (Animal Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": "1.a.iv",
+    "questionText": "Which of the animals in Fig. 1(a) can be classified as a ruminant?",
+    "modelAnswer": "Animal A / Cow[cite: 95].",
+    "topic": "Integrated Science (Animal Classification)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b.i",
+    "questionText": "Name the parts of the human respiratory system labelled I, II, III, IV, and V.",
+    "modelAnswer": "I: Larynx / Pharynx / Nasal cavity[cite: 95].\nII: Trachea / Windpipe[cite: 95].\nIII: Bronchus[cite: 95].\nIV: Lung / Bronchioles[cite: 95].\nV: Diaphragm[cite: 95].",
+    "topic": "Integrated Science (Human Respiratory System)", 
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/science-2025/sci_26_1bQ.jpg"
+  },
+  {
+    "number": "1.b.ii",
+    "questionText": "Give one function each of the parts labelled II, III, and V.",
+    "modelAnswer": "II (Trachea): Serves as a passage for air to flow into and out of the lungs; cartilaginous rings keep the airway open[cite: 95].\nIII (Bronchus): Distributes air from the trachea directly into the left and right lungs[cite: 95].\nV (Diaphragm): Contracts and flattens during inhalation to increase chest volume; relaxes and domes upwards during exhalation to decrease chest volume, aiding breathing[cite: 95].",
+    "topic": "Integrated Science (Human Respiratory System)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b.iii",
+    "questionText": "Name the most important gas during respiration that is (a) used by the body; (β) brought out from the body.",
+    "modelAnswer": "(a) Oxygen ($O_2$)[cite: 95].\n(β) Carbon dioxide ($CO_2$)[cite: 95].",
+    "topic": "Integrated Science (Respiration)",
+    "hasImage": false
+  },
+  {
+    "number": "1.c.i",
+    "questionText": "Name the circuit symbols labelled II, III, and IV.",
+    "modelAnswer": "II: Ammeter[cite: 95].\nIII: Switch / Key[cite: 95].\nIV: Resistor[cite: 95].",
+    "topic": "Integrated Science (Electricity & Circuit Symbols)",
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/science-2025/sci_26_1cQ.png"
+  },
+  {
+    "number": "1.c.ii",
+    "questionText": "Draw a circuit diagram using all the symbols labelled I (Cell/Battery), II (Ammeter), III (Switch), IV (Resistor), and V (Voltmeter).",
+    "modelAnswer": "A circuit diagram showing a closed loop containing a Cell/Battery (I), Switch (III), Resistor (IV), Ammeter connected in series (II), and a Voltmeter connected in parallel across the Resistor (IV)[cite: 95].",
+    "topic": "Integrated Science (Electric Circuits)",
+    "hasImage": true
+  },
+  {
+    "number": "1.c.iii",
+    "questionText": "If the circuit is closed and V (Voltmeter) reads 5 units with IV (Resistor/Resistance) reading 15 units, determine the value of II (Current) in S.I. units.",
+    "modelAnswer": "Voltage (V) = 5 V[cite: 95].\nResistance (R) = 15 $\\Omega$[cite: 95].\nCurrent (I) = $V / R = 5 / 15 = 0.33\\text{ A}$ (Amperes)[cite: 95].",
+    "topic": "Integrated Science (Ohm's Law & Calculations)",
+    "hasImage": false
+  },
+  {
+    "number": "1.d.i",
+    "questionText": "Identify the solution in the table that would have a pH value equal to (a) 7; (β) 14.",
+    "modelAnswer": "(a) 7: Solution C ($NaCl$).\n(β) 14: Solution E ($NaOH$).",
+    "topic": "Integrated Science (Acids, Bases & pH Scale)",
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/science-2025/sci_26_1dQ.jpg"
+  },
+  {
+    "number": "1.d.ii",
+    "questionText": "Identify the solution that can be classified as (a) strong acid; (β) neutral; (γ) weak base.",
+    "modelAnswer": "(a) Strong acid: Solution A ($HCl$)[cite: 96].\n(β) Neutral: Solution C ($NaCl$)[cite: 96].\n(γ) Weak base: Solution D ($NH_3$)[cite: 96].",
+    "topic": "Integrated Science (Acids, Bases & Salts)",
+    "hasImage": false
+  },
+  {
+    "number": "1.d.iii",
+    "questionText": "Suggest the pH value of solution A ($0.1\\text{ mol dm}^{-3} \\text{ HCl}$).",
+    "modelAnswer": "1 or 2 (Accept 1-2)[cite: 96].",
+    "topic": "Integrated Science (pH Scale)",
+    "hasImage": false
+  },
+  {
+    "number": "1.d.iv",
+    "questionText": "Identify two solutions in the table that will react to form salt and water.",
+    "modelAnswer": "Solution A ($HCl$) and Solution E ($NaOH$)[cite: 96]. (Or Solution A and D; or Solution B and E).",
+    "topic": "Integrated Science (Neutralization Reactions)",
+    "hasImage": false
+  },
+  {
+    "number": "1.d.v",
+    "questionText": "What would be the colour of solution C upon addition of drops of universal indicator?",
+    "modelAnswer": "Green (since $NaCl$ is a neutral salt with pH 7)[cite: 96].",
+    "topic": "Integrated Science (Indicators & pH)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a",
+    "questionText": "Give two examples of each type of human disease: (i) Fungal disease; (ii) Deficiency disease; (iii) Non-communicable disease.",
+    "modelAnswer": "(i) Fungal disease: Ringworm, Athlete's foot[cite: 96].\n(ii) Deficiency disease: Kwashiorkor, Scurvy[cite: 96].\n(iii) Non-communicable disease: Diabetes, Hypertension[cite: 96].",
+    "topic": "Integrated Science (Diseases)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "Explain the terms: (i) Homogeneous mixture; (ii) Heterogeneous mixture.",
+    "modelAnswer": "(i) Homogeneous mixture: A mixture in which components are uniformly distributed throughout, appearing as a single phase (e.g., salt solution)[cite: 96].\n(ii) Heterogeneous mixture: A mixture in which components are not uniformly distributed and remain visibly distinct (e.g., sand and water)[cite: 96].",
+    "topic": "Integrated Science (Mixtures)",
+    "hasImage": false
+  },
+  {
+    "number": "2.c.i",
+    "questionText": "Explain briefly why dragging an object on a smooth surface is easier than on a rough surface.",
+    "modelAnswer": "A smooth surface offers less frictional force opposing the motion of the object compared to a rough surface, thus requiring less force to move it[cite: 96].",
+    "topic": "Integrated Science (Friction)",
+    "hasImage": false
+  },
+  {
+    "number": "2.c.ii",
+    "questionText": "Name the S.I. unit of (a) force; (β) work.",
+    "modelAnswer": "(a) Force: Newton (N)[cite: 96].\n(β) Work: Joule (J)[cite: 96].",
+    "topic": "Integrated Science (Units of Measurement)",
+    "hasImage": false
+  },
+  {
+    "number": "2.d.i",
+    "questionText": "What is a balanced ration in poultry feed?",
+    "modelAnswer": "It is the daily allowance of feed given to poultry that contains all essential nutrients (carbohydrates, proteins, fats, vitamins, minerals, water) in the right proportions to meet their physiological, growth, and production needs[cite: 96].",
+    "topic": "Integrated Science (Animal Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": "2.d.ii",
+    "questionText": "Give three effects of malnutrition in poultry.",
+    "modelAnswer": "1. Stunted or poor growth[cite: 96].\n2. Low egg production / poor eggshell quality[cite: 96].\n3. High susceptibility to diseases / weak immune system / death[cite: 96].",
+    "topic": "Integrated Science (Animal Health & Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "In a simple electric circuit made up of a cell, resistor, and a bulb, state the observation and explanation when (i) cells are doubled; (ii) bulbs are doubled in series.",
+    "modelAnswer": "(i)(a) Cells doubled: The bulb shines much brighter because total voltage increases, driving more current[cite: 96].\n(i)(β) Bulbs doubled in series: The bulbs glow dimly because total resistance increases, reducing total current[cite: 96].",
+    "topic": "Integrated Science (Electric Circuits)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "Explain briefly how the following factors affect vegetable crop production: (i) soil type; (ii) nearness to source of water; (iii) nearness to market.",
+    "modelAnswer": "(i) Soil type: Determines nutrient availability, water retention, and aeration; loamy soil is best for vegetables[cite: 97].\n(ii) Nearness to water: Essential for constant irrigation, especially during dry seasons to prevent wilting[cite: 97].\n(iii) Nearness to market: Reduces transport costs and post-harvest losses since vegetables are perishable[cite: 97].",
+    "topic": "Integrated Science (Crop Production)",
+    "hasImage": false
+  },
+  {
+    "number": "3.c",
+    "questionText": "Explain briefly the following interactions in an ecosystem: (i) Mutualism; (ii) Commensalism.",
+    "modelAnswer": "(i) Mutualism: An ecological interaction where both species benefit from the association (e.g., nitrogen-fixing bacteria in root nodules)[cite: 97].\n(ii) Commensalism: An interaction where one organism benefits while the other is neither harmed nor benefited[cite: 97].",
+    "topic": "Integrated Science (Ecosystem Interactions)",
+    "hasImage": false
+  },
+  {
+    "number": "3.d.i",
+    "questionText": "Distinguish between (a) Element and compound; (β) Molecule and ion.",
+    "modelAnswer": "(a) Element: A pure substance made of only one kind of atom; Compound: Formed when two or more different elements are chemically bonded in fixed proportions[cite: 97].\n(β) Molecule: A neutral group of two or more atoms chemically bonded; Ion: An atom or group of atoms with a net positive or negative charge due to electron loss or gain[cite: 97].",
+    "topic": "Integrated Science (Chemistry Concepts)",
+    "hasImage": false
+  },
+  {
+    "number": "3.d.ii",
+    "questionText": "Write the chemical formula of each of the following binary compounds: (a) Aluminium fluoride; (β) Ammonia.",
+    "modelAnswer": "(a) Aluminium fluoride: $AlF_3$[cite: 97].\n(β) Ammonia: $NH_3$[cite: 97].",
+    "topic": "Integrated Science (Chemical Formulae)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a",
+    "questionText": "Name two (i) micro-nutrients of plants; (ii) macro-nutrients of plants.",
+    "modelAnswer": "(i) Micro-nutrients: Iron, Zinc (or Manganese, Copper, Boron)[cite: 97].\n(ii) Macro-nutrients: Nitrogen, Phosphorus, Potassium (or Calcium, Magnesium, Sulphur)[cite: 97].",
+    "topic": "Integrated Science (Plant Nutrition)",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "Name the component of the circulatory system that performs: (i) transport of nutrients; (ii) protection against infection; (iii) temperature regulation.",
+    "modelAnswer": "(i) Transport of nutrients: Blood plasma[cite: 97].\n(ii) Protection against infection: White blood cells[cite: 97].\n(iii) Temperature regulation: Blood / Blood plasma[cite: 97].",
+    "topic": "Integrated Science (Circulatory System)",
+    "hasImage": false
+  },
+  {
+    "number": "4.c",
+    "questionText": "State three effects of poor waste management on human health.",
+    "modelAnswer": "1. Outbreak of infectious diseases like cholera and typhoid[cite: 97].\n2. Proliferation of disease vectors like mosquitoes (malaria) and houseflies[cite: 97].\n3. Respiratory diseases from toxic smoke of burnt waste[cite: 97].",
+    "topic": "Integrated Science (Environmental Health)",
+    "hasImage": false
+  },
+  {
+    "number": "4.d.i",
+    "questionText": "Differentiate between a colloid and a suspension.",
+    "modelAnswer": "A colloid has very fine particles evenly dispersed that do not settle out upon standing, whereas a suspension is a heterogeneous mixture with larger particles that eventually settle down[cite: 97].",
+    "topic": "Integrated Science (Types of Mixtures)",
+    "hasImage": false
+  },
+  {
+    "number": "4.d.ii",
+    "questionText": "Classify the mixtures as solution, colloid or suspension: (a) Groundnut paste and water; (β) Milk and water; (γ) Sugar and water.",
+    "modelAnswer": "(a) Groundnut paste and water: Suspension[cite: 97].\n(β) Milk and water: Colloid[cite: 97].\n(γ) Sugar and water: Solution[cite: 97].",
+    "topic": "Integrated Science (Classification of Mixtures)",
+    "hasImage": false
+  },
+  {
+    "number": "4.e",
+    "questionText": "(i) What is work output? (ii) Explain how work output affects the efficiency of a machine if work input is fixed.",
+    "modelAnswer": "(i) Work output is the useful work done by a machine in overcoming the load[cite: 98].\n(ii) If work input is fixed, an increase in work output increases the efficiency of the machine, meaning less energy is wasted[cite: 98].",
+    "topic": "Integrated Science (Simple Machines & Efficiency)",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "For an atom represented as ${}_{8}^{17}X$, determine (i) Protons, Electrons, Neutrons; (ii) Group and Period on the periodic table.",
+    "modelAnswer": "(i) Protons: 8; Electrons: 8; Neutrons: $17 - 8 = 9$[cite: 98].\n(ii) Electronic configuration is 2, 6 -> Group: Group VI (or 16); Period: Period 2[cite: 98].",
+    "topic": "Integrated Science (Atomic Structure & Periodic Table)",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "(i) Explain briefly heat transfer by conduction. (ii) Name two other methods of heat transfer.",
+    "modelAnswer": "(i) Conduction is heat transfer through a solid material from higher to lower temperature without material movement, via vibrating particles passing kinetic energy[cite: 98].\n(ii) Convection and Radiation[cite: 98].",
+    "topic": "Integrated Science (Heat Transfer)",
+    "hasImage": false
+  },
+  {
+    "number": "5.c",
+    "questionText": "(i) Give two examples of water bodies. (ii) State two practices of humans that destroy water bodies. (iii) State two methods of conserving water bodies.",
+    "modelAnswer": "(i) Examples: Rivers, Lakes (or Oceans, Seas)[cite: 98].\n(ii) Destructive practices: Illegal mining (Galamsey), Dumping refuse/industrial waste into water bodies[cite: 98].\n(iii) Conservation methods: Enforcing laws against pollution/galamsey, Planting trees along river banks (afforestation)[cite: 98].",
+    "topic": "Integrated Science (Water Resources & Conservation)",
+    "hasImage": false
+  },
+  {
+    "number": "5.d",
+    "questionText": "(i) State three ways bacterial diseases are managed. (ii) Give an example of a bacterial disease.",
+    "modelAnswer": "(i) 1. Administration of antibiotics. 2. Practising personal and environmental hygiene. 3. Immunization/Vaccination[cite: 98].\n(ii) Example: Cholera (or Tuberculosis, Typhoid)[cite: 98].",
+    "topic": "Integrated Science (Health & Diseases)",
+    "hasImage": false
+  }
+]

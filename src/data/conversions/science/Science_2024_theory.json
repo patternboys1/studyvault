@@ -1,0 +1,319 @@
+[
+    {
+      "number": "1.a.i",
+      "questionText": "State one function for each of the parts labelled I, II, IX and X in Fig. 1(a).",
+      "modelAnswer": "I (Aorta): Carries oxygenated blood from the heart/left ventricle to the rest of the body[cite: 121, 130].\nII (Pulmonary vein): Brings oxygenated blood from the lungs to the left atrium[cite: 121, 130].\nIX (Vena cava): Brings deoxygenated blood from the body to the right atrium[cite: 121, 130].\nX (Pulmonary artery): Carries deoxygenated blood from the right ventricle to the lungs[cite: 121, 130].",
+      "topic": "Integrated Science (Human Anatomy)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_1aq.jpg"
+    },
+    {
+      "number": "1.a.ii",
+      "questionText": "Explain briefly why the left lower part of the heart has a thicker muscle.",
+      "modelAnswer": "It contracts to pump oxygenated blood under high pressure to all parts of the body[cite: 121, 130].",
+      "topic": "Integrated Science (Human Anatomy)",
+      "hasImage": false
+    },
+    {
+      "number": "1.a.iii",
+      "questionText": "State two ways by which the flow of blood to and from the mammalian heart as shown in Fig. 1(a) can be kept at acceptable levels.",
+      "modelAnswer": "1. Regular physical exercise[cite: 121, 130].\n2. Eating a balanced diet and avoiding smoking[cite: 121, 130].",
+      "topic": "Integrated Science (Health & Lifestyle)",
+      "hasImage": false
+    },
+    {
+      "number": "1.a.iv",
+      "questionText": "Name two parts of the heart where oxygenated blood can be found.",
+      "modelAnswer": "Left atrium and left ventricle[cite: 121, 130].",
+      "topic": "Integrated Science (Human Anatomy)",
+      "hasImage": false
+    },
+    {
+      "number": "1.b.i",
+      "questionText": "Describe briefly how each of the parts labelled P, Q and R are planted on seedbed.",
+      "modelAnswer": "P (Maize): Make holes using a stick/dibber, place 2-3 seeds per hole, and cover with soil[cite: 122, 130].\nQ (Tomato seedlings): Remove a seedling gently from the nursery, place it in a prepared hole, firm the soil around it, and water immediately[cite: 122, 130].\nR (Cassava cuttings): Dig trenches/holes and place the stem cuttings into the soil at an angle with nodes facing upward, then firm the soil[cite: 122, 130].",
+      "topic": "Integrated Science (Crop Production)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_1bq.png"
+    },
+    {
+      "number": "1.b.ii",
+      "questionText": "State four conditions under which R can be cultivated to produce high yield.",
+      "modelAnswer": "1. Adequate rainfall/irrigation[cite: 122, 130].\n2. Fertile soil with good structure[cite: 122, 130].\n3. Adequate sunlight[cite: 122, 130].\n4. Absence of pests and diseases[cite: 122, 130].",
+      "topic": "Integrated Science (Crop Production)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c.i",
+      "questionText": "State one function for each of the parts labelled I, II, III and IV in Fig. 1(c).",
+      "modelAnswer": "I (Cell/Battery): Converts chemical energy to electrical energy (generates voltage)[cite: 122, 131].\nII (Switch/Key): Opens and closes the circuit to allow or stop current flow[cite: 122, 131].\nIII (Connecting wire): Allows charges/current to flow between components[cite: 122, 131].\nIV (Resistor): Opposes the flow of electrical charges/current[cite: 122, 131].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_1cq.png"
+    },
+    {
+      "number": "1.c.ii",
+      "questionText": "If the voltmeter reads 2.4 V and the ammeter reads 0.8 A when the circuit is closed, calculate the value of the part labelled IV.",
+      "modelAnswer": "Resistance (R) = V / I = 2.4 / 0.8 = 3 Ω[cite: 123, 131].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c.iii",
+      "questionText": "State one way of conserving the value of the part labelled I in the circuit.",
+      "modelAnswer": "Open the key/switch when not taking readings[cite: 123, 131].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": "1.c.iv",
+      "questionText": "State two observations that can be made when the circuit is closed.",
+      "modelAnswer": "1. Ammeter deflects/reads current[cite: 123, 131].\n2. Voltmeter deflects/reads voltage[cite: 123, 131].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": "1.d.i",
+      "questionText": "Describe briefly the process of this experiment shown in Fig. 1(d).",
+      "modelAnswer": "Pour the immiscible liquid mixture into the separating funnel, allow it to stand until it separates into two distinct layers, open the tap to drain the lower liquid layer into a conical flask, and close the tap once separated[cite: 123, 131].",
+      "topic": "Integrated Science (Separation Techniques)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_1dq.jpg"
+    },
+    {
+      "number": "1.d.ii",
+      "questionText": "State one function for each of the parts labelled II and IV in Fig. 1(d).",
+      "modelAnswer": "II (Stopcock/Tap): Regulates or controls the flow of liquid[cite: 123, 131].\nIV (Retort stand): Holds and supports the separating funnel firmly[cite: 123, 131].",
+      "topic": "Integrated Science (Laboratory Apparatus)",
+      "hasImage": false
+    },
+    {
+      "number": "1.d.iii",
+      "questionText": "State two precautions that should be taken to obtain reliable results when performing this experiment.",
+      "modelAnswer": "1. Open the tap gently to release only the bottom liquid layer[cite: 123, 131].\n2. Allow the mixture sufficient time to settle and separate completely into layers[cite: 123, 131].",
+      "topic": "Integrated Science (Laboratory Safety & Techniques)",
+      "hasImage": false
+    },
+    {
+      "number": "2.a.i",
+      "questionText": "Given a flashlight, a tennis ball and a screen; draw a diagram to show how a shadow can be formed.",
+      "modelAnswer": "A setup showing a flashlight casting light on a tennis ball, creating an umbra and penumbra shadow on a screen[cite: 124, 132].",
+      "topic": "Integrated Science (Light & Shadows)",
+      "hasImage": true,
+      "answerImageUrl": "gs://bece-prep.firebasestorage.app/science-2025/Screenshot 2026-11-11 140040.png"
+    },
+    {
+      "number": "2.a.ii",
+      "questionText": "A student seeking to determine the volume of an irregular body of mass 4 kg used a graduated cylinder in an experiment (Fig. 2). Determine the density of the irregular body.",
+      "modelAnswer": "Volume change = 75 cm³ - 50 cm³ = 25 cm³ (0.000025 m³).\nDensity = Mass / Volume = 4 kg / 25 cm³ = 160 kg cm⁻³ (or 160 g cm⁻³)[cite: 124, 132].",
+      "topic": "Integrated Science (Density & Measurement)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_2q.jpg"
+    },
+    {
+      "number": "2.a.iii",
+      "questionText": "State two precautions that must be taken to obtain reliable results.",
+      "modelAnswer": "1. Drop the irregular body gently into the cylinder to avoid splashing water[cite: 124, 132].\n2. Read the volume at the correct meniscus level[cite: 124, 132].",
+      "topic": "Integrated Science (Laboratory Techniques)",
+      "hasImage": false
+    },
+    {
+      "number": "2.b",
+      "questionText": "State three safety precautions to prevent accidents during the use of liquefied petroleum gas in the home.",
+      "modelAnswer": "1. Store LPG cylinders in a well-ventilated open-air space[cite: 124, 132].\n2. Check gas hoses regularly and replace them when worn out[cite: 124, 132].\n3. Strike the match before turning on the gas valve[cite: 124, 132].",
+      "topic": "Integrated Science (Safety)",
+      "hasImage": false
+    },
+    {
+      "number": "2.c.i",
+      "questionText": "Explain briefly the scientific principle underlying composting.",
+      "modelAnswer": "Microorganisms use oxygen to decompose and break down organic matter into nutrient-rich humus[cite: 125, 132].",
+      "topic": "Integrated Science (Waste Management)",
+      "hasImage": false
+    },
+    {
+      "number": "2.c.ii",
+      "questionText": "Explain briefly the scientific principle underlying recycling.",
+      "modelAnswer": "Physical and chemical processing of waste materials to convert them into new usable products[cite: 125, 132].",
+      "topic": "Integrated Science (Waste Management)",
+      "hasImage": false
+    },
+    {
+      "number": "2.c.iii",
+      "questionText": "Explain briefly the scientific principle underlying incineration.",
+      "modelAnswer": "Burning waste materials at high temperatures to destroy contaminants and convert them into gas and ash[cite: 125, 132].",
+      "topic": "Integrated Science (Waste Management)",
+      "hasImage": false
+    },
+    {
+      "number": "2.d",
+      "questionText": "Outline three features that would help to differentiate between the digestive systems of a goat and a rabbit.",
+      "modelAnswer": "1. Goats are ruminants with a four-chambered stomach (polygastric), whereas rabbits have a simple one-chambered stomach (monogastric)[cite: 125, 132].\n2. Rabbits have a large caecum for cellulose digestion (hindgut fermentation), unlike goats[cite: 125, 132].\n3. Differences in dental structure (goats lack upper incisors, rabbits have peg teeth)[cite: 125, 132].",
+      "topic": "Integrated Science (Animal Biology)",
+      "hasImage": false
+    },
+    {
+      "number": "3.a.i",
+      "questionText": "Design a 4-year rotational program using maize, cowpea, cassava and cabbage.",
+      "modelAnswer": "Year 1: Plot 1: Maize, Plot 2: Cowpea, Plot 3: Cassava, Plot 4: Cabbage\nYear 2: Plot 1: Cabbage, Plot 2: Maize, Plot 3: Cowpea, Plot 4: Cassava\nYear 3: Plot 1: Cassava, Plot 2: Cabbage, Plot 3: Maize, Plot 4: Cowpea\nYear 4: Plot 1: Cowpea, Plot 2: Cassava, Plot 3: Cabbage, Plot 4: Maize[cite: 125, 133].",
+      "topic": "Integrated Science (Agricultural Science)",
+      "hasImage": false,
+      "answerImageUrl":"gs://bece-prep.firebasestorage.app/science-2025/science_3aans.jpg"
+    },
+    {
+      "number": "3.a.ii",
+      "questionText": "Give two reasons for the sequence given in 3(a)(i).",
+      "modelAnswer": "1. Breaks pest and disease cycles[cite: 125, 133].\n2. Cowpea is a leguminous crop that fixes nitrogen into the soil[cite: 125, 133].",
+      "topic": "Integrated Science (Agricultural Science)",
+      "hasImage": false
+    },
+    {
+      "number": "3.b.i",
+      "questionText": "Give three symptoms that a student suspected of having COVID-19 may exhibit.",
+      "modelAnswer": "1. Fever and persistent cough[cite: 126, 133].\n2. Loss of taste or smell[cite: 126, 133].\n3. Shortness of breath and fatigue[cite: 126, 133].",
+      "topic": "Integrated Science (Health & Disease)",
+      "hasImage": false
+    },
+    {
+      "number": "3.b.ii",
+      "questionText": "Suggest two ways to prevent the spread of COVID-19 in the school.",
+      "modelAnswer": "1. Frequent hand washing with soap and water or using hand sanitizer[cite: 126, 133].\n2. Wearing a properly fitted face mask and maintaining social distancing[cite: 126, 133].",
+      "topic": "Integrated Science (Health & Disease)",
+      "hasImage": false
+    },
+    {
+      "number": "3.b.iii",
+      "questionText": "Give two reasons why COVID-19 was declared as a pandemic.",
+      "modelAnswer": "1. It spread rapidly across a large part of the world[cite: 126, 133].\n2. It caused massive global socio-economic disruption and loss of lives[cite: 126, 133].",
+      "topic": "Integrated Science (Health & Disease)",
+      "hasImage": false
+    },
+    {
+      "number": "3.c.i",
+      "questionText": "Calculate the acceleration of the vehicle (mass = 1000 kg, initial velocity = 100 m s⁻¹, final velocity = 150 m s⁻¹, time = 10 s).",
+      "modelAnswer": "Acceleration (a) = (v - u) / t = (150 - 100) / 10 = 50 / 10 = 5 m s⁻²[cite: 126, 133].",
+      "topic": "Integrated Science (Physics - Motion)",
+      "hasImage": false
+    },
+    {
+      "number": "3.c.ii",
+      "questionText": "Calculate the force that acts on the vehicle.",
+      "modelAnswer": "Force (F) = m × a = 1000 kg × 5 m s⁻² = 5000 N[cite: 126, 133].",
+      "topic": "Integrated Science (Physics - Force)",
+      "hasImage": false
+    },
+    {
+      "number": "3.c.iii",
+      "questionText": "Calculate the final momentum when the vehicle comes to a stop.",
+      "modelAnswer": "Final momentum = mass × final velocity = 1000 kg × 0 m s⁻¹ = 0 Ns[cite: 126, 133].",
+      "topic": "Integrated Science (Physics - Momentum)",
+      "hasImage": false
+    },
+    {
+      "number": "4.a",
+      "questionText": "A student who went to bed immediately after eating complained of stomach upset the next morning. A doctor prescribed a liver salt whose major composition is NaHCO3 as the medication. Using a balanced chemical equation, explain how the liver salt would relieve the student from this discomfort.",
+      "modelAnswer": "Stomach acid is HCl. Equation: HCl + NaHCO3 → NaCl + H2O + CO2. The liver salt acts as a base that neutralizes excess stomach acid, relieving the pain[cite: 127, 134].",
+      "topic": "Integrated Science (Chemistry & Health)",
+      "hasImage": false
+    },
+    {
+      "number": "4.b",
+      "questionText": "Calculate the energy of the body placed on top of a wall (mass = 20 kg, height = 10 m, g = 10 m s⁻²).",
+      "modelAnswer": "Potential Energy (E) = mgh = 20 kg × 10 m s⁻² × 10 m = 2000 J (or 2 kJ)[cite: 127, 134].",
+      "topic": "Integrated Science (Physics - Energy)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_4bq.png"
+    },
+    {
+      "number": "4.c.i",
+      "questionText": "Define the term light emitting diode (LED).",
+      "modelAnswer": "An LED is a semiconductor device that emits light when an electric current passes through it[cite: 127, 134].",
+      "topic": "Integrated Science (Electronics)",
+      "hasImage": false
+    },
+    {
+      "number": "4.c.ii",
+      "questionText": "Mention two devices that use LED in their operation.",
+      "modelAnswer": "1. Traffic lights[cite: 127, 134].\n2. Smartphone screens / Digital watches[cite: 127, 134].",
+      "topic": "Integrated Science (Electronics)",
+      "hasImage": false
+    },
+    {
+      "number": "4.d.i",
+      "questionText": "Suggest two simple tools that could be used in nursery bed preparation.",
+      "modelAnswer": "1. Hoe[cite: 127, 134].\n2. Rake / Shovel / Garden fork[cite: 127, 134].",
+      "topic": "Integrated Science (Agricultural Tools)",
+      "hasImage": false
+    },
+    {
+      "number": "4.d.ii",
+      "questionText": "State one function each of the tools listed in (d)(i).",
+      "modelAnswer": "Hoe: Used for digging, gathering soil, or weeding[cite: 127, 134].\nRake: Used for leveling the soil surface and removing debris[cite: 127, 134].",
+      "topic": "Integrated Science (Agricultural Tools)",
+      "hasImage": false
+    },
+    {
+      "number": "4.e.i",
+      "questionText": "State three observable features of an animal cell.",
+      "modelAnswer": "1. Cell membrane[cite: 127, 134].\n2. Cytoplasm[cite: 127, 134].\n3. Nucleus / Nuclear membrane[cite: 127, 134].",
+      "topic": "Integrated Science (Cell Biology)",
+      "hasImage": false
+    },
+    {
+      "number": "4.e.ii",
+      "questionText": "State two functions of a nerve cell.",
+      "modelAnswer": "1. Transmits electrical impulses/messages throughout the body[cite: 127, 134].\n2. Responds to physical and chemical stimuli[cite: 127, 134].",
+      "topic": "Integrated Science (Human Physiology)",
+      "hasImage": false
+    },
+    {
+      "number": "5.a.i",
+      "questionText": "Calculate the effective resistance in the circuit shown in Fig. 5 (parallel resistors of 4 Ω and 5 Ω).",
+      "modelAnswer": "1 / RT = 1 / R1 + 1 / R2 = 1 / 4 + 1 / 5 = (5 + 4) / 20 = 9 / 20.\nRT = 20 / 9 = 2.22 Ω (or 2 2/9 Ω)[cite: 128, 134].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": true,
+      "imageUrl": "gs://bece-prep.firebasestorage.app/science-2025/science_5aq.jpg"
+    },
+    {
+      "number": "5.a.ii",
+      "questionText": "Calculate the current that will flow through the circuit when it is closed (Voltage = 6 V).",
+      "modelAnswer": "I = V / RT = 6 / (20 / 9) = (6 × 9) / 20 = 54 / 20 = 2.7 A[cite: 129, 134].",
+      "topic": "Integrated Science (Electricity)",
+      "hasImage": false
+    },
+    {
+      "number": "5.b.i",
+      "questionText": "Differentiate between an organic fertilizer and an inorganic fertilizer.",
+      "modelAnswer": "Organic fertilizers are derived from natural plant and animal sources, whereas inorganic fertilizers are manufactured artificially through chemical and physical processes[cite: 129, 134].",
+      "topic": "Integrated Science (Soil Science)",
+      "hasImage": false
+    },
+    {
+      "number": "5.b.ii",
+      "questionText": "Outline briefly the steps involved in preparing raised beds.",
+      "modelAnswer": "1. Clear vegetation and weeds[cite: 130, 134].\n2. Dig and loosen the topsoil, breaking large lumps and removing roots/stones[cite: 130, 134].\n3. Shape the bed into size, firm the edges, and level the surface with a rake[cite: 130, 134].",
+      "topic": "Integrated Science (Agricultural Practice)",
+      "hasImage": false
+    },
+    {
+      "number": "5.c.i",
+      "questionText": "State one function each of the following components of blood: red blood cells, white blood cells, blood plasma.",
+      "modelAnswer": "Red blood cells: Carry oxygen from the lungs to body tissues[cite: 130, 134].\nWhite blood cells: Protect the body against infections and diseases[cite: 130, 134].\nBlood plasma: Transports nutrients, hormones, wastes, and water throughout the body[cite: 130, 134].",
+      "topic": "Integrated Science (Human Physiology)",
+      "hasImage": false
+    },
+    {
+      "number": "5.c.ii",
+      "questionText": "Explain briefly the impact of each of the following organisms on humans: housefly, grasshopper.",
+      "modelAnswer": "Housefly: Helps in the decomposition of organic matter, but also acts as a vector spreading diseases like cholera and dysentery[cite: 130, 134].\nGrasshopper: Serves as part of the ecosystem food web, but can cause severe destruction to crops and vegetation[cite: 130, 134].",
+      "topic": "Integrated Science (Ecology & Agriculture)",
+      "hasImage": false
+    },
+    {
+      "number": "5.d",
+      "questionText": "Describe briefly the formation of an ammonia molecule after an interaction between H and N atoms.",
+      "modelAnswer": "Nitrogen (N) has 5 valence electrons and Hydrogen (H) has 1 valence electron. Three H atoms combine with one N atom, with each H atom sharing a covalent bond with one electron from N to form the NH3 molecule[cite: 130].",
+      "topic": "Integrated Science (Chemical Bonding)",
+      "hasImage": false
+    }
+  ]
