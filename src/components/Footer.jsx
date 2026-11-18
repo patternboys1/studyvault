@@ -1,53 +1,54 @@
-import { Globe, Mail } from 'lucide-react'; // Add this line
-import logo from "../assets/logo.png"
+import { Globe, Mail } from "lucide-react";
+import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
-const date = new Date()
-const today = date.getFullYear()
+const today = new Date().getFullYear();
 
 function Footer() {
   return (
-   <footer className="border-t border-slate-100 py-12 px-6">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-    
-    {/* Left Side: Logo and Branding */}
-    <div className="flex flex-col items-center md:items-start">
-      {/* Horizontal Brand Container */}
-      <div className="flex items-center gap-3 mb-2">
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-10 h-10 md:w-12 md:h-12 object-contain"
-        />
-        {/* Negative margin to pull text up and align with the blue box */}
-        <h1 className="text-xl md:text-2xl font-bold text-slate-900 leading-none -mt-3 md:-mt-4">
-          Study Vault
-        </h1>
-      </div>
-      
-      <p className="text-xs text-slate-400 text-center md:text-left">
-        © {today} BECE Study Vault Ghana. Empowering students for academic excellence.
-      </p>
-    </div>
+    <footer className="border-t border-slate-100 px-6 py-12">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 md:flex-row">
+        <div className="flex flex-col items-center md:items-start">
+          <div className="mb-2 flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Study Vault"
+              className="h-10 w-10 object-contain md:h-12 md:w-12"
+            />
+            <h2 className="-mt-3 text-xl font-bold leading-none text-slate-900 md:-mt-4 md:text-2xl">
+              Study Vault
+            </h2>
+          </div>
+          <p className="text-center text-xs text-slate-400 md:text-left">
+            © {today} BECE Study Vault Ghana. Empowering students for academic excellence.
+          </p>
+        </div>
 
-    {/* Center: Navigation Links */}
-    <div className="flex gap-6 text-xs text-slate-500">
-      <a href="#" className="hover:text-blue-600 transition-colors">About Us</a>
-      <a href="#" className="hover:text-blue-600 transition-colors">Support Center</a>
-      <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
-      <a href="#" className="hover:text-blue-600 transition-colors">Contact</a>
-    </div>
+        <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-6 text-xs text-slate-500">
+          <Link to="/about" className="transition-colors hover:text-blue-600">About Us</Link>
+          <Link to="/contact" className="transition-colors hover:text-blue-600">Support Center</Link>
+          <Link to="/privacy" className="transition-colors hover:text-blue-600">Privacy Policy</Link>
+          <Link to="/contact" className="transition-colors hover:text-blue-600">Contact</Link>
+        </nav>
 
-    {/* Right Side: Social Icons */}
-    <div className="flex gap-4">
-      <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all cursor-pointer">
-        <Globe size={16} />
+        <div className="flex gap-4">
+          <Link
+            to="/"
+            aria-label="Study Vault home"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all hover:border-blue-600 hover:text-blue-600"
+          >
+            <Globe size={16} />
+          </Link>
+          <Link
+            to="/contact"
+            aria-label="Contact Study Vault"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-all hover:border-blue-600 hover:text-blue-600"
+          >
+            <Mail size={16} />
+          </Link>
+        </div>
       </div>
-      <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all cursor-pointer">
-        <Mail size={16} />
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   );
 }
 

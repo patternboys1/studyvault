@@ -5,9 +5,8 @@
     "modelAnswer": "Drawing = 2 marks; Labeling/indicating secondary colours (Orange, Green, Violet/Purple) = 2 marks; Shading secondary colours with hatching = 3 marks; Labeling/indicating primary colours (Red, Yellow, Blue) = 2 marks; Shading primary colours with stippling = 3 marks.",
     "topic": "Visual Arts",
     "hasImage": true,
-    "imageUrl": "gs://bece-prep.firebasestorage.app/creative-arts-2025/figure1(a).png",
-    "answerImageUrl": "gs://bece-prep.firebasestorage.app/creative-arts-2025/figure1(a).png",
-    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/Screenshot 2026-09-19 081557.png"
+    "answerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creat_2025_1aii_ans.jpg",
+    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creat_2025_1aii_ans.jpg"
   },
   {
     "number": "1.b",
@@ -113,7 +112,7 @@
     "modelAnswer": "Woodwinds: Clarinet; Brass: Trombone; Percussion: Cymbals; Strings: Cello; Electronic: Keyboard.",
     "topic": "Music",
    "hasImage": true,
-    "imageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/Screenshot 2026-09-19 084302.png"
+    "imageUrl": "gs://bece-prep.firebasestorage.app/creativeArt-2025/creat_2025_Q4b.jpg"
   },
   {
     "number": "4.c",

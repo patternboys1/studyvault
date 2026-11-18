@@ -140,7 +140,8 @@ export default function Signup() {
             <div className="flex items-start gap-2 py-2">
               <input type="checkbox" id="terms" className="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded" required />
               <label htmlFor="terms" className="text-sm text-gray-600">
-                I agree to the <span className="text-indigo-600 font-semibold cursor-pointer">Terms and Conditions</span> and <span className="text-indigo-600 font-semibold cursor-pointer">Privacy Policy</span>.
+                I agree to the <span className="text-indigo-600 font-semibold cursor-pointer">Terms and Conditions</span> and{" "}
+                <Link to="/privacy" className="font-semibold text-indigo-600 hover:underline">Privacy Policy</Link>.
               </label>
             </div>
 

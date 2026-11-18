@@ -5,7 +5,7 @@
     "modelAnswer": "Start -> Go to the shop -> Select the stationery -> Check the price -> [Decision: Is price OK?] -> If Yes, Go to the cash counter -> Pay money -> Take the stationery along -> Leave the shop -> Stop.",
     "topic": "Algorithms & Flowcharts",
     "hasImage": true,
-    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/answer1A.png"
+    "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/com_2025_A1.jpg"
   },
   {
     "number": "1.b",
@@ -27,7 +27,7 @@
     "modelAnswer": "1. Star Topology: A central node/switch connected individually to Node 1, Node 2, Node 3, and Node 4.\n2. Bus Topology: A single central backbone link line with drop lines connecting to Node 1, Node 2, Node 3, and Node 4.",
     "topic": "Computer Networks & Topologies",
     "hasImage": true,
-     "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/answer1D.png"
+     "modelAnswerImageUrl": "gs://bece-prep.firebasestorage.app/computing-2025/com_2025_Ad.jpg"
   },
   {
     "number": "1.e.i",

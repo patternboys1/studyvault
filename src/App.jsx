@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 const Home = lazy(() => import("./pages/public/Home"));
 const About = lazy(() => import("./pages/public/About"));
+const Privacy = lazy(() => import("./pages/public/Privacy"));
 const Features = lazy(() => import("./pages/public/Features"));
 const Contact = lazy(() => import("./pages/public/Contact"));
 const Subjects = lazy(() => import("./pages/public/Subjects"));
@@ -37,6 +38,7 @@ function App() {
           {/*  Public Landing Page Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/features" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/subject" element={<Subjects />} />
