@@ -1,0 +1,567 @@
+[
+  {
+    "number": 1,
+    "questionText": "Two brands of airconditioners S and T cost GH¢ 3,000.00 and GH¢ 4,000.00 respectively. A company budgeted GH¢ 20,000.00 to buy airconditioners. If the company bought 5 units of brand S instead of brand T, how much did it save?",
+    "options": [
+      "GH¢ 1,000.00",
+      "GH¢ 5,000.00",
+      "GH¢ 20,000.00",
+      "GH¢ 15,000.00"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cost of 5 units of brand T = 5 × GH¢ 4,000.00 = GH¢ 20,000.00. Cost of 5 units of brand S = 5 × GH¢ 3,000.00 = GH¢ 15,000.00. Savings = 20,000 - 15,000 = GH¢ 5,000.00[cite: 56].",
+    "topic": "Mathematics (Commercial Arithmetic)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "Zalia and Amina shared an amount of money in the ratio 2 : 5. If Amina had GH¢ 150.00 more than Zalia, how much did they share?",
+    "options": [
+      "GH¢ 100.00",
+      "GH¢ 250.00",
+      "GH¢ 450.00",
+      "GH¢ 350.00"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Difference in ratio = 5 - 2 = 3 parts. 3 parts = GH¢ 150.00, so 1 part = GH¢ 50.00. Total parts = 2 + 5 = 7 parts. Total amount = 7 × 50 = GH¢ 350.00[cite: 56].",
+    "topic": "Mathematics (Ratio and Proportion)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Which of the following is an example of quantitative data?",
+    "options": [
+      "Colour",
+      "Gender",
+      "Marital status",
+      "Length"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Quantitative data deals with numbers and measurable quantities, such as length[cite: 56].",
+    "topic": "Mathematics (Statistics - Data Types)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "In the diagram, P and Q are two sets and U is the universal set. Find P ∩ Q.",
+    "options": [
+      "{c, d, e}",
+      "{a, b}",
+      "{a, b, c, d, e}",
+      "{f, g, h}"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The intersection of sets P and Q (P ∩ Q) represents the elements common to both sets, which is set Q = {c, d, e}[cite: 57].",
+    "topic": "Mathematics (Set Theory)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_2024_obj_Q4&5.png"
+  },
+  {
+    "number": 5,
+    "questionText": "How many members are in set Q?",
+    "options": [
+      "2",
+      "3",
+      "8",
+      "5"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Set Q contains 3 elements: c, d, and e[cite: 57].",
+    "topic": "Mathematics (Set Theory)",
+    "hasImage": true,
+     "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_2024_obj_Q4&5.png"
+  },
+  {
+    "number": 6,
+    "questionText": "Amadu walked to a point such that he is always the same distance from two villages P and Q. Which of the following best describes the locus of Amadu?",
+    "options": [
+      "An arc passing through line PQ",
+      "A circle passing through line PQ",
+      "Straight line PQ",
+      "Perpendicular bisector of line PQ"
+    ],
+    "correctAnswer": "D",
+    "explanation": "The locus of points equidistant from two fixed points is the perpendicular bisector of the line segment joining the points[cite: 57].",
+    "topic": "Mathematics (Loci)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "A bag of rice weighs 2 kg. If the empty bag weighs 150 g, find the weight of the rice. [1 kg = 1,000 g]",
+    "options": [
+      "0.175 kg",
+      "0.185 kg",
+      "1.850 kg",
+      "1.750 kg"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Total weight = 2 kg = 2000 g. Weight of rice = 2000 g - 150 g = 1850 g = 1.850 kg[cite: 57].",
+    "topic": "Mathematics (Units and Measurement)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Andrews drew three lines such that the length of the first one is 10 cm, the second is 15 cm longer than the first one and the third is 9 cm less than the second. Find the length of the third line.",
+    "options": [
+      "4 cm",
+      "14 cm",
+      "34 cm",
+      "16 cm"
+    ],
+    "correctAnswer": "D",
+    "explanation": "First = 10 cm, Second = 10 + 15 = 25 cm, Third = 25 - 9 = 16 cm[cite: 57].",
+    "topic": "Mathematics (Basic Arithmetic)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "Find the truth set of 2x - 4 < 6 + 3x.",
+    "options": [
+      "{x: x < 2}",
+      "{x: x > -2}",
+      "{x: x > -10}",
+      "{x: x < 10}"
+    ],
+    "correctAnswer": "C",
+    "explanation": "2x - 3x < 6 + 4 ⇒ -x < 10 ⇒ x > -10[cite: 58].",
+    "topic": "Mathematics (Inequalities)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "The locus of points equidistant from a fixed point is called a",
+    "options": [
+      "chord.",
+      "circle.",
+      "mediator.",
+      "diameter."
+    ],
+    "correctAnswer": "B",
+    "explanation": "By definition, the locus of points at a constant (equal) distance from a fixed point (center) forms a circle[cite: 58].",
+    "topic": "Mathematics (Loci)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Evaluate: \\sqrt{75} + \\sqrt{18} - \\sqrt{27}",
+    "options": [
+      "2\\sqrt{3} - 3\\sqrt{2}",
+      "2\\sqrt{3} + 3\\sqrt{2}",
+      "\\sqrt{6}",
+      "5\\sqrt{6}"
+    ],
+    "correctAnswer": "B",
+    "explanation": "\\sqrt{75} = 5\\sqrt{3}, \\sqrt{18} = 3\\sqrt{2}, \\sqrt{27} = 3\\sqrt{3}. Thus, 5\\sqrt{3} + 3\\sqrt{2} - 3\\sqrt{3} = 2\\sqrt{3} + 3\\sqrt{2}[cite: 58].",
+    "topic": "Mathematics (Surds)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "In the diagram, line PQ is parallel to line ST. Find the value of the angle marked x.",
+    "options": [
+      "140°",
+      "220°",
+      "290°",
+      "285°"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Using parallel line properties and angles around a point, the acute interior angle sum is 75°, making the reflex angle x = 360° - 75° = 285°[cite: 58].",
+    "topic": "Mathematics (Geometry - Angles)",
+    "hasImage": true,
+    "imageUrl":"gs://bece-prep.firebasestorage.app/maths-2025/maths_2024_obj_Q12.png"
+  },
+  {
+    "number": 13,
+    "questionText": "A hawker is carrying a basket load of three types of fruits: oranges, mangoes and pears. If \\frac{2}{5} of the fruits are oranges and \\frac{6}{25} mangoes, what percentage of the fruits are pears?",
+    "options": [
+      "9%",
+      "18%",
+      "64%",
+      "36%"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Oranges + Mangoes = \\frac{10}{25} + \\frac{6}{25} = \\frac{16}{25}. Pears = 1 - \\frac{16}{25} = \\frac{9}{25} = 36%[cite: 58].",
+    "topic": "Mathematics (Fractions and Percentages)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "The diagram shows the graph of a linear relation of the form y = mx + c. Find the slope of the relation.",
+    "options": [
+      "-2",
+      "-1",
+      "2",
+      "1"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Using points on the line such as (0, 3) and (1, 1), slope m = \\frac{1 - 3}{1 - 0} = -2[cite: 59].",
+    "topic": "Mathematics (Coordinate Geometry)",
+    "hasImage": true
+  },
+  {
+    "number": 15,
+    "questionText": "Find the equation of the relation.",
+    "options": [
+      "y = -2x + 3",
+      "y = -2x + 2",
+      "y = 2x + 3",
+      "y = 2x - 3"
+    ],
+    "correctAnswer": "A",
+    "explanation": "With slope m = -2 and y-intercept c = 3, the equation is y = -2x + 3[cite: 59].",
+    "topic": "Mathematics (Coordinate Geometry)",
+    "hasImage": true
+  },
+  {
+    "number": 16,
+    "questionText": "Araba is 3 years younger than her sister. If the sum of their ages is 17 years, find Araba's age.",
+    "options": [
+      "7 years",
+      "8 years",
+      "10 years",
+      "9 years"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Let sister's age be S. Araba's age = S - 3. S + (S - 3) = 17 ⇒ 2S = 20 ⇒ S = 10. Araba's age = 10 - 3 = 7 years[cite: 60].",
+    "topic": "Mathematics (Word Problems / Linear Equations)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "A number of oranges are shared among 50 students and each got 15 oranges. If the same number of oranges are shared equally among 30 students, how many will each student get?",
+    "options": [
+      "13",
+      "15",
+      "25",
+      "20"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Total oranges = 50 × 15 = 750. Shared among 30 students = 750 / 30 = 25[cite: 60].",
+    "topic": "Mathematics (Inverse Proportion)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "If the bearing of Q from P is 120°, find the bearing of P from Q.",
+    "options": [
+      "060°",
+      "210°",
+      "300°",
+      "240°"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Back bearing = 120° + 180° = 300°[cite: 60].",
+    "topic": "Mathematics (Bearings)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "Given the vectors m = \\binom{5}{-1} and n = \\binom{-4}{2}, find 2m + n.",
+    "options": [
+      "\\binom{6}{0}",
+      "\\binom{-6}{0}",
+      "\\binom{0}{6}",
+      "\\binom{0}{-6}"
+    ],
+    "correctAnswer": "A",
+    "explanation": "2m + n = 2\\binom{5}{-1} + \\binom{-4}{2} = \\binom{10}{-2} + \\binom{-4}{2} = \\binom{6}{0}[cite: 60].",
+    "topic": "Mathematics (Vectors)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "Simplify: \\frac{27^{m+1}}{3^{m+2}}",
+    "options": [
+      "3^{2m}",
+      "3^{2m-1}",
+      "3^{2m+2}",
+      "3^{2m+1}"
+    ],
+    "correctAnswer": "D",
+    "explanation": "\\frac{(3^3)^{m+1}}{3^{m+2}} = \\frac{3^{3m+3}}{3^{m+2}} = 3^{(3m+3)-(m+2)} = 3^{2m+1}[cite: 60].",
+    "topic": "Mathematics (Indices)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "There are 15 white and 25 black identical balls in a box. If a ball is selected at random from the box, find the probability that it is white.",
+    "options": [
+      "\\frac{1}{25}",
+      "\\frac{1}{15}",
+      "\\frac{3}{8}",
+      "\\frac{5}{8}"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Total balls = 15 + 25 = 40. P(white) = \\frac{15}{40} = \\frac{3}{8}[cite: 60].",
+    "topic": "Mathematics (Probability)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "The area of a rectangle is 18 cm². If the width is 2 cm, find its perimeter",
+    "options": [
+      "18 cm",
+      "20 cm",
+      "36 cm",
+      "22 cm"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Length = 18 / 2 = 9 cm. Perimeter = 2(9 + 2) = 22 cm[cite: 61].",
+    "topic": "Mathematics (Mensuration)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Find the interest on GH¢ 400.00 for 2 years at 10% simple interest per annum.",
+    "options": [
+      "GH¢ 8.00",
+      "GH¢ 40.00",
+      "GH¢ 80.00",
+      "GH¢ 60.00"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Interest = \\frac{400 \\times 10 \\times 2}{100} = GH¢ 80.00[cite: 61].",
+    "topic": "Mathematics (Simple Interest)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "One of the factors of the expression 4m² + 12m - 8m - 24 is (4m - 8). Find the other factor.",
+    "options": [
+      "m - 3",
+      "m + 3",
+      "2m + 3",
+      "2m - 3"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Grouping: 4m(m + 3) - 8(m + 3) = (4m - 8)(m + 3). The other factor is (m + 3)[cite: 61].",
+    "topic": "Mathematics (Algebraic Factorization)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "An article which cost GH¢ 600.00 was sold at a discount of 10%. Find the selling price.",
+    "options": [
+      "GH¢ 60.00",
+      "GH¢ 504.00",
+      "GH¢ 560.00",
+      "GH¢ 540.00"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Discount = 10% of 600 = GH¢ 60.00. Selling Price = 600 - 60 = GH¢ 540.00[cite: 61].",
+    "topic": "Mathematics (Commercial Arithmetic)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "Make m the subject of the relation \\frac{1}{m} = \\frac{1}{p} + \\frac{1}{r}",
+    "options": [
+      "m = \\frac{pr}{r+p}",
+      "m = \\frac{pr}{r-p}",
+      "m = \\frac{r-p}{pr}",
+      "m = \\frac{r+p}{pr}"
+    ],
+    "correctAnswer": "A",
+    "explanation": "\\frac{1}{m} = \\frac{r + p}{pr} ⇒ m = \\frac{pr}{r + p}[cite: 61].",
+    "topic": "Mathematics (Changing Subject of Formula)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "The point P(-2, 3) is translated by a vector \\binom{-1}{3} to a point R. Find the coordinates of R.",
+    "options": [
+      "(6, 12)",
+      "(-3, 6)",
+      "(-3, -6)",
+      "(-1, 0)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "R = \\binom{-2}{3} + \\binom{-1}{3} = \\binom{-3}{6} ⇒ (-3, 6)[cite: 61].",
+    "topic": "Mathematics (Transformation - Translation)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "A frog leaps in such a way that its distance, in metres, from its starting position after each leap is given by 4, 7, 10, ... Find its distance from the starting position after the 10th leap.",
+    "options": [
+      "28",
+      "31",
+      "37",
+      "34"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Arithmetic progression with a = 4, d = 3. T_{10} = 4 + (10 - 1)3 = 31[cite: 62].",
+    "topic": "Mathematics (Sequences and Series)",
+    "hasImage": false
+  },
+  {
+    "number": 29,
+    "questionText": "A bus departed from Elmina at 9:15 pm and arrived in Accra at 2:45 am the next day. How long did the journey take?",
+    "options": [
+      "4 hours 20 minutes",
+      "4 hours 30 minutes",
+      "5 hours 30 minutes",
+      "5 hours 20 minutes"
+    ],
+    "correctAnswer": "C",
+    "explanation": "9:15 pm to 12:00 am = 2 hours 45 minutes. 12:00 am to 2:45 am = 2 hours 45 minutes. Total = 5 hours 30 minutes[cite: 62].",
+    "topic": "Mathematics (Time and Speed)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Simplify: 3x - 2(3 + 2x) + x(2x + 4)",
+    "options": [
+      "2x² + 11x - 6",
+      "2x² + 3x - 6",
+      "2x² - 4x - 6",
+      "2x² + 4x - 6"
+    ],
+    "correctAnswer": "B",
+    "explanation": "3x - 6 - 4x + 2x² + 4x = 2x² + 3x - 6[cite: 62].",
+    "topic": "Mathematics (Algebraic Expressions)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "In the diagram, ∠QPR = 30° and |\\overline{QR}| = 5 cm. [Take sin 30° = \\frac{1}{2}]. Find the length of \\overline{PR}.",
+    "options": [
+      "2.5 cm",
+      "5.0 cm",
+      "12.0 cm",
+      "10.0 cm"
+    ],
+    "correctAnswer": "D",
+    "explanation": "sin 30° = \\frac{Opposite}{Hypotenuse} = \\frac{5}{|PR|} ⇒ |PR| = \\frac{5}{1/2} = 10.0 cm[cite: 62].",
+    "topic": "Mathematics (Trigonometry)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_2024_obj_Q31.png"
+  },
+  {
+    "number": 32,
+    "questionText": "A fair coin and a fair die are rolled together once. Find the probability of obtaining a tail and an even number.",
+    "options": [
+      "\\frac{1}{4}",
+      "\\frac{1}{2}",
+      "\\frac{3}{8}",
+      "\\frac{1}{3}"
+    ],
+    "correctAnswer": "A",
+    "explanation": "P(Tail) = \\frac{1}{2}, P(even number) = \\frac{3}{6} = \\frac{1}{2}. Probability = \\frac{1}{2} × \\frac{1}{2} = \\frac{1}{4}.",
+    "topic": "Mathematics (Probability)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "If the gradient of a straight line is zero, then the line",
+    "options": [
+      "is vertical.",
+      "is horizontal.",
+      "falls to the right.",
+      "rises to the right."
+    ],
+    "correctAnswer": "B",
+    "explanation": "A gradient of zero indicates no steepness, meaning the line is horizontal[cite: 63].",
+    "topic": "Mathematics (Coordinate Geometry)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Madam Nancy wants to know which of the teachers in her school is liked best by most of the students. Which of the following methods is most suitable for collecting the data?",
+    "options": [
+      "Experiment",
+      "Database",
+      "Questionnaire",
+      "Observation"
+    ],
+    "correctAnswer": "C",
+    "explanation": "A questionnaire is the most suitable method for gathering opinions and preferences from a large group of students[cite: 63].",
+    "topic": "Mathematics (Statistics - Data Collection)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "Mansah packed 1,800 apples into a number of boxes. If each box contained 120 apples, how many boxes were fully packed?",
+    "options": [
+      "15",
+      "16",
+      "18",
+      "17"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Number of boxes = 1800 / 120 = 15[cite: 63].",
+    "topic": "Mathematics (Basic Arithmetic)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "The cost of three items at a shop are GH¢ 72.00, GH¢ 1,105.00 and GH¢ 216.00. If a customer bought all the three items and received a change of GH¢ 107.00, how much did he initially give the shopkeeper?",
+    "options": [
+      "GH¢ 1,300.00",
+      "GH¢ 1,400.00",
+      "GH¢ 1,500.00",
+      "GH¢ 1,600.00"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Total cost = 72 + 1105 + 216 = GH¢ 1,393.00. Amount given = 1393 + 107 = GH¢ 1,500.00[cite: 63].",
+    "topic": "Mathematics (Commercial Arithmetic)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "The table shows the results when a student tossed a die many times. Find the mode.",
+    "options": [
+      "6",
+      "5",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "A",
+    "explanation": "The number 6 has the highest frequency (5), so it is the mode[cite: 63].",
+    "topic": "Mathematics (Statistics - Measures of Central Tendency)",
+    "hasImage": true,
+    "imageUrl": "gs://bece-prep.firebasestorage.app/maths-2025/maths_2024_obj_Q37.jpg"
+  },
+  {
+    "number": 38,
+    "questionText": "How many times did the student throw the die?",
+    "options": [
+      "6",
+      "18",
+      "21",
+      "20"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Total throws = sum of frequencies = 4 + 3 + 3 + 2 + 3 + 5 = 20[cite: 63].",
+    "topic": "Mathematics (Statistics)",
+    "hasImage": true
+  },
+  {
+    "number": 39,
+    "questionText": "Find the image of the point (-3, 5) when it is rotated through 360° about the origin.",
+    "options": [
+      "(5, -3)",
+      "(-3, 5)",
+      "(-5, 3)",
+      "(-3, -5)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "A complete rotation of 360° maps any point back onto its original coordinates, (-3, 5)[cite: 64].",
+    "topic": "Mathematics (Transformation - Rotation)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "A story book contains 50 pages. If a student reads 10 pages per hour, find the relationship between the number of unread pages (N) and time (t).",
+    "options": [
+      "N = 10t + 50",
+      "N = -10t + 50",
+      "N = -\\frac{1}{10}t + 50",
+      "N = 10t - 50"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Initial unread pages = 50. Pages read in time t = 10t. Unread pages N = 50 - 10t, which can be written as N = -10t + 50[cite: 64].",
+    "topic": "Mathematics (Linear Relations)",
+    "hasImage": false
+  }
+]

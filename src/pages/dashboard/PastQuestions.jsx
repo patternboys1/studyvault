@@ -4,14 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import {
   ArrowLeft,
+  Atom,
+  Beaker,
+  BookOpen,
+  Calculator,
   CheckCircle2,
   ChevronDown,
   ChevronLeft,
   Clock3,
   FileText,
+  Globe2,
+  Hammer,
   Lightbulb,
   LoaderCircle,
-  Sigma,
+  Languages,
+  Palette,
+  MonitorCog,
   X,
   ClipboardCheck,
 } from "lucide-react";
@@ -36,6 +44,19 @@ const normalizeOptions = (options = []) => {
     label,
     letter: String.fromCharCode(65 + index),
   }));
+};
+
+const getSubjectIcon = (subjectName = "") => {
+  const name = subjectName.toLowerCase();
+  if (name.includes("math")) return <Calculator size={20} />;
+  if (name.includes("english") || name.includes("french")) return <Languages size={20} />;
+  if (name.includes("science")) return <Beaker size={20} />;
+  if (name.includes("social")) return <Globe2 size={20} />;
+  if (name.includes("computing") || name.includes("ict")) return <MonitorCog size={20} />;
+  if (name.includes("creative") || name.includes("art")) return <Palette size={20} />;
+  if (name.includes("career") || name.includes("technology") || name.includes("bdt")) return <Hammer size={20} />;
+  if (name.includes("rme") || name.includes("religious")) return <BookOpen size={20} />;
+  return <Atom size={20} />;
 };
 
 // --- MAIN COMPONENT ---
@@ -258,10 +279,23 @@ function PracticeMode({ onBack, paper, questions, isLoading, isPremium, onUpgrad
 
         <div className="mt-10 pt-8 border-t flex flex-col md:flex-row justify-between gap-4">
           <button 
-            onClick={() => isPremium ? setRevealedSolutions(p => ({ ...p, [questionId]: true })) : onUpgrade()} 
+            onClick={() => {
+              if (!isPremium) {
+                onUpgrade();
+                return;
+              }
+              setRevealedSolutions((previous) => ({
+                ...previous,
+                [questionId]: !previous[questionId],
+              }));
+            }}
             className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold shadow-lg shadow-emerald-100 transition hover:bg-emerald-700"
           >
-            {isPremium ? "Reveal Marking Scheme" : "Pro: Reveal Marking Scheme"}
+            {isPremium
+              ? isSolutionVisible
+                ? "Hide Marking Scheme"
+                : "Reveal Marking Scheme"
+              : "Pro: Reveal Marking Scheme"}
           </button>
           <div className="flex gap-3">
             <button disabled={currentIndex === 0} onClick={() => setCurrentIndex(i => i - 1)} className="p-4 border rounded-xl hover:bg-gray-50 disabled:opacity-20"><ChevronLeft /></button>
@@ -290,7 +324,9 @@ function PaperCard({ paper, onClick, requiresPro }) {
   return (
     <div onClick={onClick} className="bg-white p-6 rounded-3xl border border-gray-100 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-50 cursor-pointer transition-all group">
       <div className="flex justify-between mb-4">
-        <div className="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors"><Sigma size={20} /></div>
+        <div className="p-3 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+          {getSubjectIcon(paper.subjectName)}
+        </div>
         <span className="bg-blue-700 text-white px-3 py-1 rounded-full text-[10px] font-black tracking-widest">{paper.year}</span>
       </div>
       <h3 className="font-black text-gray-900 text-lg group-hover:text-blue-700 transition-colors">{paper.subjectName}</h3>
