@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaLinkedinIn, FaTiktok } from 'react-icons/fa6';
 
 // Layout Components
 import Footer from '../../components/Footer';
@@ -325,14 +326,14 @@ const Contact = () => {
 
             {/* Dark Office Box */}
             <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl space-y-6">
-              <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-4">Our Office</h3>
+              <h3 className="text-xl font-bold text-white border-b border-slate-800 pb-4">Where We Work</h3>
               
               <div className="space-y-4 text-sm text-slate-300">
                 <div className="flex items-start gap-3">
                   <MapPin size={20} className="text-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-white">Oxford Street, Osu</p>
-                    <p className="text-slate-400">Accra, Ghana</p>
+                    <p className="font-semibold text-white">At or near our linked location</p>
+                    <p className="text-slate-400">We do not have a dedicated office.</p>
                   </div>
                 </div>
 
@@ -349,14 +350,32 @@ const Contact = () => {
               <div className="pt-4 border-t border-slate-800">
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Follow Our Updates</p>
                 <div className="flex items-center gap-3">
-                  <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition text-slate-300 hover:text-white">
-                    <span className="font-bold text-xs">f</span>
+                  <a
+                    href="https://www.instagram.com/pragma.devs"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Follow Study Vault on Instagram"
+                    className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-pink-600 transition text-slate-300 hover:text-white"
+                  >
+                    <FaInstagram size={18} />
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition text-slate-300 hover:text-white">
-                    <span className="font-bold text-xs">X</span>
+                  <a
+                    href="https://www.tiktok.com/@pragma.devs"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Follow Study Vault on TikTok"
+                    className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition text-slate-300 hover:text-white"
+                  >
+                    <FaTiktok size={18} />
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition text-slate-300 hover:text-white">
-                    <span className="font-bold text-xs">in</span>
+                  <a
+                    href="https://www.linkedin.com/in/pragma-devs-818291451"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Follow Study Vault on LinkedIn"
+                    className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition text-slate-300 hover:text-white"
+                  >
+                    <FaLinkedinIn size={18} />
                   </a>
                 </div>
               </div>
@@ -377,10 +396,10 @@ const Contact = () => {
           <div className="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-3">
             <MapPin size={22} />
           </div>
-          <h4 className="font-bold text-slate-900 text-base">Study Vault Ghana HQ</h4>
-          <p className="text-xs text-slate-500 mt-1">Empowering students across Osu and Greater Accra</p>
+          <h4 className="font-bold text-slate-900 text-base">Our Work Location</h4>
+          <p className="text-xs text-slate-500 mt-1">We work at or near this place in Techiman; it is not a dedicated office.</p>
           <a
-            href="https://maps.google.com"
+            href="https://maps.app.goo.gl/4qYwMtfdcQNDLD1z8"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 mt-3 hover:underline"
