@@ -332,8 +332,8 @@ const Contact = () => {
                 <div className="flex items-start gap-3">
                   <MapPin size={20} className="text-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-white">At or near our linked location</p>
-                    <p className="text-slate-400">We do not have a dedicated office.</p>
+                    <p className="font-semibold text-white">Pragma.Devs, Bono-East</p>
+                    <p className="text-slate-400">Techiman, Ghana</p>
                   </div>
                 </div>
 
