@@ -38,9 +38,21 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // The form has no delivery service yet. Do not log personal contact details
-    // or claim the message was sent when it was not.
-    setFormMessage("This contact form is not connected yet. Your message was not sent.");
+    const subject = `Study Vault support: ${formData.subject.trim()}`;
+    const body = [
+      `Name: ${formData.fullName.trim()}`,
+      `Email: ${formData.email.trim()}`,
+      `Phone: ${formData.phone.trim() || "Not provided"}`,
+      `Role: ${formData.role}`,
+      "",
+      formData.message.trim()
+    ].join("\n");
+    const mailto = `mailto:patternboys1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+    setFormMessage(
+      "Your email app should open with the message addressed to patternboys1@gmail.com. Please send it there. If it does not open, email that address directly."
+    );
   };
 
   const navLinks = [
@@ -59,7 +71,7 @@ const Contact = () => {
       title: "Email Us",
       desc: "Our support team responds within 24 hours to all inquiries.",
       actionText: "support@studyvault.com",
-      actionLink: "mailto:studyvault@gmail.com",
+      actionLink: "mailto:patternboys1@gmail.com",
       actionColor: "text-blue-600 hover:text-blue-700"
     },
     {
@@ -68,7 +80,7 @@ const Contact = () => {
       title: "WhatsApp",
       desc: "Instant help for students and parents on the go.",
       actionText: "Chat on WhatsApp",
-      actionLink: "https://wa.me/203261348",
+      actionLink: "https://wa.me/233203261348",
       actionColor: "text-emerald-600 hover:text-emerald-700 font-bold"
     },
     {
@@ -76,8 +88,8 @@ const Contact = () => {
       bgColor: "bg-amber-50",
       title: "Call Support",
       desc: "Available Mon–Fri, 8:00 AM to 5:00 PM for urgent needs.",
-      actionText: "+233 (0) 203 261 248",
-      actionLink: "tel:+2330555123456",
+      actionText: "020 326 1348",
+      actionLink: "tel:+233203261348",
       actionColor: "text-slate-800 font-bold hover:text-blue-600"
     },
     {
@@ -209,7 +221,7 @@ const Contact = () => {
           {/* Left Form (7 cols) */}
           <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-3xl border border-slate-200/80 shadow-sm">
             <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
-            <p className="text-slate-500 text-sm mb-8">Fill out the form below and our academic consultants will get back to you shortly.</p>
+            <p className="text-slate-500 text-sm mb-8">Fill out the form below to open an email addressed to our support inbox. Review and send it from your email app.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {formMessage && <p role="alert" className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm font-semibold text-amber-900">{formMessage}</p>}
@@ -293,7 +305,7 @@ const Contact = () => {
                 className="w-full bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-800 transition flex items-center justify-center gap-2"
               >
                 <Send size={18} />
-                Send Message
+                Continue to Email
               </button>
             </form>
           </div>
