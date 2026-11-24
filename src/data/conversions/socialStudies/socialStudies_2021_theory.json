@@ -1,0 +1,107 @@
+[
+  {
+    "number": "1.a.i",
+    "questionText": "State three forms in which the scale of a map can be expressed with the aid of an example each.",
+    "modelAnswer": "1. Statement scale: e.g., 1 cm to 1 km (or 1 cm represents 4 km).\n2. Representative fraction (RF) scale: e.g., 1:50,000 or 1/50,000.\n3. Linear scale: A graduated straight line divided into equal primary and secondary segments representing ground distances.",
+    "topic": "Social Studies (Mapping & Scale)",
+    "hasImage": false
+  },
+  {
+    "number": "1.a.ii",
+    "questionText": "If the distance between Town A and B on a map is 12.5 cm, calculate the actual distance on the ground using a scale of 1 cm to 4 km.",
+    "modelAnswer": "Scale: 1 cm = 4 km\nDistance on map = 12.5 cm\nActual distance = 12.5 × 4 km = 50 km.",
+    "topic": "Social Studies (Map Scale Calculations)",
+    "hasImage": false
+  },
+  {
+    "number": "1.b",
+    "questionText": "Outline four ways in which education can cause change in society.",
+    "modelAnswer": "1. Imparts modern knowledge, literacy, and technical skills that drive economic and technological advancement.\n2. Promotes critical thinking and helps eradicate outdated, harmful cultural practices and superstitions.\n3. Enhances health awareness, sanitation, and family planning practices, improving life expectancy.\n4. Fosters national integration, democratic values, and respect for human rights and the rule of law.",
+    "topic": "Social Studies (Education & Social Change)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.i",
+    "questionText": "List four ways in which Ghanaians demonstrate their culture.",
+    "modelAnswer": "1. Festivals\n2. Dance\n3. Music\n4. Language (or Games, Funeral rites, Chieftaincy)",
+    "topic": "Social Studies (Culture & Identity)",
+    "hasImage": false
+  },
+  {
+    "number": "2.a.ii",
+    "questionText": "Name an example each of the ways in which Ghanaians demonstrate their culture as listed in 2(a)(i) above.",
+    "modelAnswer": "1. Festivals: Aboakyer, Damba, Homowo, Hogbetsotso.\n2. Dance: Adowa, Agbadza, Kpanlogo, Bamaya.\n3. Music: Dirges, Highlife, Folk songs.\n4. Language: Akan (Twi/Fante), Ewe, Ga, Dagbani (or Games: Oware, Ampe).",
+    "topic": "Social Studies (Cultural Expressions in Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": "2.b",
+    "questionText": "Highlight four ways in which education can cause change in the society.",
+    "modelAnswer": "1. Equips individuals with employable skills and promotes entrepreneurship and industrialization.\n2. Encourages positive attitudes toward work, punctuality, and environmental conservation.\n3. Promotes gender equality and empowers women to participate in leadership and decision-making.\n4. Facilitates scientific research and adoption of modern technology in agriculture, medicine, and communication.",
+    "topic": "Social Studies (Education & Social Change)",
+    "hasImage": false
+  },
+  {
+    "number": "3.a",
+    "questionText": "State four ways by which education can cause change in the society.",
+    "modelAnswer": "1. Respecting the culture of other ethnic groups and promoting inter-ethnic harmony.\n2. Encouraging the celebration of national festivals and promoting local music and dance.\n3. Valuing peace, stability, and practicing tolerance of opposing views.\n4. Promoting modernization, scientific reasoning, and improved standards of living.",
+    "topic": "Social Studies (Education & National Integration)",
+    "hasImage": false
+  },
+  {
+    "number": "3.b",
+    "questionText": "Highlight four negative effects of colonization on the people of Ghana.",
+    "modelAnswer": "1. Depopulation and loss of able-bodied human resources through the Trans-Atlantic Slave Trade.\n2. Loss of self-esteem, cultural identity, and pride in indigenous traditions, names, and languages.\n3. Weakening of traditional authority and indigenous governance institutions.\n4. Overdependence on foreign manufactured goods and imported raw-material-export economic structures.",
+    "topic": "Social Studies (Effects of Colonization)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a.i",
+    "questionText": "What is political instability?",
+    "modelAnswer": "Political instability is a situation in a country characterized by frequent disruptions in governance, breakdown of law and order, civil unrest, coups d'état, or violent conflicts that prevent peaceful administration and development.",
+    "topic": "Social Studies (Governance & Stability)",
+    "hasImage": false
+  },
+  {
+    "number": "4.a.ii",
+    "questionText": "List four factors that can promote political instability in Ghana.",
+    "modelAnswer": "1. Rigging of elections or lack of free and fair elections.\n2. Suppression of freedom of speech and media censorship.\n3. Dictatorial rule, abuse of power, and violation of fundamental human rights.\n4. Bribery, corruption, nepotism, and unfair distribution of national resources.",
+    "topic": "Social Studies (Causes of Political Instability)",
+    "hasImage": false
+  },
+  {
+    "number": "4.b",
+    "questionText": "Highlight four ways in which conflicts can be resolved in the society.",
+    "modelAnswer": "1. Mediation: Involving a neutral third party to facilitate dialogue and assist conflicting parties to reach a mutual agreement.\n2. Negotiation: Direct dialogue and compromise between the parties involved in the dispute.\n3. Arbitration: Referring the dispute to an independent arbitrator or panel whose decision the parties agree to accept.\n4. Adjudication: Settling the conflict through the formal law courts and judicial system.",
+    "topic": "Social Studies (Conflict Resolution)",
+    "hasImage": false
+  },
+  {
+    "number": "5.a",
+    "questionText": "State four ways of improving the health needs of the youth in Ghana.",
+    "modelAnswer": "1. Providing adequate reproductive health education and counselling services.\n2. Encouraging parents to take children for periodic medical check-ups and vaccinations.\n3. Educating the youth to exhibit good personal and environmental hygienic behaviours.\n4. Providing adequate education on substance/drug abuse, unsafe abortion, and their consequences.",
+    "topic": "Social Studies (Youth Health & Development)",
+    "hasImage": false
+  },
+  {
+    "number": "5.b",
+    "questionText": "Highlight four ways by which indisciplined behaviour affects the individual in the society.",
+    "modelAnswer": "1. It can bring illness, sexually transmitted infections, or physical injuries to the individual.\n2. It brings disgrace, loss of respect, and social stigma to the individual and their family.\n3. It can lead to school dropout, unemployment, and loss of future opportunities.\n4. It can result in arrest, imprisonment, banishment from society, or untimely death.",
+    "topic": "Social Studies (Indiscipline & Consequences)",
+    "hasImage": false
+  },
+  {
+    "number": "6.a",
+    "questionText": "Highlight four ways in which Non-Governmental Organizations (NGOs) contribute to the development of Ghana.",
+    "modelAnswer": "1. Setting up schools, awarding scholarships, and providing educational materials in rural and deprived areas.\n2. Assisting with health infrastructure, clean water boreholes, and sanitation projects.\n3. Supporting farmers as implementers of agricultural projects by supplying improved seedlings and fertilizers.\n4. Working with communities to eradicate poverty, protect the environment, and offer human rights advocacy and skills training.",
+    "topic": "Social Studies (Role of NGOs in Development)",
+    "hasImage": false
+  },
+  {
+    "number": "6.b",
+    "questionText": "Outline four measures that can be taken to improve agricultural output in Ghana.",
+    "modelAnswer": "1. Use of modern farming technology, machinery, and improved high-yielding crop varieties.\n2. Provision of irrigation facilities to ensure all-year-round farming rather than relying solely on rainfall.\n3. Providing technical assistance and regular training to farmers through agricultural extension officers.\n4. Proper application of fertilizers and agro-chemicals, alongside improved storage, packaging, and processing facilities.",
+    "topic": "Social Studies (Agricultural Development)",
+    "hasImage": false
+  }
+]

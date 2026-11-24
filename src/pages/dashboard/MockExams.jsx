@@ -14,6 +14,7 @@ import {
   RotateCcw,
   Timer,
   Trophy,
+  WifiOff,
   XCircle,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
@@ -38,6 +39,24 @@ const formatTime = (totalSeconds) => {
 
 const getOptionLetter = (index) => String.fromCharCode(65 + index);
 
+function getNetworkError(error, fallback = "Please try again.") {
+  const message = String(error?.message || "").toLowerCase();
+  const looksLikeNetworkError = !navigator.onLine
+    || error?.name === "TypeError"
+    || message.includes("failed to fetch")
+    || message.includes("network")
+    || message.includes("connection")
+    || message.includes("timed out")
+    || message.includes("timeout")
+    || message.includes("http 502")
+    || message.includes("http 503")
+    || message.includes("http 504");
+
+  return looksLikeNetworkError
+    ? "Your internet connection appears weak or unavailable. Check your connection, then try again."
+    : error?.message || fallback;
+}
+
 const isCorrect = (question, selectedAnswer) => {
   if (!selectedAnswer || !question.correctAnswer) return false;
 
@@ -57,19 +76,21 @@ export default function MockExams() {
   const [freeMocksOverride, setFreeMocksOverride] = useState(null);
   const freeMocksRemaining = freeMocksOverride ?? userProfile?.freeMocksRemaining;
 
-  const { data: papers = [], isLoading: papersLoading, isError: papersError, error: paperLoadError } = useQuery({
+  const { data: papers = [], isLoading: papersLoading, isError: papersError, error: paperLoadError, refetch: refetchPapers } = useQuery({
     queryKey: ["mock-exam-papers", user?.uid],
     queryFn: getPapers,
     enabled: Boolean(user?.uid),
+    retry: 1,
   });
 
-  const { data: questions = [], isLoading: questionsLoading } = useQuery({
+  const { data: questions = [], isLoading: questionsLoading, isError: questionsError, error: questionLoadError, refetch: refetchQuestions } = useQuery({
     queryKey: ["mock-exam-questions", activeExam?.paper.subjectId, activeExam?.paper.year, activeExam?.section, activeExam?.attemptId],
     queryFn: () => getQuestionsByPaper(activeExam.paper.subjectId, activeExam.paper.year, activeExam.section, {
       mode: "mock",
       reservationId: activeExam.attemptId,
     }),
     enabled: Boolean(activeExam?.paper.subjectId),
+    retry: 1,
   });
 
   const startExam = async (paper, section) => {
@@ -89,7 +110,7 @@ export default function MockExams() {
       setActiveExam(nextExam);
       setView("exam");
     } catch (error) {
-      setStartError(error.message || "Unable to start this mock exam.");
+      setStartError(getNetworkError(error, "Unable to start this mock exam."));
     }
   };
 
@@ -100,13 +121,13 @@ export default function MockExams() {
   };
 
   if (view === "exam" && activeExam) {
-    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} startedAt={activeExam.startedAt} questions={questions} isLoading={questionsLoading} onExit={exitExam} />;
+    return <MockExamSession key={`${activeExam.paper.id}-${activeExam.section}-${activeExam.attemptId}`} paper={activeExam.paper} section={activeExam.section} attemptId={activeExam.attemptId} startedAt={activeExam.startedAt} questions={questions} isLoading={questionsLoading} questionsError={questionsError ? getNetworkError(questionLoadError, "Unable to load the mock questions.") : ""} onRetryQuestions={() => refetchQuestions()} onExit={exitExam} />;
   }
 
-  return <MockExamRepository papers={papers} isLoading={papersLoading} papersError={papersError ? paperLoadError : null} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
+  return <MockExamRepository papers={papers} isLoading={papersLoading} papersError={papersError ? getNetworkError(paperLoadError, "Unable to load mock papers.") : null} onRetryPapers={() => refetchPapers()} onStart={startExam} startError={startError} isPremium={isPremium} freeMocksRemaining={freeMocksRemaining} />;
 }
 
-function MockExamRepository({ papers, isLoading, papersError, onStart, startError, isPremium, freeMocksRemaining }) {
+function MockExamRepository({ papers, isLoading, papersError, onRetryPapers, onStart, startError, isPremium, freeMocksRemaining }) {
   const [selectedSubject, setSelectedSubject] = useState("All Subjects");
   const subjects = useMemo(() => [...new Set(papers.map((paper) => paper.subjectName).filter(Boolean))], [papers]);
   const availablePapers = papers.filter((paper) => selectedSubject === "All Subjects" || paper.subjectName === selectedSubject);
@@ -128,7 +149,7 @@ function MockExamRepository({ papers, isLoading, papersError, onStart, startErro
         </div>
       </section>
 
-      {startError && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm font-bold text-red-800">{startError}</p>}
+      {startError && <ConnectionError message={startError} />}
       {!isPremium && Number.isFinite(freeMocksRemaining) && <p className="rounded-xl border border-blue-100 bg-blue-50 p-4 text-sm font-bold text-blue-900">Free plan: {freeMocksRemaining} of 3 mock exams remaining this month.</p>}
 
       <section className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -145,7 +166,7 @@ function MockExamRepository({ papers, isLoading, papersError, onStart, startErro
         </label>
       </section>
 
-      {papersError ? <p role="alert" className="rounded-xl border border-red-200 bg-red-50 p-4 font-semibold text-red-800">Unable to load mock papers: {papersError.message || "Please try again."}</p> : isLoading ? <LoadingCard label="Loading available mock papers..." /> : availablePapers.length > 0 ? (
+      {papersError ? <ConnectionError message={papersError.message || papersError} onRetry={onRetryPapers} retryLabel="Retry loading papers" /> : isLoading ? <LoadingCard label="Loading available mock papers..." /> : availablePapers.length > 0 ? (
         <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {availablePapers.map((paper) => <MockPaperCard key={paper.id} paper={paper} onStart={onStart} isPremium={isPremium} />)}
         </section>
@@ -182,17 +203,17 @@ function MockPaperCard({ paper, onStart, isPremium }) {
   );
 }
 
-function MockExamSession({ paper, section, attemptId, startedAt, questions, isLoading, onExit }) {
+function MockExamSession({ paper, section, attemptId, startedAt, questions, isLoading, questionsError, onRetryQuestions, onExit }) {
   const { user } = useAuth();
 
   if (section === "Theory") {
-    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} startedAt={startedAt} userId={user?.uid} onExit={onExit} />;
+    return <TheoryExamSession paper={paper} questions={questions} isLoading={isLoading} questionsError={questionsError} onRetryQuestions={onRetryQuestions} attemptId={attemptId} startedAt={startedAt} userId={user?.uid} onExit={onExit} />;
   }
 
-  return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
+  return <ObjectiveExamSession paper={paper} questions={questions} isLoading={isLoading} questionsError={questionsError} onRetryQuestions={onRetryQuestions} attemptId={attemptId} userId={user?.uid} onExit={onExit} />;
 }
 
-function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, onExit }) {
+function ObjectiveExamSession({ paper, questions, isLoading, questionsError, onRetryQuestions, attemptId, userId, onExit }) {
   const durationInSeconds = (paper.durationMinutes || 60) * 60;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -225,6 +246,15 @@ function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, 
   }, [showSubmitPrompt]);
 
   if (isLoading) return <LoadingCard label="Preparing your mock exam..." />;
+
+  if (questionsError) {
+    return (
+      <div className="space-y-6 pb-10">
+        <button type="button" onClick={onExit} className="flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Back to mock exams</button>
+        <ConnectionError message={questionsError} onRetry={onRetryQuestions} retryLabel="Retry loading questions" />
+      </div>
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -335,7 +365,7 @@ function ObjectiveExamSession({ paper, questions, isLoading, attemptId, userId, 
   );
 }
 
-function TheoryExamSession({ paper, questions, isLoading, attemptId, startedAt, userId, onExit }) {
+function TheoryExamSession({ paper, questions, isLoading, questionsError, onRetryQuestions, attemptId, startedAt, userId, onExit }) {
   const durationInSeconds = (paper.durationMinutes || 60) * 60;
   const [currentIndex, setCurrentIndex] = useState(0);
   const draftKey = `bece-prep-theory-draft:${userId}:${attemptId}`;
@@ -382,6 +412,15 @@ function TheoryExamSession({ paper, questions, isLoading, attemptId, startedAt, 
   }, [showSubmitPrompt]);
 
   if (isLoading) return <LoadingCard label="Preparing your theory mock..." />;
+
+  if (questionsError) {
+    return (
+      <div className="space-y-6 pb-10">
+        <button type="button" onClick={onExit} className="flex items-center gap-2 text-sm font-black text-blue-700 hover:underline"><ArrowLeft size={16} /> Back to mock exams</button>
+        <ConnectionError message={questionsError} onRetry={onRetryQuestions} retryLabel="Retry loading questions" />
+      </div>
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -476,7 +515,7 @@ function TheoryExamSession({ paper, questions, isLoading, attemptId, startedAt, 
 
 function TheoryResults({ paper, questions, responses, attemptId, userId, draftKey, onRestart, onExit }) {
   const draftedCount = Object.values(responses).filter((response) => response.trim()).length;
-  const [saveStatus, setSaveStatus] = useState(userId ? "saving" : "error");
+  const [saveStatus, setSaveStatus] = useState(userId ? "saving" : "error:Sign in again to save your theory responses.");
   const [saveAttempt, setSaveAttempt] = useState(0);
 
   useEffect(() => {
@@ -490,7 +529,7 @@ function TheoryResults({ paper, questions, responses, attemptId, userId, draftKe
       })
       .catch((error) => {
         console.error("Unable to save theory mock:", error);
-        if (active) setSaveStatus("error");
+        if (active) setSaveStatus(`error:${getNetworkError(error, "Could not save your responses.")}`);
       });
     return () => { active = false; };
   }, [attemptId, draftKey, responses, saveAttempt, userId]);
@@ -499,7 +538,7 @@ function TheoryResults({ paper, questions, responses, attemptId, userId, draftKe
     <div className="space-y-7 pb-10">
       <section className="overflow-hidden rounded-3xl bg-slate-950 p-7 text-white shadow-xl shadow-slate-200 md:p-10">
         <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-200">Theory mock complete</p>
-        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p><p className="mt-2 text-sm font-bold text-blue-200">{saveStatus === "saving" ? "Saving your responses…" : saveStatus === "saved" ? "Your responses are saved." : "Could not save your responses. Your draft is kept in this tab."}</p>{saveStatus === "error" && <button type="button" onClick={() => { setSaveStatus("saving"); setSaveAttempt((count) => count + 1); }} className="mt-2 rounded-lg bg-white px-3 py-2 text-sm font-black text-blue-800">Retry saving</button>}</div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
+        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div><h1 className="text-3xl font-black md:text-4xl">{paper.subjectName} {paper.year}</h1><p className="mt-2 text-slate-300">Compare your work carefully against the marking guide.</p><p className="mt-2 text-sm font-bold text-blue-200">{saveStatus === "saving" ? "Saving your responses…" : saveStatus === "saved" ? "Your responses are saved." : saveStatus.startsWith("error:") ? saveStatus.slice(6) : "Could not save your responses. Your draft is kept in this tab."}</p>{saveStatus.startsWith("error:") && <button type="button" onClick={() => { setSaveStatus("saving"); setSaveAttempt((count) => count + 1); }} className="mt-2 rounded-lg bg-white px-3 py-2 text-sm font-black text-blue-800">Retry saving</button>}</div><p className="text-4xl font-black text-emerald-300">{draftedCount}/{questions.length}</p></div>
       </section>
       <section className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"><div><h2 className="text-2xl font-black text-gray-950">Model answers</h2><p className="mt-1 text-sm text-gray-500">Use the points below to self-assess and improve your response.</p></div><div className="flex flex-wrap gap-3"><button type="button" onClick={onExit} className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-black text-gray-700 hover:border-blue-200 hover:text-blue-700">Back to papers</button><button type="button" onClick={onRestart} className="flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 text-sm font-black text-white shadow-md shadow-blue-100 hover:bg-blue-800"><RotateCcw size={16} /> Start another attempt</button></div></div>
@@ -550,7 +589,7 @@ function MockResults({ paper, questions, answers, attemptId, userId, onRestart, 
     }).then((result) => {
       if (!cancelled) setSubmission(result);
     }).catch((error) => {
-      if (!cancelled) setSaveError(error.message || "Unable to save and mark this mock attempt.");
+      if (!cancelled) setSaveError(getNetworkError(error, "Unable to save and mark this mock attempt."));
     });
     return () => { cancelled = true; };
   }, [answers, attemptId, paper.id, paper.subjectId, paper.subjectName, paper.year, questions.length, saveAttempt, userId]);
@@ -616,6 +655,21 @@ function MockResults({ paper, questions, answers, attemptId, userId, onRestart, 
 
 function ResultStat({ label, value, icon, color }) {
   return <article className="rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"><div className={`flex h-11 w-11 items-center justify-center rounded-xl ${color}`}>{icon}</div><p className="mt-5 text-3xl font-black text-gray-950">{value}</p><p className="mt-1 text-sm font-bold text-gray-500">{label}</p></article>;
+}
+
+function ConnectionError({ message, onRetry, retryLabel = "Try again" }) {
+  return (
+    <section role="alert" className="rounded-3xl border border-amber-200 bg-amber-50 p-7 text-center md:p-10">
+      <WifiOff className="mx-auto text-amber-700" size={38} />
+      <h2 className="mt-4 text-xl font-black text-amber-950">Connection interrupted</h2>
+      <p className="mx-auto mt-2 max-w-lg text-sm font-semibold leading-relaxed text-amber-900">{message}</p>
+      {onRetry && (
+        <button type="button" onClick={onRetry} className="mt-5 rounded-xl bg-amber-800 px-5 py-3 text-sm font-black text-white shadow-sm transition hover:bg-amber-900">
+          <RotateCcw className="mr-2 inline" size={16} /> {retryLabel}
+        </button>
+      )}
+    </section>
+  );
 }
 
 function LoadingCard({ label }) {

@@ -470,7 +470,7 @@ const Subjects = () => {
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
                 <p className="text-slate-600 text-sm italic leading-relaxed mb-4">
-                  "BECE Prep Ghana helped me pass my Integrated Science paper easily. The topic breakdown showed me exactly what to study!"
+                  "StudyVault Ghana helped me pass my Integrated Science paper easily. The topic breakdown showed me exactly what to study!"
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-blue-100 text-blue-700 font-bold rounded-full flex items-center justify-center text-sm">

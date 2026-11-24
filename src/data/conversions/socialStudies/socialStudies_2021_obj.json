@@ -1,0 +1,562 @@
+[
+  {
+    "number": 1,
+    "questionText": "Major roads connecting regional capitals in Ghana are known as",
+    "options": [
+      "feeder roads",
+      "highways",
+      "trunk roads",
+      "urban roads"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Trunk roads are major arterial highways that link regional capitals and major towns across Ghana[cite: 65].",
+    "topic": "Social Studies (Infrastructure & Transportation)",
+    "hasImage": false
+  },
+  {
+    "number": 2,
+    "questionText": "One factor which results in high birth rate in Ghana is",
+    "options": [
+      "effective use of contraceptives.",
+      "migration of people to urban centres.",
+      "ineffective birth control measures.",
+      "failure of the youth to acquire skills."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Ineffective or low adoption of birth control and family planning measures contributes significantly to high fertility and birth rates[cite: 65].",
+    "topic": "Social Studies (Population Growth)",
+    "hasImage": false
+  },
+  {
+    "number": 3,
+    "questionText": "Which of the following business enterprises raises capital through the sale of shares?",
+    "options": [
+      "Partnership",
+      "Joint stock companies",
+      "Sole proprietorship",
+      "Co-operative societies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Joint stock companies (limited liability companies) raise capital by issuing shares to the public or private investors[cite: 65].",
+    "topic": "Social Studies (Business Enterprises)",
+    "hasImage": false
+  },
+  {
+    "number": 4,
+    "questionText": "Which of the following is not a business enterprise?",
+    "options": [
+      "Rural banks.",
+      "Financial savings.",
+      "Joint stock companies.",
+      "Co-operative societies."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Financial savings is a personal or institutional financial practice rather than a legal form of business organization[cite: 65].",
+    "topic": "Social Studies (Business Enterprises)",
+    "hasImage": false
+  },
+  {
+    "number": 5,
+    "questionText": "Movement and supply of utilities in settlements become easier and faster when the",
+    "options": [
+      "layout is good.",
+      "layout is haphazard.",
+      "settlement is compact.",
+      "settlement is linear."
+    ],
+    "correctAnswer": "A",
+    "explanation": "A well-planned settlement layout provides clear access routes for roads, water pipelines, electricity lines, and emergency services[cite: 65].",
+    "topic": "Social Studies (Settlement & Town Planning)",
+    "hasImage": false
+  },
+  {
+    "number": 6,
+    "questionText": "The best way of disposing industrial and domestic waste is by",
+    "options": [
+      "dumping.",
+      "burning.",
+      "burying.",
+      "recycling."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Recycling converts waste materials into reusable products, reducing environmental pollution and conserving resources[cite: 65].",
+    "topic": "Social Studies (Environmental Sanitation)",
+    "hasImage": false
+  },
+  {
+    "number": 7,
+    "questionText": "Socio-economic development is hindered when there is no",
+    "options": [
+      "peace and stability",
+      "foreign aid",
+      "natural resources",
+      "skilled labour"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Peace and stability create the safe environment required for investment, production, and national development[cite: 65].",
+    "topic": "Social Studies (Peace & National Development)",
+    "hasImage": false
+  },
+  {
+    "number": 8,
+    "questionText": "Conflicts in the community cannot be properly managed when there is",
+    "options": [
+      "forgiveness.",
+      "mediation.",
+      "reconciliation.",
+      "land disputes."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Ongoing and unresolved land disputes fuel tension and prevent peaceful conflict resolution in communities[cite: 65].",
+    "topic": "Social Studies (Conflict Prevention & Management)",
+    "hasImage": false
+  },
+  {
+    "number": 9,
+    "questionText": "The main reason for producing cocoa in Ghana is to",
+    "options": [
+      "promote the manufacture of more cocoa products.",
+      "generate more foreign exchange.",
+      "make the farmers happy.",
+      "set up more factories."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cocoa is Ghana's leading agricultural export crop, grown primarily to earn foreign exchange revenue for the country[cite: 65].",
+    "topic": "Social Studies (Economic Activities in Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": 10,
+    "questionText": "Which of the following business enterprises is the commonest and easiest to form in Ghana?",
+    "options": [
+      "Partnership",
+      "Sole proprietorships",
+      "Public joint stock companies",
+      "Co-operative Societies"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Sole proprietorships (one-man businesses) require minimal capital and few legal formalities, making them the easiest and most common businesses to establish[cite: 65].",
+    "topic": "Social Studies (Business Enterprises)",
+    "hasImage": false
+  },
+  {
+    "number": 11,
+    "questionText": "Ghana is bordered in the west by",
+    "options": [
+      "Côte d'Ivoire.",
+      "Burkina Faso.",
+      "Togo.",
+      "Nigeria."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ghana shares its western border with Côte d'Ivoire (Ivory Coast), northern with Burkina Faso, and eastern with Togo[cite: 65].",
+    "topic": "Social Studies (Location & Neighbors of Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": 12,
+    "questionText": "Which one of the following may cause unemployment in Ghana?",
+    "options": [
+      "Greater use of locally made goods",
+      "Reduction in tax on imported goods",
+      "Development of inter-regional trade",
+      "Extension of electricity to rural communities"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lowering taxes on imports makes foreign goods cheaper, hurting local industries and leading to job losses[cite: 65].",
+    "topic": "Social Studies (Employment & Economic Policy)",
+    "hasImage": false
+  },
+  {
+    "number": 13,
+    "questionText": "The best way of increasing productivity in the agricultural sector is through",
+    "options": [
+      "effective supervision.",
+      "the use of modern technology.",
+      "instituting best farmers' awards.",
+      "planning and target setting."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Adopting modern agricultural technology (mechanization, irrigation, improved seeds) directly boosts farm yields and efficiency[cite: 65].",
+    "topic": "Social Studies (Agricultural Development)",
+    "hasImage": false
+  },
+  {
+    "number": 14,
+    "questionText": "One benefit Ghana derives from her co-operation with other countries is the",
+    "options": [
+      "prevention of dumping of expired goods.",
+      "introduction of foreign culture.",
+      "prevention of the spread of communicable diseases.",
+      "country's ability to access international funds."
+    ],
+    "correctAnswer": "D",
+    "explanation": "International cooperation enables Ghana to access grants, loans, and financial assistance from global partners and institutions[cite: 65].",
+    "topic": "Social Studies (International Cooperation)",
+    "hasImage": false
+  },
+  {
+    "number": 15,
+    "questionText": "In a working environment, productivity means",
+    "options": [
+      "output of the country.",
+      "management of workers.",
+      "output per worker.",
+      "quantity of resource."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Productivity measures efficiency in production, commonly expressed as the ratio of output per worker within a given time[cite: 65].",
+    "topic": "Social Studies (Productivity & Work Ethics)",
+    "hasImage": false
+  },
+  {
+    "number": 16,
+    "questionText": "A general pardon for an offence against the state is known as",
+    "options": [
+      "amnesty.",
+      "freedom.",
+      "permit.",
+      "plebiscite."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Amnesty is an official pardon granted by a government to individuals or groups who have committed political or state offences[cite: 65].",
+    "topic": "Social Studies (Governance & Law)",
+    "hasImage": false
+  },
+  {
+    "number": 17,
+    "questionText": "Which of the following is not a feature of a sketched map?",
+    "options": [
+      "Title",
+      "Key",
+      "Scale",
+      "Land mark"
+    ],
+    "correctAnswer": "D",
+    "explanation": "A sketched map typically includes basic elements like a title, key, and approximate scale/direction, whereas physical landmarks are real-world terrain features rather than formal map marginalia[cite: 65].",
+    "topic": "Social Studies (Mapping Skills)",
+    "hasImage": false
+  },
+  {
+    "number": 18,
+    "questionText": "If Ghana is to be self-reliant, it must adopt the following methods except",
+    "options": [
+      "less dependent on foreign goods.",
+      "use of expertise from Ghana.",
+      "overdependence on foreign assistance.",
+      "improve agriculture."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Overdependence on foreign assistance undermines national autonomy and contradicts the goal of economic self-reliance[cite: 65].",
+    "topic": "Social Studies (Self-Reliance & Development)",
+    "hasImage": false
+  },
+  {
+    "number": 19,
+    "questionText": "When the sun is overhead on the Tropic of Capricorn, areas in the southern hemisphere experience",
+    "options": [
+      "Winter.",
+      "Spring.",
+      "Summer.",
+      "Autumn."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Around December 21 (the December solstice), the sun is directly overhead at the Tropic of Capricorn, bringing Summer to the Southern Hemisphere[cite: 65].",
+    "topic": "Social Studies (Earth Movements & Seasons)",
+    "hasImage": false
+  },
+  {
+    "number": 20,
+    "questionText": "National unity in Ghana can be promoted through",
+    "options": [
+      "formal education.",
+      "freedom of worship.",
+      "use of made in Ghana goods.",
+      "religious tolerance."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Religious tolerance fosters mutual respect and peaceful coexistence among citizens of diverse faiths, strengthening national unity[cite: 65].",
+    "topic": "Social Studies (National Unity)",
+    "hasImage": false
+  },
+  {
+    "number": 21,
+    "questionText": "Latitudes and Longitudes can be used to",
+    "options": [
+      "show contour lines on maps.",
+      "locate objects on maps.",
+      "show the direction of a stream.",
+      "show heights of mountains."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The geographic coordinate grid of latitudes and longitudes is used to pinpoint exact locations on maps and globes[cite: 65].",
+    "topic": "Social Studies (Mapping & Coordinates)",
+    "hasImage": false
+  },
+  {
+    "number": 22,
+    "questionText": "Rivers meander in their lower course because, the",
+    "options": [
+      "valley is almost flat.",
+      "valley is very steep.",
+      "rivers erode vertically.",
+      "deposition is very low."
+    ],
+    "correctAnswer": "D",
+    "explanation": "In the lower course of a river, gentle gradients slow water velocity, causing lateral erosion and shifting channels (Note: matches official key D)[cite: 65].",
+    "topic": "Social Studies (Physical Geography - Rivers)",
+    "hasImage": false
+  },
+  {
+    "number": 23,
+    "questionText": "Ghana's population can best be described as youthful because a large portion of its people are between ages",
+    "options": [
+      "45-59.",
+      "30-44.",
+      "15-29.",
+      "0-14."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Ghana's demographic structure features a large youth cohort concentrated in the 15–29 age bracket[cite: 65].",
+    "topic": "Social Studies (Population Structure)",
+    "hasImage": false
+  },
+  {
+    "number": 24,
+    "questionText": "The head of the Traditional Government in Ghana is the",
+    "options": [
+      "District Chief Executive.",
+      "Paramount Chief.",
+      "Regional Co-ordinator.",
+      "Divisional Chief."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Paramount Chief (Omanhene) is the highest traditional authority within a traditional area in Ghana[cite: 65].",
+    "topic": "Social Studies (Traditional Governance)",
+    "hasImage": false
+  },
+  {
+    "number": 25,
+    "questionText": "Which of the following was a positive effect of the 1948 riot in the Gold Coast?",
+    "options": [
+      "Led to the release of the Big Six.",
+      "Increased political awareness among the people.",
+      "The 1951 constitution was replaced.",
+      "Dr. Kwame Nkrumah was arrested."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The 1948 riots heightened nationalist consciousness and political awareness across the Gold Coast, accelerating the independence struggle[cite: 65].",
+    "topic": "Social Studies (Ghana's Independence Struggle)",
+    "hasImage": false
+  },
+  {
+    "number": 26,
+    "questionText": "The outbreak of Cholera can be prevented by",
+    "options": [
+      "supplying drugs.",
+      "improving nutrition.",
+      "providing clinics.",
+      "improving sanitation."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Cholera is a waterborne disease caused by poor hygiene; improving sanitation and clean water access prevents outbreaks[cite: 65].",
+    "topic": "Social Studies (Environmental Health)",
+    "hasImage": false
+  },
+  {
+    "number": 27,
+    "questionText": "Public corporations are set up mainly to provide",
+    "options": [
+      "money for development.",
+      "emergency services.",
+      "utility services.",
+      "trading services."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Public corporations (such as ECG and GWCL) are state-owned enterprises established primarily to provide essential utility and public services[cite: 65].",
+    "topic": "Social Studies (State Enterprises)",
+    "hasImage": false
+  },
+  {
+    "number": 28,
+    "questionText": "The conventional sign (crescent and star / dome symbol) on topographical maps represents",
+    "options": [
+      "Church.",
+      "Mosque.",
+      "Chief's palace.",
+      "Fort."
+    ],
+    "correctAnswer": "B",
+    "explanation": "On topographical survey maps, the symbol shown represents a Mosque[cite: 65].",
+    "topic": "Social Studies (Map Reading & Conventional Signs)",
+    "hasImage": true
+  },
+  {
+    "number": 29,
+    "questionText": "An example of positive effects of colonization in Ghana is",
+    "options": [
+      "barter trade.",
+      "formal education.",
+      "Christian marriage.",
+      "human sacrifice."
+    ],
+    "correctAnswer": "B",
+    "explanation": "The introduction of formal classroom education and literacy is recognized as a positive legacy of colonization[cite: 65].",
+    "topic": "Social Studies (Colonial History)",
+    "hasImage": false
+  },
+  {
+    "number": 30,
+    "questionText": "Which of the following factors cannot promote political stability in Ghana?",
+    "options": [
+      "Dictatorship in administration",
+      "Freedom of speech",
+      "Multiparty democracy",
+      "Open government"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Dictatorship suppresses citizens' rights and breeds discontent, undermining political stability[cite: 65].",
+    "topic": "Social Studies (Political Stability)",
+    "hasImage": false
+  },
+  {
+    "number": 31,
+    "questionText": "The Sagrenti War of 1874 was fought between the",
+    "options": [
+      "Fante and Asante.",
+      "British and Fante.",
+      "Akyem and Asante.",
+      "British and Asante."
+    ],
+    "correctAnswer": "D",
+    "explanation": "The Sagrenti War (Third Anglo-Ashanti War of 1873–1874) was fought between the British forces under Sir Garnet Wolseley and the Asante Kingdom[cite: 65].",
+    "topic": "Social Studies (Pre-Colonial & Colonial History)",
+    "hasImage": false
+  },
+  {
+    "number": 32,
+    "questionText": "The Latitudinal position of Ghana on the map is",
+    "options": [
+      "60° North and 130° North approximately.",
+      "5° North and 11° North approximately.",
+      "50° North and 110° North approximately.",
+      "30° North and 120° North approximately."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Ghana lies just north of the Equator between latitudes 5° North and 11° North approximately[cite: 65].",
+    "topic": "Social Studies (Geographic Location of Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": 33,
+    "questionText": "Indiscipline among the youth can be reduced through",
+    "options": [
+      "increasing health care.",
+      "enriching the youth with money.",
+      "encouraging desire for wealth.",
+      "public education."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Public education and moral sensitization help instill positive values and curb youth indiscipline[cite: 65].",
+    "topic": "Social Studies (Socialization & Discipline)",
+    "hasImage": false
+  },
+  {
+    "number": 34,
+    "questionText": "Industries which are controlled and managed by the state are called",
+    "options": [
+      "cottage industries.",
+      "public corporations.",
+      "government departments.",
+      "co-operative societies."
+    ],
+    "correctAnswer": "B",
+    "explanation": "State-owned and state-managed commercial or service enterprises are known as public corporations[cite: 65].",
+    "topic": "Social Studies (Production & Enterprises)",
+    "hasImage": false
+  },
+  {
+    "number": 35,
+    "questionText": "The main function of the executive organ of government is",
+    "options": [
+      "interpretation of the law.",
+      "passing of laws.",
+      "implementation of policies.",
+      "approval of budget."
+    ],
+    "correctAnswer": "C",
+    "explanation": "The Executive arm of government is responsible for formulating and implementing national laws and policies[cite: 65].",
+    "topic": "Social Studies (Arms of Government)",
+    "hasImage": false
+  },
+  {
+    "number": 36,
+    "questionText": "Which of the following tourist attractions is mostly associated with Kintampo in the Bono East region?",
+    "options": [
+      "Monkey sanctuary",
+      "Bird viewing",
+      "Savanna Vegetation",
+      "Waterfalls"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Kintampo in the Bono East Region is famous for the Kintampo Waterfalls and Fuller Falls[cite: 65].",
+    "topic": "Social Studies (Tourism in Ghana)",
+    "hasImage": false
+  },
+  {
+    "number": 37,
+    "questionText": "An individual who behaves in an honest and just manner is said to be performing",
+    "options": [
+      "civic responsibility.",
+      "civic right.",
+      "natural responsibility.",
+      "political responsibility."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Upholding honesty, justice, and moral integrity in society is an essential civic responsibility of every citizen[cite: 65].",
+    "topic": "Social Studies (Citizenship & Responsibilities)",
+    "hasImage": false
+  },
+  {
+    "number": 38,
+    "questionText": "Which of the following values promotes unity among Ghanaians?",
+    "options": [
+      "Logic",
+      "Tolerance",
+      "Humility",
+      "Hospitality"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Tolerance of differing ethnic, religious, and political views fosters harmony and national unity[cite: 65].",
+    "topic": "Social Studies (National Unity & Values)",
+    "hasImage": false
+  },
+  {
+    "number": 39,
+    "questionText": "Which of the following is not a coastal feature?",
+    "options": [
+      "Cliff",
+      "Beach",
+      "Tide",
+      "Valley"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Cliffs, beaches, and tides are coastal landforms/phenomena, whereas a valley is an inland lowland feature between hills or mountains[cite: 65].",
+    "topic": "Social Studies (Physical Geography)",
+    "hasImage": false
+  },
+  {
+    "number": 40,
+    "questionText": "Political conflicts in Ghana can best be minimized through",
+    "options": [
+      "tolerating opposing views.",
+      "adopting a common language.",
+      "banning of private newspapers.",
+      "voting for a strong President."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Tolerating opposing political opinions and engaging in peaceful dialogue minimizes political tension and conflict[cite: 65].",
+    "topic": "Social Studies (Conflict Prevention & Democracy)",
+    "hasImage": false
+  }
+]
