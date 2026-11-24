@@ -58,7 +58,7 @@ async function uploadPaper() {
   // 2. Dynamically build the file path
   // Assumes your folder is: data/conversions/science/science_2025_theory.json
   const folderName = normalizeSubjectFolderName(subjectArg);
-  const fileName = `${subjectArg.toLowerCase().replace(/\s+/g, '')}_${yearArg}_${typeArg.toLowerCase() === 'objectives' ? 'obj' : 'theory'}.json`;
+  const fileName = `${folderName}_${yearArg}_${typeArg.toLowerCase() === 'objectives' ? 'obj' : 'theory'}.json`;
   const filePath = path.join(__dirname, '..', 'src', 'data', 'conversions', folderName, fileName);
 
   try {
